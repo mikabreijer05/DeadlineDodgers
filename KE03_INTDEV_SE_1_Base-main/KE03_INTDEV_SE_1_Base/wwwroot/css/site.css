@@ -20,3 +20,27 @@ html {
 body {
   margin-bottom: 60px;
 }
+/*header------------------------------------------------------------------------------------------------------------------------------------*/
+/* Add a black background color to the top navigation bar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #222;
+}
+
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+    .search-container input {
+        width: 300px;
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+    }
+
+/*header------------------------------------------------------------------------------------------------------------------------------------*/
