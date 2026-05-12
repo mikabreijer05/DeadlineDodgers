@@ -3,39 +3,111 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<div class="alert-info">
-    <p class="p-1">
-        Dit project kun je gebruiken als startpunt voor de individuele inleveropdracht: <a href="https://moodle.zuyd.nl/mod/resource/view.php?id=1262065">KE03_INTDEV_SE_1</a>
+<div class="category-bar">
 
-        <ul>
-            <li>Wat ga je maken: Een gebruiksvriendelijk online bestelsysteem voor een klant om producten te bestellen.</li>
-            <li>
-                Hoe ga je dit maken?<br />
-                - Individuele inleveropdracht.<br/>
-                - Pas de principes van HCI toe (bijv. Paper prototyping, design principles etc…)<br />
-                - Maak gebruik van: .NET core razor pages met bijbehorende zaken zoals, html, css, js, bootstrap, jquery<br />
-                - Maak gebruik van git en github voor source control van jouw code<br />
-            </li>
-            <li>
-                Je krijgt een dal (data access layer) meegeleverd. Qua inhoud is die niet perfect gevuld, maar qua structuur biedt die voldoende om een mooi bestel systeem te kunnen maken. <br /> 
-                Maar mis je iets, je bent vrij om alles naar wens aan te passen! Ben creatief!
-            </li>
-        </ul>
-    </p>
-</div>
+    <a href="#" class="active">ALL</a>
+    <a href="#">REALITY</a>
+    <a href="#">ILLUSION</a>
+    <a href="#">HARDWARE</a>
+    <a href="#">ACCESSORIES</a>
+    <a href="#">APPAREL</a>
+    <a href="#">VEHICLES</a>
+    <a href="#">SOFTWARE</a>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Klant</th>
-            <th>Aantal Orders</th>
-        </tr>
-    </thead>
-    @foreach (var c in Model.Customers)
-    {        
-        <tr>
-            <td>@Html.DisplayName(c.Name)</td>
-            <td>@Html.DisplayName(c.Orders.Count.ToString())</td>           
-        </tr>
-    }
-</table>
+    <section class="featured-products">
+
+        <div class="section-header">
+            <h2>FEATURED PRODUCTS</h2>
+            <p>Top picks from the Matrix</p>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+                <img src="/images/redpill.jpg" alt="Red Pill">
+                <div class="product-info">
+                    <h3>RED PILL</h3>
+                    <p class="price">$999.99</p>
+                    <p class="desc">Wake up from the simulation</p>
+                    <span class="tag">REALITY</span>
+                    <button class="add-btn">🛒 ADD</button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card">
+                <img src="/images/bluepill.jpg" alt="Blue Pill">
+                <div class="product-info">
+                    <h3>BLUE PILL</h3>
+                    <p class="price">$0.01</p>
+                    <p class="desc">Stay in wonderland</p>
+                    <span class="tag">ILLUSION</span>
+                    <button class="add-btn">🛒 ADD</button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card">
+                <img src="/images/phonebooth.jpg" alt="Phone Booth">
+                <div class="product-info">
+                    <h3>PHONE BOOTH</h3>
+                    <p class="price">$1337</p>
+                    <p class="desc">Emergency exit portal</p>
+                    <span class="tag">HARDWARE</span>
+                    <button class="add-btn">🛒 ADD</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="New-Arrivals">
+
+        <div class="section-header">
+            <h2>New Arrivals</h2>
+            <p>new in this simulation</p>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+                <img src="/images/redpill.jpg" alt="Red Pill">
+                <div class="product-info">
+                    <h3>RED PILL</h3>
+                    <p class="price">$999.99</p>
+                    <p class="desc">Wake up from the simulation</p>
+                    <span class="tag">REALITY</span>
+                    <button class="add-btn">🛒 ADD</button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card">
+                <img src="/images/bluepill.jpg" alt="Blue Pill">
+                <div class="product-info">
+                    <h3>BLUE PILL</h3>
+                    <p class="price">$0.01</p>
+                    <p class="desc">Stay in wonderland</p>
+                    <span class="tag">ILLUSION</span>
+                    <button class="add-btn">🛒 ADD</button>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card">
+                <img src="/images/phonebooth.jpg" alt="Phone Booth">
+                <div class="product-info">
+                    <h3>PHONE BOOTH</h3>
+                    <p class="price">$1337</p>
+                    <p class="desc">Emergency exit portal</p>
+                    <span class="tag">HARDWARE</span>
+                    <button class="add-btn">🛒 ADD</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
