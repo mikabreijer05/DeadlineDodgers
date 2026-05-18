@@ -3,6 +3,28 @@
 @{
     ViewData["Title"] = "Home page";
 }
+
+<section>
+    <h1>Producten</h1>
+
+    <div class="product-card">
+        @foreach (var product in Model.Products)
+        {
+            <div class="product-card">
+                <h3>@product.Name</h3>
+                <p>€@product.Price</p>
+            </div>
+        }
+    </div>
+
+</section>
+
+
+
+<!-- Voor referentie,
+    De gegenereerde site, waarvan wij de css overnemen, 
+    had de volgende html voorgesteld:
+
 <section class="featured-products">
 
     <div class="section-header">
@@ -11,8 +33,6 @@
     </div>
 
     <div class="product-grid">
-
-        <!-- PRODUCT 1 -->
         <div class="product-card">
             <img src="/images/redpill.jpg" alt="Red Pill">
             <div class="product-info">
@@ -27,100 +47,6 @@
                 </button>
             </div>
         </div>
-
-        <!-- PRODUCT 2 -->
-        <div class="product-card">
-            <img src="/images/bluepill.jpg" alt="Blue Pill">
-            <div class="product-info">
-                <h3>BLUE PILL</h3>
-                <p class="price">$0.01</p>
-                <p class="desc">Stay in wonderland</p>
-                <span class="tag">ILLUSION</span>
-                <button class="add-btn"
-                        data-product-id="bluepill"
-                        data-product-name="Blue Pill">
-                    🛒 ADD
-                </button>
-            </div>
-        </div>
-
-        <!-- PRODUCT 3 -->
-        <div class="product-card">
-            <img src="/images/phonebooth.jpg" alt="Phone Booth">
-            <div class="product-info">
-                <h3>PHONE BOOTH</h3>
-                <p class="price">$1337</p>
-                <p class="desc">Emergency exit portal</p>
-                <span class="tag">HARDWARE</span>
-                <button class="add-btn"
-                        data-product-id="phonebooth"
-                        data-product-name="Phone Booth">
-                    🛒 ADD
-                </button>
-            </div>
-        </div>
-
     </div>
 
-</section>
-
-<section class="New-Arrivals">
-
-    <div class="section-header">
-        <h2>New Arrivals</h2>
-        <p>new in this simulation</p>
-    </div>
-
-    <div class="product-grid">
-
-        <!-- PRODUCT 1 -->
-        <div class="product-card">
-            <img src="/images/redpill.jpg" alt="Red Pill">
-            <div class="product-info">
-                <h3>RED PILL</h3>
-                <p class="price">$999.99</p>
-                <p class="desc">Wake up from the simulation</p>
-                <span class="tag">REALITY</span>
-                <button class="add-btn"
-                        data-product-id="redpill"
-                        data-product-name="Red Pill">
-                    🛒 ADD
-                </button>
-            </div>
-        </div>
-
-        <!-- PRODUCT 2 -->
-        <div class="product-card">
-            <img src="/images/bluepill.jpg" alt="Blue Pill">
-            <div class="product-info">
-                <h3>BLUE PILL</h3>
-                <p class="price">$0.01</p>
-                <p class="desc">Stay in wonderland</p>
-                <span class="tag">ILLUSION</span>
-                <button class="add-btn"
-                        data-product-id="bluepill"
-                        data-product-name="Blue Pill">
-                    🛒 ADD
-                </button>
-            </div>
-        </div>
-
-        <!-- PRODUCT 3 -->
-        <div class="product-card">
-            <img src="/images/phonebooth.jpg" alt="Phone Booth">
-            <div class="product-info">
-                <h3>PHONE BOOTH</h3>
-                <p class="price">$1337</p>
-                <p class="desc">Emergency exit portal</p>
-                <span class="tag">HARDWARE</span>
-                <button class="add-btn"
-                        data-product-id="phonebooth"
-                        data-product-name="Phone Booth">
-                    🛒 ADD
-                </button>
-            </div>
-        </div>
-
-    </div>
-
-</section>
+</section>-->
