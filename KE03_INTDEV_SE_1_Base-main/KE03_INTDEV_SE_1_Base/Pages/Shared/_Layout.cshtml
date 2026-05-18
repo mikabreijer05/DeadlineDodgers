@@ -1,94 +1,68 @@
-﻿<!DOCTYPE html>
+﻿@inherits Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>@ViewData["Title"] - KE03_INTDEV_SE_1_Base</title>
-
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/KE03_INTDEV_SE_1_Base.styles.css" asp-append-version="true" />
-
-    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/KE03_INTDEV_SE_1_Base.styles.css" />
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-
-                <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    Matrix Market
-                </a>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-
-                    <!-- 🔹 JOUW MENU (NIET VERWIJDERD) -->
-                    <ul class="navbar-nav flex-grow-1">
-                    </ul>
-
-                    <!-- 🔹 SEARCH (NIET VERWIJDERD) -->
-                    <div class="search-container">
-                        <input type="text" placeholder="Zoeken...">
-                    </div>
-
-                    <!-- 🔹 NIEUW: ICONS (LOGIN + CART) -->
-                    <!-- ICONS -->
-                    <div class="nav-icons d-flex align-items-center ms-3 gap-3">
-
-                        <a class="nav-link" asp-page="/Login" title="Inloggen">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-
-                        <a class="nav-link" asp-page="/Cart" title="Winkelmandje">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </a>
-
-                    </div>
-
-                    <!-- CATEGORY BAR -->
-                    <div class="category-bar">
-
-                        <a href="#" class="active">HOME</a>
-                        <a href="#">REALITY</a>
-                        <a href="#">ILLUSION</a>
-                        <a href="#">HARDWARE</a>
-                        <a href="#">ACCESSORIES</a>
-                        <a href="#">APPAREL</a>
-                        <a href="#">VEHICLES</a>
-                        <a href="#">SOFTWARE</a>
-
-                    </div>
-
-                </div>
+        <!-- Header top row: logo, search and icons -->
+        <div class="navbar-header-content">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">
+                Matrix Market
+            </a>
+            <div class="search-container">
+                <input type="text" placeholder="Zoeken..." />
             </div>
-        </nav>
+            <div class="nav-icons">
+                <a class="nav-link" asp-page="/Login" title="Inloggen">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+                <a class="nav-link" asp-page="/Cart" title="Winkelmandje">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </div>
+        <!-- Category navigation bar, horizontal, below nav row -->
+        <div class="category-bar">
+            <a href="#" class="active">HOME</a>
+            <a href="#">REALITY</a>
+            <a href="#">ILLUSION</a>
+            <a href="#">HARDWARE</a>
+            <a href="#">ACCESSORIES</a>
+            <a href="#">APPAREL</a>
+            <a href="#">VEHICLES</a>
+            <a href="#">SOFTWARE</a>
+        </div>
+        <!-- Green separator line below header -->
+        <hr class="header-separator" />
     </header>
 
+    <!-- Main content area -->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+    <!-- Footer -->
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2025 - KE03_INTDEV_SE_1_Base - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/site.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
