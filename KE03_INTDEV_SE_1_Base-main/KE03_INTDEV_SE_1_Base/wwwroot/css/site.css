@@ -25,7 +25,7 @@ body {
    ======================================== */
 
 header {
-    width: 100vw;
+    width: 100%;
     background: #000;
     margin-bottom: 0;
 }
@@ -138,7 +138,7 @@ header {
     border: none;
     background: #19ff62;
     margin: 0;
-    width: 100vw;
+    width: 100%;
 }
 
 /* ========================================

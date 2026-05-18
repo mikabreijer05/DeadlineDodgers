@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/KE03_INTDEV_SE_1_Base.styles.css" />
+    <script src="~/js/site.js" defer></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -25,8 +26,10 @@
                 <a class="nav-link" asp-page="/Login" title="Inloggen">
                     <i class="fa-solid fa-user"></i>
                 </a>
-                <a class="nav-link" asp-page="/Cart" title="Winkelmandje">
+                <a class="nav-link" asp-page="/Cart" title="Winkelmandje" style="position:relative;">
                     <i class="fa-solid fa-cart-shopping"></i>
+                    <!-- Cart count badge -->
+                    <span id="cartCount" style="position:absolute; top:-10px; right:-12px; background:#20ff62; color:#000; font-size:0.92rem; font-weight:bold; padding:2px 7px; border-radius:14px;"></span>
                 </a>
             </div>
         </div>
@@ -50,6 +53,25 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+    </div>
+
+    <!-- Toast for Add to Cart notifications -->
+    <div id="toast" style="
+        display:none;
+        position:fixed;
+        bottom:40px;
+        left:50%;
+        transform:translateX(-50%);
+        background:#20ff62;
+        color:black;
+        font-family:monospace;
+        font-weight:bold;
+        font-size:1.1rem;
+        padding:14px 40px;
+        border-radius:18px;
+        z-index: 9999;
+        box-shadow: 0 0 24px #20ff6299;
+        transition: opacity 0.3s;">
     </div>
 
     <!-- Footer -->

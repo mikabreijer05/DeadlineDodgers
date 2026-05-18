@@ -3,100 +3,124 @@
 @{
     ViewData["Title"] = "Home page";
 }
-    <section class="featured-products">
+<section class="featured-products">
 
-        <div class="section-header">
-            <h2>FEATURED PRODUCTS</h2>
-            <p>Top picks from the Matrix</p>
+    <div class="section-header">
+        <h2>FEATURED PRODUCTS</h2>
+        <p>Top picks from the Matrix</p>
+    </div>
+
+    <div class="product-grid">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-card">
+            <img src="/images/redpill.jpg" alt="Red Pill">
+            <div class="product-info">
+                <h3>RED PILL</h3>
+                <p class="price">$999.99</p>
+                <p class="desc">Wake up from the simulation</p>
+                <span class="tag">REALITY</span>
+                <button class="add-btn"
+                        data-product-id="redpill"
+                        data-product-name="Red Pill">
+                    🛒 ADD
+                </button>
+            </div>
         </div>
 
-        <div class="product-grid">
-
-            <!-- PRODUCT 1 -->
-            <div class="product-card">
-                <img src="/images/redpill.jpg" alt="Red Pill">
-                <div class="product-info">
-                    <h3>RED PILL</h3>
-                    <p class="price">$999.99</p>
-                    <p class="desc">Wake up from the simulation</p>
-                    <span class="tag">REALITY</span>
-                    <button class="add-btn">🛒 ADD</button>
-                </div>
+        <!-- PRODUCT 2 -->
+        <div class="product-card">
+            <img src="/images/bluepill.jpg" alt="Blue Pill">
+            <div class="product-info">
+                <h3>BLUE PILL</h3>
+                <p class="price">$0.01</p>
+                <p class="desc">Stay in wonderland</p>
+                <span class="tag">ILLUSION</span>
+                <button class="add-btn"
+                        data-product-id="bluepill"
+                        data-product-name="Blue Pill">
+                    🛒 ADD
+                </button>
             </div>
-
-            <!-- PRODUCT 2 -->
-            <div class="product-card">
-                <img src="/images/bluepill.jpg" alt="Blue Pill">
-                <div class="product-info">
-                    <h3>BLUE PILL</h3>
-                    <p class="price">$0.01</p>
-                    <p class="desc">Stay in wonderland</p>
-                    <span class="tag">ILLUSION</span>
-                    <button class="add-btn">🛒 ADD</button>
-                </div>
-            </div>
-
-            <!-- PRODUCT 3 -->
-            <div class="product-card">
-                <img src="/images/phonebooth.jpg" alt="Phone Booth">
-                <div class="product-info">
-                    <h3>PHONE BOOTH</h3>
-                    <p class="price">$1337</p>
-                    <p class="desc">Emergency exit portal</p>
-                    <span class="tag">HARDWARE</span>
-                    <button class="add-btn">🛒 ADD</button>
-                </div>
-            </div>
-
         </div>
 
-    </section>
-
-    <section class="New-Arrivals">
-
-        <div class="section-header">
-            <h2>New Arrivals</h2>
-            <p>new in this simulation</p>
+        <!-- PRODUCT 3 -->
+        <div class="product-card">
+            <img src="/images/phonebooth.jpg" alt="Phone Booth">
+            <div class="product-info">
+                <h3>PHONE BOOTH</h3>
+                <p class="price">$1337</p>
+                <p class="desc">Emergency exit portal</p>
+                <span class="tag">HARDWARE</span>
+                <button class="add-btn"
+                        data-product-id="phonebooth"
+                        data-product-name="Phone Booth">
+                    🛒 ADD
+                </button>
+            </div>
         </div>
 
-        <div class="product-grid">
+    </div>
 
-            <!-- PRODUCT 1 -->
-            <div class="product-card">
-                <img src="/images/redpill.jpg" alt="Red Pill">
-                <div class="product-info">
-                    <h3>RED PILL</h3>
-                    <p class="price">$999.99</p>
-                    <p class="desc">Wake up from the simulation</p>
-                    <span class="tag">REALITY</span>
-                    <button class="add-btn">🛒 ADD</button>
-                </div>
+</section>
+
+<section class="New-Arrivals">
+
+    <div class="section-header">
+        <h2>New Arrivals</h2>
+        <p>new in this simulation</p>
+    </div>
+
+    <div class="product-grid">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-card">
+            <img src="/images/redpill.jpg" alt="Red Pill">
+            <div class="product-info">
+                <h3>RED PILL</h3>
+                <p class="price">$999.99</p>
+                <p class="desc">Wake up from the simulation</p>
+                <span class="tag">REALITY</span>
+                <button class="add-btn"
+                        data-product-id="redpill"
+                        data-product-name="Red Pill">
+                    🛒 ADD
+                </button>
             </div>
-
-            <!-- PRODUCT 2 -->
-            <div class="product-card">
-                <img src="/images/bluepill.jpg" alt="Blue Pill">
-                <div class="product-info">
-                    <h3>BLUE PILL</h3>
-                    <p class="price">$0.01</p>
-                    <p class="desc">Stay in wonderland</p>
-                    <span class="tag">ILLUSION</span>
-                    <button class="add-btn">🛒 ADD</button>
-                </div>
-            </div>
-
-            <!-- PRODUCT 3 -->
-            <div class="product-card">
-                <img src="/images/phonebooth.jpg" alt="Phone Booth">
-                <div class="product-info">
-                    <h3>PHONE BOOTH</h3>
-                    <p class="price">$1337</p>
-                    <p class="desc">Emergency exit portal</p>
-                    <span class="tag">HARDWARE</span>
-                    <button class="add-btn">🛒 ADD</button>
-                </div>
-            </div>
-
         </div>
 
-    </section>
+        <!-- PRODUCT 2 -->
+        <div class="product-card">
+            <img src="/images/bluepill.jpg" alt="Blue Pill">
+            <div class="product-info">
+                <h3>BLUE PILL</h3>
+                <p class="price">$0.01</p>
+                <p class="desc">Stay in wonderland</p>
+                <span class="tag">ILLUSION</span>
+                <button class="add-btn"
+                        data-product-id="bluepill"
+                        data-product-name="Blue Pill">
+                    🛒 ADD
+                </button>
+            </div>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="product-card">
+            <img src="/images/phonebooth.jpg" alt="Phone Booth">
+            <div class="product-info">
+                <h3>PHONE BOOTH</h3>
+                <p class="price">$1337</p>
+                <p class="desc">Emergency exit portal</p>
+                <span class="tag">HARDWARE</span>
+                <button class="add-btn"
+                        data-product-id="phonebooth"
+                        data-product-name="Phone Booth">
+                    🛒 ADD
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</section>

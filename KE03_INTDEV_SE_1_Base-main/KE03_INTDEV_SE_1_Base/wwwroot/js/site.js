@@ -1,4 +1,54 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// =============================
+// Matrix Market Cart Logic with Toast
+// =============================
 
-// Write your JavaScript code.
+console.log("site.js loaded!");
+// Add event listeners and update cart badge on page load
+document.addEventListener('DOMContentLoaded', function () {
+    updateCartCount();
+
+    // Attach add to cart logic to every .add-btn button
+    document.querySelectorAll('.add-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            // Read product ID and Name from data attributes
+            const productId = btn.getAttribute('data-product-id');
+            const productName = btn.getAttribute('data-product-name');
+            addToCart(productId, productName);
+        });
+    });
+});
+
+// Add a product to cart in localStorage
+function addToCart(productId, productName) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let found = cart.find(item => item.id === productId);
+    if (found) {
+        found.quantity += 1;
+    } else {
+        cart.push({ id: productId, name: productName, quantity: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    showToast(productName + " added to cart!"); // Use toast instead of alert
+}
+
+// Update the cart badge in the nav
+function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    let cartCount = document.getElementById('cartCount');
+    if (cartCount) cartCount.textContent = totalItems > 0 ? totalItems : '';
+}
+
+// Show a toast/snackbar notification at the bottom of the page
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    if (!toast) return;
+    toast.textContent = message;
+    toast.style.display = 'block';
+    toast.style.opacity = 1;
+    setTimeout(() => {
+        toast.style.opacity = 0;
+        setTimeout(() => { toast.style.display = 'none'; }, 400);
+    }, 2000);
+}
