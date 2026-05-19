@@ -266,3 +266,48 @@ header {
         background: #00cc44;
         color: #fff;
     }
+/* Footer Styles */
+body {
+    margin-bottom: 0;
+}
+
+footer {
+    background: black;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid #20ff62;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* belangrijk voor responsive */
+    gap: 20px;
+}
+
+footer p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.footer-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+    .footer-buttons .btn {
+        min-width: 160px;
+        border-color: #20ff62;
+        color: #20ff62;
+        font-family: monospace;
+    }
+
+        .footer-buttons .btn:hover {
+            background: #20ff62;
+            color: black;
+        }
