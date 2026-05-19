@@ -163,6 +163,37 @@ header {
         color: #00ff66;
     }
 
+/* FAQ styling */
+.faq {
+    padding: 16px 0;
+}
+
+.faq-item {
+    margin-bottom: 18px;
+}
+
+.faq-question {
+    margin: 0 0 6px 0;
+    color: #20ff62;
+    font-family: monospace;
+    font-size: 1.25rem; /* larger than default body text */
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+.faq-answer {
+    margin: 0;
+    color: #00ff66;
+    font-size: 1rem; /* default body size */
+    opacity: 0.95;
+}
+
+@media (min-width: 768px) {
+    .faq-question {
+        font-size: 1.5rem;
+    }
+}
+
 /* Product grid */
 .product-grid {
     display: grid;
