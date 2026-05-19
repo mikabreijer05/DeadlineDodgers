@@ -214,7 +214,7 @@ header {
     width: fit-content;
 }
 
-/* Card 'Add' button */
+/* Card 'Add' button Noa */
 .add-btn {
     margin-top: auto;
     padding: 8px;
@@ -227,4 +227,42 @@ header {
     .add-btn:hover {
         background: #00ff66;
         color: black;
+    }
+
+
+/* --- Cart Page Additional Buttons Noa --- */
+.remove-btn {
+    margin-top: 10px;
+    padding: 7px 20px;
+    background: #ff2525;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+    .remove-btn:hover {
+        background: #ce1818;
+    }
+
+.checkout-btn {
+    padding: 12px 28px;
+    background: #20ff62;
+    color: black;
+    border-radius: 12px;
+    border: none;
+    font-family: monospace;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 12px #20ff62AA;
+    transition: background .16s, color .16s;
+}
+
+    .checkout-btn:hover {
+        background: #00cc44;
+        color: #fff;
     }

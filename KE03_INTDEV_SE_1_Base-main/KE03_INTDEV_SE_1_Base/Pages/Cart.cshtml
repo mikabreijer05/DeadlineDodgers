@@ -1,0 +1,17 @@
+﻿@page
+@model dynamic
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<section>
+    <h1>Winkelmandje</h1>
+
+    <div id="cart-contents">
+        <!-- Cart items and totals will be rendered here by JS -->
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/cart.js"></script>
+}

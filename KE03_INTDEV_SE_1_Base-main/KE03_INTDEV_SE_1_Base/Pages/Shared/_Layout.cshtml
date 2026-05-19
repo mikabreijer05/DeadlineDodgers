@@ -1,6 +1,9 @@
 ﻿@inherits Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
 <!DOCTYPE html>
 <html lang="en">
+
+
+    <!--Inheritance toegevoegd om-->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -26,9 +29,8 @@
                 <a class="nav-link" asp-page="/Login" title="Inloggen">
                     <i class="fa-solid fa-user"></i>
                 </a>
-                <a class="nav-link" asp-page="/Cart" title="Winkelmandje" style="position:relative;">
+                <a class="nav-link" href="/Cart" title="Winkelmandje" style="position:relative;">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <!-- Cart count badge -->
                     <span id="cartCount" style="position:absolute; top:-10px; right:-12px; background:#20ff62; color:#000; font-size:0.92rem; font-weight:bold; padding:2px 7px; border-radius:14px;"></span>
                 </a>
             </div>
@@ -55,7 +57,7 @@
         </main>
     </div>
 
-    <!-- Toast for Add to Cart notifications -->
+    <!-- Toast for Add to Cart notifications Noaw -->
     <div id="toast" style="
         display:none;
         position:fixed;
@@ -81,10 +83,10 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Bootstrap scripts -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js"></script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>

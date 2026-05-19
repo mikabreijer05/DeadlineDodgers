@@ -1,13 +1,14 @@
 ﻿// =============================
-// Matrix Market Cart Logic with Toast
+// Matrix Market Cart Logic with Dropdown & Toast
 // =============================
 
 console.log("site.js loaded!");
-// Add event listeners and update cart badge on page load
+
+// Setup cart button functionality after page load
 document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
 
-    // Attach add to cart logic to every .add-btn button
+    // Attach add to cart logic to every .add-btn button Noa
     document.querySelectorAll('.add-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             // Read product ID and Name from data attributes
@@ -16,9 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
             addToCart(productId, productName);
         });
     });
+
+    // Close cart dropdown on scroll (optional for better UX)
+    window.addEventListener('scroll', function () {
+        hideCartDropdown();
+    });
 });
 
-// Add a product to cart in localStorage
+// Add a product to cart in localStorage Noa
 function addToCart(productId, productName) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let found = cart.find(item => item.id === productId);
@@ -29,10 +35,10 @@ function addToCart(productId, productName) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    showToast(productName + " added to cart!"); // Use toast instead of alert
+    showToast(productName + " added to cart!");
 }
 
-// Update the cart badge in the nav
+// Update the cart badge in the nav Noa
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -40,7 +46,7 @@ function updateCartCount() {
     if (cartCount) cartCount.textContent = totalItems > 0 ? totalItems : '';
 }
 
-// Show a toast/snackbar notification at the bottom of the page
+// Show a toast/snackbar notification at the bottom of the page Noa
 function showToast(message) {
     const toast = document.getElementById('toast');
     if (!toast) return;
