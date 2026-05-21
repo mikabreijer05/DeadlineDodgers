@@ -56,3 +56,13 @@ function showToast(message) {
         setTimeout(() => { toast.style.display = 'none'; }, 400);
     }, 2000);
 }
+
+// zorgt ervoor dat de winkelwagen knop er niet ook nog voor zorgd dat de product pagina geopend word. Mika
+document.querySelectorAll('.add-btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+        e.stopPropagation();
+
+        // winkelwagen code hier
+        console.log("Toegevoegd aan winkelwagen");
+    });
+});

@@ -11,8 +11,8 @@ namespace DataAccessLayer
     {
         public static void Initialize(MatrixIncDbContext context)
         {
-            // Look for any customers.
-            if (context.Customers.Any())
+            // If the database already has products, assume seeding already happened.
+            if (context.Products.Any())
             {
                 return;   // DB has been seeded
             }
@@ -27,38 +27,44 @@ namespace DataAccessLayer
                 new Customer { Name = "Morpheus", Address = "456 Oak St", Active = true },
                 new Customer { Name = "Trinity", Address = "789 Pine St", Active = true }
             };
-            context.Customers.AddRange(customers);
+            // Add customers if none exist
+            if (!context.Customers.Any())
+            {
+                context.Customers.AddRange(customers);
+            }
 
+            // Ensure we have customers from the database to link orders to
+            var dbCustomers = context.Customers.ToArray();
             var orders = new Order[]
             {
-                new Order { Customer = customers[0], OrderDate = DateTime.Parse("2021-01-01")},
-                new Order { Customer = customers[0], OrderDate = DateTime.Parse("2021-02-01")},
-                new Order { Customer = customers[1], OrderDate = DateTime.Parse("2021-02-01")},
-                new Order { Customer = customers[2], OrderDate = DateTime.Parse("2021-03-01")}
-            };  
-            context.Orders.AddRange(orders);
+                new Order { Customer = dbCustomers[0], OrderDate = DateTime.Parse("2021-01-01")},
+                new Order { Customer = dbCustomers[0], OrderDate = DateTime.Parse("2021-02-01")},
+                new Order { Customer = dbCustomers[1], OrderDate = DateTime.Parse("2021-02-01")},
+                new Order { Customer = dbCustomers[2], OrderDate = DateTime.Parse("2021-03-01")}
+            };
+            if (!context.Orders.Any())
+            {
+                context.Orders.AddRange(orders);
+            }
 
             var products = new Product[]
             {
-                new Product { Name = "Nebuchadnezzar", Description = "Het schip waarop Neo voor het eerst de echte wereld leert kennen", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
-                new Product { Name = "Jack-in Chair", Description = "Stoel met een rugsteun en metalen armen waarin mensen zitten om ingeplugd te worden in de Matrix via een kabel in de nekpoort", Price = 500.50m, ImageUrl = "images/product/jackinchair.jpg"},
-                new Product { Name = "EMP (Electro-Magnetic Pulse) Device", Description = "Wapentuig op de schepen van Zion", Price = 129.99m,  ImageUrl = "images/product/emp.jpg" },
-                new Product { Name = "Blue Pill", Description = "De blauwe pil die Neo neemt in de Matrix", Price = 100.00m, ImageUrl="images/product/bluepill.jpg"},
+                new Product { Name = "Nebuchadnezzar", Type = "product", Description = "Het schip waarop Neo voor het eerst de echte wereld leert kennen", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
+                new Product { Name = "Jack-in Chair", Type = "product", Description = "Stoel met een rugsteun en metalen armen waarin mensen zitten om ingeplugd te worden in de Matrix via een kabel in de nekpoort", Price = 500.50m, ImageUrl = "images/product/jackinchair.jpg"},
+                new Product { Name = "EMP (Electro-Magnetic Pulse) Device", Type = "product", Description = "Wapentuig op de schepen van Zion", Price = 129.99m,  ImageUrl = "images/product/emp.jpg" },
+                new Product { Name = "Blue Pill", Type = "product", Description = "De blauwe pil die Neo neemt in de Matrix", Price = 100.00m, ImageUrl="images/product/bluepill.jpg"},
+                new Product { Name = "Tandwiel", Type = "onderdeel", Description = "Overdracht van rotatie in bijvoorbeeld de motor of luikmechanismen", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
+                new Product { Name = "M5 Boutje", Type = "onderdeel", Description = "Bevestiging van panelen, buizen of interne modules.", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
+                new Product { Name = "Hydraulische cilinder", Type = "onderdeel", Description = "Openen/sluiten van zware luchtsluizen of bewegende onderdelen.", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
+                new Product { Name = "Koelvloeistofpomp", Type = "onderdeel", Description = "Koeling van de motor of elektronische systemen.", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"}
             };
-            context.Products.AddRange(products);
-
-            var parts = new Part[]
+            // Add seeded products to the context so they are persisted
+            if (!context.Products.Any())
             {
-                new Part { Name = "Tandwiel", Description = "Overdracht van rotatie in bijvoorbeeld de motor of luikmechanismen"},
-                new Part { Name = "M5 Boutje", Description = "Bevestiging van panelen, buizen of interne modules"},
-                new Part { Name = "Hydraulische cilinder", Description = "Openen/sluiten van zware luchtsluizen of bewegende onderdelen"},
-                new Part { Name = "Koelvloeistofpomp", Description = "Koeling van de motor of elektronische systemen."}
-            };
-            context.Parts.AddRange(parts);
+                context.Products.AddRange(products);
+            }
 
             context.SaveChanges();
-
-            context.Database.EnsureCreated();
         }
     }
 }
