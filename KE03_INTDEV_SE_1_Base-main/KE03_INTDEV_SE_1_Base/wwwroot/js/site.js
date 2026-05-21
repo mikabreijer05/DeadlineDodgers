@@ -6,7 +6,7 @@
 
 console.log("site.js loaded!");
 
-// Setup cart button functionality after page load Noa
+// Setup cart button functionality after page load  - Noa
 document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Add a product to cart in localStorage Noa
+// Add a product to cart in localStorage - Noa
 function addToCart(productId, productName, productPrice) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let found = cart.find(item => item.id === productId);
@@ -36,7 +36,7 @@ function addToCart(productId, productName, productPrice) {
     showToast(productName + " added to cart!");
 }
 
-// Update the cart badge in the nav Noa
+// Update the cart badge in the nav - Noa
 function updateCartCount() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -56,13 +56,3 @@ function showToast(message) {
         setTimeout(() => { toast.style.display = 'none'; }, 400);
     }, 2000);
 }
-
-// zorgt ervoor dat de winkelwagen knop er niet ook nog voor zorgd dat de product pagina geopend word. Mika
-document.querySelectorAll('.add-btn').forEach(button => {
-    button.addEventListener('click', function (e) {
-        e.stopPropagation();
-
-        // winkelwagen code hier
-        console.log("Toegevoegd aan winkelwagen");
-    });
-});
