@@ -11,6 +11,7 @@
         @foreach (var product in Model.Products)
         {
             <div class="product-card">
+                <img src="@product.ImageUrl" alt="@product.Name">
                 <h3>@product.Name</h3>
                 <p>€@product.Price</p>
                 <button class="add-btn"
