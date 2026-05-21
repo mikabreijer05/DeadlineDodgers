@@ -3,8 +3,6 @@
 // =============================
 
 
-// delete later this is for testing and troubleshoot reasons - Noa
-localStorage.removeItem('cart');
 
 console.log("site.js loaded!");
 
