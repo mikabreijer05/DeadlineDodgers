@@ -18,5 +18,8 @@ namespace DataAccessLayer.Interfaces
         public void UpdateCustomer(Customer customer);
 
         public void DeleteCustomer(Customer customer);
+
+        public Customer? GetCustomerByUserName(string userName);
+        
     }
 }

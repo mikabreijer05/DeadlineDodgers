@@ -40,6 +40,11 @@ namespace DataAccessLayer.Repositories
             return _context.Customers.Include(c => c.Orders).FirstOrDefault(c => c.Id == id);
         }
 
+        public Customer? GetCustomerByUserName(string userName)
+        {
+            throw new NotImplementedException();
+        }
+
         public void UpdateCustomer(Customer customer)
         {
             _context.Customers.Update(customer);

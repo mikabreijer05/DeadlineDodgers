@@ -1,0 +1,27 @@
+﻿@page
+@model KE03_INTDEV_SE_1_Base.Pages.LoginModel
+@{
+    ViewData["Title"] = "Inloggen";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Vul hier uw gebruikersnaam en wachtwoord in.</p>
+
+<form method="post">
+    <div>
+        <label>Gebruikersnaam</label>
+        <input asp-for="Gebruikersnaam" />
+    </div>
+
+    <div>
+        <label>Wachtwoord</label>
+        <input asp-for="Wachtwoord" type="password" />
+    </div>
+
+    <button type="submit">Login</button>
+</form>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <p style="color:red">@Model.ErrorMessage</p>
+}
