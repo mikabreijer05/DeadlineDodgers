@@ -1,37 +1,37 @@
 ﻿// =============================
-// Matrix Market Cart Logic with Dropdown & Toast
+// Matrix Market Cart Logic with Toast
 // =============================
+
+
+// delete later this is for testing and troubleshoot reasons - Noa
+localStorage.removeItem('cart');
 
 console.log("site.js loaded!");
 
-// Setup cart button functionality after page load
+// Setup cart button functionality after page load Noa
 document.addEventListener('DOMContentLoaded', function () {
     updateCartCount();
 
-    // Attach add to cart logic to every .add-btn button Noa
+    // Attach add to cart logic to every .add-btn button
     document.querySelectorAll('.add-btn').forEach(btn => {
         btn.addEventListener('click', function () {
-            // Read product ID and Name from data attributes
+            // Read product ID, Name, and PRICE from data attributes
             const productId = btn.getAttribute('data-product-id');
             const productName = btn.getAttribute('data-product-name');
-            addToCart(productId, productName);
+            const productPrice = parseFloat(btn.getAttribute('data-product-price'));
+            addToCart(productId, productName, productPrice); // PASS PRICE!
         });
-    });
-
-    // Close cart dropdown on scroll (optional for better UX)
-    window.addEventListener('scroll', function () {
-        hideCartDropdown();
     });
 });
 
 // Add a product to cart in localStorage Noa
-function addToCart(productId, productName) {
+function addToCart(productId, productName, productPrice) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let found = cart.find(item => item.id === productId);
     if (found) {
         found.quantity += 1;
     } else {
-        cart.push({ id: productId, name: productName, quantity: 1 });
+        cart.push({ id: productId, name: productName, price: productPrice, quantity: 1 });
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();

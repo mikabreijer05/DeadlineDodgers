@@ -1,5 +1,8 @@
 ﻿// ==========================
-// Matrix Market - Cart Page Noa
+// Matrix Market - Cart Page
+// Noa Scipio - 2507177
+// This script handles rendering the cart page, showing products in the cart, calculating totals,
+// and allowing users to remove items or proceed to checkout.
 // ==========================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -26,16 +29,13 @@ function renderCart() {
     `;
 
     cart.forEach(item => {
-        // Optionally you could store price in localStorage too; but using data attribute fallback for demo
-        const priceKey = `price_${item.id}`;
-        let price = Number(localStorage.getItem(priceKey));
-        if (!price) price = item.price || 0;
+        const price = item.price || 0;
         total += price * item.quantity;
         html += `
             <div class="product-card">
                 <h3>${item.name}</h3>
                 <p>Aantal: ${item.quantity}</p>
-                ${price ? `<p>Prijs per stuk: €${price.toFixed(2)}</p>` : ''}
+                <p>Prijs per stuk: €${price.toFixed(2)}</p>
                 <button class="remove-btn" data-product-id="${item.id}">Verwijder</button>
             </div>
         `;
@@ -52,11 +52,11 @@ function renderCart() {
 
     cartNode.innerHTML = html;
 
-    // Add remove listeners
+    // Add remove (decrement quantity) listeners
     document.querySelectorAll('.remove-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const id = btn.getAttribute('data-product-id');
-            removeFromCart(id);
+            removeOneFromCart(id);
         });
     });
 
@@ -65,15 +65,22 @@ function renderCart() {
         alert('Bedankt voor je bestelling! (hier zou een echt betaalsysteem komen)');
         localStorage.removeItem('cart');
         renderCart();
-        // Optionally, update badge if on main site
         if (typeof updateCartCount === 'function') updateCartCount();
     });
 }
 
-// Removes one product ENTIRELY from cart
-function removeFromCart(id) {
+// Removes ONE quantity of a product (if 0 left, removes entirely)
+function removeOneFromCart(id) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    cart = cart.filter(item => item.id !== id);
+    let idx = cart.findIndex(item => item.id === id);
+    if (idx !== -1) {
+        if (cart[idx].quantity > 1) {
+            cart[idx].quantity -= 1;
+        } else {
+            // Remove the product if only one left
+            cart.splice(idx, 1);
+        }
+    }
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
     if (typeof updateCartCount === 'function') updateCartCount();
