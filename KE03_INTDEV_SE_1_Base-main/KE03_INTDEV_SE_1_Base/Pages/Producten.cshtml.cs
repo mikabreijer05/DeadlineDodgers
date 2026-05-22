@@ -13,6 +13,20 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
         public IList<Product> Products { get; set; } = new List<Product>();
 
+        public IList<string> Categories { get; set; } = new List<string>();
+
+        [BindProperty(SupportsGet = true)]
+        public string? Q { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string? Category { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public decimal? MinPrice { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public decimal? MaxPrice { get; set; }
+        
         public ProductenModel(IProductRepository productRepository)
         {
             _productRepository = productRepository;
@@ -20,7 +34,41 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
         public void OnGet()
         {
-            Products = _productRepository.GetAllProducts().Where(p => p.Type == "product").ToList();
+            var allProducts = _productRepository.GetAllProducts().ToList();
+
+            Categories = allProducts
+                .Where(p => !string.IsNullOrWhiteSpace(p.Type))
+                .Select(p => p.Type)
+                .Distinct()
+                .OrderBy(type => type)
+                .ToList();
+
+            var filteredProducts = allProducts.AsEnumerable();
+
+            if (!string.IsNullOrWhiteSpace(Q))
+            {
+                filteredProducts = filteredProducts.Where(p =>
+                    p.Name.Contains(Q, System.StringComparison.OrdinalIgnoreCase) ||
+                    p.Description.Contains(Q, System.StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (!string.IsNullOrWhiteSpace(Category))
+            {
+                filteredProducts = filteredProducts.Where(p =>
+                    p.Type.Equals(Category, System.StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (MinPrice.HasValue)
+            {
+                filteredProducts = filteredProducts.Where(p => p.Price >= MinPrice.Value);
+            }
+
+            if (MaxPrice.HasValue)
+            {
+                filteredProducts = filteredProducts.Where(p => p.Price <= MaxPrice.Value);
+            }
+
+            Products = filteredProducts.ToList();
         }
         
         public IActionResult OnGetSearch(string term)

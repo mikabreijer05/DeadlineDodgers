@@ -30,6 +30,20 @@ function setupSiteSearch() {
         }, 250);
     });
 
+    searchInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+
+            const searchTerm = searchInput.value.trim();
+
+            if (searchTerm.length > 0) {
+                window.location.href = `/Producten?q=${encodeURIComponent(searchTerm)}`;
+            } else {
+                window.location.href = '/Producten';
+            }
+        }
+    });
+    
     document.addEventListener('click', function (event) {
         if (!event.target.closest('.search-container')) {
             resultsContainer.style.display = 'none';
