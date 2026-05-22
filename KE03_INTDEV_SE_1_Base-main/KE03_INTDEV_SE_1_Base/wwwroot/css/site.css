@@ -521,29 +521,6 @@ header {
     letter-spacing: 2px;
 }
 
-/* Search box */
-.search-container {
-    width: 420px;
-    margin-right: 28px; /* keeps a small gap between search and icons */
-}
-
-    .search-container input {
-        width: 430px;
-        padding: 13px 14px;
-        border: 2px solid #20ff62;
-        border-radius: 12px;
-        background-color: black;
-        color: #00ff66;
-        font-size: 1.12rem;
-        outline: none;
-        transition: border-color .2s, box-shadow .2s;
-    }
-
-        .search-container input:focus {
-            border-color: #00ff66;
-            box-shadow: 0 0 12px #20ff62;
-        }
-
 /* Header icons (cart, user) */
 .nav-icons {
     display: flex;
@@ -1017,12 +994,5 @@ header {
         padding: 20px 15px 10px 15px !important;
         gap: 15px;
     }
-
-    .search-container {
-        width: 100%;
-    }
-
-    .search-container input {
-        width: 100% !important;
-    }
+    
 }

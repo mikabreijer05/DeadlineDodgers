@@ -9,8 +9,10 @@
     <title>@ViewData["Title"] - KE03_INTDEV_SE_1_Base</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/search.css" />
     <link rel="stylesheet" href="~/KE03_INTDEV_SE_1_Base.styles.css" />
     <script src="~/js/site.js" defer></script>
+    <script src="~/js/search.js" defer></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -22,7 +24,8 @@
                 Matrix Market
             </a>
             <div class="search-container">
-                <input type="text" placeholder="Zoeken..." />
+                <input id="siteSearchInput" type="text" placeholder="Zoeken..." autocomplete="off" />
+                <div id="siteSearchResults" class="search-results-dropdown"></div>
             </div>
             <div class="nav-icons">
                 @{ 
