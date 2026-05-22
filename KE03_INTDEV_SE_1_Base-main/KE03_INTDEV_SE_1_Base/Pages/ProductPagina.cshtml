@@ -1,5 +1,8 @@
 ﻿@page "{id:int}"
 @model KE03_INTDEV_SE_1_Base.Pages.ProductPaginaModel
+@section Scripts {
+    <script src="~/js/review.js" asp-append-version="true"></script>
+}
 
 <div class="matrix-page">
 
@@ -57,15 +60,30 @@
                             <div asp-validation-summary="ModelOnly" class="review-validation-summary"></div>
 
                             <div class="review-form-group">
-                                <label asp-for="Rating" class="review-form-label">Beoordeling</label>
-                                <select asp-for="Rating" class="review-form-control">
-                                    <option value="">Kies een beoordeling</option>
-                                    <option value="5">5 sterren</option>
-                                    <option value="4">4 sterren</option>
-                                    <option value="3">3 sterren</option>
-                                    <option value="2">2 sterren</option>
-                                    <option value="1">1 ster</option>
-                                </select>
+                                <label class="review-form-label">Beoordeling</label>
+
+                                <div class="star-rating-row">
+                                    <div class="star-rating-input" aria-label="Kies een beoordeling">
+                                        <input asp-for="Rating" type="radio" id="rating-5" value="5" />
+                                        <label for="rating-5" title="5 sterren" data-rating="5">★</label>
+
+                                        <input asp-for="Rating" type="radio" id="rating-4" value="4" />
+                                        <label for="rating-4" title="4 sterren" data-rating="4">★</label>
+
+                                        <input asp-for="Rating" type="radio" id="rating-3" value="3" />
+                                        <label for="rating-3" title="3 sterren" data-rating="3">★</label>
+
+                                        <input asp-for="Rating" type="radio" id="rating-2" value="2" />
+                                        <label for="rating-2" title="2 sterren" data-rating="2">★</label>
+
+                                        <input asp-for="Rating" type="radio" id="rating-1" value="1" />
+                                        <label for="rating-1" title="1 ster" data-rating="1">★</label>
+                                    </div>
+
+                                    <span class="star-rating-feedback" id="starRatingFeedback">Geen beoordeling gekozen</span>
+                                </div>
+
+                                <p class="star-rating-help">Beweeg over de sterren en klik om je beoordeling te kiezen.</p>
                                 <span asp-validation-for="Rating" class="review-validation-message"></span>
                             </div>
 

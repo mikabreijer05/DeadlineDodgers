@@ -49,6 +49,80 @@ body {
     margin-bottom: 40px;
 }
 
+/* Interactive star rating input */
+.star-rating-input {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 8px;
+    width: fit-content;
+}
+.star-rating-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+.star-rating-input input {
+    display: none;
+}
+
+.star-rating-input label {
+    color: #004400;
+    font-size: 38px;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.15s, text-shadow 0.15s, transform 0.15s;
+}
+
+.star-rating-input label:hover,
+.star-rating-input label:hover ~ label {
+    color: #20ff62;
+    text-shadow: 0 0 12px rgba(32, 255, 98, 0.7);
+    transform: scale(1.08);
+}
+
+.star-rating-input input:checked ~ label {
+    color: #20ff62;
+    text-shadow: 0 0 12px rgba(32, 255, 98, 0.6);
+}
+
+.star-rating-input input:checked + label {
+    color: #20ff62;
+    text-shadow: 0 0 18px rgba(32, 255, 98, 0.9);
+}
+
+.star-rating-input:hover input:checked ~ label {
+    color: #004400;
+    text-shadow: none;
+}
+
+.star-rating-input input:hover ~ label {
+    color: #20ff62;
+    text-shadow: 0 0 12px rgba(32, 255, 98, 0.7);
+}
+
+.star-rating-help {
+    color: #007700;
+    font-family: monospace;
+    font-size: 12px;
+    margin: 0;
+}
+
+.star-rating-feedback {
+    color: #20ff62;
+    border: 1px solid #20ff62;
+    background-color: #000;
+    padding: 7px 12px;
+    font-family: monospace;
+    font-size: 13px;
+    letter-spacing: 1px;
+    min-width: 210px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(32, 255, 98, 0.15);
+}
+
+
 .review-form-card,
 .review-login-card {
     border: 2px solid #20ff62;
