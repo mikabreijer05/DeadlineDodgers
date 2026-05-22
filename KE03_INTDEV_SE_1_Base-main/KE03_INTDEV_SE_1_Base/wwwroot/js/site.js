@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const productId = btn.getAttribute('data-product-id');
             const productName = btn.getAttribute('data-product-name');
             const productPrice = parseFloat(btn.getAttribute('data-product-price'));
-            addToCart(productId, productName, productPrice); // PASS PRICE!
+            addToCart(productId, productName, productPrice);
         });
     });
 });
