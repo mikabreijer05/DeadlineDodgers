@@ -1,8 +1,6 @@
 ﻿@page "{id:int}"
 @model KE03_INTDEV_SE_1_Base.Pages.ProductPaginaModel
 
-<link rel="stylesheet" href="~/css/matrix-product.css" />
-
 <div class="matrix-page">
 
     <a class="back-link" href="/">
@@ -14,7 +12,7 @@
         <div class="product-image-section">
 
 
-            <img src="@Model.Product.ImageUrl"
+            <img src="@(Url.Content($"~/{Model.Product.ImageUrl}"))"
                  alt="@Model.Product.Name"
                  class="product-image" />
 
@@ -31,11 +29,14 @@
             </p>
 
             <div class="price">
-                $@Model.Product.Price
+                €@Model.Product.Price
             </div>
 
-            <button class="cart-button">
-                ADD_TO_CART
+            <button class="add-btn"
+                    data-product-id="@Model.Product.Id"
+                    data-product-name="@Model.Product.Name"
+                    data-product-price="@Model.Product.Price">
+                🛒 in winkelwagen
             </button>
 
         </div>
