@@ -51,14 +51,14 @@ namespace DataAccessLayer
 
             var products = new Product[]
             {
-                new Product { Name = "Nebuchadnezzar", Type = "product", Description = "Het schip waarop Neo voor het eerst de echte wereld leert kennen", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
+                new Product { Name = "Nebuchadnezzar", Type = "product", Description = "Het schip waarop Neo voor het eerst de echte wereld leert kennen", Price = 9999.99m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
                 new Product { Name = "Jack-in Chair", Type = "product", Description = "Stoel met een rugsteun en metalen armen waarin mensen zitten om ingeplugd te worden in de Matrix via een kabel in de nekpoort", Price = 500.50m, ImageUrl = "images/product/jackinchair.jpg"},
                 new Product { Name = "EMP (Electro-Magnetic Pulse) Device", Type = "product", Description = "Wapentuig op de schepen van Zion", Price = 129.99m,  ImageUrl = "images/product/emp.jpg" },
                 new Product { Name = "Blue Pill", Type = "product", Description = "De blauwe pil die Neo neemt in de Matrix", Price = 100.00m, ImageUrl="images/product/bluepill.jpg"},
-                new Product { Name = "Tandwiel", Type = "onderdeel", Description = "Overdracht van rotatie in bijvoorbeeld de motor of luikmechanismen", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
-                new Product { Name = "M5 Boutje", Type = "onderdeel", Description = "Bevestiging van panelen, buizen of interne modules.", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
-                new Product { Name = "Hydraulische cilinder", Type = "onderdeel", Description = "Openen/sluiten van zware luchtsluizen of bewegende onderdelen.", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"},
-                new Product { Name = "Koelvloeistofpomp", Type = "onderdeel", Description = "Koeling van de motor of elektronische systemen.", Price = 10000.00m, ImageUrl = "images/product/nebuchadnezzar.jpg"}
+                new Product { Name = "Tandwiel", Type = "onderdeel", Description = "Overdracht van rotatie in bijvoorbeeld de motor of luikmechanismen", Price = 0.99m, ImageUrl = "images/product/tandwiel.jpg"},
+                new Product { Name = "M5 Boutje", Type = "onderdeel", Description = "Bevestiging van panelen, buizen of interne modules.", Price = 0.50m, ImageUrl = "images/product/m5bout.jpg"},
+                new Product { Name = "Hydraulische cilinder", Type = "onderdeel", Description = "Openen/sluiten van zware luchtsluizen of bewegende onderdelen.", Price = 32.29m, ImageUrl = "images/product/hydraulischeCilinder.jpg"},
+                new Product { Name = "Koelvloeistof", Type = "onderdeel", Description = "Koeling van de motor of elektronische systemen.", Price = 4.99m, ImageUrl = "images/product/koelVloeistof.jpg"}
             };
             // Add seeded products to the context so they are persisted
             if (!context.Products.Any())
