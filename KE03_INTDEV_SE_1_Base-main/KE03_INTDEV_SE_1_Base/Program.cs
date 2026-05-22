@@ -9,8 +9,6 @@ namespace KE03_INTDEV_SE_1_Base
     {
         public static void Main(string[] args)
         {
-            // Deze File.Delete zorgt ervoor dat de .db file up-to-date blijft met de initializer.
-            File.Delete("MatrixIncDb.db");
             var builder = WebApplication.CreateBuilder(args);
 
             // We gebruiken voor nu even een SQLite voor de database,
@@ -22,6 +20,7 @@ namespace KE03_INTDEV_SE_1_Base
             builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
             builder.Services.AddScoped<IOrderRepository, OrderRepository>();
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
+            builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
 
             // Add services to the container.
             builder.Services.AddRazorPages();

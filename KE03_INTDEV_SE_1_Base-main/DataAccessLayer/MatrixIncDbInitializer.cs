@@ -66,6 +66,47 @@ namespace DataAccessLayer
                 context.Products.AddRange(products);
                 context.SaveChanges();
             }
+            
+            // Add sample reviews
+            var dbProducts = context.Products.ToArray();
+            var reviews = new Review[]
+            {
+                new Review 
+                { 
+                    ProductId = dbProducts[0].Id, 
+                    Username = "Neo_87", 
+                    Rating = 5, 
+                    Title = "Changed my entire reality", 
+                    Comment = "I took it and suddenly everything made sense. The green code raining down was a bit much at first, but you get used to it. 10/10 would unplug again.",
+                    CreatedDate = DateTime.Parse("2025-12-15"),
+                    IsVerified = true
+                },
+                new Review 
+                { 
+                    ProductId = dbProducts[0].Id, 
+                    Username = "Morpheus_Fan", 
+                    Rating = 5, 
+                    Title = "As advertised", 
+                    Comment = "Exactly what it says on the tin. Reality is a lot grittier than I expected though. Also, ship food is terrible – docking one star for that.",
+                    CreatedDate = DateTime.Parse("2025-12-10"),
+                    IsVerified = true
+                },
+                new Review 
+                { 
+                    ProductId = dbProducts[0].Id, 
+                    Username = "TrinityLover", 
+                    Rating = 4, 
+                    Title = "Worth every credit", 
+                    Comment = "No going back after this one. Make sure you are truly ready before purchase. Support team was helpful when I had questions about my new powers.",
+                    CreatedDate = DateTime.Parse("2025-12-05"),
+                    IsVerified = false
+                }
+            };
+            if (!context.Reviews.Any())
+            {
+                context.Reviews.AddRange(reviews);
+                context.SaveChanges();
+            }
 
             
         }

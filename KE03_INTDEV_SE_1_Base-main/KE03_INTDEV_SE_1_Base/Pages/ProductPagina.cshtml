@@ -38,9 +38,88 @@
                     data-product-price="@Model.Product.Price">
                 🛒 in winkelwagen
             </button>
-
+            
         </div>
-
     </div>
 
+    <!-- REVIEWS SECTION - Full width, outside matrix-page -->
+<div class="reviews-section">
+    <div class="matrix-page" style="padding-top: 0; padding-bottom: 40px;">
+        <h2 class="reviews-title">REVIEWS (@Model.ReviewCount)</h2>
+        
+        @if (Model.ReviewCount > 0)
+        {
+            <div class="reviews-summary">
+                <div class="rating-display">
+                    <div class="rating-number">@Model.AverageRating</div>
+                    <div class="stars">
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < Math.Floor(Model.AverageRating))
+                            {
+                                <span class="star filled">★</span>
+                            }
+                            else
+                            {
+                                <span class="star empty">★</span>
+                            }
+                        }
+                    </div>
+                </div>
+
+                <div class="rating-breakdown">
+                    @for (int rating = 5; rating >= 1; rating--)
+                    {
+                        var count = Model.Reviews.Count(r => r.Rating == rating);
+                        var percentage = Model.ReviewCount > 0 ? (count * 100) / Model.ReviewCount : 0;
+                        <div class="rating-bar">
+                            <span class="rating-label">@rating ★</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" style="width: @percentage%"></div>
+                            </div>
+                            <span class="rating-count">@count</span>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- INDIVIDUAL REVIEWS -->
+            <div class="individual-reviews">
+                @foreach (var review in Model.Reviews)
+                {
+                    <div class="review-card">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <span class="username">@review.Username</span>
+                                @if (review.IsVerified)
+                                {
+                                    <span class="verified-badge">VERIFIED</span>
+                                }
+                            </div>
+                            <div class="review-rating">
+                                @for (int i = 0; i < review.Rating; i++)
+                                {
+                                    <span class="star-filled">★</span>
+                                }
+                                @for (int i = review.Rating; i < 5; i++)
+                                {
+                                    <span class="star-empty">★</span>
+                                }
+                            </div>
+                        </div>
+
+                        <h3 class="review-title">@review.Title</h3>
+                        <p class="review-comment">@review.Comment</p>
+                        <p class="review-date">@review.CreatedDate.ToString("yyyy-MM-dd")</p>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p style="color: #00ff66; font-family: monospace; margin-top: 20px;">No reviews yet. Be the first to review this product!</p>
+        }
+    </div>
+</div>
+    
 </div>
