@@ -405,7 +405,7 @@ header {
         box-shadow: 0 0 10px rgba(32, 255, 98, 0.3);
     }
 
-/* Product Container - Two Column Layout */
+/* Product Container  */
 .product-container {
     display: grid;
     grid-template-columns: 1fr 1fr;

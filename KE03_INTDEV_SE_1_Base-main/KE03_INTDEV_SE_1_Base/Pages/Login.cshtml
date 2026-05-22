@@ -5,20 +5,20 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Vul hier uw gebruikersnaam en wachtwoord in.</p>
+<p>Selecteer een gebruiker om in te loggen.</p>
 
 <form method="post">
     <div>
-        <label>Gebruikersnaam</label>
-        <input asp-for="Gebruikersnaam" />
+        @foreach (var c in Model.Customers)
+        {
+            <div>
+                <input type="radio" asp-for="SelectedCustomerId" name="SelectedCustomerId" value="@c.Id" id="user-@c.Id" />
+                <label for="user-@c.Id">@c.Name (@c.Address)</label>
+            </div>
+        }
     </div>
 
-    <div>
-        <label>Wachtwoord</label>
-        <input asp-for="Wachtwoord" type="password" />
-    </div>
-
-    <button type="submit">Login</button>
+    <button type="submit">Login als geselecteerde gebruiker</button>
 </form>
 
 @if (!string.IsNullOrEmpty(Model.ErrorMessage))

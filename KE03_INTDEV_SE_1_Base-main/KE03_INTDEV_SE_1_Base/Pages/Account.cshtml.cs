@@ -8,24 +8,50 @@ namespace KE03_INTDEV_SE_1_Base.Pages
     public class AccountModel : PageModel
     {
         private readonly ICustomerRepository _customerRepository;
+
+        public AccountModel(ICustomerRepository customerRepository)
+        {
+            _customerRepository = customerRepository;
+        }
+
+        public IActionResult OnPostLogout()
+        {
+            // remove cookies
+            if (Request.Cookies.ContainsKey("LoggedInCustomerId"))
+            {
+                Response.Cookies.Delete("LoggedInCustomerId");
+            }
+            if (Request.Cookies.ContainsKey("LoggedInCustomerName"))
+            {
+                Response.Cookies.Delete("LoggedInCustomerName");
+            }
+
+            return RedirectToPage("/Index");
+        }
+
         public UserProfile UserData { get; set; }
 
-        public List<OrderItem> Orders { get; set; }
+        public List<OrderItem> Orders { get; set; } = new List<OrderItem>();
 
-        public void OnGet()
+        public void OnGet(int? id)
         {
-            Customer customer = @_customerRepository.GetCustomerById(1);
+            if (id == null)
+            {
+                // fallback to first customer if no id supplied
+                var first = _customerRepository.GetAllCustomers().FirstOrDefault();
+                if (first == null) return;
+                id = first.Id;
+            }
+
+            var customer = _customerRepository.GetCustomerById(id.Value);
+            if (customer == null) return;
+
             UserData = new UserProfile
             {
                 Name = customer.Name,
                 Address = customer.Address,
                 Active = customer.Active,
-
             };
-
-            
-
-            
         }
     }
 

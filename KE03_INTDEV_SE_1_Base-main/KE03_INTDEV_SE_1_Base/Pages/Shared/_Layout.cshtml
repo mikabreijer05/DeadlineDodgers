@@ -25,9 +25,25 @@
                 <input type="text" placeholder="Zoeken..." />
             </div>
             <div class="nav-icons">
-                <a class="nav-link" asp-page="/Login" title="Inloggen">
-                    <i class="fa-solid fa-user"></i>
-                </a>
+                @{ 
+                    var loggedName = Context.Request.Cookies["LoggedInCustomerName"];
+                    var loggedId = Context.Request.Cookies["LoggedInCustomerId"];
+                }
+
+                @if (!string.IsNullOrEmpty(loggedName))
+                {
+                    <a class="nav-link" asp-page="/Account" asp-route-id="@(loggedId ?? String.Empty)" title="Mijn account">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="logged-name" style="margin-left:8px;">@loggedName</span>
+                    </a>
+                }
+                else
+                {
+                    <a class="nav-link" asp-page="/Login" title="Inloggen">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                }
+
                 <a class="nav-link" href="/Cart" title="Winkelmandje" style="position:relative;">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span id="cartCount" class="cart-badge"></span>
@@ -37,13 +53,8 @@
         <!-- Category navigation bar, horizontal, below nav row -->
         <div class="category-bar">
             <a href="#" class="active">HOME</a>
-            <a href="#">REALITY</a>
-            <a href="#">ILLUSION</a>
-            <a href="#">HARDWARE</a>
-            <a href="#">ACCESSORIES</a>
-            <a href="#">APPAREL</a>
-            <a href="#">VEHICLES</a>
-            <a href="#">SOFTWARE</a>
+            <a href="#">PRODUCTEN</a>
+            <a href="#">ONDERDELEN</a>
         </div>
         <!-- Green separator line below header -->
         <hr class="header-separator" />
