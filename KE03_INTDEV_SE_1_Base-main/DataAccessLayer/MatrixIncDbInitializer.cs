@@ -31,20 +31,22 @@ namespace DataAccessLayer
             if (!context.Customers.Any())
             {
                 context.Customers.AddRange(customers);
+                context.SaveChanges();  // Save changes before trying to use the customers
             }
 
             // Ensure we have customers from the database to link orders to
             var dbCustomers = context.Customers.ToArray();
             var orders = new Order[]
             {
-                new Order { Customer = dbCustomers[0], OrderDate = DateTime.Parse("2021-01-01")},
-                new Order { Customer = dbCustomers[0], OrderDate = DateTime.Parse("2021-02-01")},
-                new Order { Customer = dbCustomers[1], OrderDate = DateTime.Parse("2021-02-01")},
-                new Order { Customer = dbCustomers[2], OrderDate = DateTime.Parse("2021-03-01")}
+                new Order { CustomerId = dbCustomers[0].Id, OrderDate = DateTime.Parse("2021-01-01")},
+                new Order { CustomerId = dbCustomers[0].Id, OrderDate = DateTime.Parse("2021-02-01")},
+                new Order { CustomerId = dbCustomers[1].Id, OrderDate = DateTime.Parse("2021-02-01")},
+                new Order { CustomerId = dbCustomers[2].Id, OrderDate = DateTime.Parse("2021-03-01")}
             };
             if (!context.Orders.Any())
             {
                 context.Orders.AddRange(orders);
+                context.SaveChanges();
             }
 
             var products = new Product[]
@@ -62,9 +64,10 @@ namespace DataAccessLayer
             if (!context.Products.Any())
             {
                 context.Products.AddRange(products);
+                context.SaveChanges();
             }
 
-            context.SaveChanges();
+            
         }
     }
 }
