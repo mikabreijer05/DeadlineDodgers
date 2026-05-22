@@ -1,7 +1,7 @@
 ﻿@page
 @model KE03_INTDEV_SE_1_Base.Pages.ProductenModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Producten";
 }
 
 <section>
@@ -21,13 +21,13 @@
         </div>
 
         <div class="filter-group">
-            <label for="category">Categorie</label>
-            <select id="category" name="category">
-                <option value="">Alle categorieën</option>
-                @foreach (var category in Model.Categories)
+            <label for="type">Type</label>
+            <select id="type" name="type">
+                <option value="">Alle types</option>
+                @foreach (var type in Model.Types)
                 {
-                    <option value="@category" selected="@(Model.Category == category)">
-                        @category
+                    <option value="@type" selected="@(Model.Type == type)">
+                        @type
                     </option>
                 }
             </select>
@@ -74,5 +74,4 @@
             }
         </div>
     }
-
 </section>

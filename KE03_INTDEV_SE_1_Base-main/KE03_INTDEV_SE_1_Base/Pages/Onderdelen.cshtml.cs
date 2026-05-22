@@ -13,6 +13,15 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
         public IList<Product> Products { get; set; } = new List<Product>();
 
+        [BindProperty(SupportsGet = true)]
+        public string? Q { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public decimal? MinPrice { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public decimal? MaxPrice { get; set; }
+
         public OnderdelenModel(IProductRepository productRepository)
         {
             _productRepository = productRepository;
@@ -20,7 +29,28 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
         public void OnGet()
         {
-            Products = _productRepository.GetAllProducts().Where(p => p.Type == "onderdeel").ToList();
+            var filteredParts = _productRepository.GetAllProducts()
+                .Where(p => p.Type == "onderdeel")
+                .AsEnumerable();
+
+            if (!string.IsNullOrWhiteSpace(Q))
+            {
+                filteredParts = filteredParts.Where(p =>
+                    p.Name.Contains(Q, System.StringComparison.OrdinalIgnoreCase) ||
+                    p.Description.Contains(Q, System.StringComparison.OrdinalIgnoreCase));
+            }
+
+            if (MinPrice.HasValue)
+            {
+                filteredParts = filteredParts.Where(p => p.Price >= MinPrice.Value);
+            }
+
+            if (MaxPrice.HasValue)
+            {
+                filteredParts = filteredParts.Where(p => p.Price <= MaxPrice.Value);
+            }
+
+            Products = filteredParts.ToList();
         }
     }
 }

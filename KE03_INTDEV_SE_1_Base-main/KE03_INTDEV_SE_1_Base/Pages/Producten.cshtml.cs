@@ -13,13 +13,13 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
         public IList<Product> Products { get; set; } = new List<Product>();
 
-        public IList<string> Categories { get; set; } = new List<string>();
+        public IList<string> Types { get; set; } = new List<string>();
 
         [BindProperty(SupportsGet = true)]
         public string? Q { get; set; }
 
         [BindProperty(SupportsGet = true)]
-        public string? Category { get; set; }
+        public string? Type { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public decimal? MinPrice { get; set; }
@@ -36,7 +36,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
         {
             var allProducts = _productRepository.GetAllProducts().ToList();
 
-            Categories = allProducts
+            Types = allProducts
                 .Where(p => !string.IsNullOrWhiteSpace(p.Type))
                 .Select(p => p.Type)
                 .Distinct()
@@ -52,10 +52,10 @@ namespace KE03_INTDEV_SE_1_Base.Pages
                     p.Description.Contains(Q, System.StringComparison.OrdinalIgnoreCase));
             }
 
-            if (!string.IsNullOrWhiteSpace(Category))
+            if (!string.IsNullOrWhiteSpace(Type))
             {
                 filteredProducts = filteredProducts.Where(p =>
-                    p.Type.Equals(Category, System.StringComparison.OrdinalIgnoreCase));
+                    p.Type.Equals(Type, System.StringComparison.OrdinalIgnoreCase));
             }
 
             if (MinPrice.HasValue)
