@@ -46,8 +46,56 @@
 <div class="reviews-section">
     <div class="matrix-page" style="padding-top: 0; padding-bottom: 40px;">
         <h2 class="reviews-title">REVIEWS (@Model.ReviewCount)</h2>
+
+        <div class="add-review-section">
+                @if (Model.IsLoggedIn)
+                {
+                    <div class="review-form-card">
+                        <h3 class="review-form-title">Schrijf een review als @Model.LoggedInCustomerName</h3>
+
+                        <form method="post" asp-page-handler="AddReview" asp-route-id="@Model.Product.Id" class="review-form">
+                            <div asp-validation-summary="ModelOnly" class="review-validation-summary"></div>
+
+                            <div class="review-form-group">
+                                <label asp-for="Rating" class="review-form-label">Beoordeling</label>
+                                <select asp-for="Rating" class="review-form-control">
+                                    <option value="">Kies een beoordeling</option>
+                                    <option value="5">5 sterren</option>
+                                    <option value="4">4 sterren</option>
+                                    <option value="3">3 sterren</option>
+                                    <option value="2">2 sterren</option>
+                                    <option value="1">1 ster</option>
+                                </select>
+                                <span asp-validation-for="Rating" class="review-validation-message"></span>
+                            </div>
+
+                            <div class="review-form-group">
+                                <label asp-for="Title" class="review-form-label">Titel</label>
+                                <input asp-for="Title" class="review-form-control" placeholder="Geef je review een titel" />
+                                <span asp-validation-for="Title" class="review-validation-message"></span>
+                            </div>
+
+                            <div class="review-form-group">
+                                <label asp-for="Comment" class="review-form-label">Review</label>
+                                <textarea asp-for="Comment" rows="5" class="review-form-control review-textarea" placeholder="Vertel wat je van dit product vindt"></textarea>
+                                <span asp-validation-for="Comment" class="review-validation-message"></span>
+                            </div>
+
+                            <button type="submit" class="review-submit-button">Review plaatsen</button>
+                        </form>
+                    </div>
+                }
+                else
+                {
+                    <div class="review-login-card">
+                        <p>
+                            <a asp-page="/Login">Log in</a> om een review te plaatsen.
+                        </p>
+                    </div>
+                }
+            </div>
         
-        @if (Model.ReviewCount > 0)
+            @if (Model.ReviewCount > 0)
         {
             <div class="reviews-summary">
                 <div class="rating-display">

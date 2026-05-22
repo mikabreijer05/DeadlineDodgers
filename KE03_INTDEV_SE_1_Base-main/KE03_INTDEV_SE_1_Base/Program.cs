@@ -9,7 +9,10 @@ namespace KE03_INTDEV_SE_1_Base
     {
         public static void Main(string[] args)
         {
-            File.Delete("MatrixInc.db");
+            // gebruik deze File.Delete om de database te verwijderen tijdens het devellopen, aangezien er 
+            // anders bij het aanpassen van de database foutmeldingen optreden.
+            
+            //File.Delete("MatrixInc.db");
             var builder = WebApplication.CreateBuilder(args);
 
             // We gebruiken voor nu even een SQLite voor de database,
