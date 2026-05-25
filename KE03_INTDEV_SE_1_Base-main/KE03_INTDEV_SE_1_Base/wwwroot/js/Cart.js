@@ -1,25 +1,28 @@
 ﻿// ==========================
-// Matrix Market - Winkelwagen Pagina
-// README: Ik heb nu alle opmerkingen in het Nederlands gezet, voor duidelijkheid en toekomstige documentatie
+// Matrix Market - Cart Page
+// README: I have made any comments in english, to not only encourage this when i start working but because i find it easier to do so in english
 // Noa Scipio - 2507177
-// Dit script regelt het tonen van de winkelwagenpagina, het weergeven van producten in de winkelwagen, het berekenen van totalen,
-// en geeft gebruikers de mogelijkheid om items te verwijderen of af te rekenen.
+// This script handles rendering the cart page, showing products in the cart, calculating totals,
+// and allowing users to remove items or proceed to checkout.
 // ==========================
 
 document.addEventListener('DOMContentLoaded', function () {
     renderCart();
 });
 
-// Rendeert de winkelwagenpagina
+// Renders the cart page
 function renderCart() {
-    // Haal het HTML-element op waar de inhoud van de winkelwagen geplaatst wordt
+    // Get the HTML element where cart contents will be placed
     const cartNode = document.getElementById('cart-contents');
 
-    // Haal de huidige winkelwagen op uit localStorage, of gebruik een lege array als er geen winkelwagen is
-    // HOE: localStorage bewaart data over pagina-herladingen en browsersessies heen
+
+    // Get the current cart from localStorage, or set as empty array if none
+    // HOW: localStorage persists data across page reloads and browser sessions
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Als de winkelwagen leeg is, toon een bericht en stop (einde functie)
+
+    // If cart is empty, show a message and return (end the function here)
+
     if (cart.length === 0) {
         cartNode.innerHTML = `
             <div style="color: #20ff62; text-align: center; margin-top: 64px; font-size: 1.3rem;">
@@ -29,18 +32,20 @@ function renderCart() {
         return;
     }
 
-    // Houdt het totaalbedrag bij van alle producten
+
+    // Will hold the sum of all product subtotals
     let total = 0;
     let html = `
         <div class="product-grid" style="margin-top: 30px;">
     `;
 
-    // Doorloop elk product in de winkelwagen
-    cart.forEach(item => {
-        const price = item.price || 0; // Haal de prijs van het product op; WAAROM: terugvallen op 0 als prijs ontbreekt zodat de code niet stukgaat
-        total += price * item.quantity; // HOE: Tel prijs keer aantal op bij het totaal
 
-        // Voeg productdetails toe aan de HTML: naam, aantal, prijs per stuk en verwijderknop
+    // For each product in the cart
+    cart.forEach(item => {
+        const price = item.price || 0; // Get product price; WHY: fallback to 0 if somehow missing so it doesn't break
+        total += price * item.quantity; // HOW: Add to the total the price times quantity of this item
+
+        // Add product details to HTML: name, quantity, price per, and remove button
         html += `
             <div class="product-card">
                 <h3>${item.name}</h3>
@@ -51,9 +56,9 @@ function renderCart() {
         `;
     });
 
-    html += '</div>'; // Einde van de producten-grid
+    html += '</div>'; // End the product grid
 
-    // Voeg het totaalbedrag en de afrekenknop toe aan de HTML
+    // Add the total price (sum) and the checkout button to HTML
     html += `
         <div style="margin-top: 38px; font-size:1.3rem; color:#20ff62;">
             <strong>Totaal bedrag: €<span id="cart-total">${total.toFixed(2)}</span></strong>
@@ -61,64 +66,96 @@ function renderCart() {
         <button class="checkout-btn" style="margin-top:18px; padding:12px 28px; background:#20ff62; color:black; border-radius:12px; border:none; font-family:monospace; font-size:1.2rem; cursor:pointer; font-weight:bold;">Afrekenen</button>
     `;
 
-    // Zet de samengestelde HTML in de winkelwagen-container
+
+    // Place the constructed HTML inside the cart container
     cartNode.innerHTML = html;
 
-    // Voeg voor iedere 'Verwijder' knop een click-handler toe
-    // HOE: Elke knop heeft het product-ID en verwijdert telkens 1 van dit product
+    
+    // For every "Verwijder" (Remove) button, set up its click handler
+    // HOW: Each button has its product ID and will remove one quantity at a time
     document.querySelectorAll('.remove-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const id = btn.getAttribute('data-product-id');
-            removeOneFromCart(id); // Verwijder één exemplaar van dit product
+            removeOneFromCart(id); // Remove one of this product
         });
     });
 
-    // Voor de afrekenknop: wanneer geklikt, toon een alert, sla bestelling op, maak winkelwagen leeg, update UI en badge
-    document.querySelector('.checkout-btn').addEventListener('click', function () {
-        alert('Bedankt voor je bestelling! (hier zou een echt betaalsysteem komen)');
-        saveOrderToHistory(); // Sla alle bestelgegevens op voor later gebruik (in localStorage)
+    // For the checkout button: when clicked, send order to server, clear cart, refresh UI and cart badge.
+    document.querySelector('.checkout-btn').addEventListener('click', async function () {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const response = await fetch('/Cart?handler=Checkout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': getAntiForgeryToken()
+            },
+            body: JSON.stringify({
+                items: cart.map(item => ({
+                    productId: parseInt(item.id),
+                    quantity: item.quantity
+                }))
+            })
+        });
+
+        const result = await response.json();
+
+        console.log('Checkout response:', result);
+
+        if (!response.ok || !result.success) {
+            alert(result.message || 'Er ging iets mis bij het plaatsen van je bestelling.');
+            return;
+        }
+
+        alert('Bedankt voor je bestelling!');
         localStorage.removeItem('cart');
-        renderCart(); // Pagina herladen, nu staat er "winkelwagen is leeg"
+        renderCart();
+
         if (typeof updateCartCount === 'function') updateCartCount();
     });
 }
 
 // --------------------------
-// Verwijdert ÉÉN stuk van een product uit de winkelwagen, of het product volledig als er nog maar één was
+// Remove ONE quantity of a product from cart, or remove product if last one
 // --------------------------
-// WAAROM: Gebruiker wil soms slechts aantal verlagen i.p.v. alles verwijderen
+// WHY: User may want to decrement quantity rather than delete everything
 function removeOneFromCart(id) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     let idx = cart.findIndex(item => item.id === id);
     if (idx !== -1) {
         if (cart[idx].quantity > 1) {
-            cart[idx].quantity -= 1; // Trek er eentje van af als er meer dan 1 zijn
+            cart[idx].quantity -= 1; // Subtract one from quantity if more than 1 left
         } else {
-            // Verwijder het product als dit het laatste was
+            // Remove the product if only one left
             cart.splice(idx, 1);
         }
     }
-    // Sla de aangepaste winkelwagen op en update de UI/badge
+    // Save the changed cart and update UI/badge
     localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
     if (typeof updateCartCount === 'function') updateCartCount();
 }
 
+function getAntiForgeryToken() {
+    const tokenInput = document.querySelector('input[name="__RequestVerificationToken"]');
+    return tokenInput ? tokenInput.value : '';
+}
+
 // ==========================
-// Sla complete bestelling op in localStorage na het afrekenen
+// Save complete order to localStorage after checkout
 // ==========================
-// WAT: Verzamelt alle besteldata (producten, hoeveelheid, prijs/stuk, totalen, BTW)
-// WAAROM: Nodig voor bevestiging, klantenservice, factuur, statistiek of later synchroniseren met server
+// WHAT: Collects full order data (all products, quantity, price/pc, totals, VAT) and saves for review/export/history.
+// WHY: This is important for order confirmation, admin, receipt, statistics, or a later server sync.
 function saveOrderToHistory() {
-    // Laad de huidige winkelwagen (wordt alleen aangeroepen als er items zijn)
+    // Load current cart (will only be called if cart has items)
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) return;
 
-    let items = [];    // Hierin zet ik alle producten als {naam, hoeveelheid, prijs_per_stuk}
-    let subtotal = 0;  // Hier tel ik alles bij elkaar op
+    let items = [];    // Will be all products as {name, amount, price_per_product}
+    let subtotal = 0;  // Sum of products
 
     cart.forEach(item => {
-        // Sla alleen de gewenste info op voor later: naam, aantal stuks, prijs per product
+        // Save just what you want shown in history: name, quantity, price per item
         const one = {
             name: item.name,
             amount: item.quantity,
@@ -128,15 +165,12 @@ function saveOrderToHistory() {
         subtotal += (item.price || 0) * item.quantity;
     });
 
-    // Sla de hele bestelling op incl. 21% BTW (Nederland)
+    // Now save entire order including BTW (VAT 21%)
     const order = {
-        items: items,                         // Complete lijst met producten en hun aantallen/prijzen
-        total_price: subtotal,                // Totaal vóór BTW
-        total_price_vat21: +(subtotal * 1.21).toFixed(2) // Totaal incl. 21% BTW (afgerond op 2 decimalen)
+        items: items,
+        total_price: subtotal,
+        total_price_vat21: +(subtotal * 1.21).toFixed(2)
     };
 
-    // Sla ALLEEN de laatste bestelling op in localStorage (overschrijft eerdere)
-    // Wil je bestelgeschiedenis, sla dan alle bestellingen in een array op
     localStorage.setItem('lastOrder', JSON.stringify(order));
-    // Waarom: Kan later getoond worden als bon/factuur, voor administratie, export, enz.
 }

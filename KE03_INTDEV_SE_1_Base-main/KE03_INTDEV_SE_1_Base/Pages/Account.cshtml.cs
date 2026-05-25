@@ -8,10 +8,12 @@ namespace KE03_INTDEV_SE_1_Base.Pages
     public class AccountModel : PageModel
     {
         private readonly ICustomerRepository _customerRepository;
+        private readonly IOrderRepository _orderRepository;
 
-        public AccountModel(ICustomerRepository customerRepository)
+        public AccountModel(ICustomerRepository customerRepository, IOrderRepository orderRepository)
         {
             _customerRepository = customerRepository;
+            _orderRepository = orderRepository;
         }
 
         public IActionResult OnPostLogout()
@@ -32,19 +34,27 @@ namespace KE03_INTDEV_SE_1_Base.Pages
         public UserProfile UserData { get; set; }
 
         public List<OrderItem> Orders { get; set; } = new List<OrderItem>();
-
-        public void OnGet(int? id)
+        
+        public IActionResult OnGet(int? id)
         {
             if (id == null)
             {
-                // fallback to first customer if no id supplied
-                var first = _customerRepository.GetAllCustomers().FirstOrDefault();
-                if (first == null) return;
-                id = first.Id;
+                if (Request.Cookies.TryGetValue("LoggedInCustomerId", out var customerIdCookie) &&
+                    int.TryParse(customerIdCookie, out var loggedInCustomerId))
+                {
+                    id = loggedInCustomerId;
+                }
+                else
+                {
+                    return RedirectToPage("/Index");
+                }
             }
 
             var customer = _customerRepository.GetCustomerById(id.Value);
-            if (customer == null) return;
+            if (customer == null)
+            {
+                return NotFound();
+            }
 
             UserData = new UserProfile
             {
@@ -52,6 +62,19 @@ namespace KE03_INTDEV_SE_1_Base.Pages
                 Address = customer.Address,
                 Active = customer.Active,
             };
+
+            Orders = _orderRepository.GetOrdersByCustomerId(customer.Id)
+                .Select(order => new OrderItem
+                {
+                    OrderNumber = order.Id.ToString(),
+                    OrderDate = order.OrderDate,
+                    ItemName = string.Join(", ", order.Products.Select(product => product.Name)),
+                    Status = "Completed",
+                    Price = order.Products.Sum(product => product.Price)
+                })
+                .ToList();
+
+            return Page();
         }
     }
 
