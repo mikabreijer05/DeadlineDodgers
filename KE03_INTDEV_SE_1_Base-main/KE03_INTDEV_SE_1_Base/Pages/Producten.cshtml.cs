@@ -43,7 +43,9 @@ namespace KE03_INTDEV_SE_1_Base.Pages
                 .OrderBy(type => type)
                 .ToList();
 
-            var filteredProducts = allProducts.AsEnumerable();
+            var filteredProducts = allProducts
+                .Where(p => p.Type.Equals("product", System.StringComparison.OrdinalIgnoreCase))
+                .AsEnumerable();
 
             if (!string.IsNullOrWhiteSpace(Q))
             {
