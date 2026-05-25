@@ -1,0 +1,73 @@
+@page
+@model KE03_INTDEV_SE_1_Base.Pages.OrderHistoryModel
+
+@{
+    ViewData["Title"] = "Bestelgeschiedenis";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="matrix-container">
+    <div class="panel">
+        <h2>> Overzicht Bestellingen</h2>
+
+        <div class="separator"></div>
+
+        @if (!Model.Orders.Any())
+        {
+            <p>Je hebt nog geen bestellingen geplaatst.</p>
+        }
+        else
+        {
+            <div class="orders-container">
+                @foreach (var order in Model.Orders)
+                {
+                    <div class="order-card">
+                        <div class="info-row">
+                            <span>ORDER_ID:</span>
+                            <span>@order.OrderNumber</span>
+                        </div>
+
+                        <div class="info-row">
+                            <span>DATE:</span>
+                            <span>@order.OrderDate.ToString("yyyy-MM-dd HH:mm")</span>
+                        </div>
+
+                        <div class="separator small"></div>
+
+                        <h3>Producten</h3>
+
+                        <table style="width:100%;">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left;">Product</th>
+                                    <th style="text-align:left;">Aantal</th>
+                                    <th style="text-align:left;">Prijs per stuk</th>
+                                    <th style="text-align:left;">Totaal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in order.Products)
+                                {
+                                    <tr>
+                                        <td>@product.ProductName</td>
+                                        <td>@product.Quantity</td>
+                                        <td>€ @product.PricePerProduct.ToString("0.00")</td>
+                                        <td>€ @product.TotalPrice.ToString("0.00")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <div class="separator small"></div>
+
+                        <div class="info-row">
+                            <span>TOTAL:</span>
+                            <span>€ @order.TotalPrice.ToString("0.00")</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>

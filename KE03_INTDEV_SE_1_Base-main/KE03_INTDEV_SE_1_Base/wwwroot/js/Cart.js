@@ -80,12 +80,43 @@ function renderCart() {
         });
     });
 
-    // For the checkout button: when clicked, alert, save order, clear cart, refresh UI and cart badge.
-    document.querySelector('.checkout-btn').addEventListener('click', function () {
-        alert('Bedankt voor je bestelling! (hier zou een echt betaalsysteem komen)');
-        saveOrderToHistory(); // Store all order details for later access (localStorage)
+    // For the checkout button: when clicked, send order to server, clear cart, refresh UI and cart badge.
+    document.querySelector('.checkout-btn').addEventListener('click', async function () {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const productIds = [];
+
+        cart.forEach(item => {
+            for (let i = 0; i < item.quantity; i++) {
+                productIds.push(parseInt(item.id));
+            }
+        });
+
+        const response = await fetch('/Cart?handler=Checkout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': getAntiForgeryToken()
+            },
+            body: JSON.stringify({
+                items: cart.map(item => ({
+                    productId: parseInt(item.id),
+                    quantity: item.quantity
+                }))
+            })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+            alert(result.message || 'Er ging iets mis bij het plaatsen van je bestelling.');
+            return;
+        }
+
+        alert('Bedankt voor je bestelling!');
         localStorage.removeItem('cart');
-        renderCart(); // Rerender page, now showing "cart empty"
+        renderCart();
+
         if (typeof updateCartCount === 'function') updateCartCount();
     });
 }
@@ -146,4 +177,30 @@ function saveOrderToHistory() {
     // If you want ORDER HISTORY, switch to storing an array
     localStorage.setItem('lastOrder', JSON.stringify(order));
     // Why: Persist order summary for use by other pages, confirmations, admin, export, etc.
+
+    function removeOneFromCart(id) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let idx = cart.findIndex(item => item.id === id);
+        if (idx !== -1) {
+            if (cart[idx].quantity > 1) {
+                cart[idx].quantity -= 1; // Subtract one from quantity if more than 1 left
+            } else {
+                // Remove the product if only one left
+                cart.splice(idx, 1);
+            }
+        }
+        // Save the changed cart and update UI/badge
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+        if (typeof updateCartCount === 'function') updateCartCount();
+    }
+
+    function getAntiForgeryToken() {
+        const tokenInput = document.querySelector('input[name="__RequestVerificationToken"]');
+        return tokenInput ? tokenInput.value : '';
+    }
+
+// ==========================
+// Save complete order to localStorage after checkout
+// ==========================
 }

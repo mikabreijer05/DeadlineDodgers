@@ -56,43 +56,50 @@
 
             <div class="orders-container">
 
-                @foreach (var order in Model.Orders)
+                @if (!Model.Orders.Any())
                 {
-                    <div class="order-card">
+                    <p>Je hebt nog geen bestellingen geplaatst.</p>
+                }
+                else
+                {
+                    @foreach (var order in Model.Orders)
+                    {
+                        <div class="order-card">
 
-                        <div class="info-row">
-                            <span>ORDER_ID:</span>
-                            <span>@order.OrderNumber</span>
+                            <div class="info-row">
+                                <span>ORDER_ID:</span>
+                                <span>@order.OrderNumber</span>
+                            </div>
+
+                            <div class="info-row">
+                                <span>DATE:</span>
+                                <span>@order.OrderDate.ToString("yyyy-MM-dd")</span>
+                            </div>
+
+                            <div class="info-row">
+                                <span>ITEM:</span>
+                                <span>@order.ItemName</span>
+                            </div>
+
+                            <div class="info-row">
+                                <span>STATUS:</span>
+                                <span>@order.Status</span>
+                            </div>
+
+                            <div class="separator small"></div>
+
+                            <div class="info-row">
+                                <span>PRICE:</span>
+                                <span>€ @order.Price</span>
+                            </div>
+
                         </div>
-
-                        <div class="info-row">
-                            <span>DATE:</span>
-                            <span>@order.OrderDate.ToString("yyyy-MM-dd")</span>
-                        </div>
-
-                        <div class="info-row">
-                            <span>ITEM:</span>
-                            <span>@order.ItemName</span>
-                        </div>
-
-                        <div class="info-row">
-                            <span>STATUS:</span>
-                            <span>@order.Status</span>
-                        </div>
-
-                        <div class="separator small"></div>
-
-                        <div class="info-row">
-                            <span>PRICE:</span>
-                            <span>€ @order.Price</span>
-                        </div>
-
-                    </div>
+                    }
                 }
 
             </div>
 
-            <button class="matrix-button">
+            <button class="matrix-button" asp-page="/OrderHistory">
                 > VIEW_ALL_ORDERS
             </button>
 

@@ -1,8 +1,12 @@
 ﻿@page
-@model dynamic
+@model KE03_INTDEV_SE_1_Base.Pages.cartModel
 @{
     ViewData["Title"] = "Cart";
 }
+
+<form method="post">
+    @Html.AntiForgeryToken()
+</form>
 
 <section>
     <h1>Winkelwagen</h1>
