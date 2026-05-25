@@ -84,14 +84,6 @@ function renderCart() {
     document.querySelector('.checkout-btn').addEventListener('click', async function () {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        const productIds = [];
-
-        cart.forEach(item => {
-            for (let i = 0; i < item.quantity; i++) {
-                productIds.push(parseInt(item.id));
-            }
-        });
-
         const response = await fetch('/Cart?handler=Checkout', {
             method: 'POST',
             headers: {
@@ -107,6 +99,8 @@ function renderCart() {
         });
 
         const result = await response.json();
+
+        console.log('Checkout response:', result);
 
         if (!response.ok || !result.success) {
             alert(result.message || 'Er ging iets mis bij het plaatsen van je bestelling.');
@@ -142,6 +136,11 @@ function removeOneFromCart(id) {
     if (typeof updateCartCount === 'function') updateCartCount();
 }
 
+function getAntiForgeryToken() {
+    const tokenInput = document.querySelector('input[name="__RequestVerificationToken"]');
+    return tokenInput ? tokenInput.value : '';
+}
+
 // ==========================
 // Save complete order to localStorage after checkout
 // ==========================
@@ -168,39 +167,10 @@ function saveOrderToHistory() {
 
     // Now save entire order including BTW (VAT 21%)
     const order = {
-        items: items,                         // Whole product list with their names/amounts/prices
-        total_price: subtotal,                // Cart subtotal BEFORE VAT
-        total_price_vat21: +(subtotal * 1.21).toFixed(2) // Subtotal + 21% VAT, rounded to 2 decimals
+        items: items,
+        total_price: subtotal,
+        total_price_vat21: +(subtotal * 1.21).toFixed(2)
     };
 
-    // Save ONLY last order in localStorage (will overwrite previous)
-    // If you want ORDER HISTORY, switch to storing an array
     localStorage.setItem('lastOrder', JSON.stringify(order));
-    // Why: Persist order summary for use by other pages, confirmations, admin, export, etc.
-
-    function removeOneFromCart(id) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let idx = cart.findIndex(item => item.id === id);
-        if (idx !== -1) {
-            if (cart[idx].quantity > 1) {
-                cart[idx].quantity -= 1; // Subtract one from quantity if more than 1 left
-            } else {
-                // Remove the product if only one left
-                cart.splice(idx, 1);
-            }
-        }
-        // Save the changed cart and update UI/badge
-        localStorage.setItem('cart', JSON.stringify(cart));
-        renderCart();
-        if (typeof updateCartCount === 'function') updateCartCount();
-    }
-
-    function getAntiForgeryToken() {
-        const tokenInput = document.querySelector('input[name="__RequestVerificationToken"]');
-        return tokenInput ? tokenInput.value : '';
-    }
-
-// ==========================
-// Save complete order to localStorage after checkout
-// ==========================
 }
