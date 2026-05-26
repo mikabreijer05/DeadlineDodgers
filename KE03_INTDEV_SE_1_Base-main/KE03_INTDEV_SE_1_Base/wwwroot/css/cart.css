@@ -1,0 +1,94 @@
+/* Card 'Add' button Noa */
+.add-btn {
+    margin-top: auto;
+    padding: 8px;
+    background: transparent;
+    border: 1px solid #00ff66;
+    color: #00ff66;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #00ff66;
+    color: black;
+}
+
+
+/* --- Cart Page Additional Buttons Noa --- */
+.remove-btn {
+    margin-top: 10px;
+    padding: 7px 20px;
+    background: #ff2525;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .15s;
+}
+
+.remove-btn:hover {
+    background: #ce1818;
+}
+
+.checkout-btn {
+    padding: 12px 28px;
+    background: #20ff62;
+    color: black;
+    border-radius: 12px;
+    border: none;
+    font-family: monospace;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 12px #20ff62AA;
+    transition: background .16s, color .16s;
+}
+
+.checkout-btn:hover {
+    background: #00cc44;
+    color: #fff;
+}
+
+/* --- Cart badge --- */
+.cart-badge {
+    position: absolute;
+    top: -30px;
+    right: -28px;
+    background: #20ff62;
+    color: #000;
+    font-size: 0.92rem;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 14px;
+    z-index: 2;
+    box-shadow: 0 2px 10px #22ff6670;
+}
+
+
+/* Add to Cart Button */
+.cart-button {
+    background-color: transparent;
+    border: 2px solid #20ff62;
+    color: #20ff62;
+    padding: 18px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+    font-family: monospace;
+    letter-spacing: 2px;
+    margin-top: 20px;
+}
+
+.cart-button:hover {
+    background-color: #20ff62;
+    color: #000;
+    box-shadow: 0 0 30px rgba(32, 255, 98, 0.5);
+}
+
+.cart-button:active {
+    transform: scale(0.98);
+}

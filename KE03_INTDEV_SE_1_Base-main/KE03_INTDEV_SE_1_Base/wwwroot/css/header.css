@@ -1,0 +1,101 @@
+/* ========================================
+   Header/NAVIGATION BAR
+   ======================================== */
+
+header {
+    width: 100%;
+    background: #000;
+    margin-bottom: 0;
+}
+
+/* --- NAVBAR HEADER ROW (logo, search, icons) --- */
+.navbar-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px; /* space between left group and icons */
+    padding: 35px 70px 10px 70px; /* left and right margin for both sides */
+    width: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 36px; /* space between logo and search box */
+}
+
+/* Logo/Brand styling */
+.navbar-brand {
+    color: #20ff62 !important;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 2.6rem;
+    margin-right: 40px;
+    letter-spacing: 2px;
+}
+
+/* Header icons (cart, user) */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    /*margin-left: 36px;*/
+}
+
+.nav-icons a {
+    font-size: 36px;
+    color: #20ff62;
+    text-decoration: none;
+    transition: color .15s;
+}
+
+.nav-icons a:hover {
+    color: #ff1a2a;
+}
+
+/* --- CATEGORY BAR --- */
+.category-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 34px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 0 26px 3vw;
+    margin-top: 0;
+}
+
+.category-bar a {
+    color: mediumspringgreen !important;
+    background: transparent;
+    border: 2.5px solid #20ff62;
+    text-decoration: none;
+    padding: 5px 20px 5px 20px;
+    font-family: monospace;
+    font-size: 1.0rem;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background .15s, color .15s, border-color .15s;
+    white-space: nowrap;
+    display: block;
+    margin: 0;
+    text-align: center;
+}
+
+.category-bar a.active,
+.category-bar a:focus,
+.category-bar a:hover {
+    background: #20ff62;
+    color: #000;
+    border-color: #20ff62;
+}
+
+/* Green separator line under header */
+.header-separator {
+    height: 2.5px;
+    border: none;
+    background: #19ff62;
+    margin: 0;
+    width: 100%;
+}

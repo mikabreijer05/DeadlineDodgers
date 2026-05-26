@@ -1,0 +1,67 @@
+/* ========================================
+   Algemene instellingen & BODY
+   ======================================== */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: black;
+    color: #00ff66;
+    font-family: monospace;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .matrix-page {
+        padding: 40px 40px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .product-title {
+        font-size: 36px;
+    }
+
+    .price {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .matrix-page {
+        padding: 20px 15px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .product-title {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 32px;
+    }
+
+    .navbar-header-content {
+        padding: 20px 15px 10px 15px !important;
+        gap: 15px;
+    }
+    
+}
+
