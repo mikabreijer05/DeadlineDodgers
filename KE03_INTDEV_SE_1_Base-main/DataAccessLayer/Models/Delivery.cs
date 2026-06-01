@@ -3,7 +3,7 @@ namespace DataAccessLayer.Models;
 public class Delivery
 {
     public int Id { get; set; }
-    public string OrderId { get; set; }
+    public int OrderId { get; set; }
     public Order Order { get; set; }
     public string DeliveryMethod { get; set; }
     public bool Sent { get; set; }
