@@ -1,0 +1,1920 @@
+Folder PATH listing for volume Acer
+Volume serial number is E86A-7387
+C:.
+|   .gitattributes
+|   repo-tree.txt
+|   
++---.github
+|   \---workflows
++---.vs
+|   |   slnx.sqlite
+|   |   VSWorkspaceState.json
+|   |   
+|   \---DeadlineDodgers
+|       +---CopilotIndices
+|       |   +---17.14.1661.41761
+|       |   |       CodeChunks.db
+|       |   |       SemanticSymbols.db
+|       |   |       
+|       |   \---17.14.1681.23550
+|       |           CodeChunks.db
+|       |           SemanticSymbols.db
+|       |           
+|       +---FileContentIndex
+|       |       93e70a0d-906c-44eb-9d71-4a297d4ab396.vsidx
+|       |       db9d5afd-8cc1-4883-bc79-5f300f85c5d4.vsidx
+|       |       
+|       \---v17
+|               DocumentLayout.backup.json
+|               DocumentLayout.json
+|               
++---KE03_INTDEV_SE_1_Base-main
+|   |   .aiignore
+|   |   .gitignore
+|   |   KE03_INTDEV_SE_1_Base.sln
+|   |   README.md
+|   |   
+|   +---.idea
+|   |   \---.idea.KE03_INTDEV_SE_1_Base
+|   |       \---.idea
+|   |               .gitignore
+|   |               .name
+|   |               encodings.xml
+|   |               indexLayout.xml
+|   |               vcs.xml
+|   |               
+|   +---DataAccessLayer
+|   |   |   DataAccessLayer.csproj
+|   |   |   MatrixIncDbContext.cs
+|   |   |   MatrixIncDbInitializer.cs
+|   |   |   
+|   |   +---bin
+|   |   |   +---Debug
+|   |   |   |   \---net8.0
+|   |   |   |           DataAccessLayer.deps.json
+|   |   |   |           DataAccessLayer.dll
+|   |   |   |           DataAccessLayer.pdb
+|   |   |   |           
+|   |   |   \---Release
+|   |   |       \---net8.0
+|   |   +---Interfaces
+|   |   |       ICustomerRepository.cs
+|   |   |       IOrderRepository.cs
+|   |   |       IProductRepository.cs
+|   |   |       IReviewRepository.cs
+|   |   |       
+|   |   +---Models
+|   |   |       Account.cs
+|   |   |       Advertisement.cs
+|   |   |       ContactDescriptions.cs
+|   |   |       CoWorker.cs
+|   |   |       Customer.cs
+|   |   |       CustomerDelivery.cs
+|   |   |       CustomerOrder.cs
+|   |   |       CustomerServiceTicket.cs
+|   |   |       Delivery.cs
+|   |   |       Distributor.cs
+|   |   |       DistributorDelivery.cs
+|   |   |       DistributorOrder.cs
+|   |   |       Order.cs
+|   |   |       OrderLine.cs
+|   |   |       Product.cs
+|   |   |       ProductList.cs
+|   |   |       Review.cs
+|   |   |       
+|   |   +---obj
+|   |   |   |   DataAccessLayer.csproj.nuget.dgspec.json
+|   |   |   |   DataAccessLayer.csproj.nuget.g.props
+|   |   |   |   DataAccessLayer.csproj.nuget.g.targets
+|   |   |   |   project.assets.json
+|   |   |   |   project.nuget.cache
+|   |   |   |   
+|   |   |   +---Debug
+|   |   |   |   \---net8.0
+|   |   |   |       |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+|   |   |   |       |   DataAccessLayer.AssemblyInfo.cs
+|   |   |   |       |   DataAccessLayer.AssemblyInfoInputs.cache
+|   |   |   |       |   DataAccessLayer.assets.cache
+|   |   |   |       |   DataAccessLayer.csproj.AssemblyReference.cache
+|   |   |   |       |   DataAccessLayer.csproj.BuildWithSkipAnalyzers
+|   |   |   |       |   DataAccessLayer.csproj.CoreCompileInputs.cache
+|   |   |   |       |   DataAccessLayer.csproj.FileListAbsolute.txt
+|   |   |   |       |   DataAccessLayer.dll
+|   |   |   |       |   DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+|   |   |   |       |   DataAccessLayer.GlobalUsings.g.cs
+|   |   |   |       |   DataAccessLayer.pdb
+|   |   |   |       |   DataAccessLayer.sourcelink.json
+|   |   |   |       |   
+|   |   |   |       +---ref
+|   |   |   |       |       DataAccessLayer.dll
+|   |   |   |       |       
+|   |   |   |       \---refint
+|   |   |   |               DataAccessLayer.dll
+|   |   |   |               
+|   |   |   \---Release
+|   |   |       \---net8.0
+|   |   |           |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+|   |   |           |   DataAccessLayer.AssemblyInfo.cs
+|   |   |           |   DataAccessLayer.AssemblyInfoInputs.cache
+|   |   |           |   DataAccessLayer.assets.cache
+|   |   |           |   DataAccessLayer.csproj.AssemblyReference.cache
+|   |   |           |   DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+|   |   |           |   DataAccessLayer.GlobalUsings.g.cs
+|   |   |           |   
+|   |   |           +---ref
+|   |   |           \---refint
+|   |   \---Repositories
+|   |           CustomerRepository.cs
+|   |           OrderRepository.cs
+|   |           ProductRepository.cs
+|   |           ReviewRepository.cs
+|   |           
+|   +---KE03_INTDEV_SE_1_Base
+|   |   |   appsettings.Development.json
+|   |   |   appsettings.json
+|   |   |   KE03_INTDEV_SE_1_Base.csproj
+|   |   |   KE03_INTDEV_SE_1_Base.csproj.user
+|   |   |   MatrixInc.db
+|   |   |   Program.cs
+|   |   |   
+|   |   +---bin
+|   |   |   +---Debug
+|   |   |   |   \---net8.0
+|   |   |   |       |   appsettings.Development.json
+|   |   |   |       |   appsettings.json
+|   |   |   |       |   DataAccessLayer.dll
+|   |   |   |       |   DataAccessLayer.pdb
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.deps.json
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.dll
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.exe
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.pdb
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.runtimeconfig.json
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.staticwebassets.endpoints.json
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.staticwebassets.runtime.json
+|   |   |   |       |   Microsoft.Data.Sqlite.dll
+|   |   |   |       |   Microsoft.EntityFrameworkCore.Abstractions.dll
+|   |   |   |       |   Microsoft.EntityFrameworkCore.dll
+|   |   |   |       |   Microsoft.EntityFrameworkCore.Relational.dll
+|   |   |   |       |   Microsoft.EntityFrameworkCore.Sqlite.dll
+|   |   |   |       |   Microsoft.Extensions.DependencyModel.dll
+|   |   |   |       |   SQLitePCLRaw.batteries_v2.dll
+|   |   |   |       |   SQLitePCLRaw.core.dll
+|   |   |   |       |   SQLitePCLRaw.provider.e_sqlite3.dll
+|   |   |   |       |   
+|   |   |   |       \---runtimes
+|   |   |   |           +---browser-wasm
+|   |   |   |           |   \---nativeassets
+|   |   |   |           |       \---net8.0
+|   |   |   |           |               e_sqlite3.a
+|   |   |   |           |               
+|   |   |   |           +---linux-arm
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-arm64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-armel
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-mips64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-musl-arm
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-musl-arm64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-musl-x64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-ppc64le
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-s390x
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-x64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---linux-x86
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.so
+|   |   |   |           |           
+|   |   |   |           +---maccatalyst-arm64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.dylib
+|   |   |   |           |           
+|   |   |   |           +---maccatalyst-x64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.dylib
+|   |   |   |           |           
+|   |   |   |           +---osx-arm64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.dylib
+|   |   |   |           |           
+|   |   |   |           +---osx-x64
+|   |   |   |           |   \---native
+|   |   |   |           |           libe_sqlite3.dylib
+|   |   |   |           |           
+|   |   |   |           +---win-arm
+|   |   |   |           |   \---native
+|   |   |   |           |           e_sqlite3.dll
+|   |   |   |           |           
+|   |   |   |           +---win-arm64
+|   |   |   |           |   \---native
+|   |   |   |           |           e_sqlite3.dll
+|   |   |   |           |           
+|   |   |   |           +---win-x64
+|   |   |   |           |   \---native
+|   |   |   |           |           e_sqlite3.dll
+|   |   |   |           |           
+|   |   |   |           \---win-x86
+|   |   |   |               \---native
+|   |   |   |                       e_sqlite3.dll
+|   |   |   |                       
+|   |   |   \---Release
+|   |   |       \---net8.0
+|   |   +---obj
+|   |   |   |   KE03_INTDEV_SE_1_Base.csproj.nuget.dgspec.json
+|   |   |   |   KE03_INTDEV_SE_1_Base.csproj.nuget.g.props
+|   |   |   |   KE03_INTDEV_SE_1_Base.csproj.nuget.g.targets
+|   |   |   |   project.assets.json
+|   |   |   |   project.nuget.cache
+|   |   |   |   
+|   |   |   +---Debug
+|   |   |   |   \---net8.0
+|   |   |   |       |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+|   |   |   |       |   ApiEndpoints.json
+|   |   |   |       |   apphost.exe
+|   |   |   |       |   KE03_INT.9D31F6F5.Up2Date
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.AssemblyInfo.cs
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.AssemblyInfoInputs.cache
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.assets.cache
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.csproj.AssemblyReference.cache
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.csproj.BuildWithSkipAnalyzers
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.csproj.CoreCompileInputs.cache
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.csproj.FileListAbsolute.txt
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.dll
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.GeneratedMSBuildEditorConfig.editorconfig
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.genruntimeconfig.cache
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.GlobalUsings.g.cs
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.MvcApplicationPartsAssemblyInfo.cache
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.pdb
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.RazorAssemblyInfo.cache
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.RazorAssemblyInfo.cs
+|   |   |   |       |   KE03_INTDEV_SE_1_Base.sourcelink.json
+|   |   |   |       |   rjimswa.dswa.cache.json
+|   |   |   |       |   rjsmcshtml.dswa.cache.json
+|   |   |   |       |   rjsmrazor.dswa.cache.json
+|   |   |   |       |   rpswa.dswa.cache.json
+|   |   |   |       |   staticwebassets.build.endpoints.json
+|   |   |   |       |   staticwebassets.build.json
+|   |   |   |       |   staticwebassets.build.json.cache
+|   |   |   |       |   staticwebassets.development.json
+|   |   |   |       |   staticwebassets.references.upToDateCheck.txt
+|   |   |   |       |   staticwebassets.removed.txt
+|   |   |   |       |   staticwebassets.upToDateCheck.txt
+|   |   |   |       |   
+|   |   |   |       +---ref
+|   |   |   |       |       KE03_INTDEV_SE_1_Base.dll
+|   |   |   |       |       
+|   |   |   |       +---refint
+|   |   |   |       |       KE03_INTDEV_SE_1_Base.dll
+|   |   |   |       |       
+|   |   |   |       +---scopedcss
+|   |   |   |       |   +---bundle
+|   |   |   |       |   |       KE03_INTDEV_SE_1_Base.styles.css
+|   |   |   |       |   |       
+|   |   |   |       |   +---Pages
+|   |   |   |       |   |   \---Shared
+|   |   |   |       |   |           _Layout.cshtml.rz.scp.css
+|   |   |   |       |   |           
+|   |   |   |       |   \---projectbundle
+|   |   |   |       |           KE03_INTDEV_SE_1_Base.bundle.scp.css
+|   |   |   |       |           
+|   |   |   |       \---staticwebassets
+|   |   |   \---Release
+|   |   |       \---net8.0
+|   |   |           |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+|   |   |           |   KE03_INTDEV_SE_1_Base.AssemblyInfo.cs
+|   |   |           |   KE03_INTDEV_SE_1_Base.AssemblyInfoInputs.cache
+|   |   |           |   KE03_INTDEV_SE_1_Base.assets.cache
+|   |   |           |   KE03_INTDEV_SE_1_Base.csproj.AssemblyReference.cache
+|   |   |           |   KE03_INTDEV_SE_1_Base.GeneratedMSBuildEditorConfig.editorconfig
+|   |   |           |   KE03_INTDEV_SE_1_Base.GlobalUsings.g.cs
+|   |   |           |   KE03_INTDEV_SE_1_Base.RazorAssemblyInfo.cache
+|   |   |           |   KE03_INTDEV_SE_1_Base.RazorAssemblyInfo.cs
+|   |   |           |   
+|   |   |           +---ref
+|   |   |           \---refint
+|   |   +---Pages
+|   |   |   |   Account.cshtml
+|   |   |   |   Account.cshtml.cs
+|   |   |   |   Cart.cshtml
+|   |   |   |   Cart.cshtml.cs
+|   |   |   |   Error.cshtml
+|   |   |   |   Error.cshtml.cs
+|   |   |   |   Index.cshtml
+|   |   |   |   Index.cshtml.cs
+|   |   |   |   Klantenservice.cshtml
+|   |   |   |   Klantenservice.cshtml.cs
+|   |   |   |   Login.cshtml
+|   |   |   |   Login.cshtml.cs
+|   |   |   |   Onderdelen.cshtml
+|   |   |   |   Onderdelen.cshtml.cs
+|   |   |   |   OrderHistory.cshtml
+|   |   |   |   OrderHistory.cshtml.cs
+|   |   |   |   OverOns.cshtml
+|   |   |   |   OverOns.cshtml.cs
+|   |   |   |   Privacy.cshtml
+|   |   |   |   Privacy.cshtml.cs
+|   |   |   |   Producten.cshtml
+|   |   |   |   Producten.cshtml.cs
+|   |   |   |   ProductPagina.cshtml
+|   |   |   |   ProductPagina.cshtml.cs
+|   |   |   |   _ViewImports.cshtml
+|   |   |   |   _ViewStart.cshtml
+|   |   |   |   
+|   |   |   \---Shared
+|   |   |           _Layout.cshtml
+|   |   |           _Layout.cshtml.css
+|   |   |           _ValidationScriptsPartial.cshtml
+|   |   |           
+|   |   +---Properties
+|   |   |       launchSettings.json
+|   |   |       
+|   |   \---wwwroot
+|   |       |   favicon.ico
+|   |       |   
+|   |       +---css
+|   |       |       account.css
+|   |       |       cart.css
+|   |       |       header.css
+|   |       |       product.css
+|   |       |       review.css
+|   |       |       searchBar.css
+|   |       |       searchPage.css
+|   |       |       styles.css
+|   |       |       
+|   |       +---images
+|   |       |   \---product
+|   |       |           bluepill.jpg
+|   |       |           emp.jpg
+|   |       |           hydraulischeCilinder.jpg
+|   |       |           jackinchair.jpg
+|   |       |           koelVloeistof.jpg
+|   |       |           m5bout.jpg
+|   |       |           nebuchadnezzar.jpg
+|   |       |           tandwiel.jpg
+|   |       |           
+|   |       +---js
+|   |       |       cart.js
+|   |       |       review.js
+|   |       |       search.js
+|   |       |       site.js
+|   |       |       
+|   |       \---lib
+|   |           +---bootstrap
+|   |           |   |   LICENSE
+|   |           |   |   
+|   |           |   \---dist
+|   |           |       +---css
+|   |           |       |       bootstrap-grid.css
+|   |           |       |       bootstrap-grid.css.map
+|   |           |       |       bootstrap-grid.min.css
+|   |           |       |       bootstrap-grid.min.css.map
+|   |           |       |       bootstrap-grid.rtl.css
+|   |           |       |       bootstrap-grid.rtl.css.map
+|   |           |       |       bootstrap-grid.rtl.min.css
+|   |           |       |       bootstrap-grid.rtl.min.css.map
+|   |           |       |       bootstrap-reboot.css
+|   |           |       |       bootstrap-reboot.css.map
+|   |           |       |       bootstrap-reboot.min.css
+|   |           |       |       bootstrap-reboot.min.css.map
+|   |           |       |       bootstrap-reboot.rtl.css
+|   |           |       |       bootstrap-reboot.rtl.css.map
+|   |           |       |       bootstrap-reboot.rtl.min.css
+|   |           |       |       bootstrap-reboot.rtl.min.css.map
+|   |           |       |       bootstrap-utilities.css
+|   |           |       |       bootstrap-utilities.css.map
+|   |           |       |       bootstrap-utilities.min.css
+|   |           |       |       bootstrap-utilities.min.css.map
+|   |           |       |       bootstrap-utilities.rtl.css
+|   |           |       |       bootstrap-utilities.rtl.css.map
+|   |           |       |       bootstrap-utilities.rtl.min.css
+|   |           |       |       bootstrap-utilities.rtl.min.css.map
+|   |           |       |       bootstrap.css
+|   |           |       |       bootstrap.css.map
+|   |           |       |       bootstrap.min.css
+|   |           |       |       bootstrap.min.css.map
+|   |           |       |       bootstrap.rtl.css
+|   |           |       |       bootstrap.rtl.css.map
+|   |           |       |       bootstrap.rtl.min.css
+|   |           |       |       bootstrap.rtl.min.css.map
+|   |           |       |       
+|   |           |       \---js
+|   |           |               bootstrap.bundle.js
+|   |           |               bootstrap.bundle.js.map
+|   |           |               bootstrap.bundle.min.js
+|   |           |               bootstrap.bundle.min.js.map
+|   |           |               bootstrap.esm.js
+|   |           |               bootstrap.esm.js.map
+|   |           |               bootstrap.esm.min.js
+|   |           |               bootstrap.esm.min.js.map
+|   |           |               bootstrap.js
+|   |           |               bootstrap.js.map
+|   |           |               bootstrap.min.js
+|   |           |               bootstrap.min.js.map
+|   |           |               
+|   |           +---jquery
+|   |           |   |   LICENSE.txt
+|   |           |   |   
+|   |           |   \---dist
+|   |           |           jquery.js
+|   |           |           jquery.min.js
+|   |           |           jquery.min.map
+|   |           |           
+|   |           +---jquery-validation
+|   |           |   |   LICENSE.md
+|   |           |   |   
+|   |           |   \---dist
+|   |           |           additional-methods.js
+|   |           |           additional-methods.min.js
+|   |           |           jquery.validate.js
+|   |           |           jquery.validate.min.js
+|   |           |           
+|   |           \---jquery-validation-unobtrusive
+|   |                   jquery.validate.unobtrusive.js
+|   |                   jquery.validate.unobtrusive.min.js
+|   |                   LICENSE.txt
+|   |                   
+|   \---KE03_INTDEV_SE_1_Base-main
+|       +---.idea
+|       |   \---.idea.KE03_INTDEV_SE_1_Base
+|       |       \---.idea
+|       |               .gitignore
+|       |               .name
+|       |               encodings.xml
+|       |               indexLayout.xml
+|       |               vcs.xml
+|       |               
+|       +---.vs
+|       |   +---KE03_INTDEV_SE_1_Base
+|       |   |   +---config
+|       |   |   |       applicationhost.config
+|       |   |   |       
+|       |   |   +---CopilotIndices
+|       |   |   |   \---18.5.39187.10602
+|       |   |   |           CodeChunks.db
+|       |   |   |           SemanticSymbols.db
+|       |   |   |           
+|       |   |   +---DesignTimeBuild
+|       |   |   |       .dtbcache.v2
+|       |   |   |       
+|       |   |   +---FileContentIndex
+|       |   |   |       174fd9c8-e02a-4702-8539-d485669fc34f.vsidx
+|       |   |   |       80d0a4cd-aad9-4515-8314-7cc756e46bd4.vsidx
+|       |   |   |       e6098b4d-7d4a-47bd-a223-d9468a6380d5.vsidx
+|       |   |   |       
+|       |   |   \---v18
+|       |   |           .futdcache.v2
+|       |   |           .suo
+|       |   |           DocumentLayout.backup.json
+|       |   |           DocumentLayout.json
+|       |   |           
+|       |   \---ProjectEvaluation
+|       |           ke03_intdev_se_1_base.metadata.v10.bin
+|       |           ke03_intdev_se_1_base.projects.v10.bin
+|       |           ke03_intdev_se_1_base.strings.v10.bin
+|       |           
+|       +---DataAccessLayer
+|       |   +---bin
+|       |   |   \---Debug
+|       |   |       \---net8.0
+|       |   |               DataAccessLayer.deps.json
+|       |   |               DataAccessLayer.dll
+|       |   |               DataAccessLayer.pdb
+|       |   |               
+|       |   \---obj
+|       |       |   DataAccessLayer.csproj.nuget.dgspec.json
+|       |       |   DataAccessLayer.csproj.nuget.g.props
+|       |       |   DataAccessLayer.csproj.nuget.g.targets
+|       |       |   project.assets.json
+|       |       |   project.nuget.cache
+|       |       |   project.packagespec.json
+|       |       |   rider.project.restore.info
+|       |       |   
+|       |       \---Debug
+|       |           \---net8.0
+|       |               |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+|       |               |   DataAccessLayer.AssemblyInfo.cs
+|       |               |   DataAccessLayer.AssemblyInfoInputs.cache
+|       |               |   DataAccessLayer.assets.cache
+|       |               |   DataAccessLayer.csproj.AssemblyReference.cache
+|       |               |   DataAccessLayer.csproj.BuildWithSkipAnalyzers
+|       |               |   DataAccessLayer.csproj.CoreCompileInputs.cache
+|       |               |   DataAccessLayer.csproj.FileListAbsolute.txt
+|       |               |   DataAccessLayer.dll
+|       |               |   DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+|       |               |   DataAccessLayer.GlobalUsings.g.cs
+|       |               |   DataAccessLayer.pdb
+|       |               |   DataAccessLayer.sourcelink.json
+|       |               |   
+|       |               +---ref
+|       |               |       DataAccessLayer.dll
+|       |               |       
+|       |               \---refint
+|       |                       DataAccessLayer.dll
+|       |                       
+|       \---KE03_INTDEV_SE_1_Base
+|           |   MatrixInc.db
+|           |   
+|           +---bin
+|           |   \---Debug
+|           |       \---net8.0
+|           |           |   appsettings.Development.json
+|           |           |   appsettings.json
+|           |           |   DataAccessLayer.dll
+|           |           |   DataAccessLayer.pdb
+|           |           |   KE03_INTDEV_SE_1_Base
+|           |           |   KE03_INTDEV_SE_1_Base.deps.json
+|           |           |   KE03_INTDEV_SE_1_Base.dll
+|           |           |   KE03_INTDEV_SE_1_Base.exe
+|           |           |   KE03_INTDEV_SE_1_Base.pdb
+|           |           |   KE03_INTDEV_SE_1_Base.runtimeconfig.json
+|           |           |   KE03_INTDEV_SE_1_Base.staticwebassets.endpoints.json
+|           |           |   KE03_INTDEV_SE_1_Base.staticwebassets.runtime.json
+|           |           |   Microsoft.Data.Sqlite.dll
+|           |           |   Microsoft.EntityFrameworkCore.Abstractions.dll
+|           |           |   Microsoft.EntityFrameworkCore.dll
+|           |           |   Microsoft.EntityFrameworkCore.Relational.dll
+|           |           |   Microsoft.EntityFrameworkCore.Sqlite.dll
+|           |           |   Microsoft.Extensions.DependencyModel.dll
+|           |           |   SQLitePCLRaw.batteries_v2.dll
+|           |           |   SQLitePCLRaw.core.dll
+|           |           |   SQLitePCLRaw.provider.e_sqlite3.dll
+|           |           |   
+|           |           \---runtimes
+|           |               +---browser-wasm
+|           |               |   \---nativeassets
+|           |               |       \---net8.0
+|           |               |               e_sqlite3.a
+|           |               |               
+|           |               +---linux-arm
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-arm64
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-armel
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-mips64
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-musl-arm
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-musl-arm64
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-musl-x64
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-ppc64le
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-s390x
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-x64
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---linux-x86
+|           |               |   \---native
+|           |               |           libe_sqlite3.so
+|           |               |           
+|           |               +---maccatalyst-arm64
+|           |               |   \---native
+|           |               |           libe_sqlite3.dylib
+|           |               |           
+|           |               +---maccatalyst-x64
+|           |               |   \---native
+|           |               |           libe_sqlite3.dylib
+|           |               |           
+|           |               +---osx-arm64
+|           |               |   \---native
+|           |               |           libe_sqlite3.dylib
+|           |               |           
+|           |               +---osx-x64
+|           |               |   \---native
+|           |               |           libe_sqlite3.dylib
+|           |               |           
+|           |               +---win-arm
+|           |               |   \---native
+|           |               |           e_sqlite3.dll
+|           |               |           
+|           |               +---win-arm64
+|           |               |   \---native
+|           |               |           e_sqlite3.dll
+|           |               |           
+|           |               +---win-x64
+|           |               |   \---native
+|           |               |           e_sqlite3.dll
+|           |               |           
+|           |               \---win-x86
+|           |                   \---native
+|           |                           e_sqlite3.dll
+|           |                           
+|           \---obj
+|               |   KE03_INTDEV_SE_1_Base.csproj.nuget.dgspec.json
+|               |   KE03_INTDEV_SE_1_Base.csproj.nuget.g.props
+|               |   KE03_INTDEV_SE_1_Base.csproj.nuget.g.targets
+|               |   project.assets.json
+|               |   project.nuget.cache
+|               |   project.packagespec.json
+|               |   rider.project.restore.info
+|               |   
+|               \---Debug
+|                   \---net8.0
+|                       |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+|                       |   ApiEndpoints.json
+|                       |   apphost
+|                       |   apphost.exe
+|                       |   KE03_INT.9D31F6F5.Up2Date
+|                       |   KE03_INTDEV_SE_1_Base.AssemblyInfo.cs
+|                       |   KE03_INTDEV_SE_1_Base.AssemblyInfoInputs.cache
+|                       |   KE03_INTDEV_SE_1_Base.assets.cache
+|                       |   KE03_INTDEV_SE_1_Base.csproj.AssemblyReference.cache
+|                       |   KE03_INTDEV_SE_1_Base.csproj.BuildWithSkipAnalyzers
+|                       |   KE03_INTDEV_SE_1_Base.csproj.CoreCompileInputs.cache
+|                       |   KE03_INTDEV_SE_1_Base.csproj.FileListAbsolute.txt
+|                       |   KE03_INTDEV_SE_1_Base.dll
+|                       |   KE03_INTDEV_SE_1_Base.GeneratedMSBuildEditorConfig.editorconfig
+|                       |   KE03_INTDEV_SE_1_Base.genruntimeconfig.cache
+|                       |   KE03_INTDEV_SE_1_Base.GlobalUsings.g.cs
+|                       |   KE03_INTDEV_SE_1_Base.MvcApplicationPartsAssemblyInfo.cache
+|                       |   KE03_INTDEV_SE_1_Base.pdb
+|                       |   KE03_INTDEV_SE_1_Base.RazorAssemblyInfo.cache
+|                       |   KE03_INTDEV_SE_1_Base.RazorAssemblyInfo.cs
+|                       |   KE03_INTDEV_SE_1_Base.sourcelink.json
+|                       |   rjimswa.dswa.cache.json
+|                       |   rjsmcshtml.dswa.cache.json
+|                       |   rjsmrazor.dswa.cache.json
+|                       |   rpswa.dswa.cache.json
+|                       |   staticwebassets.build.endpoints.json
+|                       |   staticwebassets.build.json
+|                       |   staticwebassets.build.json.cache
+|                       |   staticwebassets.development.json
+|                       |   staticwebassets.references.upToDateCheck.txt
+|                       |   staticwebassets.removed.txt
+|                       |   staticwebassets.upToDateCheck.txt
+|                       |   swae.build.ex.cache
+|                       |   
+|                       +---ref
+|                       |       KE03_INTDEV_SE_1_Base.dll
+|                       |       
+|                       +---refint
+|                       |       KE03_INTDEV_SE_1_Base.dll
+|                       |       
+|                       \---scopedcss
+|                           +---bundle
+|                           |       KE03_INTDEV_SE_1_Base.styles.css
+|                           |       
+|                           +---Pages
+|                           |   \---Shared
+|                           |           _Layout.cshtml.rz.scp.css
+|                           |           
+|                           \---projectbundle
+|                                   KE03_INTDEV_SE_1_Base.bundle.scp.css
+|                                   
+\---KE03_INTDEV_SE_2_Base-main
+    |   .gitignore
+    |   KE03_INTDEV_SE_2_Base.sln
+    |   README.md
+    |   
+    +---DataAccessLayer
+    |   |   DataAccessLayer.csproj
+    |   |   MatrixIncDbContext.cs
+    |   |   MatrixIncDbInitializer.cs
+    |   |   
+    |   +---bin
+    |   |   \---Debug
+    |   |       \---net8.0
+    |   |               DataAccessLayer.deps.json
+    |   |               DataAccessLayer.dll
+    |   |               DataAccessLayer.pdb
+    |   |               
+    |   +---Interfaces
+    |   |       ICustomerRepository.cs
+    |   |       IOrderRepository.cs
+    |   |       IPartRepository.cs
+    |   |       IProductRepository.cs
+    |   |       
+    |   +---Models
+    |   |       Customer.cs
+    |   |       Order.cs
+    |   |       Part.cs
+    |   |       Product.cs
+    |   |       
+    |   +---obj
+    |   |   |   DataAccessLayer.csproj.nuget.dgspec.json
+    |   |   |   DataAccessLayer.csproj.nuget.g.props
+    |   |   |   DataAccessLayer.csproj.nuget.g.targets
+    |   |   |   project.assets.json
+    |   |   |   project.nuget.cache
+    |   |   |   
+    |   |   \---Debug
+    |   |       \---net8.0
+    |   |           |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+    |   |           |   DataAccessLayer.AssemblyInfo.cs
+    |   |           |   DataAccessLayer.AssemblyInfoInputs.cache
+    |   |           |   DataAccessLayer.assets.cache
+    |   |           |   DataAccessLayer.csproj.AssemblyReference.cache
+    |   |           |   DataAccessLayer.csproj.BuildWithSkipAnalyzers
+    |   |           |   DataAccessLayer.csproj.CoreCompileInputs.cache
+    |   |           |   DataAccessLayer.csproj.FileListAbsolute.txt
+    |   |           |   DataAccessLayer.dll
+    |   |           |   DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+    |   |           |   DataAccessLayer.GlobalUsings.g.cs
+    |   |           |   DataAccessLayer.pdb
+    |   |           |   DataAccessLayer.sourcelink.json
+    |   |           |   
+    |   |           +---ref
+    |   |           |       DataAccessLayer.dll
+    |   |           |       
+    |   |           \---refint
+    |   |                   DataAccessLayer.dll
+    |   |                   
+    |   \---Repositories
+    |           CustomerRepository.cs
+    |           OrderRepository.cs
+    |           PartRepository.cs
+    |           ProductRepository.cs
+    |           
+    +---KE03_INTDEV_SE_2_Base
+    |   |   appsettings.Development.json
+    |   |   appsettings.json
+    |   |   CustomersController.cs
+    |   |   KE03_INTDEV_SE_2_Base.csproj
+    |   |   KE03_INTDEV_SE_2_Base.csproj.user
+    |   |   MatrixInc.db
+    |   |   Program.cs
+    |   |   
+    |   +---bin
+    |   |   \---Debug
+    |   |       \---net8.0
+    |   |           |   appsettings.Development.json
+    |   |           |   appsettings.json
+    |   |           |   DataAccessLayer.dll
+    |   |           |   DataAccessLayer.pdb
+    |   |           |   dotnet-aspnet-codegenerator-design.dll
+    |   |           |   Humanizer.dll
+    |   |           |   KE03_INTDEV_SE_2_Base.deps.json
+    |   |           |   KE03_INTDEV_SE_2_Base.dll
+    |   |           |   KE03_INTDEV_SE_2_Base.exe
+    |   |           |   KE03_INTDEV_SE_2_Base.pdb
+    |   |           |   KE03_INTDEV_SE_2_Base.runtimeconfig.json
+    |   |           |   KE03_INTDEV_SE_2_Base.staticwebassets.endpoints.json
+    |   |           |   KE03_INTDEV_SE_2_Base.staticwebassets.runtime.json
+    |   |           |   Microsoft.AspNetCore.Razor.Language.dll
+    |   |           |   Microsoft.Bcl.AsyncInterfaces.dll
+    |   |           |   Microsoft.Build.dll
+    |   |           |   Microsoft.Build.Framework.dll
+    |   |           |   Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+    |   |           |   Microsoft.CodeAnalysis.CSharp.dll
+    |   |           |   Microsoft.CodeAnalysis.CSharp.Features.dll
+    |   |           |   Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+    |   |           |   Microsoft.CodeAnalysis.dll
+    |   |           |   Microsoft.CodeAnalysis.Elfie.dll
+    |   |           |   Microsoft.CodeAnalysis.Features.dll
+    |   |           |   Microsoft.CodeAnalysis.Razor.dll
+    |   |           |   Microsoft.CodeAnalysis.Scripting.dll
+    |   |           |   Microsoft.CodeAnalysis.Workspaces.dll
+    |   |           |   Microsoft.Data.Sqlite.dll
+    |   |           |   Microsoft.DiaSymReader.dll
+    |   |           |   Microsoft.DotNet.Scaffolding.Shared.dll
+    |   |           |   Microsoft.EntityFrameworkCore.Abstractions.dll
+    |   |           |   Microsoft.EntityFrameworkCore.Design.dll
+    |   |           |   Microsoft.EntityFrameworkCore.dll
+    |   |           |   Microsoft.EntityFrameworkCore.Relational.dll
+    |   |           |   Microsoft.EntityFrameworkCore.Sqlite.dll
+    |   |           |   Microsoft.Extensions.Caching.Memory.dll
+    |   |           |   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+    |   |           |   Microsoft.Extensions.DependencyInjection.dll
+    |   |           |   Microsoft.Extensions.DependencyModel.dll
+    |   |           |   Microsoft.Extensions.Logging.Abstractions.dll
+    |   |           |   Microsoft.Extensions.Logging.dll
+    |   |           |   Microsoft.Extensions.Options.dll
+    |   |           |   Microsoft.NET.StringTools.dll
+    |   |           |   Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+    |   |           |   Microsoft.VisualStudio.Web.CodeGeneration.dll
+    |   |           |   Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+    |   |           |   Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+    |   |           |   Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+    |   |           |   Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+    |   |           |   Microsoft.Win32.SystemEvents.dll
+    |   |           |   Mono.TextTemplating.dll
+    |   |           |   Newtonsoft.Json.dll
+    |   |           |   NuGet.Common.dll
+    |   |           |   NuGet.Configuration.dll
+    |   |           |   NuGet.DependencyResolver.Core.dll
+    |   |           |   NuGet.Frameworks.dll
+    |   |           |   NuGet.LibraryModel.dll
+    |   |           |   NuGet.Packaging.dll
+    |   |           |   NuGet.ProjectModel.dll
+    |   |           |   NuGet.Protocol.dll
+    |   |           |   NuGet.Versioning.dll
+    |   |           |   SQLitePCLRaw.batteries_v2.dll
+    |   |           |   SQLitePCLRaw.core.dll
+    |   |           |   SQLitePCLRaw.provider.e_sqlite3.dll
+    |   |           |   System.CodeDom.dll
+    |   |           |   System.Composition.AttributedModel.dll
+    |   |           |   System.Composition.Convention.dll
+    |   |           |   System.Composition.Hosting.dll
+    |   |           |   System.Composition.Runtime.dll
+    |   |           |   System.Composition.TypedParts.dll
+    |   |           |   System.Configuration.ConfigurationManager.dll
+    |   |           |   System.Drawing.Common.dll
+    |   |           |   System.Reflection.MetadataLoadContext.dll
+    |   |           |   System.Security.Cryptography.ProtectedData.dll
+    |   |           |   System.Security.Permissions.dll
+    |   |           |   System.Windows.Extensions.dll
+    |   |           |   
+    |   |           +---af
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---ar
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---az
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---bg
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---bn-BD
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---cs
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---da
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---de
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---el
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---es
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---fa
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---fi-FI
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---fr
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---fr-BE
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---he
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---hr
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---hu
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---hy
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---id
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---is
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---it
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---ja
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---ko
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---ko-KR
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---ku
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---lv
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---ms-MY
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---mt
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---nb
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---nb-NO
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---nl
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---pl
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---pt
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---pt-BR
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---ro
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---ru
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---runtimes
+    |   |           |   +---browser-wasm
+    |   |           |   |   \---nativeassets
+    |   |           |   |       \---net8.0
+    |   |           |   |               e_sqlite3.a
+    |   |           |   |               
+    |   |           |   +---linux-arm
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-arm64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-armel
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-mips64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-musl-arm
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-musl-arm64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-musl-x64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-ppc64le
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-s390x
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-x64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---linux-x86
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.so
+    |   |           |   |           
+    |   |           |   +---maccatalyst-arm64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.dylib
+    |   |           |   |           
+    |   |           |   +---maccatalyst-x64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.dylib
+    |   |           |   |           
+    |   |           |   +---osx-arm64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.dylib
+    |   |           |   |           
+    |   |           |   +---osx-x64
+    |   |           |   |   \---native
+    |   |           |   |           libe_sqlite3.dylib
+    |   |           |   |           
+    |   |           |   +---win
+    |   |           |   |   \---lib
+    |   |           |   |       \---net7.0
+    |   |           |   |               Microsoft.Win32.SystemEvents.dll
+    |   |           |   |               System.Drawing.Common.dll
+    |   |           |   |               System.Security.Cryptography.ProtectedData.dll
+    |   |           |   |               System.Windows.Extensions.dll
+    |   |           |   |               
+    |   |           |   +---win-arm
+    |   |           |   |   \---native
+    |   |           |   |           e_sqlite3.dll
+    |   |           |   |           
+    |   |           |   +---win-arm64
+    |   |           |   |   \---native
+    |   |           |   |           e_sqlite3.dll
+    |   |           |   |           
+    |   |           |   +---win-x64
+    |   |           |   |   \---native
+    |   |           |   |           e_sqlite3.dll
+    |   |           |   |           
+    |   |           |   \---win-x86
+    |   |           |       \---native
+    |   |           |               e_sqlite3.dll
+    |   |           |               
+    |   |           +---sk
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---sl
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---sr
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---sr-Latn
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---sv
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---th-TH
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---tr
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           +---uk
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---uz-Cyrl-UZ
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---uz-Latn-UZ
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---vi
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---zh-CN
+    |   |           |       Humanizer.resources.dll
+    |   |           |       
+    |   |           +---zh-Hans
+    |   |           |       Humanizer.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Features.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |           |       
+    |   |           \---zh-Hant
+    |   |                   Humanizer.resources.dll
+    |   |                   Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+    |   |                   Microsoft.CodeAnalysis.CSharp.resources.dll
+    |   |                   Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+    |   |                   Microsoft.CodeAnalysis.Features.resources.dll
+    |   |                   Microsoft.CodeAnalysis.resources.dll
+    |   |                   Microsoft.CodeAnalysis.Scripting.resources.dll
+    |   |                   Microsoft.CodeAnalysis.Workspaces.resources.dll
+    |   |                   
+    |   +---Controllers
+    |   |       HomeController.cs
+    |   |       ProductController.cs
+    |   |       
+    |   +---Models
+    |   |       ErrorViewModel.cs
+    |   |       Product.cs
+    |   |       
+    |   +---obj
+    |   |   |   KE03_INTDEV_SE_2_Base.csproj.nuget.dgspec.json
+    |   |   |   KE03_INTDEV_SE_2_Base.csproj.nuget.g.props
+    |   |   |   KE03_INTDEV_SE_2_Base.csproj.nuget.g.targets
+    |   |   |   project.assets.json
+    |   |   |   project.nuget.cache
+    |   |   |   
+    |   |   \---Debug
+    |   |       \---net8.0
+    |   |           |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+    |   |           |   ApiEndpoints.json
+    |   |           |   apphost.exe
+    |   |           |   KE03_INT.D6BD825A.Up2Date
+    |   |           |   KE03_INTDEV_SE_2_Base.AssemblyInfo.cs
+    |   |           |   KE03_INTDEV_SE_2_Base.AssemblyInfoInputs.cache
+    |   |           |   KE03_INTDEV_SE_2_Base.assets.cache
+    |   |           |   KE03_INTDEV_SE_2_Base.csproj.AssemblyReference.cache
+    |   |           |   KE03_INTDEV_SE_2_Base.csproj.BuildWithSkipAnalyzers
+    |   |           |   KE03_INTDEV_SE_2_Base.csproj.CoreCompileInputs.cache
+    |   |           |   KE03_INTDEV_SE_2_Base.csproj.FileListAbsolute.txt
+    |   |           |   KE03_INTDEV_SE_2_Base.dll
+    |   |           |   KE03_INTDEV_SE_2_Base.GeneratedMSBuildEditorConfig.editorconfig
+    |   |           |   KE03_INTDEV_SE_2_Base.genruntimeconfig.cache
+    |   |           |   KE03_INTDEV_SE_2_Base.GlobalUsings.g.cs
+    |   |           |   KE03_INTDEV_SE_2_Base.MvcApplicationPartsAssemblyInfo.cache
+    |   |           |   KE03_INTDEV_SE_2_Base.pdb
+    |   |           |   KE03_INTDEV_SE_2_Base.RazorAssemblyInfo.cache
+    |   |           |   KE03_INTDEV_SE_2_Base.RazorAssemblyInfo.cs
+    |   |           |   KE03_INTDEV_SE_2_Base.sourcelink.json
+    |   |           |   rjimswa.dswa.cache.json
+    |   |           |   rjsmcshtml.dswa.cache.json
+    |   |           |   rjsmrazor.dswa.cache.json
+    |   |           |   rpswa.dswa.cache.json
+    |   |           |   staticwebassets.build.endpoints.json
+    |   |           |   staticwebassets.build.json
+    |   |           |   staticwebassets.build.json.cache
+    |   |           |   staticwebassets.development.json
+    |   |           |   staticwebassets.references.upToDateCheck.txt
+    |   |           |   staticwebassets.removed.txt
+    |   |           |   staticwebassets.upToDateCheck.txt
+    |   |           |   
+    |   |           +---ref
+    |   |           |       KE03_INTDEV_SE_2_Base.dll
+    |   |           |       
+    |   |           +---refint
+    |   |           |       KE03_INTDEV_SE_2_Base.dll
+    |   |           |       
+    |   |           +---scopedcss
+    |   |           |   +---bundle
+    |   |           |   |       KE03_INTDEV_SE_2_Base.styles.css
+    |   |           |   |       
+    |   |           |   +---projectbundle
+    |   |           |   |       KE03_INTDEV_SE_2_Base.bundle.scp.css
+    |   |           |   |       
+    |   |           |   \---Views
+    |   |           |       \---Shared
+    |   |           |               _Layout.cshtml.rz.scp.css
+    |   |           |               
+    |   |           \---staticwebassets
+    |   +---Properties
+    |   |       launchSettings.json
+    |   |       
+    |   +---Views
+    |   |   |   _ViewImports.cshtml
+    |   |   |   _ViewStart.cshtml
+    |   |   |   
+    |   |   +---Customers
+    |   |   |       Create.cshtml
+    |   |   |       Delete.cshtml
+    |   |   |       Details.cshtml
+    |   |   |       Edit.cshtml
+    |   |   |       Index.cshtml
+    |   |   |       
+    |   |   +---Home
+    |   |   |       Index.cshtml
+    |   |   |       Privacy.cshtml
+    |   |   |       
+    |   |   +---Product
+    |   |   |       Create.cshtml
+    |   |   |       Detail.cshtml
+    |   |   |       Edit.cshtml
+    |   |   |       Index.cshtml
+    |   |   |       List.cshtml
+    |   |   |       
+    |   |   \---Shared
+    |   |           Error.cshtml
+    |   |           _Layout.cshtml
+    |   |           _Layout.cshtml.css
+    |   |           _ValidationScriptsPartial.cshtml
+    |   |           
+    |   \---wwwroot
+    |       |   favicon.ico
+    |       |   
+    |       +---css
+    |       |       site.css
+    |       |       
+    |       +---js
+    |       |       site.js
+    |       |       
+    |       \---lib
+    |           +---bootstrap
+    |           |   |   LICENSE
+    |           |   |   
+    |           |   \---dist
+    |           |       +---css
+    |           |       |       bootstrap-grid.css
+    |           |       |       bootstrap-grid.css.map
+    |           |       |       bootstrap-grid.min.css
+    |           |       |       bootstrap-grid.min.css.map
+    |           |       |       bootstrap-grid.rtl.css
+    |           |       |       bootstrap-grid.rtl.css.map
+    |           |       |       bootstrap-grid.rtl.min.css
+    |           |       |       bootstrap-grid.rtl.min.css.map
+    |           |       |       bootstrap-reboot.css
+    |           |       |       bootstrap-reboot.css.map
+    |           |       |       bootstrap-reboot.min.css
+    |           |       |       bootstrap-reboot.min.css.map
+    |           |       |       bootstrap-reboot.rtl.css
+    |           |       |       bootstrap-reboot.rtl.css.map
+    |           |       |       bootstrap-reboot.rtl.min.css
+    |           |       |       bootstrap-reboot.rtl.min.css.map
+    |           |       |       bootstrap-utilities.css
+    |           |       |       bootstrap-utilities.css.map
+    |           |       |       bootstrap-utilities.min.css
+    |           |       |       bootstrap-utilities.min.css.map
+    |           |       |       bootstrap-utilities.rtl.css
+    |           |       |       bootstrap-utilities.rtl.css.map
+    |           |       |       bootstrap-utilities.rtl.min.css
+    |           |       |       bootstrap-utilities.rtl.min.css.map
+    |           |       |       bootstrap.css
+    |           |       |       bootstrap.css.map
+    |           |       |       bootstrap.min.css
+    |           |       |       bootstrap.min.css.map
+    |           |       |       bootstrap.rtl.css
+    |           |       |       bootstrap.rtl.css.map
+    |           |       |       bootstrap.rtl.min.css
+    |           |       |       bootstrap.rtl.min.css.map
+    |           |       |       
+    |           |       \---js
+    |           |               bootstrap.bundle.js
+    |           |               bootstrap.bundle.js.map
+    |           |               bootstrap.bundle.min.js
+    |           |               bootstrap.bundle.min.js.map
+    |           |               bootstrap.esm.js
+    |           |               bootstrap.esm.js.map
+    |           |               bootstrap.esm.min.js
+    |           |               bootstrap.esm.min.js.map
+    |           |               bootstrap.js
+    |           |               bootstrap.js.map
+    |           |               bootstrap.min.js
+    |           |               bootstrap.min.js.map
+    |           |               
+    |           +---jquery
+    |           |   |   LICENSE.txt
+    |           |   |   
+    |           |   \---dist
+    |           |           jquery.js
+    |           |           jquery.min.js
+    |           |           jquery.min.map
+    |           |           
+    |           +---jquery-validation
+    |           |   |   LICENSE.md
+    |           |   |   
+    |           |   \---dist
+    |           |           additional-methods.js
+    |           |           additional-methods.min.js
+    |           |           jquery.validate.js
+    |           |           jquery.validate.min.js
+    |           |           
+    |           \---jquery-validation-unobtrusive
+    |                   jquery.validate.unobtrusive.js
+    |                   jquery.validate.unobtrusive.min.js
+    |                   LICENSE.txt
+    |                   
+    \---KE03_INTDEV_SE_2_Base-main
+        +---.vs
+        |   +---KE03_INTDEV_SE_2_Base
+        |   |   +---config
+        |   |   |       applicationhost.config
+        |   |   |       
+        |   |   +---DesignTimeBuild
+        |   |   |       .dtbcache.v2
+        |   |   |       
+        |   |   +---FileContentIndex
+        |   |   |       64390a88-cfb1-4c10-9cf5-7cda9a2902ab.vsidx
+        |   |   |       84cf5959-f572-42af-833c-f85295344451.vsidx
+        |   |   |       d26d94a4-5c1d-448b-8cc3-66b6829b6dc9.vsidx
+        |   |   |       
+        |   |   \---v18
+        |   |           .futdcache.v2
+        |   |           .suo
+        |   |           DocumentLayout.backup.json
+        |   |           DocumentLayout.json
+        |   |           
+        |   \---ProjectEvaluation
+        |           ke03_intdev_se_2_base.metadata.v10.bin
+        |           ke03_intdev_se_2_base.projects.v10.bin
+        |           ke03_intdev_se_2_base.strings.v10.bin
+        |           
+        +---DataAccessLayer
+        |   +---bin
+        |   |   \---Debug
+        |   |       \---net8.0
+        |   |               DataAccessLayer.deps.json
+        |   |               DataAccessLayer.dll
+        |   |               DataAccessLayer.pdb
+        |   |               
+        |   \---obj
+        |       |   DataAccessLayer.csproj.nuget.dgspec.json
+        |       |   DataAccessLayer.csproj.nuget.g.props
+        |       |   DataAccessLayer.csproj.nuget.g.targets
+        |       |   project.assets.json
+        |       |   project.nuget.cache
+        |       |   
+        |       \---Debug
+        |           \---net8.0
+        |               |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+        |               |   DataAccessLayer.AssemblyInfo.cs
+        |               |   DataAccessLayer.AssemblyInfoInputs.cache
+        |               |   DataAccessLayer.assets.cache
+        |               |   DataAccessLayer.csproj.AssemblyReference.cache
+        |               |   DataAccessLayer.csproj.BuildWithSkipAnalyzers
+        |               |   DataAccessLayer.csproj.CoreCompileInputs.cache
+        |               |   DataAccessLayer.csproj.FileListAbsolute.txt
+        |               |   DataAccessLayer.dll
+        |               |   DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+        |               |   DataAccessLayer.GlobalUsings.g.cs
+        |               |   DataAccessLayer.pdb
+        |               |   DataAccessLayer.sourcelink.json
+        |               |   
+        |               +---ref
+        |               |       DataAccessLayer.dll
+        |               |       
+        |               \---refint
+        |                       DataAccessLayer.dll
+        |                       
+        \---KE03_INTDEV_SE_2_Base
+            |   MatrixInc.db
+            |   MatrixInc.db-shm
+            |   MatrixInc.db-wal
+            |   
+            +---.idea
+            |   \---.idea.KE03_INTDEV_SE_2_Base.dir
+            |       \---.idea
+            |               .gitignore
+            |               encodings.xml
+            |               indexLayout.xml
+            |               vcs.xml
+            |               
+            +---bin
+            |   \---Debug
+            |       \---net8.0
+            |           |   appsettings.Development.json
+            |           |   appsettings.json
+            |           |   DataAccessLayer.dll
+            |           |   DataAccessLayer.pdb
+            |           |   dotnet-aspnet-codegenerator-design.dll
+            |           |   Humanizer.dll
+            |           |   KE03_INTDEV_SE_2_Base.deps.json
+            |           |   KE03_INTDEV_SE_2_Base.dll
+            |           |   KE03_INTDEV_SE_2_Base.exe
+            |           |   KE03_INTDEV_SE_2_Base.pdb
+            |           |   KE03_INTDEV_SE_2_Base.runtimeconfig.json
+            |           |   KE03_INTDEV_SE_2_Base.staticwebassets.endpoints.json
+            |           |   KE03_INTDEV_SE_2_Base.staticwebassets.runtime.json
+            |           |   Microsoft.AspNetCore.Razor.Language.dll
+            |           |   Microsoft.Bcl.AsyncInterfaces.dll
+            |           |   Microsoft.Build.dll
+            |           |   Microsoft.Build.Framework.dll
+            |           |   Microsoft.CodeAnalysis.AnalyzerUtilities.dll
+            |           |   Microsoft.CodeAnalysis.CSharp.dll
+            |           |   Microsoft.CodeAnalysis.CSharp.Features.dll
+            |           |   Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+            |           |   Microsoft.CodeAnalysis.dll
+            |           |   Microsoft.CodeAnalysis.Elfie.dll
+            |           |   Microsoft.CodeAnalysis.Features.dll
+            |           |   Microsoft.CodeAnalysis.Razor.dll
+            |           |   Microsoft.CodeAnalysis.Scripting.dll
+            |           |   Microsoft.CodeAnalysis.Workspaces.dll
+            |           |   Microsoft.Data.Sqlite.dll
+            |           |   Microsoft.DiaSymReader.dll
+            |           |   Microsoft.DotNet.Scaffolding.Shared.dll
+            |           |   Microsoft.EntityFrameworkCore.Abstractions.dll
+            |           |   Microsoft.EntityFrameworkCore.Design.dll
+            |           |   Microsoft.EntityFrameworkCore.dll
+            |           |   Microsoft.EntityFrameworkCore.Relational.dll
+            |           |   Microsoft.EntityFrameworkCore.Sqlite.dll
+            |           |   Microsoft.Extensions.Caching.Memory.dll
+            |           |   Microsoft.Extensions.DependencyInjection.Abstractions.dll
+            |           |   Microsoft.Extensions.DependencyInjection.dll
+            |           |   Microsoft.Extensions.DependencyModel.dll
+            |           |   Microsoft.Extensions.Logging.Abstractions.dll
+            |           |   Microsoft.Extensions.Logging.dll
+            |           |   Microsoft.Extensions.Options.dll
+            |           |   Microsoft.NET.StringTools.dll
+            |           |   Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+            |           |   Microsoft.VisualStudio.Web.CodeGeneration.dll
+            |           |   Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+            |           |   Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+            |           |   Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+            |           |   Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+            |           |   Microsoft.Win32.SystemEvents.dll
+            |           |   Mono.TextTemplating.dll
+            |           |   Newtonsoft.Json.dll
+            |           |   NuGet.Common.dll
+            |           |   NuGet.Configuration.dll
+            |           |   NuGet.DependencyResolver.Core.dll
+            |           |   NuGet.Frameworks.dll
+            |           |   NuGet.LibraryModel.dll
+            |           |   NuGet.Packaging.dll
+            |           |   NuGet.ProjectModel.dll
+            |           |   NuGet.Protocol.dll
+            |           |   NuGet.Versioning.dll
+            |           |   SQLitePCLRaw.batteries_v2.dll
+            |           |   SQLitePCLRaw.core.dll
+            |           |   SQLitePCLRaw.provider.e_sqlite3.dll
+            |           |   System.CodeDom.dll
+            |           |   System.Composition.AttributedModel.dll
+            |           |   System.Composition.Convention.dll
+            |           |   System.Composition.Hosting.dll
+            |           |   System.Composition.Runtime.dll
+            |           |   System.Composition.TypedParts.dll
+            |           |   System.Configuration.ConfigurationManager.dll
+            |           |   System.Drawing.Common.dll
+            |           |   System.Reflection.MetadataLoadContext.dll
+            |           |   System.Security.Cryptography.ProtectedData.dll
+            |           |   System.Security.Permissions.dll
+            |           |   System.Windows.Extensions.dll
+            |           |   
+            |           +---af
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---ar
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---az
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---bg
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---bn-BD
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---cs
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---da
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---de
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---el
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---es
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---fa
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---fi-FI
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---fr
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---fr-BE
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---he
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---hr
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---hu
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---hy
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---id
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---is
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---it
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---ja
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---ko
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---ko-KR
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---ku
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---lv
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---ms-MY
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---mt
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---nb
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---nb-NO
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---nl
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---pl
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---pt
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---pt-BR
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---ro
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---ru
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---runtimes
+            |           |   +---browser-wasm
+            |           |   |   \---nativeassets
+            |           |   |       \---net8.0
+            |           |   |               e_sqlite3.a
+            |           |   |               
+            |           |   +---linux-arm
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-arm64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-armel
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-mips64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-musl-arm
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-musl-arm64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-musl-x64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-ppc64le
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-s390x
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-x64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---linux-x86
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.so
+            |           |   |           
+            |           |   +---maccatalyst-arm64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.dylib
+            |           |   |           
+            |           |   +---maccatalyst-x64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.dylib
+            |           |   |           
+            |           |   +---osx-arm64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.dylib
+            |           |   |           
+            |           |   +---osx-x64
+            |           |   |   \---native
+            |           |   |           libe_sqlite3.dylib
+            |           |   |           
+            |           |   +---win
+            |           |   |   \---lib
+            |           |   |       \---net7.0
+            |           |   |               Microsoft.Win32.SystemEvents.dll
+            |           |   |               System.Drawing.Common.dll
+            |           |   |               System.Security.Cryptography.ProtectedData.dll
+            |           |   |               System.Windows.Extensions.dll
+            |           |   |               
+            |           |   +---win-arm
+            |           |   |   \---native
+            |           |   |           e_sqlite3.dll
+            |           |   |           
+            |           |   +---win-arm64
+            |           |   |   \---native
+            |           |   |           e_sqlite3.dll
+            |           |   |           
+            |           |   +---win-x64
+            |           |   |   \---native
+            |           |   |           e_sqlite3.dll
+            |           |   |           
+            |           |   \---win-x86
+            |           |       \---native
+            |           |               e_sqlite3.dll
+            |           |               
+            |           +---sk
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---sl
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---sr
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---sr-Latn
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---sv
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---th-TH
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---tr
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           +---uk
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---uz-Cyrl-UZ
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---uz-Latn-UZ
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---vi
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---zh-CN
+            |           |       Humanizer.resources.dll
+            |           |       
+            |           +---zh-Hans
+            |           |       Humanizer.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.resources.dll
+            |           |       Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |           |       Microsoft.CodeAnalysis.Features.resources.dll
+            |           |       Microsoft.CodeAnalysis.resources.dll
+            |           |       Microsoft.CodeAnalysis.Scripting.resources.dll
+            |           |       Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |           |       
+            |           \---zh-Hant
+            |                   Humanizer.resources.dll
+            |                   Microsoft.CodeAnalysis.CSharp.Features.resources.dll
+            |                   Microsoft.CodeAnalysis.CSharp.resources.dll
+            |                   Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+            |                   Microsoft.CodeAnalysis.Features.resources.dll
+            |                   Microsoft.CodeAnalysis.resources.dll
+            |                   Microsoft.CodeAnalysis.Scripting.resources.dll
+            |                   Microsoft.CodeAnalysis.Workspaces.resources.dll
+            |                   
+            \---obj
+                |   KE03_INTDEV_SE_2_Base.csproj.nuget.dgspec.json
+                |   KE03_INTDEV_SE_2_Base.csproj.nuget.g.props
+                |   KE03_INTDEV_SE_2_Base.csproj.nuget.g.targets
+                |   project.assets.json
+                |   project.nuget.cache
+                |   project.packagespec.json
+                |   rider.project.restore.info
+                |   
+                \---Debug
+                    \---net8.0
+                        |   .NETCoreApp,Version=v8.0.AssemblyAttributes.cs
+                        |   ApiEndpoints.json
+                        |   apphost.exe
+                        |   KE03_INT.D6BD825A.Up2Date
+                        |   KE03_INTDEV_SE_2_Base.AssemblyInfo.cs
+                        |   KE03_INTDEV_SE_2_Base.AssemblyInfoInputs.cache
+                        |   KE03_INTDEV_SE_2_Base.assets.cache
+                        |   KE03_INTDEV_SE_2_Base.csproj.AssemblyReference.cache
+                        |   KE03_INTDEV_SE_2_Base.csproj.BuildWithSkipAnalyzers
+                        |   KE03_INTDEV_SE_2_Base.csproj.CoreCompileInputs.cache
+                        |   KE03_INTDEV_SE_2_Base.csproj.FileListAbsolute.txt
+                        |   KE03_INTDEV_SE_2_Base.dll
+                        |   KE03_INTDEV_SE_2_Base.GeneratedMSBuildEditorConfig.editorconfig
+                        |   KE03_INTDEV_SE_2_Base.genruntimeconfig.cache
+                        |   KE03_INTDEV_SE_2_Base.GlobalUsings.g.cs
+                        |   KE03_INTDEV_SE_2_Base.MvcApplicationPartsAssemblyInfo.cache
+                        |   KE03_INTDEV_SE_2_Base.pdb
+                        |   KE03_INTDEV_SE_2_Base.RazorAssemblyInfo.cache
+                        |   KE03_INTDEV_SE_2_Base.RazorAssemblyInfo.cs
+                        |   KE03_INTDEV_SE_2_Base.sourcelink.json
+                        |   rjimswa.dswa.cache.json
+                        |   rjsmcshtml.dswa.cache.json
+                        |   rjsmrazor.dswa.cache.json
+                        |   rpswa.dswa.cache.json
+                        |   staticwebassets.build.endpoints.json
+                        |   staticwebassets.build.json
+                        |   staticwebassets.build.json.cache
+                        |   staticwebassets.development.json
+                        |   staticwebassets.references.upToDateCheck.txt
+                        |   staticwebassets.removed.txt
+                        |   staticwebassets.upToDateCheck.txt
+                        |   swae.build.ex.cache
+                        |   
+                        +---ref
+                        |       KE03_INTDEV_SE_2_Base.dll
+                        |       
+                        +---refint
+                        |       KE03_INTDEV_SE_2_Base.dll
+                        |       
+                        \---scopedcss
+                            +---bundle
+                            |       KE03_INTDEV_SE_2_Base.styles.css
+                            |       
+                            +---projectbundle
+                            |       KE03_INTDEV_SE_2_Base.bundle.scp.css
+                            |       
+                            \---Views
+                                \---Shared
+                                        _Layout.cshtml.rz.scp.css
+                                        
