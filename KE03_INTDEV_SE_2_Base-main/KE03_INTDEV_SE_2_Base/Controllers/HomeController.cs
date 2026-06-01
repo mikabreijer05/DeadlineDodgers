@@ -1,10 +1,12 @@
-using System.Diagnostics;
 using KE03_INTDEV_SE_2_Base.Models;
+using KE03_INTDEV_SE_2_Base_main.Models; // Make sure this matches your project's namespace!
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 
-namespace KE03_INTDEV_SE_2_Base.Controllers
+namespace KE03_INTDEV_SE_2_Base_main.Controllers
 {
-    public class HomeController : ProductController
+    public class HomeController : Controller   // <---- Correct inheritance here!
     {
         private readonly ILogger<HomeController> _logger;
 
