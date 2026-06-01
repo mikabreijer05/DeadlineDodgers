@@ -1,22 +1,206 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+:root {
+    /* Matrix Greens */
+    --matrix-primary: #00ff41;
+    --matrix-primary-2: #39ff14;
+    --matrix-primary-3: #00cc33;
+    --matrix-primary-4: #00ff7f;
+    --matrix-primary-5: #00aa22;
+    --matrix-muted-foreground: #008f11;
+    /* Backgrounds */
+    --matrix-bg: #000000;
+    --matrix-card: #0a0e0a;
+    --matrix-secondary: #003b00;
+    --matrix-muted: #0d1f0d;
+    --matrix-input-bg: #001a00;
+    /* Special */
+    --matrix-destructive: #ff0000;
 }
 
 body {
-  margin-bottom: 60px;
+    background: var(--matrix-bg);
+    color: var(--matrix-primary);
+    font-family: 'Fira Mono', Consolas, 'Courier New', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+.header, .sidebar {
+    background: var(--matrix-card);
+    border-bottom: 2px solid var(--matrix-primary);
+    color: var(--matrix-primary);
+    padding: 16px 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar {
+    width: 200px;
+    min-height: 100vh;
+    float: left;
+    border-right: 2px solid var(--matrix-primary-2);
+    padding: 24px 12px;
+}
+
+.main-content {
+    margin-left: 220px;
+    padding: 32px 24px;
+    background: var(--matrix-bg);
+    min-height: 100vh;
+}
+
+.card {
+    background: var(--matrix-card);
+    border: 1px solid var(--matrix-primary-2);
+    padding: 16px 24px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--matrix-primary-2);
+    margin-top: 0;
+}
+
+a, .btn {
+    color: var(--matrix-primary);
+    border: 1px solid var(--matrix-primary);
+    background: transparent;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+    a:hover, .btn:hover {
+        background: var(--matrix-primary);
+        color: var(--matrix-bg);
+    }
+
+.btn {
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.btn-danger {
+    color: var(--matrix-destructive);
+    border: 1px solid var(--matrix-destructive);
+}
+
+    .btn-danger:hover {
+        background: var(--matrix-destructive);
+        color: var(--matrix-bg);
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--matrix-card);
+    margin-bottom: 36px;
+}
+
+th, td {
+    border-bottom: 1px solid var(--matrix-primary-2);
+    padding: 12px 12px;
+    color: var(--matrix-primary);
+}
+
+th {
+    background: var(--matrix-secondary);
+    text-align: left;
+    font-weight: 600;
+    color: var(--matrix-primary-4);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+img.product-img {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border: 1px solid var(--matrix-primary-2);
+    border-radius: 6px;
+    background: var(--matrix-muted);
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+input, textarea, select {
+    background: var(--matrix-input-bg);
+    color: var(--matrix-primary);
+    border: 1px solid transparent;
+    padding: 7px 11px;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    input:focus, textarea:focus, select:focus {
+        outline: 2px solid var(--matrix-primary);
+    }
+
+label {
+    color: var(--matrix-primary-2);
+    font-weight: 500;
+}
+
+.form-section {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+}
+
+.form-section-image {
+    flex: 0 0 180px;
+}
+
+.form-section-fields {
+    flex: 1 1 auto;
+}
+
+.notes-section {
+    margin-top: 18px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--matrix-secondary);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--matrix-bg);
+}
+
+/* Responsive basic */
+@media (max-width: 800px) {
+    .main-content {
+        margin-left: 0;
+        padding: 8px;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: unset;
+        float: none;
+        padding: 12px;
+        border-right: none;
+        border-bottom: 2px solid var(--matrix-primary-2);
+    }
+
+    .form-section {
+        flex-direction: column;
+    }
 }

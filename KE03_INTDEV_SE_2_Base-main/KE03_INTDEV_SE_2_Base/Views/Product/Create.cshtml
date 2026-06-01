@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model KE03_INTDEV_SE_2_Base_main.Models.Product
+
+    <div class="header">
+        <h1>Add Product</h1>
+        <a class="btn" href="/Product/Index">&larr; Back to List</a>
+    </div>
+
+    <div class="main-content">
+        <div class="card">
+            <form method="post">
+                <div class="form-section">
+                    <div class="form-section-image">
+                        <label>Product Image</label><br />
+                        <img class="product-img" src="@Model.ImageUrl" alt="Product image" style="width:120px;" /><br />
+                        <input type="text" name="ImageUrl" value="@Model.ImageUrl" placeholder="Image URL" />
+                    </div>
+
+                    <div class="form-section-fields">
+                        <label>Name</label>
+                        <input type="text" name="Name" value="@Model.Name" />
+                        <div class="danger">@Html.ValidationMessage("Name")</div>
+
+                        <label>Category</label>
+                        <input type="text" name="Category" value="@Model.Category" />
+
+                        <label>Price</label>
+                        <input type="number" name="Price" value="@Model.Price" step="0.01" />
+                        <div class="danger">@Html.ValidationMessage("Price")</div>
+
+                        <label>Description</label>
+                        <input type="text" name="Description" value="@Model.Description" />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn">Create</button>
+            </form>
+        </div>
+    </div>
+}
