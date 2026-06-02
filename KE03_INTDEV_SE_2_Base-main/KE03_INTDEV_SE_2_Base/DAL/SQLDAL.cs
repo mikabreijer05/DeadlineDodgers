@@ -4,7 +4,7 @@ namespace KE03_INTDEV_SE_2_Base.DAL;
 public class SQLDAL
 {
     private readonly string _serverAddress = "matrixincserver.database.windows.net";
-    private readonly string _databaseName = "MatrixInc";
+    private readonly string _databaseName = "TryoutDatabase";
 
     public SQLDAL(string serverAddress, string databaseName)
     {

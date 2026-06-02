@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using KE03_INTDEV_SE_2_Base_main.Models;
 
-namespace KE03_INTDEV_SE_2_Base_main.Models;
+namespace KE03_INTDEV_SE_2_Base.Models;
 
 public class OrderLine
 {

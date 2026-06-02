@@ -4,36 +4,36 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using DataAccessLayer.Models;
+using KE03_INTDEV_SE_2_Base.DAL;
+using KE03_INTDEV_SE_2_Base.Models;
 
 namespace KE03_INTDEV_SE_2_Base
 {
     public class CustomersController : Controller
     {
-        private readonly MatrixIncDbContext _context;
 
-        public CustomersController(MatrixIncDbContext context)
+        private readonly SQLCustomer _customers;
+
+        public CustomersController(SQLCustomer customers)
         {
-            _context = context;
+            _customers = customers;
         }
 
         // GET: Customers
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Customers.ToListAsync());
+            return View(_customers.GetAllCustomers());
         }
 
         // GET: Customers/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var customer = await _context.Customers
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var customer = _customers.GetCustomerById(id.Value);
             if (customer == null)
             {
                 return NotFound();
@@ -53,26 +53,25 @@ namespace KE03_INTDEV_SE_2_Base
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Address,Active")] Customer customer)
+        public IActionResult Create([Bind("Id,Name,Address,Active")] Customer customer)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(customer);
-                await _context.SaveChangesAsync();
+                _customers.AddCustomer(customer);
                 return RedirectToAction(nameof(Index));
             }
             return View(customer);
         }
 
         // GET: Customers/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var customer = await _context.Customers.FindAsync(id);
+            var customer = _customers.GetCustomerById(id.Value);
             if (customer == null)
             {
                 return NotFound();
@@ -85,7 +84,7 @@ namespace KE03_INTDEV_SE_2_Base
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Address,Active")] Customer customer)
+        public IActionResult Edit(int id, [Bind("Id,Name,Address,Active")] Customer customer)
         {
             if (id != customer.Id)
             {
@@ -94,37 +93,26 @@ namespace KE03_INTDEV_SE_2_Base
 
             if (ModelState.IsValid)
             {
-                try
+                if (!CustomerExists(customer.Id))
                 {
-                    _context.Update(customer);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CustomerExists(customer.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+
+                _customers.UpdateCustomer(customer);
                 return RedirectToAction(nameof(Index));
             }
             return View(customer);
         }
 
         // GET: Customers/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var customer = await _context.Customers
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var customer = _customers.GetCustomerById(id.Value);
             if (customer == null)
             {
                 return NotFound();
@@ -136,21 +124,15 @@ namespace KE03_INTDEV_SE_2_Base
         // POST: Customers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var customer = await _context.Customers.FindAsync(id);
-            if (customer != null)
-            {
-                _context.Customers.Remove(customer);
-            }
-
-            await _context.SaveChangesAsync();
+            _customers.DeleteCustomer(id);
             return RedirectToAction(nameof(Index));
         }
 
         private bool CustomerExists(int id)
         {
-            return _context.Customers.Any(e => e.Id == id);
+            return _customers.GetCustomerById(id) != null;
         }
     }
 }
