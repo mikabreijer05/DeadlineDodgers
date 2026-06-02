@@ -4,6 +4,15 @@
     <projectFile profileName="http">KE03_INTDEV_SE_2_Base.csproj</projectFile>
     <projectFile profileName="https">KE03_INTDEV_SE_2_Base.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="32442e40-9757-47cc-b3cf-df7ef881434e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="104" />
+    <option name="cachedIndexableFilesCount" value="3" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -22,10 +31,10 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5,
-  "fromUser": false
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
   <component name="ProjectId" id="3EahuE297HR3ZWOBTRBoZUPMl1z" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -43,6 +52,12 @@
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/camille/GitHub/DeadlineDodgers/KE03_INTDEV_SE_1_Base-main/KE03_INTDEV_SE_1_Base/KE03_INTDEV_SE_1_Base.csproj",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -88,6 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1780422808285</updated>
       <workItem from="1780422809966" duration="33000" />
+      <workItem from="1780428365244" duration="548000" />
     </task>
     <servers />
   </component>

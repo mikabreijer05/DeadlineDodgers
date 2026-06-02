@@ -1,4 +1,5 @@
-using DataAccessLayer.Interfaces;
+
+using KE03_INTDEV_SE_1_Base.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -6,11 +7,11 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 {
     public class OrderHistoryModel : PageModel
     {
-        private readonly IOrderRepository _orderRepository;
+        private readonly SQLOrder _orderService;
 
-        public OrderHistoryModel(IOrderRepository orderRepository)
+        public OrderHistoryModel(SQLOrder orderService)
         {
-            _orderRepository = orderRepository;
+            _orderService = orderService;
         }
 
         public List<OrderHistoryViewModel> Orders { get; set; } = new List<OrderHistoryViewModel>();
@@ -23,7 +24,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
                 return RedirectToPage("/Index");
             }
 
-            Orders = _orderRepository.GetOrdersByCustomerId(customerId)
+            Orders = _orderService.GetOrdersByCustomerId(customerId)
                 .Select(order => new OrderHistoryViewModel
                 {
                     OrderNumber = order.Id.ToString(),
@@ -44,22 +45,16 @@ namespace KE03_INTDEV_SE_1_Base.Pages
     public class OrderHistoryViewModel
     {
         public string OrderNumber { get; set; }
-
         public DateTime OrderDate { get; set; }
-
         public List<OrderProductViewModel> Products { get; set; } = new List<OrderProductViewModel>();
-
         public decimal TotalPrice => Products.Sum(product => product.TotalPrice);
     }
 
     public class OrderProductViewModel
     {
         public string ProductName { get; set; }
-
         public int Quantity { get; set; }
-
         public decimal PricePerProduct { get; set; }
-
         public decimal TotalPrice => Quantity * PricePerProduct;
     }
 }

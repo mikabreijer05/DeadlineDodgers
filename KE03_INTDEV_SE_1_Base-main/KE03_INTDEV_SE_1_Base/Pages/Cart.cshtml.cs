@@ -1,5 +1,6 @@
-using DataAccessLayer.Interfaces;
-using DataAccessLayer.Models;
+
+using KE03_INTDEV_SE_1_Base.DAL;
+using KE03_INTDEV_SE_1_Base.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -7,15 +8,13 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 {
     public class cartModel : PageModel
     {
-        private readonly IOrderRepository _orderRepository;
-        private readonly IProductRepository _productRepository;
+        private readonly SQLOrder _orderService;
+        private readonly SQLProducts _productService;
 
-        public cartModel(
-            IOrderRepository orderRepository,
-            IProductRepository productRepository)
+        public cartModel(SQLOrder orderService, SQLProducts productService)
         {
-            _orderRepository = orderRepository;
-            _productRepository = productRepository;
+            _orderService = orderService;
+            _productService = productService;
         }
 
         public void OnGet()
@@ -27,11 +26,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
             if (!Request.Cookies.TryGetValue("LoggedInCustomerId", out var customerIdCookie) ||
                 !int.TryParse(customerIdCookie, out var customerId))
             {
-                return new JsonResult(new
-                {
-                    success = false,
-                    message = "Je moet ingelogd zijn om te bestellen."
-                })
+                return new JsonResult(new { success = false, message = "Je moet ingelogd zijn om te bestellen." })
                 {
                     StatusCode = 401
                 };
@@ -39,11 +34,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
             if (request.Items == null || request.Items.Count == 0)
             {
-                return new JsonResult(new
-                {
-                    success = false,
-                    message = "Je winkelwagen is leeg."
-                })
+                return new JsonResult(new { success = false, message = "Je winkelwagen is leeg." })
                 {
                     StatusCode = 400
                 };
@@ -57,8 +48,7 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
             foreach (var cartItem in request.Items)
             {
-                var product = _productRepository.GetProductById(cartItem.ProductId);
-
+                var product = _productService.GetProductById(cartItem.ProductId);
                 if (product == null)
                 {
                     continue;
@@ -74,24 +64,18 @@ namespace KE03_INTDEV_SE_1_Base.Pages
 
             if (!order.OrderLines.Any())
             {
-                return new JsonResult(new
-                {
-                    success = false,
-                    message = "Geen geldige producten gevonden."
-                })
+                return new JsonResult(new { success = false, message = "Geen geldige producten gevonden." })
                 {
                     StatusCode = 400
                 };
             }
 
-            _orderRepository.AddOrder(order);
+            _orderService.AddOrder(order);
 
-            return new JsonResult(new
-            {
-                success = true
-            });
+            return new JsonResult(new { success = true });
         }
     }
+
     public class CheckoutRequest
     {
         public List<CheckoutItemRequest> Items { get; set; } = new List<CheckoutItemRequest>();
@@ -100,7 +84,6 @@ namespace KE03_INTDEV_SE_1_Base.Pages
     public class CheckoutItemRequest
     {
         public int ProductId { get; set; }
-
         public int Quantity { get; set; }
     }
 }
