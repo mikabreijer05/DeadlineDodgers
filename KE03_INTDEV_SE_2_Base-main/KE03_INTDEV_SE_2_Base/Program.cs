@@ -1,7 +1,4 @@
-using DataAccessLayer;
-using DataAccessLayer.Interfaces;
-using DataAccessLayer.Repositories;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace KE03_INTDEV_SE_2_Base
 {
@@ -9,40 +6,7 @@ namespace KE03_INTDEV_SE_2_Base
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
-
-            builder.Services.Configure<MatrixIncOptions>(o =>
-            {
-                o.ConnectionString = builder.Configuration.GetConnectionString("MatrixInc")!;
-            });
-
-            builder.Services.AddScoped<DbConnectionFactory>();
-
-
-
-
-
-
-
-
-
-
-
-            var builder = WebApplication.CreateBuilder(args);
-
-            // Add services to the container.
-            // We gebruiken voor nu even een SQLite voor de database,
-            // omdat deze eenvoudig lokaal te gebruiken is en geen extra configuratie nodig heeft.
-            builder.Services.AddDbContext<MatrixIncDbContext>(
-                options => options.UseSqlite("Data Source=MatrixInc.db"));
-            builder.Services.AddControllersWithViews();
-
-            // We registreren de repositories in de DI container
-            builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
-            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-            builder.Services.AddScoped<IProductRepository, ProductRepository>();
-            builder.Services.AddScoped<IPartRepository, PartRepository>();
-
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
