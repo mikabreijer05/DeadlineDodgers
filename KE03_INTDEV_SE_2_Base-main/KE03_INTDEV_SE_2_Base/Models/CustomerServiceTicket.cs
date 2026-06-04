@@ -5,6 +5,10 @@ namespace KE03_INTDEV_SE_2_Base.Models;
 public class CustomerServiceTicket
 {
     public int Id { get; set; }
+
+    public string Title { get; set; }
+
+    
     public DateTime DateCreated { get; set; }
     public int CustomerId { get; set; }
     public Customer Customer { get; set; }

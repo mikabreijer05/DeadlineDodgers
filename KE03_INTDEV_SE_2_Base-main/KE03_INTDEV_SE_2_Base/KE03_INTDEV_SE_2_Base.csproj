@@ -17,7 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< Updated upstream
     <Folder Include="Views\Orders\" />
+=======
+    <Folder Include="Views\CustomerSupport\" />
+>>>>>>> Stashed changes
   </ItemGroup>
 
 </Project>
