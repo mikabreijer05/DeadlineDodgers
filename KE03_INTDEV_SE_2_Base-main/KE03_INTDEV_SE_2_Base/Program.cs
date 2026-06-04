@@ -15,6 +15,7 @@ namespace KE03_INTDEV_SE_2_Base
             builder.Services.AddScoped<SQLCustomer>();
             builder.Services.AddScoped<SQLOrder>();
             builder.Services.AddScoped<SQLProducts>();
+            builder.Services.AddScoped<SQLCustomerService>();
 
             var app = builder.Build();
 
