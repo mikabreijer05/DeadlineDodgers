@@ -15,6 +15,7 @@ namespace KE03_INTDEV_SE_1_Base
             builder.Services.AddScoped<SQLOrder>();
             builder.Services.AddScoped<SQLProducts>();
             builder.Services.AddScoped<SQLCustomerService>();
+            builder.Services.AddScoped<SQLReview>();
 
             // Add services to the container.
             builder.Services.AddRazorPages();
