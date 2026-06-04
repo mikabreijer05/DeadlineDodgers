@@ -10,14 +10,11 @@
         public decimal Price { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-
-<<<<<<< Updated upstream
+        
         public ICollection<Order> Orders { get; } = new List<Order>();
         public string? ProductDimensions { get; set; }
-=======
         // Category relation
         public int CategoryId { get; set; }
->>>>>>> Stashed changes
 
         // Extra fields from SQL table
         public int Quantity { get; set; }
