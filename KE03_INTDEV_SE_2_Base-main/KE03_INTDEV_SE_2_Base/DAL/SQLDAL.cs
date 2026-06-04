@@ -1,4 +1,5 @@
 using Microsoft.Data.SqlClient;
+
 namespace KE03_INTDEV_SE_2_Base.DAL;
 
 public class SQLDAL
@@ -6,6 +7,7 @@ public class SQLDAL
     private readonly string _serverAddress = "matrixincserver.database.windows.net";
     private readonly string _databaseName = "TryoutDatabase";
 
+    // Kept both constructors, but fixed assignment issue
     public SQLDAL(string serverAddress, string databaseName)
     {
         _serverAddress = serverAddress;

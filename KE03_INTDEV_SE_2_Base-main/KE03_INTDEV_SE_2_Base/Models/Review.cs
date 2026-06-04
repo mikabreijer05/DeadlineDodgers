@@ -2,7 +2,7 @@ namespace KE03_INTDEV_SE_2_Base.Models;
 
 public class Review
 {
-    public int Id { get; set; }
+    public int ReviewId { get; set; }
     
     public int ProductId { get; set; }
     

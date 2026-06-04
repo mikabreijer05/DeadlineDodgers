@@ -1,33 +1,82 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model KE03_INTDEV_SE_2_Base.Models.Product
 
-<div class="header">
-    <h1>Edit Product</h1>
-    <a class="btn" href="/Product/Index">&larr; Back to List</a>
-</div>
+@{
+    ViewData["Title"] = "Edit Product";
+}
 
-<div class="main-content">
-    <div class="card">
-        <form method="post">
-            <div class="form-section">
-                <div class="form-section-image">
-                    <label>Product Image</label><br />
-                    <img class="product-img" src="@Model.ImageUrl" alt="@Model.Name" style="width:120px;" /><br />
-                    <input type="text" name="ImageUrl" value="@Model.ImageUrl" placeholder="Image URL" />
-                </div>
-                <div class="form-section-fields">
-                    <input type="hidden" name="Id" value="@Model.Id" />
-                    <label>Name</label>
-                    <input type="text" name="Name" value="@Model.Name" /><br />
-                    <label>Category</label>
-                    <input type="text" name="Category" value="@Model.Category" /><br />
-                    <label>Price</label>
-                    <input type="number" name="Price" value="@Model.Price" step="0.01" /><br />
-                    <label>Description</label>
-                    <input type="text" name="Description" value="@Model.Description" /><br />
-                </div>
-            </div>
-        </form>
+<h1>Edit Product</h1>
+
+<form asp-action="Edit" method="post">
+
+    <!-- Product Id -->
+    <input type="hidden" asp-for="Id" />
+
+    <!-- Product Name -->
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
     </div>
-</div>
+
+    <!-- Product Price -->
+    <div>
+        <label asp-for="Price"></label>
+        <input asp-for="Price" />
+    </div>
+
+    <!-- Product Description -->
+    <div>
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+    </div>
+
+    <!-- Product Image -->
+    <div>
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" />
+    </div>
+
+    <!-- Product Quantity -->
+    <div>
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity" />
+    </div>
+
+    <!-- DDC Id -->
+    <div>
+        <label asp-for="DDCId"></label>
+        <input asp-for="DDCId" />
+    </div>
+
+    <!-- Delivery Time -->
+    <div>
+        <label asp-for="DeliveryTime"></label>
+        <input asp-for="DeliveryTime" />
+    </div>
+
+    <!-- Discount Id -->
+    <div>
+        <label asp-for="DiscountId"></label>
+        <input asp-for="DiscountId" />
+    </div>
+
+    <!-- Product Cost -->
+    <div>
+        <label asp-for="Cost"></label>
+        <input asp-for="Cost" />
+    </div>
+
+    <!-- Product Dimensions -->
+    <div>
+        <label asp-for="Dimensions"></label>
+        <input asp-for="Dimensions" />
+    </div>
+
+    <!-- Category -->
+    <div>
+        <label asp-for="CategoryId"></label>
+        <input asp-for="CategoryId" />
+    </div>
+
+    <button type="submit">Save</button>
+
+</form>

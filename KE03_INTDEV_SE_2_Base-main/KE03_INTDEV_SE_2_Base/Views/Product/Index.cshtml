@@ -29,20 +29,16 @@
                             @p.Name
                         </td>
 
-                        <td>@p.Category</td>
+                        <!-- FIX: CategoryId instead of Category -->
+                        <td>@p.CategoryId</td>
 
                         <td>@p.Price.ToString("C")</td>
 
                         <td>@p.Description</td>
 
                         <td>
-                            <a class="btn" href="/Product/Edit/@p.Id">
-                                &#9998;
-                            </a>
-
-                            <a class="btn btn-danger" href="#">
-                                &#128465;
-                            </a>
+                            <a class="btn" href="/Product/Edit/@p.Id">✎</a>
+                            <a class="btn btn-danger" href="/Product/Delete/@p.Id">🗑</a>
                         </td>
                     </tr>
                 }

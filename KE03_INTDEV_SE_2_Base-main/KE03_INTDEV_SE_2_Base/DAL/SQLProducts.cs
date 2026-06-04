@@ -1,5 +1,4 @@
 using Dapper;
-using KE03_INTDEV_SE_2_Base_main.Models;
 using KE03_INTDEV_SE_2_Base.Models;
 
 namespace KE03_INTDEV_SE_2_Base.DAL;
@@ -8,71 +7,36 @@ public class SQLProducts : SQLDAL
 {
     public IEnumerable<Product> GetAllProducts()
     {
-
         const string sql = @"
-            SELECT
-                p.ProductId       AS Id,
-                p.ProdName        AS Name,
-                c.CatName         AS Category,
-                p.ProdPrice       AS Price,
-                p.ProdImage       AS ImageUrl,
-                p.ProdDescription AS Description,
-
-                r.RevId             AS Id,
-                r.ProdId            AS ProductId,
-                r.ReviewRating      AS Rating,
-                r.ReviewTitle       AS Title,
-                r.reviewDescription AS Comment,
-                r.reviewDate        AS CreatedDate,
-                a.AccName           AS Username,
-
-                CASE WHEN r.ReviewStatus = 'Verified' THEN 1 ELSE 0 END AS IsVerified
-
-            FROM dbo.Product p
-            LEFT JOIN dbo.ProductCategory pc ON pc.ProductId = p.ProductId
-            LEFT JOIN dbo.Category c          ON c.CatId = pc.CategoryId
-            LEFT JOIN dbo.Review r            ON r.ProdId = p.ProductId
-            LEFT JOIN dbo.Account a           ON a.AccId = r.reviewAccount;
-        ";
-
-        var productMap = new Dictionary<int, Product>();
+    SELECT
+        p.ProductId          AS Id,
+        p.ProdName           AS Name,
+        p.ProdPrice          AS Price,
+        p.ProdDescription    AS Description,
+        p.ProdImage          AS ImageUrl,
+        p.ProdQuantity       AS Quantity,
+        p.DDCId              AS DDCId,
+        p.ProdDeliveryTime   AS DeliveryTime,
+        p.KortingId          AS DiscountId,
+        p.ProdCost           AS Cost,
+        p.ProdDimensions     AS Dimensions,
+        pc.CategoryId        AS CategoryId
+    FROM dbo.Product p
+    LEFT JOIN dbo.ProductCategory pc
+        ON pc.ProductId = p.ProductId;
+";  
 
         try
         {
             connection.Open();
-
-            connection.Query<Product, Review, Product>(
-                sql,
-                (product, review) =>
-                {
-                    if (!productMap.TryGetValue(product.Id, out var existingProduct))
-                    {
-                        existingProduct = product;
-                        productMap.Add(existingProduct.Id, existingProduct);
-                    }
-
-                    if (review != null && review.Id > 0)
-                    {
-                        existingProduct.Reviews.Add(review);
-                    }
-
-                    return existingProduct;
-                },
-                splitOn: "Id"
-            );
-
-            return productMap.Values.ToList();
+            return connection.Query<Product>(sql).ToList();
         }
         finally
         {
             CloseConnection();
         }
-        throw new Exception("DAL is being called");
     }
 
-    // -----------------------------
-    // GET SINGLE PRODUCT
-    // -----------------------------
     public Product GetProductById(int id)
     {
         const string sql = @"
@@ -89,7 +53,18 @@ public class SQLProducts : SQLDAL
         try
         {
             connection.Open();
-            return connection.QueryFirstOrDefault<Product>(sql, new { Id = id });
+
+            var product = connection.QueryFirstOrDefault<Product>(sql, new { Id = id });
+
+            if (product != null)
+            {
+                product.CategoryId = connection.QueryFirstOrDefault<int?>(
+                    "SELECT CategoryId FROM dbo.ProductCategory WHERE ProductId = @Id",
+                    new { Id = id }
+                ) ?? 0;
+            }
+
+            return product;
         }
         finally
         {
@@ -97,9 +72,6 @@ public class SQLProducts : SQLDAL
         }
     }
 
-    // -----------------------------
-    // ADD PRODUCT
-    // -----------------------------
     public void AddProduct(Product product)
     {
         const string sql = @"
@@ -118,25 +90,36 @@ public class SQLProducts : SQLDAL
         }
     }
 
-    // -----------------------------
-    // UPDATE PRODUCT
-    // -----------------------------
     public void UpdateProduct(Product product)
     {
-        const string sql = @"
-            UPDATE dbo.Product
-            SET
-                ProdName = @Name,
-                ProdPrice = @Price,
-                ProdImage = @ImageUrl,
-                ProdDescription = @Description
-            WHERE ProductId = @Id;
-        ";
-
         try
         {
             connection.Open();
-            connection.Execute(sql, product);
+
+            const string updateSql = @"
+                UPDATE dbo.Product
+                SET
+                    ProdName = @Name,
+                    ProdPrice = @Price,
+                    ProdImage = @ImageUrl,
+                    ProdDescription = @Description
+                WHERE ProductId = @Id;
+            ";
+
+            connection.Execute(updateSql, product);
+
+            connection.Execute(
+                "DELETE FROM dbo.ProductCategory WHERE ProductId = @Id",
+                new { product.Id }
+            );
+
+            if (product.CategoryId > 0)
+            {
+                connection.Execute(
+                    "INSERT INTO dbo.ProductCategory (ProductId, CategoryId) VALUES (@ProductId, @CategoryId)",
+                    new { ProductId = product.Id, CategoryId = product.CategoryId }
+                );
+            }
         }
         finally
         {
@@ -144,20 +127,21 @@ public class SQLProducts : SQLDAL
         }
     }
 
-    // -----------------------------
-    // DELETE PRODUCT
-    // -----------------------------
     public void DeleteProduct(int id)
     {
-        const string sql = @"
-            DELETE FROM dbo.Product
-            WHERE ProductId = @Id;
-        ";
-
         try
         {
             connection.Open();
-            connection.Execute(sql, new { Id = id });
+
+            connection.Execute(
+                "DELETE FROM dbo.ProductCategory WHERE ProductId = @Id",
+                new { Id = id }
+            );
+
+            connection.Execute(
+                "DELETE FROM dbo.Product WHERE ProductId = @Id",
+                new { Id = id }
+            );
         }
         finally
         {
