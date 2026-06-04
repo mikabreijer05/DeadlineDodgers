@@ -1,43 +1,52 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<KE03_INTDEV_SE_2_Base.Models.Product>
 
-    <div class="header">
-        <h1>PRODUCTS</h1>
-        <a class="btn" href="/Product/Create">+ ADD PRODUCT</a>
-    </div>
+<div class="header">
+    <h1>PRODUCTS</h1>
+    <a class="btn" href="/Product/Create">+ ADD PRODUCT</a>
+</div>
 
-    <div class="main-content">
-        <div class="card">
-            <table>
-                <thead>
+<div class="main-content">
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>PRODUCT</th>
+                    <th>CATEGORY</th>
+                    <th>PRICE</th>
+                    <th>DESCRIPTION</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var p in Model)
+                {
                     <tr>
-                        <th>PRODUCT</th>
-                        <th>CATEGORY</th>
-                        <th>PRICE</th>
-                        <th>DESCRIPTION</th>
-                        <th>ACTIONS</th>
+                        <td>
+                            <img class="product-img"
+                                 src="@p.ImageUrl"
+                                 alt="@p.Name" />
+                            @p.Name
+                        </td>
+
+                        <td>@p.Category</td>
+
+                        <td>@p.Price.ToString("C")</td>
+
+                        <td>@p.Description</td>
+
+                        <td>
+                            <a class="btn" href="/Product/Edit/@p.Id">
+                                &#9998;
+                            </a>
+
+                            <a class="btn btn-danger" href="#">
+                                &#128465;
+                            </a>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach (var p in Model)
-                    {
-                        <tr>
-                            <td>
-                                <img class="product-img" src="@p.ImageUrl" alt="@p.Name" />
-                                @p.Name
-                            </td>
-                            <td>@p.Category</td>
-                            <td>@p.Price.ToString("C")</td>
-                            <td>@p.Description</td>
-                            <td>
-                                <a class="btn" href="/Product/Edit/@p.Id">&#9998;</a>
-                                <a class="btn btn-danger" href="#">&#128465;</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+                }
+            </tbody>
+        </table>
     </div>
-}
+</div>
