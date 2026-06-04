@@ -13,6 +13,7 @@ namespace KE03_INTDEV_SE_2_Base.Models
         public string Description { get; set; }
 
         public ICollection<Order> Orders { get; } = new List<Order>();
+        public string? ProductDimensions { get; set; }
 
         public ICollection<Review> Reviews { get; } = new List<Review>();
     }
