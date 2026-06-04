@@ -1,15 +1,18 @@
 :root {
+    /* Matrix Greens */
     --matrix-primary: #00ff41;
     --matrix-primary-2: #39ff14;
     --matrix-primary-3: #00cc33;
     --matrix-primary-4: #00ff7f;
     --matrix-primary-5: #00aa22;
     --matrix-muted-foreground: #008f11;
+    /* Backgrounds */
     --matrix-bg: #000000;
     --matrix-card: #0a0e0a;
     --matrix-secondary: #003b00;
     --matrix-muted: #0d1f0d;
     --matrix-input-bg: #001a00;
+    /* Special */
     --matrix-destructive: #ff0000;
 }
 
@@ -30,7 +33,7 @@ html, body {
 .matrix-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     background: var(--matrix-card);
     border-bottom: 1px solid var(--matrix-primary);
     padding: 14px 20px;
