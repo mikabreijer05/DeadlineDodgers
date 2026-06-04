@@ -58,4 +58,29 @@ public class SQLCustomerService : SQLDAL
             CloseConnection();
         }
     }
+
+    public void AddCustomerServiceTicket(CustomerServiceTicket newTicket)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void GetAllTickets()
+    {
+        throw new NotImplementedException();
+    }
+
+    public string? GetTicketById(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DeleteTicket(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void UpdateTicket(CustomerServiceTicket updatedTicket)
+    {
+        throw new NotImplementedException();
+    }
 }
