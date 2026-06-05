@@ -188,6 +188,21 @@ input, textarea, select {
     }
 }
 
+/* Ensure customer-table text and links stay matrix green even when Bootstrap adds other classes */
+.customer-table,
+.customer-table th,
+.customer-table td,
+.customer-table a {
+    color: var(--matrix-primary) !important;
+}
+
+.customer-table .btn,
+.customer-table a.btn {
+    color: var(--matrix-primary) !important;
+    background: transparent !important;
+    border-color: var(--matrix-primary) !important;
+}
+
 /* Dashboard Cards Styling */
 .dashboard-container {
     display: flex;

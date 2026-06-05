@@ -3,3 +3,43 @@
 *@
 @{
 }
+@model KE03_INTDEV_SE_2_Base.Models.CustomerServiceTicket
+
+@{
+    ViewData["Title"] = "Create ticket";
+}
+
+<div class="container mt-4">
+    <h1 class="h3 mb-3">Create Customer Service Ticket</h1>
+
+    <form action="@Url.Action("Create", "Support")" method="post">
+        @Html.AntiForgeryToken()
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label">Title</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Customer Id</label>
+            <input asp-for="CustomerId" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div class="mb-3 form-check">
+            <input asp-for="IsActive" class="form-check-input" />
+            <label asp-for="IsActive" class="form-check-label">Open</label>
+        </div>
+
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-controller="Support" asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</div>

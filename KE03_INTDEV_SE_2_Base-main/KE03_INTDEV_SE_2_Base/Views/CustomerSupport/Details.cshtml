@@ -1,0 +1,26 @@
+@model KE03_INTDEV_SE_2_Base.Models.CustomerServiceTicket
+
+@{
+    ViewData["Title"] = "Ticket details";
+}
+
+<div class="container mt-4">
+    <h1 class="h3">Ticket details</h1>
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Title</h5>
+            <p class="card-text">Customer: @(Model.Customer?.Name ?? "-")</p>
+            <p class="card-text">Status: @(Model.IsActive ? "Open" : "Closed")</p>
+            <p class="card-text"><small class="text-muted">Created: @Model.DateCreated.ToLocalTime().ToString("g")</small></p>
+            @if (!string.IsNullOrWhiteSpace(Model.Description))
+            {
+                <hr />
+                <p class="card-text">@Model.Description</p>
+            }
+        </div>
+    </div>
+
+    <a asp-controller="Support" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Edit</a>
+    <a asp-controller="Support" asp-action="Index" class="btn btn-link ms-2">Back to list</a>
+</div>
