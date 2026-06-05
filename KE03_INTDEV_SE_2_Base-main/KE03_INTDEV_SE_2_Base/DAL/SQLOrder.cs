@@ -15,15 +15,16 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                INSERT INTO [dbo].[Order] (OrderDate, AddressId, AccountId, CouponId, DeliveryTogether)
+                INSERT INTO [dbo].[Order] (OrderDate, AddressId, AccountId, StatusId, CouponId, DeliveryTogether)
                 OUTPUT INSERTED.OrderId
-                VALUES (@OrderDate, @AddressId, @AccountId, @CouponId, @DeliveryTogether)";
+                VALUES (@OrderDate, @AddressId, @AccountId, @StatusId, @CouponId, @DeliveryTogether)";
 
             var parameters = new
             {
                 order.OrderDate,
-                AddressId = 1,  // Set appropriate value as needed
-                order.CustomerId,  // Maps to AccountId
+                AddressId = 1,
+                order.CustomerId,
+                order.StatusId,
                 CouponId = (int?)null,
                 DeliveryTogether = false
             };
@@ -43,9 +44,15 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                SELECT OrderId AS Id, OrderDate, AccountId AS CustomerId
-                FROM [dbo].[Order]
-                WHERE OrderId = @OrderId";
+                SELECT 
+                    o.OrderId AS Id, 
+                    o.OrderDate, 
+                    o.AccountId AS CustomerId,
+                    o.StatusId,
+                    s.Status AS OrderStatus
+                FROM [dbo].[Order] o
+                LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                WHERE o.OrderId = @OrderId";
 
             return await conn.QuerySingleOrDefaultAsync<Order?>(query, new { OrderId = orderId });
         }
@@ -61,8 +68,15 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                SELECT OrderId AS Id, OrderDate, AccountId AS CustomerId
-                FROM [dbo].[Order]";
+                SELECT 
+                    o.OrderId AS Id, 
+                    o.OrderDate, 
+                    o.AccountId AS CustomerId,
+                    o.StatusId,
+                    s.Status AS OrderStatus
+                FROM [dbo].[Order] o
+                LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                ORDER BY o.OrderDate DESC";
 
             return await conn.QueryAsync<Order>(query);
         }
@@ -78,10 +92,16 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                SELECT OrderId AS Id, OrderDate, AccountId AS CustomerId
-                FROM [dbo].[Order]
-                WHERE AccountId = @CustomerId
-                ORDER BY OrderDate DESC";
+                SELECT 
+                    o.OrderId AS Id, 
+                    o.OrderDate, 
+                    o.AccountId AS CustomerId,
+                    o.StatusId,
+                    s.Status AS OrderStatus
+                FROM [dbo].[Order] o
+                LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                WHERE o.AccountId = @CustomerId
+                ORDER BY o.OrderDate DESC";
 
             return await conn.QueryAsync<Order>(query, new { CustomerId = customerId });
         }
@@ -98,10 +118,10 @@ public class SQLOrder : SQLDAL
 
             var query = @"
                 UPDATE [dbo].[Order]
-                SET OrderDate = @OrderDate, AccountId = @CustomerId
+                SET OrderDate = @OrderDate, AccountId = @CustomerId, StatusId = @StatusId
                 WHERE OrderId = @OrderId";
 
-            var rowsAffected = await conn.ExecuteAsync(query, new { order.OrderDate, order.Id, order.CustomerId });
+            var rowsAffected = await conn.ExecuteAsync(query, new { order.OrderDate, order.Id, order.CustomerId, order.StatusId });
             return rowsAffected > 0;
         }
     }

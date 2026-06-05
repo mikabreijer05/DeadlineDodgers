@@ -20,5 +20,7 @@ namespace KE03_INTDEV_SE_2_Base.Models
 
         public ICollection<Product> Products { get; } = new List<Product>();
         public ICollection<OrderLine> OrderLines { get; } = new List<OrderLine>();
+        public int? StatusId;
+        public string? OrderStatus;
     }
 }
