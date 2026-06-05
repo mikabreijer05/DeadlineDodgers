@@ -17,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Orders\" />
     <Folder Include="Views\CustomerSupport\" />
   </ItemGroup>
 
