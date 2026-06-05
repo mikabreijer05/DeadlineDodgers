@@ -4,11 +4,11 @@ using KE03_INTDEV_SE_2_Base.Models;
 
 namespace KE03_INTDEV_SE_2_Base.Controllers;
 
-public class OrderController : Controller
+public class OrdersController : Controller
 {
     private readonly SQLOrder _orderDAL;
 
-    public OrderController(SQLOrder orderDAL)
+    public OrdersController(SQLOrder orderDAL)
     {
         _orderDAL = orderDAL;
     }

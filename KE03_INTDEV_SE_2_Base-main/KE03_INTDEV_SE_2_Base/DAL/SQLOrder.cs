@@ -1,6 +1,182 @@
+using Dapper;
+using KE03_INTDEV_SE_2_Base.Models;
+
 namespace KE03_INTDEV_SE_2_Base.DAL;
 
 public class SQLOrder : SQLDAL
 {
-    
+    /// <summary>
+    /// Creates a new order in the database
+    /// </summary>
+    public async Task<int> CreateOrderAsync(Order order)
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = @"
+                INSERT INTO [dbo].[Order] (OrderDate, AddressId, AccountId, CouponId, DeliveryTogether)
+                OUTPUT INSERTED.OrderId
+                VALUES (@OrderDate, @AddressId, @AccountId, @CouponId, @DeliveryTogether)";
+
+            var parameters = new
+            {
+                order.OrderDate,
+                AddressId = 1,  // Set appropriate value as needed
+                order.CustomerId,  // Maps to AccountId
+                CouponId = (int?)null,
+                DeliveryTogether = false
+            };
+
+            var orderId = await conn.QuerySingleAsync<int>(query, parameters);
+            return orderId;
+        }
+    }
+
+    /// <summary>
+    /// Retrieves a single order by ID
+    /// </summary>
+    public async Task<Order?> GetOrderByIdAsync(int orderId)
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = @"
+                SELECT OrderId AS Id, OrderDate, AccountId AS CustomerId
+                FROM [dbo].[Order]
+                WHERE OrderId = @OrderId";
+
+            return await conn.QuerySingleOrDefaultAsync<Order?>(query, new { OrderId = orderId });
+        }
+    }
+
+    /// <summary>
+    /// Retrieves all orders
+    /// </summary>
+    public async Task<IEnumerable<Order>> GetAllOrdersAsync()
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = @"
+                SELECT OrderId AS Id, OrderDate, AccountId AS CustomerId
+                FROM [dbo].[Order]";
+
+            return await conn.QueryAsync<Order>(query);
+        }
+    }
+
+    /// <summary>
+    /// Retrieves all orders for a specific customer
+    /// </summary>
+    public async Task<IEnumerable<Order>> GetOrdersByCustomerIdAsync(int customerId)
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = @"
+                SELECT OrderId AS Id, OrderDate, AccountId AS CustomerId
+                FROM [dbo].[Order]
+                WHERE AccountId = @CustomerId
+                ORDER BY OrderDate DESC";
+
+            return await conn.QueryAsync<Order>(query, new { CustomerId = customerId });
+        }
+    }
+
+    /// <summary>
+    /// Updates an existing order
+    /// </summary>
+    public async Task<bool> UpdateOrderAsync(Order order)
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = @"
+                UPDATE [dbo].[Order]
+                SET OrderDate = @OrderDate, AccountId = @CustomerId
+                WHERE OrderId = @OrderId";
+
+            var rowsAffected = await conn.ExecuteAsync(query, new { order.OrderDate, order.Id, order.CustomerId });
+            return rowsAffected > 0;
+        }
+    }
+
+    /// <summary>
+    /// Deletes an order by ID
+    /// </summary>
+    public async Task<bool> DeleteOrderAsync(int orderId)
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = "DELETE FROM [dbo].[Order] WHERE OrderId = @OrderId";
+            var rowsAffected = await conn.ExecuteAsync(query, new { OrderId = orderId });
+            return rowsAffected > 0;
+        }
+    }
+
+    /// <summary>
+    /// Creates a new order line item
+    /// </summary>
+    public async Task<bool> CreateOrderLineAsync(OrderLine orderLine)
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = @"
+                INSERT INTO [dbo].[OrderProduct] (OrderId, ProductId, Quantity)
+                VALUES (@OrderId, @ProductId, @Quantity)";
+
+            var result = await conn.ExecuteAsync(query, new { orderLine.OrderId, orderLine.ProductId, orderLine.Quantity });
+            return result > 0;
+        }
+    }
+
+    /// <summary>
+    /// Retrieves all order lines for a specific order
+    /// </summary>
+    public async Task<IEnumerable<OrderLine>> GetOrderLinesByOrderIdAsync(int orderId)
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = @"
+                SELECT OrderId, ProductId, Quantity
+                FROM [dbo].[OrderProduct]
+                WHERE OrderId = @OrderId";
+
+            return await conn.QueryAsync<OrderLine>(query, new { OrderId = orderId });
+        }
+    }
+
+    /// <summary>
+    /// Deletes an order line
+    /// </summary>
+    public async Task<bool> DeleteOrderLineAsync(int orderId, int productId)
+    {
+        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        {
+            await conn.OpenAsync();
+
+            var query = @"
+                DELETE FROM [dbo].[OrderProduct] 
+                WHERE OrderId = @OrderId AND ProductId = @ProductId";
+
+            var rowsAffected = await conn.ExecuteAsync(query, new { OrderId = orderId, ProductId = productId });
+            return rowsAffected > 0;
+        }
+    }
+
+    public async Task AddOrderAsync(Order order)
+    {
+        await CreateOrderAsync(order);
+    }
 }
