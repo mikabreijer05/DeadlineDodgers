@@ -34,10 +34,11 @@
                 <div class="status-card-content">
                     @{
                         var firstNew = newOrders.First();
+                        var firstNewTotal = firstNew.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
                     }
                     <p>Order @firstNew.Id</p>
                     <p>@firstNew.OrderDate.ToString("yyyy-MM-dd")</p>
-                    <p>Customer @firstNew.CustomerId <span class="status-card-value">€2,136.99</span></p>
+                    <p>@firstNew.CustomerName <span class="status-card-value">€@firstNewTotal.ToString("F2")</span></p>
                 </div>
             }
         </div>
@@ -52,10 +53,11 @@
                 <div class="status-card-content">
                     @{
                         var firstProcessing = processingOrders.First();
+                        var firstProcessingTotal = firstProcessing.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
                     }
                     <p>Order @firstProcessing.Id</p>
                     <p>@firstProcessing.OrderDate.ToString("yyyy-MM-dd")</p>
-                    <p>Customer @firstProcessing.CustomerId <span class="status-card-value">€99,999.99</span></p>
+                    <p>@firstProcessing.CustomerName <span class="status-card-value">€@firstProcessingTotal.ToString("F2")</span></p>
                 </div>
             }
         </div>
@@ -139,11 +141,12 @@
                     <tbody id="ordersTableBody">
                         @foreach (var order in Model.OrderByDescending(o => o.OrderDate))
                         {
-                            <tr class="order-row" data-status="@order.OrderStatus">
+                            var orderTotal = order.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
+                            <tr class="order-row" data-status="@order.OrderStatus" data-total="@orderTotal">
                                 <td><span class="order-id">@order.Id.ToString("0000")</span></td>
-                                <td>Customer @order.CustomerId</td>
+                                <td>@(order.CustomerName ?? "Unknown")</td>
                                 <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
-                                <td><span class="order-price">€2,136.99</span></td>
+                                <td><span class="order-price">€@orderTotal.ToString("F2")</span></td>
                                 <td>
                                     @if (string.IsNullOrEmpty(order.OrderStatus))
                                     {

@@ -15,12 +15,17 @@ namespace KE03_INTDEV_SE_2_Base.Models
         public DateTime OrderDate { get; set; }
 
         public int CustomerId { get; set; }
-        
+
+        public string? CustomerName { get; set; }
+
         public Customer Customer { get; set; } = null!;
 
+        public int? StatusId { get; set; }
+
+        public string? OrderStatus { get; set; }
+
         public ICollection<Product> Products { get; } = new List<Product>();
+
         public ICollection<OrderLine> OrderLines { get; } = new List<OrderLine>();
-        public int? StatusId;
-        public string? OrderStatus;
     }
 }

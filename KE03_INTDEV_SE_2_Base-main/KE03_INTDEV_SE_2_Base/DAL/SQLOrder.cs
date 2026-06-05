@@ -35,7 +35,7 @@ public class SQLOrder : SQLDAL
     }
 
     /// <summary>
-    /// Retrieves a single order by ID
+    /// Retrieves a single order by ID with order lines and customer info
     /// </summary>
     public async Task<Order?> GetOrderByIdAsync(int orderId)
     {
@@ -48,18 +48,44 @@ public class SQLOrder : SQLDAL
                     o.OrderId AS Id, 
                     o.OrderDate, 
                     o.AccountId AS CustomerId,
+                    a.CustName AS CustomerName,
                     o.StatusId,
                     s.Status AS OrderStatus
                 FROM [dbo].[Order] o
+                LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
                 LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
                 WHERE o.OrderId = @OrderId";
 
-            return await conn.QuerySingleOrDefaultAsync<Order?>(query, new { OrderId = orderId });
+            var order = await conn.QuerySingleOrDefaultAsync<Order?>(query, new { OrderId = orderId });
+
+            if (order != null)
+            {
+                // Get order lines with product information
+                var orderLinesQuery = @"
+                    SELECT 
+                        op.OrderId,
+                        op.ProductId,
+                        op.Quantity,
+                        p.ProdName,
+                        p.ProdPrice
+                    FROM [dbo].[OrderProduct] op
+                    LEFT JOIN [dbo].[Product] p ON op.ProductId = p.ProductId
+                    WHERE op.OrderId = @OrderId";
+
+                var orderLines = await conn.QueryAsync<OrderLine>(orderLinesQuery, new { OrderId = orderId });
+
+                foreach (var line in orderLines)
+                {
+                    order.OrderLines.Add(line);
+                }
+            }
+
+            return order;
         }
     }
 
     /// <summary>
-    /// Retrieves all orders
+    /// Retrieves all orders with customer names
     /// </summary>
     public async Task<IEnumerable<Order>> GetAllOrdersAsync()
     {
@@ -72,13 +98,39 @@ public class SQLOrder : SQLDAL
                     o.OrderId AS Id, 
                     o.OrderDate, 
                     o.AccountId AS CustomerId,
+                    a.CustName AS CustomerName,
                     o.StatusId,
                     s.Status AS OrderStatus
                 FROM [dbo].[Order] o
+                LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
                 LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
                 ORDER BY o.OrderDate DESC";
 
-            return await conn.QueryAsync<Order>(query);
+            var orders = await conn.QueryAsync<Order>(query);
+
+            // Fetch order lines for each order
+            foreach (var order in orders)
+            {
+                var orderLinesQuery = @"
+                    SELECT 
+                        op.OrderId,
+                        op.ProductId,
+                        op.Quantity,
+                        p.ProdName,
+                        p.ProdPrice
+                    FROM [dbo].[OrderProduct] op
+                    LEFT JOIN [dbo].[Product] p ON op.ProductId = p.ProductId
+                    WHERE op.OrderId = @OrderId";
+
+                var orderLines = await conn.QueryAsync<OrderLine>(orderLinesQuery, new { OrderId = order.Id });
+
+                foreach (var line in orderLines)
+                {
+                    order.OrderLines.Add(line);
+                }
+            }
+
+            return orders;
         }
     }
 
@@ -96,9 +148,11 @@ public class SQLOrder : SQLDAL
                     o.OrderId AS Id, 
                     o.OrderDate, 
                     o.AccountId AS CustomerId,
+                    a.CustName AS CustomerName,
                     o.StatusId,
                     s.Status AS OrderStatus
                 FROM [dbo].[Order] o
+                LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
                 LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
                 WHERE o.AccountId = @CustomerId
                 ORDER BY o.OrderDate DESC";
@@ -142,7 +196,7 @@ public class SQLOrder : SQLDAL
     }
 
     /// <summary>
-    /// Creates a new order line item
+    /// Creates a new order line item in OrderProduct table
     /// </summary>
     public async Task<bool> CreateOrderLineAsync(OrderLine orderLine)
     {
@@ -160,7 +214,7 @@ public class SQLOrder : SQLDAL
     }
 
     /// <summary>
-    /// Retrieves all order lines for a specific order
+    /// Retrieves all order lines for a specific order with product details
     /// </summary>
     public async Task<IEnumerable<OrderLine>> GetOrderLinesByOrderIdAsync(int orderId)
     {
@@ -169,16 +223,22 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                SELECT OrderId, ProductId, Quantity
-                FROM [dbo].[OrderProduct]
-                WHERE OrderId = @OrderId";
+                SELECT 
+                    op.OrderId,
+                    op.ProductId,
+                    op.Quantity,
+                    p.ProdName,
+                    p.ProdPrice
+                FROM [dbo].[OrderProduct] op
+                LEFT JOIN [dbo].[Product] p ON op.ProductId = p.ProductId
+                WHERE op.OrderId = @OrderId";
 
             return await conn.QueryAsync<OrderLine>(query, new { OrderId = orderId });
         }
     }
 
     /// <summary>
-    /// Deletes an order line
+    /// Deletes an order line from OrderProduct table
     /// </summary>
     public async Task<bool> DeleteOrderLineAsync(int orderId, int productId)
     {

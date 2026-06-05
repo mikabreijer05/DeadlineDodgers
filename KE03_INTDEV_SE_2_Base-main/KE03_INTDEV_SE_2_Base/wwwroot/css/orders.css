@@ -33,6 +33,59 @@
     letter-spacing: 2px;
 }
 
+/* Orders Table */
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+    .orders-table thead {
+        border-bottom: 2px solid var(--matrix-primary);
+    }
+
+    .orders-table th {
+        text-align: left;
+        padding: 16px 15px;
+        color: var(--matrix-primary);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .orders-table td {
+        padding: 18px 15px;
+        border-bottom: 1px solid var(--matrix-secondary);
+        color: var(--matrix-primary);
+    }
+
+    .orders-table tbody tr:hover {
+        background-color: var(--matrix-secondary);
+    }
+
+.order-id {
+    color: var(--matrix-primary);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.order-price {
+    color: var(--matrix-primary-2);
+    font-weight: bold;
+}
+
+.order-status {
+    font-weight: 500;
+}
+
+    .order-status.new {
+        color: var(--matrix-destructive);
+    }
+
+    .order-status.processing {
+        color: var(--matrix-primary-4);
+    }
+
 /* Status Cards */
 .status-cards-grid {
     display: grid;

@@ -4,30 +4,87 @@
     ViewData["Title"] = "Order Details";
 }
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-8">
-            <h1>@ViewData["Title"]</h1>
+<link rel="stylesheet" href="~/css/orders.css" />
 
-            <div class="card mt-4">
-                <div class="card-body">
-                    <dl class="row">
-                        <dt class="col-sm-3">Order ID</dt>
-                        <dd class="col-sm-9">@Model.Id</dd>
-
-                        <dt class="col-sm-3">Customer ID</dt>
-                        <dd class="col-sm-9">@Model.CustomerId</dd>
-
-                        <dt class="col-sm-3">Order Date</dt>
-                        <dd class="col-sm-9">@Model.OrderDate.ToString("dd/MM/yyyy HH:mm")</dd>
-                    </dl>
-                </div>
+<div class="orders-page">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb-nav">
+        ➤ <a asp-action="Index">ORDERS</a> / ORDER #@Model.Id
+    </nav>
+    
+    <!-- Page Title -->
+    <h1 class="orders-title">ORDER DETAILS</h1>
+    
+    <div class="orders-container" style="grid-template-columns: 1fr;">
+        <div class="main-content">
+            <!-- Order Summary -->
+            <div class="order-summary" style="margin-bottom: 30px;">
+                <h3 style="color: var(--matrix-primary); margin-bottom: 15px;">ORDER #@Model.Id.ToString("0000")</h3>
+                <table style="width: 100%; color: var(--matrix-primary);">
+                    <tr>
+                        <td style="padding: 8px 0; border-bottom: 1px solid var(--matrix-primary);"><strong>Customer:</strong></td>
+                        <td style="padding: 8px 0; border-bottom: 1px solid var(--matrix-primary);">@(Model.CustomerName ?? "Unknown")</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px 0; border-bottom: 1px solid var(--matrix-primary);"><strong>Order Date:</strong></td>
+                        <td style="padding: 8px 0; border-bottom: 1px solid var(--matrix-primary);">@Model.OrderDate.ToString("yyyy-MM-dd HH:mm")</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px 0; border-bottom: 1px solid var(--matrix-primary);"><strong>Status:</strong></td>
+                        <td style="padding: 8px 0; border-bottom: 1px solid var(--matrix-primary);">@(Model.OrderStatus ?? "Unknown")</td>
+                    </tr>
+                </table>
             </div>
 
-            <div class="mt-3">
-                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Edit</a>
-                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger">Delete</a>
-                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            <!-- Order Lines -->
+            <div class="order-lines" style="margin-bottom: 30px;">
+                <h3 style="color: var(--matrix-primary); margin-bottom: 15px;">ORDER ITEMS</h3>
+                
+                @if (Model.OrderLines.Any())
+                {
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                decimal totalPrice = 0;
+                            }
+                            @foreach (var line in Model.OrderLines)
+                            {
+                                <tr>
+                                    <td>@(line.ProdName ?? $"Product #{line.ProductId}")</td>
+                                    <td>@line.Quantity</td>
+                                    <td><span class="order-price">€@(line.ProdPrice?.ToString("F2") ?? "0.00")</span></td>
+                                    <td><span class="order-price">€@((line.Quantity * (line.ProdPrice ?? 0)).ToString("F2"))</span></td>
+                                </tr>
+                                totalPrice += line.Quantity * (line.ProdPrice ?? 0);
+                            }
+                            <tr style="border-top: 2px solid var(--matrix-primary);">
+                                <td colspan="3" style="text-align: right; padding: 15px 10px;"><strong>TOTAL:</strong></td>
+                                <td><span class="order-price" style="font-size: 1.1rem; font-weight: bold;">€@totalPrice.ToString("F2")</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                }
+                else
+                {
+                    <div class="empty-state">
+                        ⚠️ No items in this order.
+                    </div>
+                }
+            </div>
+
+            <!-- Actions -->
+            <div style="display: flex; gap: 10px;">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="action-btn" style="padding: 8px 16px;">Edit</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="action-btn delete" style="padding: 8px 16px;">Delete</a>
+                <a asp-action="Index" class="action-btn" style="padding: 8px 16px;">Back to List</a>
             </div>
         </div>
     </div>
