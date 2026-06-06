@@ -207,4 +207,72 @@
     font-size: 0.85rem;
     margin-right: 10px;
     align-self: center;
-    text-transform:
+    text-transform: capitalize;
+}
+
+/* Filters Panel */
+.filters-panel {
+    border: 1px solid var(--matrix-primary);
+    padding: 15px;
+    background-color: var(--matrix-card);
+}
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-label {
+    font-size: 0.75rem;
+    color: #34A853; 
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.filter-input {
+    width: 100%;
+    background-color: var(--matrix-input-bg);
+    border: 1px solid var(--matrix-primary);
+    color: var(--matrix-primary);
+    padding: 8px;
+    font-family: Consolas, 'Courier New', monospace;
+    margin-top: 5px;
+}
+
+.filter-input:hover {
+    outline: none;
+    border-color: var(--matrix-primary-2);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.filter-input:focus {
+    outline: none;
+    border-color: var(--matrix-primary-2);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.filter-input::placeholder {
+    color: var(--matrix-muted-foreground);
+}
+
+/* Status Buttons */
+.status-btn {
+    background-color: #184e26; 
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.status-btn:hover {
+    background-color: #4CAF50; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-btn.active {
+    background-color: #45a049; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

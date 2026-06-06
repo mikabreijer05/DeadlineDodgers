@@ -16,23 +16,95 @@
   <component name="ChangeListManager">
     <list default="true" id="32442e40-9757-47cc-b3cf-df7ef881434e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.KE03_INTDEV_SE_2_Base.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.KE03_INTDEV_SE_2_Base.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/OrdersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/OrdersController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DAL/SQLOrder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DAL/SQLOrder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Orders/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Orders/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/css/orders.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/orders.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/js/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/js/orders.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="3" />
+    <option name="cachedIndexableFilesCount" value="6" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.571533424302295" />
+      <entry key="MS500" value="4.273257357747129" />
+      <entry key="S2" value="11.299832425439226" />
+      <entry key="S5" value="15.621541481948766" />
+      <entry key="S10" value="17.619277957224" />
+      <entry key="S30" value="19.19136330464967" />
+      <entry key="S60" value="20.87932552001768" />
+      <entry key="M2" value="28.662811837856182" />
+      <entry key="M5" value="56.77271415161187" />
+      <entry key="M10" value="92.43725424679597" />
+      <entry key="M15" value="114.4877206332704" />
+      <entry key="M30" value="146.03784953882973" />
+      <entry key="H1" value="166.81795092256877" />
+      <entry key="H2" value="178.79850741543393" />
+      <entry key="H4" value="185.23834921768807" />
+      <entry key="D1" value="190.84996837123973" />
+      <entry key="W1" value="191.83513435516286" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="9.689878009886251E-195" />
+      <entry key="S5" value="2.480432097759333E-78" />
+      <entry key="S10" value="1.5752666385424245E-39" />
+      <entry key="S30" value="1.2339081460209288E-13" />
+      <entry key="S60" value="4.413488980320193E-7" />
+      <entry key="M2" value="0.0010577282647601467" />
+      <entry key="M5" value="0.137991530348968" />
+      <entry key="M10" value="0.7336751599151172" />
+      <entry key="M15" value="1.2876986378342272" />
+      <entry key="M30" value="2.2663979945284747" />
+      <entry key="H1" value="3.0098764699961227" />
+      <entry key="H2" value="3.4695016625705644" />
+      <entry key="H4" value="3.725239969833923" />
+      <entry key="D1" value="3.9528264420161365" />
+      <entry key="W1" value="3.9932263180156724" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.5417576064769911" />
+      <entry key="MS500" value="4.257763541644989" />
+      <entry key="S2" value="11.289545469574582" />
+      <entry key="S5" value="15.615770643734564" />
+      <entry key="S10" value="17.616003221829942" />
+      <entry key="S30" value="19.19016910484694" />
+      <entry key="S60" value="20.878679095967485" />
+      <entry key="M2" value="28.663412602378465" />
+      <entry key="M5" value="56.909289495773805" />
+      <entry key="M10" value="93.1678891920013" />
+      <entry key="M15" value="115.77200013825679" />
+      <entry key="M30" value="148.3013335204962" />
+      <entry key="H1" value="169.8259194774209" />
+      <entry key="H2" value="182.26691675808235" />
+      <entry key="H4" value="188.96300467614003" />
+      <entry key="D1" value="194.80269171928649" />
+      <entry key="W1" value="195.82834580171718" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5,
@@ -43,28 +115,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/camille/GitHub/DeadlineDodgers/KE03_INTDEV_SE_1_Base-main/KE03_INTDEV_SE_1_Base/KE03_INTDEV_SE_1_Base.csproj&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.KE03_INTDEV_SE_2_Base: http.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/camille/GitHub/DeadlineDodgers/KE03_INTDEV_SE_1_Base-main/KE03_INTDEV_SE_1_Base/KE03_INTDEV_SE_1_Base.csproj",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected=".NET Launch Settings Profile.KE03_INTDEV_SE_2_Base: http">
     <configuration name="KE03_INTDEV_SE_2_Base: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/KE03_INTDEV_SE_2_Base.csproj" />
@@ -109,7 +183,11 @@
       <workItem from="1780422809966" duration="33000" />
       <workItem from="1780428365244" duration="548000" />
       <workItem from="1780590833636" duration="70000" />
-      <workItem from="1780590918574" duration="459000" />
+      <workItem from="1780590918574" duration="1872000" />
+      <workItem from="1780670223591" duration="872000" />
+      <workItem from="1780691148531" duration="869000" />
+      <workItem from="1780692041762" duration="3658000" />
+      <workItem from="1780774526534" duration="1650000" />
     </task>
     <servers />
   </component>
