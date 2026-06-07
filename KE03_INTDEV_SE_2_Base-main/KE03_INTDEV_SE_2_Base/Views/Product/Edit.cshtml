@@ -4,79 +4,94 @@
     ViewData["Title"] = "Edit Product";
 }
 
-<h1>Edit Product</h1>
+<link rel="stylesheet" href="~/css/products.css" />
 
-<form asp-action="Edit" method="post">
+<div class="product-layout">
 
-    <!-- Product Id -->
-    <input type="hidden" asp-for="Id" />
+    <!-- SIDEBAR: navigation and quick actions -->
+    <!-- WHAT: provides navigation between pages -->
+    <!-- WHY: keeps user inside product management flow -->
+    <aside class="sidebar">
 
-    <!-- Product Name -->
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" />
-    </div>
+        <div class="sidebar-header">
+            <span class="sidebar-label">Matrix</span>
 
-    <!-- Product Price -->
-    <div>
-        <label asp-for="Price"></label>
-        <input asp-for="Price" />
-    </div>
+            <div class="sidebar-title-row">
+                <h2>Producten</h2>
+            </div>
 
-    <!-- Product Description -->
-    <div>
-        <label asp-for="Description"></label>
-        <input asp-for="Description" />
-    </div>
+            <a href="/Product/Create" class="matrix-btn">+ Nieuw Product</a>
+            <a href="/Product/Index" class="matrix-btn">← Overzicht</a>
+        </div>
 
-    <!-- Product Image -->
-    <div>
-        <label asp-for="ImageUrl"></label>
-        <input asp-for="ImageUrl" />
-    </div>
+    </aside>
 
-    <!-- Product Quantity -->
-    <div>
-        <label asp-for="Quantity"></label>
-        <input asp-for="Quantity" />
-    </div>
+    <!-- EDIT PANEL -->
+    <!-- WHAT: displays selected product for editing -->
+    <!-- WHY: separates navigation (left) and editing (right) -->
+    <main class="editor-panel">
 
-    <!-- DDC Id -->
-    <div>
-        <label asp-for="DDCId"></label>
-        <input asp-for="DDCId" />
-    </div>
+        <div class="editor-header">
 
-    <!-- Delivery Time -->
-    <div>
-        <label asp-for="DeliveryTime"></label>
-        <input asp-for="DeliveryTime" />
-    </div>
+            <div class="editor-title">
+                <small>&gt; PRODUCT_EDIT</small>
+                <h1>@Model.Name</h1>
+            </div>
 
-    <!-- Discount Id -->
-    <div>
-        <label asp-for="DiscountId"></label>
-        <input asp-for="DiscountId" />
-    </div>
+            <!-- deletes current product -->
+            <!-- WHY: direct action shortcut for admin workflow -->
+            <a href="/Product/Delete/@Model.Id"
+               class="delete-btn"
+               onclick="return confirm('Verwijderen?')">
+                Verwijderen
+            </a>
 
-    <!-- Product Cost -->
-    <div>
-        <label asp-for="Cost"></label>
-        <input asp-for="Cost" />
-    </div>
+        </div>
 
-    <!-- Product Dimensions -->
-    <div>
-        <label asp-for="Dimensions"></label>
-        <input asp-for="Dimensions" />
-    </div>
+        <!-- EDIT FORM -->
+        <!-- WHAT: sends updated product data to controller -->
+        <!-- WHY: binds directly to Product model via MVC binding -->
+        <form asp-action="Edit" method="post">
 
-    <!-- Category -->
-    <div>
-        <label asp-for="CategoryId"></label>
-        <input asp-for="CategoryId" />
-    </div>
+            <input type="hidden" asp-for="Id" />
 
-    <button type="submit">Save</button>
+            <div class="editor-card">
 
-</form>
+                <!-- image field -->
+                <label>Image URL</label>
+                <input asp-for="ImageUrl" />
+
+                <div class="form-grid">
+
+                    <div><label>Name</label><input asp-for="Name" /></div>
+                    <div><label>Price</label><input asp-for="Price" /></div>
+                    <div><label>Cost</label><input asp-for="Cost" /></div>
+                    <div><label>Quantity</label><input asp-for="Quantity" /></div>
+                    <div><label>DDCId</label><input asp-for="DDCId" /></div>
+                    <div><label>Delivery</label><input asp-for="DeliveryTime" /></div>
+                    <div><label>Discount</label><input asp-for="DiscountId" /></div>
+
+                    <div class="full-width">
+                        <label>Description</label>
+                        <textarea asp-for="Description"></textarea>
+                    </div>
+
+                    <div class="full-width">
+                        <label>Dimensions</label>
+                        <input asp-for="Dimensions" />
+                    </div>
+
+                </div>
+
+                <button class="save-btn" type="submit">
+                    Save Changes
+                </button>
+
+                <div asp-validation-summary="All"
+                     class="validation-summary-errors"></div>
+
+            </div>
+        </form>
+
+    </main>
+</div>

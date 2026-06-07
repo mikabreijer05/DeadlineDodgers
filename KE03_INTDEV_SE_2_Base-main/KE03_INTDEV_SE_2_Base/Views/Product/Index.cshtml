@@ -1,48 +1,179 @@
 ﻿@model IEnumerable<KE03_INTDEV_SE_2_Base.Models.Product>
 
-<div class="header">
-    <h1>PRODUCTS</h1>
-    <a class="btn" href="/Product/Create">+ ADD PRODUCT</a>
-</div>
+@{
+    ViewData["Title"] = "Productbeheer";
+}
 
-<div class="main-content">
-    <div class="card">
-        <table>
-            <thead>
-                <tr>
-                    <th>PRODUCT</th>
-                    <th>CATEGORY</th>
-                    <th>PRICE</th>
-                    <th>DESCRIPTION</th>
-                    <th>ACTIONS</th>
-                </tr>
-            </thead>
+<link rel="stylesheet" href="~/css/products.css" />
 
-            <tbody>
-                @foreach (var p in Model)
+<div class="product-layout">
+
+    @* 
+        MAIN LAYOUT CONTAINER
+        WHY: This creates a 2-column layout (sidebar + editor panel)
+        HOW: Controlled by .product-layout in CSS (flexbox)
+    *@
+    <aside class="sidebar">
+
+        @*
+            SIDEBAR HEADER
+            WHY: Shows total context (system name + product count + create button)
+        *@
+        <div class="sidebar-header">
+
+            <span class="sidebar-label">
+                Matrix
+            </span>
+
+            <div class="sidebar-title-row">
+                <h2>Alle Producten</h2>
+
+                @*
+                    Count of all products in database
+                    HOW: Model.Count() counts IEnumerable<Product>
+                *@
+                <span class="count-badge">@Model.Count()</span>
+            </div>
+
+            @*
+                CREATE BUTTON
+                WHY: Navigates to Create page (new product form)
+                HOW: Simple anchor link to controller action
+            *@
+            <a href="/Product/Create" class="matrix-btn">
+                + Nieuw Product
+            </a>
+        </div>
+
+        @*
+            CATEGORY DICTIONARY
+            WHY: Converts numeric CategoryId into readable names
+            HOW: Hardcoded mapping used for grouping in view
+        *@
+        @{
+            var categories = new Dictionary<int, string>
                 {
-                    <tr>
-                        <td>
-                            <img class="product-img"
-                                 src="@p.ImageUrl"
-                                 alt="@p.Name" />
-                            @p.Name
-                        </td>
+                {1, "Reality"},
+                {2, "Illusion"},
+                {3, "Hardware"},
+                {4, "Accessories"},
+                {5, "Apparel"},
+                {6, "Vehicles"},
+                {7, "Software"}
+                };
+        }
 
-                        <!-- FIX: CategoryId instead of Category -->
-                        <td>@p.CategoryId</td>
+        @*
+            LOOP THROUGH CATEGORIES
+            WHY: Sidebar is grouped instead of one long list
+            HOW: Each category filters products by CategoryId
+        *@
+        @foreach (var category in categories)
+        {
+            var productsInCategory = Model
+            .Where(p => p.CategoryId == category.Key)
+            .ToList();
 
-                        <td>@p.Price.ToString("C")</td>
+            <div class="category-group">
 
-                        <td>@p.Description</td>
+                @*
+                    CATEGORY HEADER (CLICKABLE AREA VISUALLY)
+                    WHY: Shows category name + product count
+                *@
+                <div class="category-header">
 
-                        <td>
-                            <a class="btn" href="/Product/Edit/@p.Id">✎</a>
-                            <a class="btn btn-danger" href="/Product/Delete/@p.Id">🗑</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                    <span class="chevron">›</span>
+
+                    <span>@category.Value</span>
+
+                    <span class="category-count">
+                        @productsInCategory.Count
+                    </span>
+
+                </div>
+
+                @*
+                    PRODUCT LIST INSIDE CATEGORY
+                    WHY: Displays clickable products under each category
+                *@
+                <div class="category-products">
+
+                    @foreach (var product in productsInCategory)
+                    {
+                        @*
+                            PRODUCT LINK
+                            WHY: Clicking opens Edit page for that product
+                            HOW: Routes to /Product/Edit/{id}
+                        *@
+                        <a class="product-link"
+                           href="/Product/Edit/@product.Id">
+
+                            @*
+                                PRODUCT IMAGE
+                                WHY: Visual identification of product
+                            *@
+                            <img src="@product.ImageUrl"
+                                 alt="@product.Name"
+                                 class="product-thumb" />
+
+                            @*
+                                PRODUCT NAME
+                                WHY: Primary label for user recognition
+                            *@
+                            <span>
+                                @product.Name
+                            </span>
+
+                        </a>
+                    }
+
+                </div>
+
+            </div>
+        }
+
+    </aside>
+
+    @*
+        RIGHT PANEL (EMPTY STATE)
+        WHY: Shown when no product is selected yet
+        HOW: Later replaced by Edit form page
+    *@
+    <main class="editor-panel">
+
+        <div class="empty-state">
+
+            <div class="empty-state-content">
+
+                @*
+                    SMALL SYSTEM LABEL
+                    WHY: Gives UI a structured “terminal” feel
+                *@
+                <span class="empty-label">
+                    PRODUCT_BEWERKEN
+                </span>
+
+                @*
+                    MAIN MESSAGE
+                    WHY: Tells user what to do next
+                *@
+                <h1>
+                    Selecteer een product om te bewerken
+                </h1>
+
+                @*
+                    HELP TEXT
+                    WHY: Explains expected action clearly
+                *@
+                <p>
+                    Kies een product uit de lijst aan de linkerkant
+                    om de gegevens te bekijken of aan te passen.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
 </div>
