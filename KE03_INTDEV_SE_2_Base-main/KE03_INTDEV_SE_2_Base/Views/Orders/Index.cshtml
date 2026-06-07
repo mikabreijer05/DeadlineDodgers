@@ -1,186 +1,195 @@
 @model IEnumerable<KE03_INTDEV_SE_2_Base.Models.Order>
 
-@{
-    ViewData["Title"] = "Orders";
-}
+ @{
+     ViewData["Title"] = "Orders";
+ }
 
-<!-- Here you can find which .css and .js files get used for this page-->
-<link rel="stylesheet" href="~/css/orders.css" />
-<script src="~/js/orders.js"></script>
+ <!-- Here you can find which .css and .js files get used for this page-->
+ <link rel="stylesheet" href="~/css/orders.css" />
+ <script src="~/js/orders.js"></script>
 
-<div class="orders-page">
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb-nav">
-        ➤ ORDER_MANAGEMENT
-    </nav>
-    
-    <!-- Page Title -->
-    <h1 class="orders-title">ORDERS</h1>
-    
-    <!-- Status Cards -->
-    @{
-        var newOrders = Model.Where(o => o.OrderStatus?.ToLower().Contains("new") == true || o.OrderStatus?.ToLower().Contains("nieuw") == true).ToList();
-        var processingOrders = Model.Where(o => o.OrderStatus?.ToLower().Contains("processing") == true || o.OrderStatus?.ToLower().Contains("behandeling") == true).ToList();
-    }
-    
-    <div class="status-cards-grid">
-        <div class="status-card new">
-            <div class="status-card-title">
-                <span>⭕ NIEUWE ORDERS</span>
-                <span class="status-card-count">@newOrders.Count()</span>
-            </div>
-            @if (newOrders.Any())
-            {
-                <div class="status-card-content">
-                    @{
-                        var firstNew = newOrders.First();
-                        var firstNewTotal = firstNew.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
-                    }
-                    <p>Order @firstNew.Id</p>
-                    <p>@firstNew.OrderDate.ToString("yyyy-MM-dd")</p>
-                    <p>@firstNew.CustomerName <span class="status-card-value">€@firstNewTotal.ToString("F2")</span></p>
-                </div>
-            }
-        </div>
-        
-        <div class="status-card processing">
-            <div class="status-card-title">
-                <span>⚙️ IN BEHANDELING</span>
-                <span class="status-card-count">@processingOrders.Count()</span>
-            </div>
-            @if (processingOrders.Any())
-            {
-                <div class="status-card-content">
-                    @{
-                        var firstProcessing = processingOrders.First();
-                        var firstProcessingTotal = firstProcessing.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
-                    }
-                    <p>Order @firstProcessing.Id</p>
-                    <p>@firstProcessing.OrderDate.ToString("yyyy-MM-dd")</p>
-                    <p>@firstProcessing.CustomerName <span class="status-card-value">€@firstProcessingTotal.ToString("F2")</span></p>
-                </div>
-            }
-        </div>
-    </div>
-    
-    <!-- Main Content Area -->
-    <div class="orders-container">
-        <!-- Filters Panel -->
-        <div class="filters-panel">
-            <div class="filter-section">
-                <label class="filter-label">🔍 FILTERS × wis</label>
-            </div>
-            
-            <div class="filter-section">
-                <label class="filter-label">KLANT</label>
-                <input type="text" class="filter-input" placeholder="Naam zoeken..." />
-            </div>
-            
-            <div class="filter-section">
-                <label class="filter-label">DATUM</label>
-                <input type="date" class="filter-input" />
-                <div style="text-align: center; margin: 5px 0; font-size: 0.75rem; color: var(--matrix-primary);">t/m</div>
-                <input type="date" class="filter-input" />
-            </div>
-            
-            <div class="filter-section">
-                <label class="filter-label">TOTAALPRIJS (€)</label>
-                <input type="text" class="filter-input" placeholder="Van" />
-                <input type="text" class="filter-input" placeholder="Tot" />
-            </div>
-            
-            <div class="filter-section">
-                <label class="filter-label">MIN. AANTAL PRODUCTEN</label>
-                <input type="text" class="filter-input" placeholder="bv. 2" />
-            </div>
-            
-            <div class="filter-section">
-                <label class="filter-label">ADRES</label>
-                <input type="text" class="filter-input" placeholder="Stad, straat..." />
-            </div>
-        </div>
-        
-        <!-- Main Content -->
-        <div class="main-content">
-            <!-- Status Filter Buttons -->
-            <div class="toolbar" id="statusFilterToolbar">
-                <button class="status-btn" data-status="Nieuw">⭕ Nieuw</button>
-                <button class="status-btn" data-status="In behandeling">⚙️ In behandeling</button>
-                <button class="status-btn" data-status="Klaar om te verzenden">✓ Klaar om te verzenden</button>
-                <button class="status-btn" data-status="Verzonden">📦 Verzonden</button>
-                <button class="status-btn" data-status="Afgeleverd">✅ Afgeleverd</button>
-                <button class="status-btn" data-status="Geannuleerd">👁️ Geannuleerd</button>
-                <button class="status-btn" data-status="Retour">↩️ Retour</button>
-            </div>
-            
-            <!-- Sort Options -->
-            <div class="toolbar" style="border-top: 1px solid var(--matrix-primary); padding-top: 15px; margin-bottom: 15px;">
-                <span class="toolbar-label">SORTEREN:</span>
-                <button class="sort-btn active">Datum ↓</button>
-                <button class="sort-btn">ID ↑</button>
-                <button class="sort-btn">Prijs ↓</button>
-                <button class="sort-btn">Producten ↑</button>
-            </div>
-            
-            <!-- Orders List -->
-            @if (Model.Any())
-            {
-                <div class="result-info">▶ ORDERARCHIEF — <span id="resultCount">@Model.Count()</span> RESULTATEN</div>
-                
-                <table class="orders-table">
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Total</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ordersTableBody">
-                        @foreach (var order in Model.OrderByDescending(o => o.OrderDate))
-                        {
-                            var orderTotal = order.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
-                            <tr class="order-row" data-status="@order.OrderStatus" data-total="@orderTotal">
-                                <td><span class="order-id">@order.Id.ToString("0000")</span></td>
-                                <td>@(order.CustomerName ?? "Unknown")</td>
-                                <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
-                                <td><span class="order-price">€@orderTotal.ToString("F2")</span></td>
-                                <td>
-                                    @if (string.IsNullOrEmpty(order.OrderStatus))
-                                    {
-                                        <span class="order-status new">⭕ Unknown</span>
-                                    }
-                                    else if (order.OrderStatus.ToLower().Contains("new") || order.OrderStatus.ToLower().Contains("nieuw"))
-                                    {
-                                        <span class="order-status new">⭕ @order.OrderStatus</span>
-                                    }
-                                    else if (order.OrderStatus.ToLower().Contains("processing") || order.OrderStatus.ToLower().Contains("behandeling"))
-                                    {
-                                        <span class="order-status processing">⚙️ @order.OrderStatus</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="order-status">ℹ️ @order.OrderStatus</span>
-                                    }
-                                </td>
-                                <td>
-                                    <a asp-action="Details" asp-route-id="@order.Id" class="action-btn">Details</a>
-                                    <a asp-action="Edit" asp-route-id="@order.Id" class="action-btn">Edit</a>
-                                    <a asp-action="Delete" asp-route-id="@order.Id" class="action-btn delete">Delete</a>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            }
-            else
-            {
-                <div class="empty-state">
-                    ⚠️ No orders found.
-                </div>
-            }
-        </div>
-    </div>
-</div>
+ <div class="orders-page">
+     <!-- Breadcrumb -->
+     <nav class="breadcrumb-nav">
+         ➤ ORDER_MANAGEMENT
+     </nav>
+     
+     <!-- Page Title -->
+     <h1 class="orders-title">ORDERS</h1>
+     
+     <!-- Status Cards -->
+     @{
+         var newOrders = Model.Where(o => o.OrderStatus?.ToLower().Contains("new") == true || o.OrderStatus?.ToLower().Contains("nieuw") == true).ToList();
+         var processingOrders = Model.Where(o => o.OrderStatus?.ToLower().Contains("processing") == true || o.OrderStatus?.ToLower().Contains("behandeling") == true).ToList();
+     }
+     
+     <div class="status-cards-grid">
+         <div class="status-card new">
+             <div class="status-card-title">
+                 <span>⭕ NIEUWE ORDERS</span>
+                 <span class="status-card-count">@newOrders.Count()</span>
+             </div>
+             @if (newOrders.Any())
+             {
+                 <div class="status-card-content">
+                     @{
+                         var firstNew = newOrders.First();
+                         var firstNewTotal = firstNew.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
+                     }
+                     <p>Order @firstNew.Id</p>
+                     <p>@firstNew.OrderDate.ToString("yyyy-MM-dd")</p>
+                     <p>@firstNew.CustomerName <span class="status-card-value">€@firstNewTotal.ToString("F2")</span></p>
+                 </div>
+             }
+         </div>
+     
+         <div class="status-card processing">
+             <div class="status-card-title">
+                 <span>⚙️ IN BEHANDELING</span>
+                 <span class="status-card-count">@processingOrders.Count()</span>
+             </div>
+             @if (processingOrders.Any())
+             {
+                 <div class="status-card-content">
+                     @{
+                         var firstProcessing = processingOrders.First();
+                         var firstProcessingTotal = firstProcessing.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
+                     }
+                     <p>Order @firstProcessing.Id</p>
+                     <p>@firstProcessing.OrderDate.ToString("yyyy-MM-dd")</p>
+                     <p>@firstProcessing.CustomerName <span class="status-card-value">€@firstProcessingTotal.ToString("F2")</span></p>
+                 </div>
+             }
+         </div>
+     </div>
+     
+     <!-- Main Content Area -->
+     <div class="orders-container">
+         <!-- Filters Panel -->
+         <div class="filters-panel">
+             <div class="filter-section">
+                 <label class="filter-label">🔍 FILTERS × wis</label>
+             </div>
+         
+             <div class="filter-section">
+                 <label class="filter-label">KLANT</label>
+                 <input type="text" id="customerName" class="filter-input" placeholder="Naam zoeken..." />
+             </div>
+         
+             <div class="filter-section">
+                 <label class="filter-label">DATUM</label>
+                 <input type="date" id="fromDate" class="filter-input" />
+                 <div style="text-align: center; margin: 5px 0; font-size: 0.75rem; color: var(--matrix-primary);">t/m</div>
+                 <input type="date" id="toDate" class="filter-input" />
+             </div>
+         
+             <div class="filter-section">
+                 <label class="filter-label">TOTAALPRIJS (€)</label>
+                 <input type="text" id="totalPriceFrom" class="filter-input" placeholder="Van" />
+                 <input type="text" id="totalPriceTo" class="filter-input" placeholder="Tot" />
+             </div>
+         
+             <div class="filter-section">
+                 <label class="filter-label">MIN. AANTAL PRODUCTEN</label>
+                 <input type="text" id="minProducts" class="filter-input" placeholder="bv. 2" />
+             </div>
+         
+             <div class="filter-section">
+                 <label class="filter-label">ADRES</label>
+                 <input type="text" id="address" class="filter-input" placeholder="Stad, straat..." />
+             </div>
+         
+             <!-- Add Apply and Remove All Filters buttons -->
+             <button class="status-btn" id="applyFiltersBtn">Apply</button>
+             <button class="status-btn" id="removeAllFiltersBtn">Remove All Filters</button>
+         </div>
+     
+         <!-- Main Content -->
+         <div class="main-content">
+             <!-- Status Filter Buttons -->
+             <div class="toolbar" id="statusFilterToolbar">
+                 <button class="status-btn" data-status="Nieuw">⭕ Nieuw</button>
+                 <button class="status-btn" data-status="In behandeling">⚙️ In behandeling</button>
+                 <button class="status-btn" data-status="Klaar om te verzenden">✓ Klaar om te verzenden</button>
+                 <button class="status-btn" data-status="Verzonden">📦 Verzonden</button>
+                 <button class="status-btn" data-status="Afgeleverd">✅ Afgeleverd</button>
+                 <button class="status-btn" data-status="Geannuleerd">👁️ Geannuleerd</button>
+                 <button class="status-btn" data-status="Retour">↩️ Retour</button>
+             </div>
+         
+             <!-- Sort Options -->
+             <div class="toolbar" style="border-top: 1px solid var(--matrix-primary); padding-top: 15px; margin-bottom: 15px;">
+                 <span class="toolbar-label">SORTEREN:</span>
+                 <button class="sort-btn active">Datum ↓</button>
+                 <button class="sort-btn">ID ↑</button>
+                 <button class="sort-btn">Prijs ↓</button>
+                 <button class="sort-btn">Producten ↑</button>
+             </div>
+         
+             <!-- Orders List -->
+             @if (Model.Any())
+             {
+                 <div class="result-info">▶ ORDERARCHIEF — <span id="resultCount">@Model.Count()</span> RESULTATEN</div>
+             
+                 <table class="orders-table">
+                     <thead>
+                         <tr>
+                             <th>Order ID</th>
+                             <th>Customer</th>
+                             <th>Date</th>
+                             <th>Total</th>
+                             <th>Status</th>
+                             <th>Actions</th>
+                         </tr>
+                     </thead>
+                     <tbody id="ordersTableBody">
+                         @foreach (var order in Model.OrderByDescending(o => o.OrderDate))
+                         {
+                             var orderTotal = order.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
+                             <tr class="order-row" 
+                                 data-customername="@order.CustomerName.ToLower()" 
+                                 data-orderdate="@order.OrderDate.ToString("yyyy-MM-dd")" 
+                                 data-total="@orderTotal.ToString("F2").Replace(",", ".")" 
+                                 data-minproducts="@order.OrderLines.Count().ToString()" 
+                                 data-status="@order.OrderStatus.ToLower()">
+                                 <td><span class="order-id">@order.Id.ToString("0000")</span></td>
+                                 <td>@(order.CustomerName ?? "Unknown")</td>
+                                 <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
+                                 <td><span class="order-price">€@orderTotal.ToString("F2").Replace(",", ".")</span></td>
+                                 <td>
+                                     @if (string.IsNullOrEmpty(order.OrderStatus))
+                                     {
+                                         <span class="order-status new">⭕ Unknown</span>
+                                     }
+                                     else if (order.OrderStatus.ToLower().Contains("new") || order.OrderStatus.ToLower().Contains("nieuw"))
+                                     {
+                                         <span class="order-status new">⭕ @order.OrderStatus</span>
+                                     }
+                                     else if (order.OrderStatus.ToLower().Contains("processing") || order.OrderStatus.ToLower().Contains("behandeling"))
+                                     {
+                                         <span class="order-status processing">⚙️ @order.OrderStatus</span>
+                                     }
+                                     else
+                                     {
+                                         <span class="order-status">ℹ️ @order.OrderStatus</span>
+                                     }
+                                 </td>
+                                 <td>
+                                     <a asp-action="Details" asp-route-id="@order.Id" class="action-btn">Details</a>
+                                     <a asp-action="Edit" asp-route-id="@order.Id" class="action-btn">Edit</a>
+                                     <a asp-action="Delete" asp-route-id="@order.Id" class="action-btn delete">Delete</a>
+                                 </td>
+                             </tr>
+                         }
+                     </tbody>
+                 </table>
+             }
+             else
+             {
+                 <div class="empty-state">
+                     ⚠️ No orders found.
+                 </div>
+             }
+         </div>
+     </div>
+ </div>
