@@ -19,7 +19,7 @@
     <form action="@Url.Action("Delete", "Support", new { id = Model.Id })" method="post">
         @Html.AntiForgeryToken()
         <input type="hidden" asp-for="Id" />
-        <button type="submit" class="btn btn-danger">Delete</button>
-        <a asp-controller="Support" asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+        <button type="submit" class="btn btn-danger">Verwijder</button>
+        <a asp-controller="Support" asp-action="Index" class="btn btn-secondary ms-2">Annuleren</a>
     </form>
 </div>

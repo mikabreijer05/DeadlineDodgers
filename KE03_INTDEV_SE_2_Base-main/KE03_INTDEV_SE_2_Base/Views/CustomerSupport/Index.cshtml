@@ -6,23 +6,23 @@
 @model IEnumerable<KE03_INTDEV_SE_2_Base.Models.CustomerServiceTicket>
 
 @{
-    ViewData["Title"] = "Customer Support";
+    ViewData["Title"] = "Klantenservice";
 }
 
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="h3">Customer Support Tickets</h1>
-        <a class="btn btn-primary" asp-controller="Support" asp-action="Create">Create ticket</a>
+        <h1 class="h3">Klantenservice Tickets</h1>
+        <a class="btn btn-primary" asp-controller="Support" asp-action="Create">Creër ticket</a>
     </div>
 
     <table class="customer-table table table-striped">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Customer</th>
-                <th>Date created</th>
+                <th>Titel</th>
+                <th>Klant</th>
+                <th>Datum aangemaakt</th>
                 <th>Status</th>
-                <th>Description</th>
+                <th>Beschrijving</th>
                 <th></th>
             </tr>
         </thead>
@@ -35,11 +35,11 @@
                     <td>@t.Title</td>
                     <td>@(t.Customer?.Name ?? "-")</td>
                     <td>@t.DateCreated.ToLocalTime().ToString("g")</td>
-                    <td>@(t.IsActive ? "Open" : "Closed")</td>
+                    <td>@(t.IsActive ? "Open" : "Gesloten")</td>
                     <td>@(string.IsNullOrWhiteSpace(t.Description) ? "-" : (t.Description.Length > 80 ? t.Description.Substring(0,80) + "..." : t.Description))</td>
                     <td class="text-end">
-                        <a class="btn btn-sm btn-secondary me-1" asp-controller="Support" asp-action="Edit" asp-route-id="@t.Id">Edit</a>
-                        <a class="btn btn-sm btn-danger" asp-controller="Support" asp-action="Delete" asp-route-id="@t.Id">Delete</a>
+                        <a class="btn btn-sm btn-secondary me-1" asp-controller="Support" asp-action="Edit" asp-route-id="@t.Id">Aanpassen</a>
+                        <a class="btn btn-sm btn-danger" asp-controller="Support" asp-action="Delete" asp-route-id="@t.Id">Verwijderen</a>
                     </td>
                 </tr>
             }
