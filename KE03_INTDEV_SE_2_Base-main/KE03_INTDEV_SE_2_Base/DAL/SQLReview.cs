@@ -6,8 +6,10 @@ using KE03_INTDEV_SE_2_Base.Models;
 
 namespace KE03_INTDEV_SE_2_Base.DAL
 {
+    // Klasse voor alle databasebewerkingen rondom reviews
     public class SQLReview : SQLDAL
     {
+        // Haalt alle reviews op die nog wachten op goedkeuring
         public IEnumerable<Review> GetPendingReviews()
         {
             const string sql = @"
@@ -31,15 +33,20 @@ namespace KE03_INTDEV_SE_2_Base.DAL
 
             try
             {
+                // Open databaseverbinding
                 connection.Open();
+
+                // Voer query uit en zet resultaten om naar Review-objecten
                 return connection.Query<Review>(sql).ToList();
             }
             finally
             {
+                // Sluit databaseverbinding
                 CloseConnection();
             }
         }
 
+        // Haalt alle goedgekeurde reviews op
         public IEnumerable<Review> GetVerifiedReviews()
         {
             const string sql = @"
@@ -72,6 +79,7 @@ namespace KE03_INTDEV_SE_2_Base.DAL
             }
         }
 
+        // Haalt alle reviews op, ongeacht hun status
         public IEnumerable<Review> GetAllReviews()
         {
             const string sql = @"
@@ -103,6 +111,7 @@ namespace KE03_INTDEV_SE_2_Base.DAL
             }
         }
 
+        // Haalt één specifieke review op aan de hand van het ID
         public Review GetReviewById(int reviewId)
         {
             const string sql = @"
@@ -126,7 +135,12 @@ namespace KE03_INTDEV_SE_2_Base.DAL
             try
             {
                 connection.Open();
-                return connection.QueryFirstOrDefault<Review>(sql, new { ReviewId = reviewId });
+
+                // Geeft de review terug of null als deze niet bestaat
+                return connection.QueryFirstOrDefault<Review>(
+                    sql,
+                    new { ReviewId = reviewId }
+                );
             }
             finally
             {
@@ -134,13 +148,17 @@ namespace KE03_INTDEV_SE_2_Base.DAL
             }
         }
 
+        // Keurt een review goed
         public void ApproveReview(int reviewId)
         {
-            const string sql = "UPDATE dbo.Review SET ReviewStatus = 'Approved' WHERE RevId = @ReviewId;";
+            const string sql =
+                "UPDATE dbo.Review SET ReviewStatus = 'Approved' WHERE RevId = @ReviewId;";
 
             try
             {
                 connection.Open();
+
+                // Update de status naar Approved
                 connection.Execute(sql, new { ReviewId = reviewId });
             }
             finally
@@ -149,13 +167,17 @@ namespace KE03_INTDEV_SE_2_Base.DAL
             }
         }
 
+        // Wijst een review af
         public void RejectReview(int reviewId)
         {
-            const string sql = "UPDATE dbo.Review SET ReviewStatus = 'Rejected' WHERE RevId = @ReviewId;";
+            const string sql =
+                "UPDATE dbo.Review SET ReviewStatus = 'Rejected' WHERE RevId = @ReviewId;";
 
             try
             {
                 connection.Open();
+
+                // Update de status naar Rejected
                 connection.Execute(sql, new { ReviewId = reviewId });
             }
             finally
@@ -164,13 +186,17 @@ namespace KE03_INTDEV_SE_2_Base.DAL
             }
         }
 
+        // Verwijdert een review definitief uit de database
         public void DeleteReview(int reviewId)
         {
-            const string sql = "DELETE FROM dbo.Review WHERE RevId = @ReviewId;";
+            const string sql =
+                "DELETE FROM dbo.Review WHERE RevId = @ReviewId;";
 
             try
             {
                 connection.Open();
+
+                // Verwijder review met opgegeven ID
                 connection.Execute(sql, new { ReviewId = reviewId });
             }
             finally
@@ -179,13 +205,17 @@ namespace KE03_INTDEV_SE_2_Base.DAL
             }
         }
 
+        // Telt hoeveel reviews nog wachten op goedkeuring
         public int GetPendingReviewsCount()
         {
-            const string sql = "SELECT COUNT(*) FROM dbo.Review WHERE ReviewStatus = 'Pending';";
+            const string sql =
+                "SELECT COUNT(*) FROM dbo.Review WHERE ReviewStatus = 'Pending';";
 
             try
             {
                 connection.Open();
+
+                // Geef het aantal pending reviews terug
                 return connection.QueryFirstOrDefault<int>(sql);
             }
             finally
