@@ -77,18 +77,24 @@
             <button class="filter-btn" data-status="Rejected">AFGEWEZEN</button>
         </div>
 
-        <div class="filters-right">
-            <label>DATUM:</label>
+            <!-- ← ZOEKBALK TOEVOEGEN -->
+            <div class="filters-search">
+                <span class="filters-search-icon">⌕</span>
+                <input type="text" id="review-search" placeholder="ZOEKEN..." />
+                <button id="review-search-clear" class="filters-search-clear">✕</button>
+            </div>
 
-            <input type="date" id="date-from" class="date-input" />
-            <span>t/m</span>
-            <input type="date" id="date-to" class="date-input" />
+            <div class="filters-right">
+                <label>DATUM:</label>
+                <input type="date" id="date-from" class="date-input" />
+                <span>t/m</span>
+                <input type="date" id="date-to" class="date-input" />
+                <button id="date-filter-btn" class="filter-btn">FILTEREN</button>
+            </div>
 
-            <button id="date-filter-btn" class="filter-btn">APPLY</button>
         </div>
 
-    </div>
-
+ 
     <!-- ARCHIVE -->
     <div class="archived-panel">
 
