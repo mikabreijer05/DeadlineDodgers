@@ -1,4 +1,3 @@
-
 using KE03_INTDEV_SE_1_Base.DAL;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -58,7 +57,11 @@ namespace KE03_INTDEV_SE_1_Base.Pages
             UserData = new UserProfile
             {
                 Name = customer.Name,
-                Address = customer.Address,
+                Street = customer.Address.Street,
+                HouseNumber = customer.Address.HouseNumber,
+                PostalCode = customer.Address.PostalCode,
+                City = customer.Address.City,
+                Country = customer.Address.Country,
                 Active = customer.Active,
             };
 
@@ -80,7 +83,11 @@ namespace KE03_INTDEV_SE_1_Base.Pages
     public class UserProfile
     {
         public string Name { get; set; }
-        public string Address { get; set; }
+        public string Street { get; set; }
+        public string HouseNumber { get; set; }
+        public string PostalCode { get; set; }
+        public string City { get; set; }
+        public string Country { get; set; }
         public bool Active { get; set; }
     }
 

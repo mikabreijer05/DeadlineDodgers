@@ -1,112 +1,121 @@
 ﻿@page
 @model KE03_INTDEV_SE_1_Base.Pages.AccountModel
-@{
-    ViewData["Title"] = "Mijn Account";
-}
-<h1>@ViewData["Title"]</h1>
+ @{
+     ViewData["Title"] = "Mijn Account";
+ }
 
-<form method="post" asp-page-handler="Logout" style="float:right;">
-    <button type="submit" class="btn btn-outline-danger">Uitloggen</button>
-</form>
+ <h1>@ViewData["Title"]</h1>
 
+ <form method="post" asp-page-handler="Logout" style="float:right;">
+     <button type="submit" class="btn btn-outline-danger">Uitloggen</button>
+ </form>
 
+ <div class="matrix-container">
 
-<div class="matrix-container">
+     <div class="dashboard-grid">
 
+         <!-- LINKER PANEEL -->
+         <div class="panel">
 
+             <h2>> Accountgegevens</h2>
 
-    <div class="dashboard-grid">
+             <div class="separator"></div>
 
-        <!-- LINKER PANEEL -->
-        <div class="panel">
+             <div class="info-row">
+                 <span>Naam:</span>
+                 <span>@Model.UserData.Name</span>
+             </div>
 
-            <h2>> Accountgegevens</h2>
+             <div class="info-row">
+                 <span>Straat:</span>
+                 <span>@Model.UserData.Street</span>
+             </div>
 
-            <div class="separator"></div>
+             <div class="info-row">
+                 <span>Huisnummer:</span>
+                 <span>@Model.UserData.HouseNumber</span>
+             </div>
 
-            <div class="info-row">
-                <span>Naam:</span>
-                <span>@Model.UserData.Name</span>
-            </div>
+             <div class="info-row">
+                 <span>Postcode:</span>
+                 <span>@Model.UserData.PostalCode</span>
+             </div>
 
-            <div class="info-row">
-                <span>EMAIL:</span>
-                <span>@Model.UserData.Address</span>
-            </div>
+             <div class="info-row">
+                 <span>Stad:</span>
+                 <span>@Model.UserData.City</span>
+             </div>
 
-            <div class="info-row">
-                <span>Gebruikersnaam:</span>
-                <span>@Model.UserData.Active</span>
-            </div>
+             <div class="info-row">
+                 <span>Land:</span>
+                 <span>@Model.UserData.Country</span>
+             </div>
 
-            
+             <div class="info-row">
+                 <span>Gebruikersnaam:</span>
+                 <span>@Model.UserData.Active</span>
+             </div>
 
+         </div>
 
+         <!-- RECHTER PANEEL -->
+         <div class="panel">
 
+             <h2>> Bestelling Geschiedenis</h2>
 
+             <div class="separator"></div>
 
-        </div>
+             <div class="orders-container">
 
-        <!-- RECHTER PANEEL -->
-        <div class="panel">
+                 @if (!Model.Orders.Any())
+                 {
+                     <p>Je hebt nog geen bestellingen geplaatst.</p>
+                 }
+                 else
+                 {
+                     @foreach (var order in Model.Orders)
+                     {
+                         <div class="order-card">
 
-            <h2>> Bestelling Geschiedenis</h2>
+                             <div class="info-row">
+                                 <span>ORDER_ID:</span>
+                                 <span>@order.OrderNumber</span>
+                             </div>
 
-            <div class="separator"></div>
+                             <div class="info-row">
+                                 <span>DATE:</span>
+                                 <span>@order.OrderDate.ToString("yyyy-MM-dd")</span>
+                             </div>
 
-            <div class="orders-container">
+                             <div class="info-row">
+                                 <span>ITEM:</span>
+                                 <span>@order.ItemName</span>
+                             </div>
 
-                @if (!Model.Orders.Any())
-                {
-                    <p>Je hebt nog geen bestellingen geplaatst.</p>
-                }
-                else
-                {
-                    @foreach (var order in Model.Orders)
-                    {
-                        <div class="order-card">
+                             <div class="info-row">
+                                 <span>STATUS:</span>
+                                 <span>@order.Status</span>
+                             </div>
 
-                            <div class="info-row">
-                                <span>ORDER_ID:</span>
-                                <span>@order.OrderNumber</span>
-                            </div>
+                             <div class="separator small"></div>
 
-                            <div class="info-row">
-                                <span>DATE:</span>
-                                <span>@order.OrderDate.ToString("yyyy-MM-dd")</span>
-                            </div>
+                             <div class="info-row">
+                                 <span>PRICE:</span>
+                                 <span>€ @order.Price</span>
+                             </div>
 
-                            <div class="info-row">
-                                <span>ITEM:</span>
-                                <span>@order.ItemName</span>
-                            </div>
+                         </div>
+                     }
+                 }
 
-                            <div class="info-row">
-                                <span>STATUS:</span>
-                                <span>@order.Status</span>
-                            </div>
+             </div>
 
-                            <div class="separator small"></div>
+             <a class="matrix-button" asp-page="/OrderHistory">
+                 > VIEW_ALL_ORDERS
+             </a>
 
-                            <div class="info-row">
-                                <span>PRICE:</span>
-                                <span>€ @order.Price</span>
-                            </div>
+         </div>
 
-                        </div>
-                    }
-                }
+     </div>
 
-            </div>
-
-            <a class="matrix-button" asp-page="/OrderHistory">
-                > VIEW_ALL_ORDERS
-            </a>
-
-        </div>
-
-    </div>
-
-
-
-</div>
+ </div>

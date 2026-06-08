@@ -8,29 +8,42 @@ public class SQLCustomer : SQLDAL
     public List<Customer> GetAllCustomers()
     {
         const string sql = """
-            SELECT
-                a.AccId     AS Id,
-                a.CustName  AS Name,
-                a.AccActive AS Active,
-                LTRIM(RTRIM(
-                    ISNULL(addr.Street, '')
-                    + ' ' + ISNULL(addr.HouseNumber, '')
-                    + ', ' + ISNULL(addr.PostalCode, '')
-                    + ' ' + ISNULL(addr.City, '')
-                    + ', ' + ISNULL(addr.Country, '')
-                )) AS Address
-            FROM Account a
-            LEFT JOIN AccountAddress aa ON aa.Account = a.AccId
-            LEFT JOIN Address addr      ON addr.AddressId = aa.Address
-            WHERE a.CustName IS NOT NULL
-            ORDER BY a.CustName
-            """;
+                           SELECT
+                               a.AccId     AS Id,
+                               a.CustName  AS Name,
+                               a.AccActive AS Active,
+                               addr.Street,
+                               addr.HouseNumber,
+                               addr.PostalCode,
+                               addr.City,
+                               addr.Country
+                           FROM Account a
+                           LEFT JOIN AccountAddress aa ON aa.Account = a.AccId
+                           LEFT JOIN Address addr      ON addr.AddressId = aa.Address
+                           WHERE a.CustName IS NOT NULL
+                           ORDER BY a.CustName
+                           """;
 
         try
         {
             connection.Open();
 
-            return connection.Query<Customer>(sql).ToList();
+            return connection.Query<Customer, Address, Customer>(
+                    sql,
+                    (customer, address) =>
+                    {
+                        customer.Address = new Address
+                        {
+                            Street = address.Street,
+                            HouseNumber = address.HouseNumber,
+                            PostalCode = address.PostalCode,
+                            City = address.City,
+                            Country = address.Country
+                        };
+                        return customer;
+                    },
+                    splitOn: "Street,HouseNumber,PostalCode,City,Country")
+                .ToList();
         }
         finally
         {
@@ -41,28 +54,46 @@ public class SQLCustomer : SQLDAL
     public Customer? GetCustomerById(int id)
     {
         const string sql = """
-            SELECT
-                a.AccId     AS Id,
-                a.CustName  AS Name,
-                a.AccActive AS Active,
-                LTRIM(RTRIM(
-                    ISNULL(addr.Street, '')
-                    + ' ' + ISNULL(addr.HouseNumber, '')
-                    + ', ' + ISNULL(addr.PostalCode, '')
-                    + ' ' + ISNULL(addr.City, '')
-                    + ', ' + ISNULL(addr.Country, '')
-                )) AS Address
-            FROM Account a
-            LEFT JOIN AccountAddress aa ON aa.Account = a.AccId
-            LEFT JOIN Address addr      ON addr.AddressId = aa.Address
-            WHERE a.AccId = @Id
-            """;
+                           SELECT
+                               a.AccId     AS Id,
+                               a.CustName  AS Name,
+                               a.AccActive AS Active,
+                               addr.Street,
+                               addr.HouseNumber,
+                               addr.PostalCode,
+                               addr.City,
+                               addr.Country
+                           FROM Account a
+                           LEFT JOIN AccountAddress aa ON aa.Account = a.AccId
+                           LEFT JOIN Address addr      ON addr.AddressId = aa.Address
+                           WHERE a.AccId = @Id
+                           """;
 
         try
         {
             connection.Open();
 
-            return connection.QuerySingleOrDefault<Customer>(sql, new { Id = id });
+            var result = connection.QueryFirstOrDefault(sql, new { Id = id });
+
+            if (result == null)
+                return null;
+
+            var customer = new Customer
+            {
+                Id = result.Id,
+                Name = result.Name,
+                Active = result.Active,
+                Address = new Address
+                {
+                    Street = result.Street,
+                    HouseNumber = result.HouseNumber,
+                    PostalCode = result.PostalCode,
+                    City = result.City,
+                    Country = result.Country
+                }
+            };
+
+            return customer;
         }
         finally
         {
@@ -73,23 +104,23 @@ public class SQLCustomer : SQLDAL
     public void AddCustomer(Customer customer)
     {
         const string insertAccountSql = """
-            INSERT INTO Account (CustName, AccActive)
-            VALUES (@Name, @Active);
+                                        INSERT INTO Account (CustName, AccActive)
+                                        VALUES (@Name, @Active);
 
-            SELECT CAST(SCOPE_IDENTITY() AS int);
-            """;
+                                        SELECT CAST(SCOPE_IDENTITY() AS int);
+                                        """;
 
         const string insertAddressSql = """
-            INSERT INTO Address (Street)
-            VALUES (@Address);
+                                        INSERT INTO Address (Street, HouseNumber, PostalCode, City, Country)
+                                        VALUES (@Street, @HouseNumber, @PostalCode, @City, @Country);
 
-            SELECT CAST(SCOPE_IDENTITY() AS int);
-            """;
+                                        SELECT CAST(SCOPE_IDENTITY() AS int);
+                                        """;
 
         const string insertAccountAddressSql = """
-            INSERT INTO AccountAddress (Account, Address)
-            VALUES (@AccountId, @AddressId);
-            """;
+                                               INSERT INTO AccountAddress (Account, Address)
+                                               VALUES (@AccountId, @AddressId);
+                                               """;
 
         try
         {
@@ -102,11 +133,18 @@ public class SQLCustomer : SQLDAL
                 new { customer.Name, customer.Active },
                 transaction);
 
-            if (!string.IsNullOrWhiteSpace(customer.Address))
+            if (customer.Address != null)
             {
                 var addressId = connection.QuerySingle<int>(
                     insertAddressSql,
-                    new { customer.Address },
+                    new
+                    {
+                        customer.Address.Street,
+                        customer.Address.HouseNumber,
+                        customer.Address.PostalCode,
+                        customer.Address.City,
+                        customer.Address.Country
+                    },
                     transaction);
 
                 connection.Execute(
@@ -133,20 +171,24 @@ public class SQLCustomer : SQLDAL
             """;
 
         const string selectAddressIdSql = """
-            SELECT TOP 1 aa.Address
+            SELECT TOP 1 aa.AddressId
             FROM AccountAddress aa
             WHERE aa.Account = @AccountId
             """;
 
         const string updateAddressSql = """
             UPDATE Address
-            SET Street = @Address
+            SET Street = @Street,
+                HouseNumber = @HouseNumber,
+                PostalCode = @PostalCode,
+                City = @City,
+                Country = @Country
             WHERE AddressId = @AddressId
             """;
 
         const string insertAddressSql = """
-            INSERT INTO Address (Street)
-            VALUES (@Address);
+            INSERT INTO Address (Street, HouseNumber, PostalCode, City, Country)
+            VALUES (@Street, @HouseNumber, @PostalCode, @City, @Country);
 
             SELECT CAST(SCOPE_IDENTITY() AS int);
             """;
@@ -176,14 +218,29 @@ public class SQLCustomer : SQLDAL
             {
                 connection.Execute(
                     updateAddressSql,
-                    new { customer.Address, AddressId = addressId.Value },
+                    new
+                    {
+                        customer.Address.Street,
+                        customer.Address.HouseNumber,
+                        customer.Address.PostalCode,
+                        customer.Address.City,
+                        customer.Address.Country,
+                        AddressId = addressId.Value
+                    },
                     transaction);
             }
-            else if (!string.IsNullOrWhiteSpace(customer.Address))
+            else if (customer.Address != null)
             {
                 var newAddressId = connection.QuerySingle<int>(
                     insertAddressSql,
-                    new { customer.Address },
+                    new
+                    {
+                        customer.Address.Street,
+                        customer.Address.HouseNumber,
+                        customer.Address.PostalCode,
+                        customer.Address.City,
+                        customer.Address.Country
+                    },
                     transaction);
 
                 connection.Execute(
@@ -203,14 +260,14 @@ public class SQLCustomer : SQLDAL
     public void DeleteCustomer(int id)
     {
         const string deleteAccountAddressSql = """
-            DELETE FROM AccountAddress
-            WHERE Account = @Id
-            """;
+                                               DELETE FROM AccountAddress
+                                               WHERE Account = @Id
+                                               """;
 
         const string deleteAccountSql = """
-            DELETE FROM Account
-            WHERE AccId = @Id
-            """;
+                                        DELETE FROM Account
+                                        WHERE AccId = @Id
+                                        """;
 
         try
         {

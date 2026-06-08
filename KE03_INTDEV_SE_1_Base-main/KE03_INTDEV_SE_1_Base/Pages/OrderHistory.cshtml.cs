@@ -31,13 +31,12 @@ namespace KE03_INTDEV_SE_1_Base.Pages
                     OrderDate = order.OrderDate,
                     Products = order.OrderLines.Select(orderLine => new OrderProductViewModel
                     {
-                        ProductName = orderLine.Product.Name,
-                        Quantity = orderLine.Quantity,
-                        PricePerProduct = orderLine.PricePerProduct
+                        ProductName = orderLine.Product.Name, // Ensure this matches the product name in OrderLine
+                        Quantity = orderLine.Quantity,       // Ensure this matches the quantity in OrderLine
+                        PricePerProduct = orderLine.Product.Price, // Ensure this matches the price per product in OrderLine
                     }).ToList()
                 })
                 .ToList();
-
             return Page();
         }
     }
@@ -55,6 +54,8 @@ namespace KE03_INTDEV_SE_1_Base.Pages
         public string ProductName { get; set; }
         public int Quantity { get; set; }
         public decimal PricePerProduct { get; set; }
+
+        // Calculate total price for each product
         public decimal TotalPrice => Quantity * PricePerProduct;
     }
 }
