@@ -1,91 +1,395 @@
-/* Recreated reviews.css with strict selectors to avoid being overridden by site.css */
-:root{
-  --bg: #000000;
-  --green: #00ff3c;
-  --green-dim: rgba(0,255,60,0.08);
-  --red: #8b2323;
-  --red-dim: rgba(255,123,123,0.04);
-}
+/* ─── Reviews Page ──────────────────────────────────────────────── */
 
-/* Scope everything under .reviews-page to avoid global conflicts */
 .reviews-page {
-  background: var(--bg) !important;
-  color: var(--green) !important;
-  font-family: 'Courier New', monospace !important;
-  padding: 20px 28px !important;
+    padding: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-.reviews-page .page-header { margin-bottom: 18px !important; }
-.reviews-page .page-header .breadcrumb { color: var(--green) !important; font-size: 12px !important; margin-bottom: 6px !important; }
-.reviews-page .page-header h1 { color: var(--green) !important; font-size: 42px !important; margin: 0 0 8px 0 !important; letter-spacing: 2px !important; }
-
-/* Pending panel */
-.reviews-page .pending-panel {
-  border: 2px solid var(--red) !important;
-  background: linear-gradient(180deg, #1a0b0b 0%, #100606 100%) !important;
-  padding: 16px !important;
-  margin-bottom: 18px !important;
-  box-sizing: border-box !important;
+/* Header */
+.page-header .breadcrumb {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: rgba(0, 255, 65, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.25rem;
 }
 
-.reviews-page .panel-header { display:flex !important; align-items:center !important; justify-content:space-between !important; padding-bottom:8px !important; border-bottom:1px solid var(--red-dim) !important; }
-.reviews-page .panel-header .panel-title { color:#ff8b8b !important; font-weight:700 !important; display:flex !important; align-items:center !important; gap:10px !important; }
-.reviews-page .panel-header .panel-count { color:#ff8b8b !important; font-size:28px !important; }
+.page-header h1 {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #00ff41;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
 
-.reviews-page .panel-list { margin-top:12px !important; }
-.reviews-page .panel-item { position:relative !important; padding:12px 6px !important; border-bottom:1px solid var(--red-dim) !important; }
-.reviews-page .panel-item .item-summary { display:flex !important; justify-content:space-between !important; align-items:center !important; }
-.reviews-page .item-left { display:flex !important; flex-direction:column !important; }
-.reviews-page .item-user { color:var(--green) !important; font-weight:700 !important; margin-bottom:6px !important; }
-.reviews-page .item-meta { color:#8bffb0 !important; font-size:12px !important; }
-.reviews-page .item-right { display:flex !important; align-items:center !important; gap:12px !important; color:var(--green) !important; }
-.reviews-page .item-rating { color:var(--green) !important; font-weight:700 !important; }
+/* ─── Pending panel ─────────────────────────────────────────────── */
 
-/* expanded left border */
-.reviews-page .panel-item.open { box-shadow: inset 4px 0 0 0 var(--red) !important; }
-.reviews-page .panel-item .panel-item-details { display:none !important; padding:12px 0 6px 0 !important; color:#99ffb3 !important; }
-.reviews-page .panel-item.open .panel-item-details { display:block !important; }
+.pending-panel {
+    border: 2px solid rgba(248, 113, 113, 0.4);
+    background-color: rgba(248, 113, 113, 0.03);
+    margin-bottom: 1.25rem;
+}
 
-.reviews-page .panel-item h4 { color:var(--green) !important; margin:8px 0 !important; }
-.reviews-page .panel-item p { color:#99ffb3 !important; margin:0 0 8px 0 !important; }
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(248, 113, 113, 0.2);
+}
 
-.reviews-page .panel-item-actions { display:flex !important; gap:10px !important; margin-top:10px !important; }
-.reviews-page .btn { font-family:inherit !important; font-size:13px !important; padding:8px 12px !important; cursor:pointer !important; }
-.reviews-page .btn.approve { background:var(--green) !important; color:#041208 !important; border:1px solid rgba(0,0,0,0.2) !important; }
-.reviews-page .btn.reject, .reviews-page .btn.delete { background:transparent !important; color:#ff6b6b !important; border:1px solid rgba(255,60,60,0.12) !important; }
+.panel-title {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgb(248, 113, 113);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
 
-/* search */
-.reviews-page .search-panel { margin:18px 0 !important; border:2px solid var(--green-dim) !important; padding:10px !important; }
-.reviews-page .search-input { width:100% !important; background:transparent !important; border:none !important; color:var(--green) !important; padding:8px 6px !important; }
+.panel-count {
+    font-family: monospace;
+    font-size: 1.75rem;
+    color: rgb(248, 113, 113);
+    line-height: 1;
+}
 
-/* filters */
-.reviews-page .filters-panel { display:flex !important; justify-content:space-between !important; gap:10px !important; align-items:center !important; border:2px solid var(--green-dim) !important; padding:12px !important; margin-bottom:18px !important; }
-.reviews-page .filters-left { display:flex !important; align-items:center !important; gap:8px !important; }
-.reviews-page .filter-btn { background:transparent !important; color:var(--green) !important; border:1px solid var(--green-dim) !important; padding:8px 12px !important; }
-.reviews-page .filter-btn.active { background:var(--green) !important; color:#041208 !important; }
-.reviews-page .filters-right { display:flex !important; align-items:center !important; gap:10px !important; }
-.reviews-page .date-input, .reviews-page .filter-select { background:transparent !important; border:1px solid var(--green-dim) !important; color:var(--green) !important; padding:6px 8px !important; }
+.panel-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
 
-/* archived */
-.reviews-page .archived-panel { border-top:1px solid var(--green-dim) !important; padding-top:12px !important; }
-.reviews-page .archived-header { color:var(--green) !important; margin-bottom:8px !important; }
-.reviews-page .archived-item { border:1px solid var(--green-dim) !important; padding:12px !important; margin-bottom:12px !important; display:flex !important; justify-content:space-between !important; align-items:flex-start !important; }
-.reviews-page .archived-tags { display:flex !important; gap:8px !important; align-items:center !important; flex-wrap:wrap !important; }
-.reviews-page .tag { border:1px solid var(--green-dim) !important; padding:6px 8px !important; font-size:13px !important; color:var(--green) !important; }
-.reviews-page .tag.approved { background:var(--green) !important; color:#041208 !important; }
-.reviews-page .stars { color:var(--green) !important; font-weight:700 !important; }
-.reviews-page .archived-body h4 { color:var(--green) !important; margin:8px 0 !important; }
-.reviews-page .archived-body p { color:#99ffb3 !important; margin:0 !important; }
-.reviews-page .archived-actions { display:flex !important; flex-direction:column !important; gap:8px !important; }
-.reviews-page .btn.reject { background:transparent !important; border:1px solid rgba(255,60,60,0.12) !important; color:#ff6b6b !important; }
-.reviews-page .btn.delete { background:transparent !important; border:1px solid rgba(255,60,60,0.12) !important; color:#ff6b6b !important; }
+/* Individual pending item */
+.panel-item {
+    border-top: 1px solid rgba(248, 113, 113, 0.1);
+}
 
-.reviews-page a { color:var(--green) !important; text-decoration:none !important; }
-.reviews-page a:hover { text-decoration:underline !important; }
+.item-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
 
-@media (max-width:900px){
-  .reviews-page .page-header h1 { font-size:28px !important; }
-  .reviews-page .panel-header .panel-count { display:none !important; }
-  .reviews-page .filters-panel { flex-direction:column !important; align-items:stretch !important; }
-  .reviews-page .archived-item { flex-direction:column !important; }
+    .item-summary:hover {
+        background-color: rgba(248, 113, 113, 0.06);
+    }
+
+.item-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-user {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: hsl(var(--foreground, 0 0% 95%));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-meta {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: rgba(0, 255, 65, 0.4);
+    margin-top: 0.125rem;
+}
+
+.item-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.item-rating {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgba(0, 255, 65, 0.7);
+}
+
+.item-expand {
+    color: rgba(0, 255, 65, 0.4);
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+/* Expanded detail block */
+.panel-item-details {
+    display: none; /* toggled with JS / small inline script */
+    padding: 1rem 1.25rem 1.25rem;
+    border-top: 1px solid rgba(248, 113, 113, 0.2);
+    background-color: rgba(248, 113, 113, 0.05);
+}
+
+    .panel-item-details.open {
+        display: block;
+    }
+
+    .panel-item-details h4 {
+        font-family: monospace;
+        font-size: 0.875rem;
+        color: #00ff41;
+        margin: 0 0 0.35rem;
+    }
+
+    .panel-item-details p {
+        font-family: monospace;
+        font-size: 0.75rem;
+        color: hsl(var(--muted-foreground, 0 0% 60%));
+        line-height: 1.65;
+        margin: 0 0 0.75rem;
+    }
+
+.panel-item-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* ─── Filters ───────────────────────────────────────────────────── */
+
+.filters-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    background-color: #000;
+    margin-bottom: 1.25rem;
+}
+
+.filters-left,
+.filters-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+    .filters-right label {
+        font-family: monospace;
+        font-size: 0.7rem;
+        color: rgba(0, 255, 65, 0.4);
+        text-transform: uppercase;
+    }
+
+/* ─── Shared button / input primitives ─────────────────────────── */
+
+.btn,
+.filter-btn {
+    border: 1px solid rgba(0, 255, 65, 0.35);
+    background: transparent;
+    padding: 0.35rem 0.75rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+}
+
+    .btn:hover,
+    .filter-btn:hover {
+        border-color: #00ff41;
+    }
+
+    .filter-btn.active {
+        border-color: #00ff41;
+        background-color: #00ff41;
+        color: #000;
+    }
+
+    .btn.approve {
+        border-color: rgba(0, 255, 65, 0.5);
+        color: #00ff41;
+    }
+
+        .btn.approve:hover {
+            background-color: rgba(0, 255, 65, 0.12);
+            border-color: #00ff41;
+        }
+
+    .btn.reject {
+        border-color: rgba(248, 113, 113, 0.35);
+        color: rgba(248, 113, 113, 0.8);
+    }
+
+        .btn.reject:hover {
+            border-color: rgb(248, 113, 113);
+            color: rgb(248, 113, 113);
+        }
+
+    .btn.delete {
+        border-color: rgba(248, 113, 113, 0.2);
+        color: rgba(248, 113, 113, 0.5);
+    }
+
+        .btn.delete:hover {
+            border-color: rgba(248, 113, 113, 0.6);
+            color: rgb(248, 113, 113);
+        }
+
+.date-input {
+    background-color: #000;
+    border: 1px solid rgba(0, 255, 65, 0.4);
+    outline: none;
+    padding: 0.35rem 0.6rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: hsl(var(--foreground, 0 0% 95%));
+    transition: border-color 0.2s;
+    color-scheme: dark;
+}
+
+    .date-input:focus {
+        border-color: #00ff41;
+    }
+
+/* ─── Archive ───────────────────────────────────────────────────── */
+
+.archived-panel {
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    background-color: #000;
+}
+
+.archived-header {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: rgba(0, 255, 65, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+}
+
+.archived-item {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+    transition: background-color 0.2s;
+}
+
+    .archived-item:last-child {
+        border-bottom: none;
+    }
+
+    .archived-item:hover {
+        background-color: rgba(0, 255, 65, 0.03);
+    }
+
+/* Tag row */
+.archived-tags {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+}
+
+.tag {
+    font-family: monospace;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    color: rgba(0, 255, 65, 0.55);
+}
+
+    .tag.status {
+        border-color: rgba(0, 255, 65, 0.35);
+        color: #00ff41;
+        text-transform: uppercase;
+    }
+
+        .tag.status[data-status="Rejected"],
+        .tag.status:has(+ .tag) /* fallback handled in JS if needed */ {
+            /* dynamically coloured via inline style or JS */
+        }
+
+/* Colour the status tag based on its text content */
+.archived-item:has(.tag.status) .tag.status {
+    /* override per value below */
+}
+
+.tag[data-val="Approved"],
+.tag.approved {
+    border-color: rgba(0,255,65,.3);
+    color: rgba(0,255,65,.6);
+}
+
+.tag[data-val="Rejected"],
+.tag.rejected {
+    border-color: rgba(248,113,113,.4);
+    color: rgba(248,113,113,.8);
+}
+
+.tag[data-val="Pending"],
+.tag.pending {
+    border-color: rgba(0,255,65,.6);
+    color: #00ff41;
+}
+
+.tag.verified {
+    border-color: rgba(0, 255, 65, 0.15);
+    color: rgba(0, 255, 65, 0.35);
+}
+
+.tag.username {
+    color: #00ff41;
+    border-color: rgba(0, 255, 65, 0.4);
+}
+
+.tag.product {
+    color: rgba(0, 255, 65, 0.5);
+}
+
+.stars {
+    font-size: 0.8rem;
+    color: #00ff41;
+    letter-spacing: 0.05em;
+}
+
+/* Body */
+.archived-body h4 {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: hsl(var(--foreground, 0 0% 95%));
+    margin: 0 0 0.25rem;
+}
+
+.archived-body p {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground, 0 0% 60%));
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Actions */
+.archived-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+/* ─── Animations ────────────────────────────────────────────────── */
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

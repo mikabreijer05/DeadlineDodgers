@@ -36,4 +36,7 @@
     @await RenderSectionAsync("Scripts", required: false)
     <script src="~/js/site.js"></script>
 </body>
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+@await RenderSectionAsync("Styles", required: false)   
 </html>

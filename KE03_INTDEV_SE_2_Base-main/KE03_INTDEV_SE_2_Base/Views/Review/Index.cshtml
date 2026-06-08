@@ -1,161 +1,127 @@
 @model KE03_INTDEV_SE_2_Base.Models.ReviewsPageViewModel
 
 @{
-    // Titel die bovenaan in de browser/tab wordt weergegeven
     ViewData["Title"] = "Reviews";
 }
+@section Styles {
+    <link rel="stylesheet" href="~/css/reviews.css" asp-append-version="true" />
+}
 
-<!-- Paneel met reviews die nog wachten op goedkeuring -->
-<div class="pending-panel">
-    <div class="panel-header">
+<div class="reviews-page">
 
-        <!-- Titel van het overzicht -->
-        <div class="panel-title">&#9719; WACHTEN OP GOEDKEURING</div>
-
-        <!-- Totaal aantal reviews dat nog beoordeeld moet worden -->
-        <div class="panel-count">@Model.PendingReviews.Count()</div>
+    <!-- HEADER -->
+    <div class="page-header">
+        <div class="breadcrumb">REVIEWS DASHBOARD</div>
+        <h1>REVIEWS</h1>
     </div>
 
-    <div class="panel-list">
+    <!-- PENDING PANEL -->
+    <div class="pending-panel">
 
-        <!-- Loop door alle reviews die nog op goedkeuring wachten -->
-        @foreach (var r in Model.PendingReviews)
-        {
-            <div class="panel-item">
+        <div class="panel-header">
+            <div class="panel-title">&#9719; WACHTEN OP GOEDKEURING</div>
+            <div class="panel-count">@Model.PendingReviews.Count()</div>
+        </div>
 
-                <!-- Verborgen gegevens voor filtering of JavaScript -->
-                <span class="tag status" style="display:none">@r.ReviewStatus</span>
-                <span class="tag date" style="display:none">@r.CreatedDate.ToString("yyyy-MM-dd")</span>
+        <div class="panel-list">
 
-                <div class="item-summary">
+            @foreach (var r in Model.PendingReviews)
+            {
+                <div class="panel-item">
 
-                    <!-- Linkerzijde met gebruikers- en productinformatie -->
-                    <div class="item-left">
-                        <div class="item-user">@r.Username</div>
+                    <!-- hidden filters -->
+                    <span class="tag status" style="display:none">@r.ReviewStatus</span>
+                    <span class="tag date" style="display:none">@r.CreatedDate.ToString("yyyy-MM-dd")</span>
 
-                        <!-- Productnaam en datum van plaatsing -->
-                        <div class="item-meta">
-                            @r.ProductName &nbsp;·&nbsp;
-                            @r.CreatedDate.ToString("yyyy-MM-dd")
+                    <div class="item-summary">
+
+                        <div class="item-left">
+                            <div class="item-user">@r.Username</div>
+
+                            <div class="item-meta">
+                                @r.ProductName &nbsp;·&nbsp;
+                                @r.CreatedDate.ToString("yyyy-MM-dd")
+                            </div>
+                        </div>
+
+                        <div class="item-right">
+                            <div class="item-rating">@r.Rating/5</div>
+                            <div class="item-expand">▾</div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel-item-details">
+                        <h4>@r.Title</h4>
+                        <p>@r.Comment</p>
+
+                        <div class="panel-item-actions">
+                            <button class="btn approve">GOEDKEUREN</button>
+                            <button class="btn reject">AFWIJZEN</button>
+                            <button class="btn delete">VERWIJDEREN</button>
                         </div>
                     </div>
 
-                    <!-- Rechterzijde met beoordeling -->
-                    <div class="item-right">
-                        <div class="item-rating">@r.Rating/5</div>
+                </div>
+            }
 
-                        <!-- Pijltje om details uit te klappen -->
-                        <div class="item-expand">▾</div>
-                    </div>
+        </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters-panel">
+
+        <div class="filters-left">
+            <button class="filter-btn active" data-status="All">ALLE OVERIGE</button>
+            <button class="filter-btn" data-status="Approved">GOEDGEKEURD</button>
+            <button class="filter-btn" data-status="Rejected">AFGEWEZEN</button>
+        </div>
+
+        <div class="filters-right">
+            <label>DATUM:</label>
+
+            <input type="date" id="date-from" class="date-input" />
+            <span>t/m</span>
+            <input type="date" id="date-to" class="date-input" />
+
+            <button id="date-filter-btn" class="filter-btn">APPLY</button>
+        </div>
+
+    </div>
+
+    <!-- ARCHIVE -->
+    <div class="archived-panel">
+
+        <div class="archived-header">
+            REVIEWARCHIEF – ALLE OVERIGE
+        </div>
+
+        @foreach (var r in Model.AllReviews)
+        {
+            <div class="archived-item">
+
+                <div class="archived-tags">
+                    <span class="tag status">@r.ReviewStatus</span>
+                    <span class="tag username">@r.Username</span>
+                    <span class="tag verified">VERIFIED</span>
+                    <span class="stars">★★★★★</span>
+                    <span class="tag date">@r.CreatedDate.ToString("yyyy-MM-dd")</span>
+                    <span class="tag product">@r.ProductName</span>
                 </div>
 
-                <!-- Uitklapbaar gedeelte met volledige review -->
-                <div class="panel-item-details">
-
-                    <!-- Titel van de review -->
+                <div class="archived-body">
                     <h4>@r.Title</h4>
-
-                    <!-- Beschrijving/commentaar -->
                     <p>@r.Comment</p>
-
-                    <!-- Actieknoppen voor de beheerder -->
-                    <div class="panel-item-actions">
-                        <button class="btn approve">GOEDKEUREN</button>
-                        <button class="btn reject">AFWIJZEN</button>
-                        <button class="btn delete">VERWIJDEREN</button>
-                    </div>
                 </div>
+
+                <div class="archived-actions">
+                    <button class="btn reject">REJECT</button>
+                    <button class="btn delete">DELETE</button>
+                </div>
+
             </div>
         }
-    </div>
-</div>
 
-<!-- Zoekbalk om reviews te zoeken -->
-<div class="search-panel">
-    <input type="text" class="search-input" placeholder="> search reviews..." />
-</div>
-
-<!-- Filters voor status en datum -->
-<div class="filters-panel">
-
-    <!-- Filteren op reviewstatus -->
-    <div class="filters-left">
-        <button class="filter-btn active" data-status="All">
-            ALLE OVERIGE
-        </button>
-
-        <button class="filter-btn" data-status="Approved">
-            GOEDGEKEURD
-        </button>
-
-        <button class="filter-btn" data-status="Rejected">
-            AFGEWEZEN
-        </button>
     </div>
 
-    <!-- Filteren op datum -->
-    <div class="filters-right">
-        <label>DATUM:</label>
-
-        <!-- Startdatum -->
-        <input type="date" id="date-from" class="date-input" />
-
-        <span>t/m</span>
-
-        <!-- Einddatum -->
-        <input type="date" id="date-to" class="date-input" />
-
-        <!-- Datumfilter toepassen -->
-        <button id="date-filter-btn" class="filter-btn">
-            APPLY
-        </button>
-    </div>
-</div>
-
-<!-- Archief met alle overige reviews -->
-<div class="archived-panel">
-
-    <!-- Titel van het reviewarchief -->
-    <div class="archived-header">
-        &gt; REVIEWARCHIEF – ALLE OVERIGE
-    </div>
-
-    <!-- Loop door alle reviews -->
-    @foreach (var r in Model.AllReviews)
-    {
-        <div class="archived-item">
-
-            <!-- Metadata van de review -->
-            <div class="archived-tags">
-                <span class="tag status">@r.ReviewStatus</span>
-                <span class="tag username">@r.Username</span>
-
-                <!-- Geeft aan dat de review geverifieerd is -->
-                <span class="tag verified">VERIFIED</span>
-
-                <!-- Sterrenweergave -->
-                <span class="stars">★★★★★</span>
-
-                <!-- Datum van plaatsing -->
-                <span class="tag date">
-                    @r.CreatedDate.ToString("yyyy-MM-dd")
-                </span>
-
-                <!-- Naam van het product -->
-                <span class="tag product">@r.ProductName</span>
-            </div>
-
-            <!-- Inhoud van de review -->
-            <div class="archived-body">
-                <h4>@r.Title</h4>
-                <p>@r.Comment</p>
-            </div>
-
-            <!-- Beheeracties -->
-            <div class="archived-actions">
-                <button class="btn reject">REJECT</button>
-                <button class="btn delete">DELETE</button>
-            </div>
-        </div>
-    }
 </div>
