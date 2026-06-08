@@ -10,23 +10,20 @@ public class SQLOrder : SQLDAL
     {
         const string sql = @"
             SELECT
-                o.OrderId    AS Id,
-                o.OrderDate  AS OrderDate,
-                o.CustomerId AS CustomerId,
+                o.OrderId       AS OrderId,
+                o.OrderDate     AS OrderDate,
 
-                ol.OrderLineId      AS Id,
-                ol.OrderId          AS OrderId,
-                ol.ProductId        AS ProductId,
-                ol.Quantity         AS Quantity,
-                ol.PricePerProduct  AS PricePerProduct,
+                op.ProductId    AS ProductId,
+                op.Quantity      AS Quantity,
+                p.ProdPrice     AS PricePerProduct,
 
-                p.ProductId AS Id,
-                p.ProdName  AS Name,
-                p.ProdPrice AS Price
+                p.ProductId     AS productId, -- Renamed to avoid conflict with existing columns
+                p.ProdName      AS Name,
+                p.ProdPrice     AS ProdPrice
             FROM dbo.[Order] o
-            LEFT JOIN dbo.OrderLine ol ON ol.OrderId = o.OrderId
-            LEFT JOIN dbo.Product p    ON p.ProductId = ol.ProductId
-            WHERE o.CustomerId = @CustomerId
+            LEFT JOIN dbo.OrderProduct op ON op.OrderId = o.OrderId
+            LEFT JOIN dbo.Product p    ON p.ProductId = op.ProductId
+            WHERE o.AccountId = @CustomerId
             ORDER BY o.OrderDate DESC;";
 
         var orderMap = new Dictionary<int, Order>();
@@ -59,7 +56,7 @@ public class SQLOrder : SQLDAL
                     return existingOrder;
                 },
                 new { CustomerId = customerId },
-                splitOn: "Id,Id");
+                splitOn: "OrderId,ProductId,productId"); 
 
             return orderMap.Values.ToList();
         }
@@ -76,9 +73,9 @@ public class SQLOrder : SQLDAL
             VALUES (@CustomerId, @OrderDate);
             SELECT CAST(SCOPE_IDENTITY() AS int);";
 
-        const string insertOrderLineSql = @"
-            INSERT INTO dbo.OrderLine (OrderId, ProductId, Quantity, PricePerProduct)
-            VALUES (@OrderId, @ProductId, @Quantity, @PricePerProduct);";
+        const string insertOrderProductSql = @"
+            INSERT INTO dbo.OrderProduct (OrderId, ProductId, Quantity)
+            VALUES (@OrderId, @ProductId, @Quantity);";
 
         try
         {
@@ -93,8 +90,8 @@ public class SQLOrder : SQLDAL
             foreach (var line in order.OrderLines)
             {
                 connection.Execute(
-                    insertOrderLineSql,
-                    new { OrderId = order.Id, line.ProductId, line.Quantity, line.PricePerProduct },
+                    insertOrderProductSql,
+                    new { OrderId = order.Id, line.ProductId, line.Quantity },
                     transaction);
             }
 
