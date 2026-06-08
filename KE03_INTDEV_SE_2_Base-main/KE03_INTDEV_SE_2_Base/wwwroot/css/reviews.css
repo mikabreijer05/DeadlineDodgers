@@ -1,0 +1,182 @@
+/* Target design: dark terminal with red panel accents and green text */
+body {
+  background: #000;
+  color: #00ff3c;
+  font-family: 'Courier New', monospace;
+  padding: 18px 30px;
+}
+
+.page-header .breadcrumb {
+  color: #00ff3c;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.page-header h1 {
+  color: #00ff3c;
+  font-size: 44px;
+  margin: 0 0 18px 0;
+  letter-spacing: 2px;
+}
+
+/* Pending panel (red bordered box with dark red background) */
+.pending-panel {
+  border: 2px solid #8b2323; /* red border */
+  background: linear-gradient(#1a0b0b, #0f0606);
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ff7b7b;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255,123,123,0.06);
+  padding-bottom: 10px;
+}
+
+.panel-header .panel-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel-header .panel-count {
+  color: #ff7b7b;
+  font-size: 28px;
+}
+
+.panel-list { margin-top: 12px; }
+
+.panel-item {
+  border-left: 4px solid transparent;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,123,123,0.03);
+}
+
+.panel-item .item-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 0;
+}
+
+.panel-item .panel-item-details {
+  display: none;
+  padding: 12px 0 18px 12px;
+  border-left: 2px solid rgba(255,123,123,0.06);
+  margin-top: 8px;
+}
+
+/* when .open is present show details and red left border */
+.panel-item.open {
+  border-left-color: #8b2323;
+}
+
+.panel-item.open .panel-item-details { display: block; }
+
+.item-left .item-user {
+  color: #00ff3c;
+  font-weight: 700;
+}
+
+.item-left .item-meta {
+  color: #8bffb0;
+  font-size: 12px;
+}
+
+.item-right .item-rating {
+  color: #00ff3c;
+  font-weight: 700;
+}
+
+.panel-item-actions { display:flex; gap:8px; margin-top:10px; }
+
+.btn.approve { background: #00ff3c; color: #041208; border: none; padding: 8px 12px; }
+.btn.reject { background: transparent; border: 1px solid rgba(255,60,60,0.12); color: #ff6b6b; padding: 8px 12px; }
+.btn.delete { background: transparent; border: 1px solid rgba(255,60,60,0.12); color: #ff6b6b; padding: 8px 12px; }
+
+/* Search panel */
+.search-panel {
+  margin: 18px 0;
+  border: 2px solid #0b3f12;
+  padding: 10px;
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #00ff3c;
+  font-family: 'Courier New', monospace;
+  padding: 8px 6px;
+}
+
+/* Filters */
+.filters-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid rgba(0,255,60,0.06);
+  padding: 12px;
+  margin-bottom: 18px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid rgba(0,255,60,0.08);
+  color: #00ff3c;
+  padding: 8px 12px;
+  margin-right: 8px;
+}
+
+.filter-btn.active {
+  background: #00ff3c;
+  color: #041208;
+}
+
+.filter-select, .date-input {
+  background: transparent;
+  border: 1px solid rgba(0,255,60,0.08);
+  color: #00ff3c;
+  padding: 6px 10px;
+}
+
+/* Archived items */
+.archived-panel { border-top: 1px solid rgba(0,255,60,0.06); padding-top: 12px; }
+.archived-header { color: #00ff3c; margin-bottom: 8px; }
+
+.archived-item {
+  border: 1px solid rgba(0,255,60,0.06);
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.archived-tags { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+.tag { border: 1px solid rgba(0,255,60,0.06); padding: 6px 8px; font-size: 13px; color: #00ff3c; }
+.tag.approved { background: rgba(0,255,60,0.06); color: #041208; }
+.tag.username { font-weight: 700; }
+
+.stars { color: #00ff3c; font-weight: 700; }
+
+.archived-body h4 { color: #00ff3c; margin: 8px 0; }
+.archived-body p { color: #99ffb3; }
+
+.archived-actions { display: flex; flex-direction: column; gap: 8px; }
+
+.btn.reject, .btn.delete { background: transparent; border: 1px solid rgba(255,60,60,0.12); color: #ff6b6b; padding: 8px 12px; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .page-header h1 { font-size: 32px; }
+  .panel-header .panel-count { display: none; }
+  .filters-panel { flex-direction: column; gap: 8px; }
+  .archived-item { flex-direction: column; }
+}

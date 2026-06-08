@@ -1,0 +1,43 @@
+@model KE03_INTDEV_SE_2_Base.Models.ReviewsPageViewModel
+
+@{
+	ViewData["Title"] = "Reviews";
+}
+
+<div class="reviews-page">
+	<div class="reviews-header">
+		<h1>REVIEWS</h1>
+	</div>
+
+	<div class="reviews-main row">
+		<div class="col-md-4">
+			<h3>Pending</h3>
+			<div class="pending-list">
+				@foreach (var r in Model.PendingReviews)
+				{
+					<div class="pending-item">
+						<a href="@Url.Action("Detail", "Review", new { id = r.ReviewId })" class="pending-link">
+							<div class="pending-title">@r.ProductName</div>
+							<div class="pending-meta">@r.Username • @r.CreatedDate.ToString("yyyy-MM-dd")</div>
+						</a>
+					</div>
+				}
+			</div>
+		</div>
+
+		<div class="col-md-8">
+			<h3>All Reviews</h3>
+			<div class="all-list">
+				@foreach (var r in Model.AllReviews)
+				{
+					<div class="all-item">
+						<a href="@Url.Action("Detail", "Review", new { id = r.ReviewId })" class="all-link">
+							<div class="all-title">@r.Title</div>
+							<div class="all-meta">@r.Username • @r.CreatedDate.ToString("yyyy-MM-dd") • @r.ProductName</div>
+						</a>
+					</div>
+				}
+			</div>
+		</div>
+	</div>
+</div>
