@@ -1,12 +1,632 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\converters\\invertboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:converters\\invertboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\converters\\nulltoboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:converters\\nulltoboolconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\converters\\booltoscanbuttonstyleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:converters\\booltoscanbuttonstyleconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\converters\\booltostrikethroughconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:converters\\booltostrikethroughconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\converters\\prioritytocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:converters\\prioritytocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\converters\\statustotextconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:converters\\statustotextconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\converters\\statustocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:converters\\statustocolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\controls\\barcodescannerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:controls\\barcodescannerview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\controls\\scannedpackagerow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:controls\\scannedpackagerow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\controls\\scanitemrow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:controls\\scanitemrow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\controls\\statusbadge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:controls\\statusbadge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\controls\\priorirtybadge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:controls\\priorirtybadge.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\controls\\pageheader.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:controls\\pageheader.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\controls\\matrixrainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:controls\\matrixrainview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\views\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:views\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\views\\notificationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:views\\notificationpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\views\\mappage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:views\\mappage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\views\\orderdetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:views\\orderdetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\views\\orderlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:views\\orderlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:viewmodels\\profileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\viewmodels\\notificationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:viewmodels\\notificationsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\viewmodels\\mapviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:viewmodels\\mapviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\viewmodels\\orderdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:viewmodels\\orderdetailviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\viewmodels\\orderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:viewmodels\\orderlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:viewmodels\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\services\\mockpackageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:services\\mockpackageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\services\\mockdeliveryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:services\\mockdeliveryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\services\\ipackagelookup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:services\\ipackagelookup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\services\\ideliveryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:services\\ideliveryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\models\\scannedpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:models\\scannedpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\models\\packagelookup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:models\\packagelookup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\models\\scanitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:models\\scanitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\models\\appnotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:models\\appnotification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3\\models\\delivery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BCE996-86BC-47DA-9BFC-C46B63A6EBF5}|Iteratie3.csproj|solutionrelative:models\\delivery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\Enums.cs",
+              "RelativeDocumentMoniker": "Models\\Enums.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\Enums.cs",
+              "RelativeToolTip": "Models\\Enums.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:45:57.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InvertBoolConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\InvertBoolConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\InvertBoolConverter.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\InvertBoolConverter.cs",
+              "RelativeToolTip": "Converters\\InvertBoolConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:40:22.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NullToBoolConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\NullToBoolConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\NullToBoolConverter.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\NullToBoolConverter.cs",
+              "RelativeToolTip": "Converters\\NullToBoolConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:40:08.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BoolToScanButtonStyleConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\BoolToScanButtonStyleConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\BoolToScanButtonStyleConverter.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\BoolToScanButtonStyleConverter.cs",
+              "RelativeToolTip": "Converters\\BoolToScanButtonStyleConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:39:46.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BoolToStrikethroughConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\BoolToStrikethroughConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\BoolToStrikethroughConverter.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\BoolToStrikethroughConverter.cs",
+              "RelativeToolTip": "Converters\\BoolToStrikethroughConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:39:34.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PriorityToColorConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\PriorityToColorConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\PriorityToColorConverter.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\PriorityToColorConverter.cs",
+              "RelativeToolTip": "Converters\\PriorityToColorConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:39:07.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StatusToTextConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\StatusToTextConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\StatusToTextConverter.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\StatusToTextConverter.cs",
+              "RelativeToolTip": "Converters\\StatusToTextConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:38:42.67Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StatusToColorConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\StatusToColorConverter.cs",
+              "RelativeDocumentMoniker": "Converters\\StatusToColorConverter.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Converters\\StatusToColorConverter.cs",
+              "RelativeToolTip": "Converters\\StatusToColorConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T10:38:27.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BarcodeScannerView.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\BarcodeScannerView.xaml",
+              "RelativeDocumentMoniker": "Controls\\BarcodeScannerView.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\BarcodeScannerView.xaml",
+              "RelativeToolTip": "Controls\\BarcodeScannerView.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T10:01:53.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ScannedPackageRow.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\ScannedPackageRow.xaml",
+              "RelativeDocumentMoniker": "Controls\\ScannedPackageRow.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\ScannedPackageRow.xaml",
+              "RelativeToolTip": "Controls\\ScannedPackageRow.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T10:01:40.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ScanItemRow.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\ScanItemRow.xaml",
+              "RelativeDocumentMoniker": "Controls\\ScanItemRow.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\ScanItemRow.xaml",
+              "RelativeToolTip": "Controls\\ScanItemRow.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T10:01:25.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "StatusBadge.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\StatusBadge.xaml",
+              "RelativeDocumentMoniker": "Controls\\StatusBadge.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\StatusBadge.xaml",
+              "RelativeToolTip": "Controls\\StatusBadge.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T10:00:56.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PriorirtyBadge.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\PriorirtyBadge.xaml",
+              "RelativeDocumentMoniker": "Controls\\PriorirtyBadge.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\PriorirtyBadge.xaml",
+              "RelativeToolTip": "Controls\\PriorirtyBadge.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T10:00:38.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PageHeader.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\PageHeader.xaml",
+              "RelativeDocumentMoniker": "Controls\\PageHeader.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\PageHeader.xaml",
+              "RelativeToolTip": "Controls\\PageHeader.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T10:00:21.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MatrixRainView.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\MatrixRainView.cs",
+              "RelativeDocumentMoniker": "Controls\\MatrixRainView.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Controls\\MatrixRainView.cs",
+              "RelativeToolTip": "Controls\\MatrixRainView.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:59:31.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProfilePage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\ProfilePage.xaml",
+              "RelativeDocumentMoniker": "Views\\ProfilePage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\ProfilePage.xaml",
+              "RelativeToolTip": "Views\\ProfilePage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T09:59:17.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NotificationPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\NotificationPage.xaml",
+              "RelativeDocumentMoniker": "Views\\NotificationPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\NotificationPage.xaml",
+              "RelativeToolTip": "Views\\NotificationPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T09:58:42.955Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MapPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\MapPage.xaml",
+              "RelativeDocumentMoniker": "Views\\MapPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\MapPage.xaml",
+              "RelativeToolTip": "Views\\MapPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T09:58:20.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrderDetailPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\OrderDetailPage.xaml",
+              "RelativeDocumentMoniker": "Views\\OrderDetailPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\OrderDetailPage.xaml",
+              "RelativeToolTip": "Views\\OrderDetailPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T09:57:56.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderListPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\OrderListPage.xaml",
+              "RelativeDocumentMoniker": "Views\\OrderListPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Views\\OrderListPage.xaml",
+              "RelativeToolTip": "Views\\OrderListPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-09T09:56:54.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProfileViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\ProfileViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ProfileViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\ProfileViewModel.cs",
+              "RelativeToolTip": "ViewModels\\ProfileViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:55:32.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "NotificationsViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\NotificationsViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\NotificationsViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\NotificationsViewModel.cs",
+              "RelativeToolTip": "ViewModels\\NotificationsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:55:24.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "MapViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\MapViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MapViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\MapViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MapViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:44:05.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "OrderDetailViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\OrderDetailViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\OrderDetailViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\OrderDetailViewModel.cs",
+              "RelativeToolTip": "ViewModels\\OrderDetailViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:43:09.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "OrderListViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\OrderListViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\OrderListViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\OrderListViewModel.cs",
+              "RelativeToolTip": "ViewModels\\OrderListViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:42:58.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "BaseViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\BaseViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\BaseViewModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\ViewModels\\BaseViewModel.cs",
+              "RelativeToolTip": "ViewModels\\BaseViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:42:44.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MockPackageService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Services\\MockPackageService.cs",
+              "RelativeDocumentMoniker": "Services\\MockPackageService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Services\\MockPackageService.cs",
+              "RelativeToolTip": "Services\\MockPackageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:42:30.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MockDeliveryService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Services\\MockDeliveryService.cs",
+              "RelativeDocumentMoniker": "Services\\MockDeliveryService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Services\\MockDeliveryService.cs",
+              "RelativeToolTip": "Services\\MockDeliveryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:42:22.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IPackageLookup.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Services\\IPackageLookup.cs",
+              "RelativeDocumentMoniker": "Services\\IPackageLookup.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Services\\IPackageLookup.cs",
+              "RelativeToolTip": "Services\\IPackageLookup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:42:07.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IDeliveryService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Services\\IDeliveryService.cs",
+              "RelativeDocumentMoniker": "Services\\IDeliveryService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Services\\IDeliveryService.cs",
+              "RelativeToolTip": "Services\\IDeliveryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:41:46.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ScannedPackage.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\ScannedPackage.cs",
+              "RelativeDocumentMoniker": "Models\\ScannedPackage.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\ScannedPackage.cs",
+              "RelativeToolTip": "Models\\ScannedPackage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:41:26.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "PackageLookup.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\PackageLookup.cs",
+              "RelativeDocumentMoniker": "Models\\PackageLookup.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\PackageLookup.cs",
+              "RelativeToolTip": "Models\\PackageLookup.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:40:20.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ScanItem.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\ScanItem.cs",
+              "RelativeDocumentMoniker": "Models\\ScanItem.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\ScanItem.cs",
+              "RelativeToolTip": "Models\\ScanItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:40:06.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "AppNotification.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\AppNotification.cs",
+              "RelativeDocumentMoniker": "Models\\AppNotification.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\AppNotification.cs",
+              "RelativeToolTip": "Models\\AppNotification.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:39:55.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\OrderItem.cs",
+              "RelativeToolTip": "Models\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:39:41.282Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Delivery.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\Delivery.cs",
+              "RelativeDocumentMoniker": "Models\\Delivery.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\Iteratie3\\Models\\Delivery.cs",
+              "RelativeToolTip": "Models\\Delivery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-09T09:39:24.355Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -30,8 +30,74 @@ build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Controls/BarcodeScannerView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Controls.BarcodeScannerView.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\BarcodeScannerView.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\BarcodeScannerView.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Controls/PageHeader.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Controls.PageHeader.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\PageHeader.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\PageHeader.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Controls/PriorirtyBadge.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Controls.PriorirtyBadge.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\PriorirtyBadge.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\PriorirtyBadge.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Controls/ScanItemRow.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Controls.ScanItemRow.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\ScanItemRow.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\ScanItemRow.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Controls/ScannedPackageRow.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Controls.ScannedPackageRow.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\ScannedPackageRow.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\ScannedPackageRow.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Controls/StatusBadge.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Controls.StatusBadge.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\StatusBadge.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\StatusBadge.xaml
+
 [C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Views/MapPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Views.MapPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\MapPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\MapPage.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Views/NotificationPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Views.NotificationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\NotificationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\NotificationPage.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Views/OrderDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Views.OrderDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\OrderDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\OrderDetailPage.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Views/OrderListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Views.OrderListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\OrderListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\OrderListPage.xaml
+
+[C:/Users/Gebruiker/Documents/GitHub/DeadlineDodgers/KE03_INTDEV_SE_3_Base-main/Iteratie3/Views/ProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Iteratie3.Views.ProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\ProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\ProfilePage.xaml
