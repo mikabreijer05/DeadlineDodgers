@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\adocument help\\project_state.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:adocument help\\project_state.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\adocument help\\database_notes.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:adocument help\\database_notes.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\adocument help\\ai_context.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:adocument help\\ai_context.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\iteratie3matrix.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:iteratie3matrix.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DATABASE_NOTES.md",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\DATABASE_NOTES.md",
+              "RelativeDocumentMoniker": "aDOCUMENT Help\\DATABASE_NOTES.md",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\DATABASE_NOTES.md",
+              "RelativeToolTip": "aDOCUMENT Help\\DATABASE_NOTES.md",
+              "ViewState": "AgIAAOEBAAAAAAAAAAAIwPoBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-06-11T08:29:53.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PROJECT_STATE.md",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\PROJECT_STATE.md",
+              "RelativeDocumentMoniker": "aDOCUMENT Help\\PROJECT_STATE.md",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\PROJECT_STATE.md",
+              "RelativeToolTip": "aDOCUMENT Help\\PROJECT_STATE.md",
+              "ViewState": "AgIAADEBAAAAAAAAAAAIwE0BAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-06-11T08:29:10.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AI_CONTEXT.md",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\AI_CONTEXT.md",
+              "RelativeDocumentMoniker": "aDOCUMENT Help\\AI_CONTEXT.md",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\AI_CONTEXT.md",
+              "RelativeToolTip": "aDOCUMENT Help\\AI_CONTEXT.md",
+              "ViewState": "AgIAAAgBAAAAAAAAAAAIwCEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-06-11T08:30:57.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "iteratie3matrix",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\iteratie3matrix.csproj",
+              "RelativeDocumentMoniker": "iteratie3matrix.csproj",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\iteratie3matrix.csproj",
+              "RelativeToolTip": "iteratie3matrix.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-11T08:29:29.383Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
