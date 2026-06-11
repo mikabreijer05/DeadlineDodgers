@@ -1,10 +1,10 @@
 ﻿# MATRIXCOURIER — PROJECT STATE
 
 Last Updated:
-YYYY-MM-DD
+2026-06-11
 
 Current Version:
-v0.0.0
+v0.1.0
 
 ====================================================
 PROJECT OVERVIEW
@@ -17,14 +17,14 @@ Framework:
 .NET 9 MAUI
 
 Architecture:
-MVVM
+MVVM (Sample Content PageModel Pattern)
 
 Libraries:
 
 * CommunityToolkit.Maui
 * CommunityToolkit.Mvvm
-* WeakReferenceMessenger
-* ZXing.Net.Maui (scanner)
+* WeakReferenceMessenger (planned)
+* ZXing.Net.Maui (planned)
 
 Target Platform:
 
@@ -39,12 +39,12 @@ CURRENT STATUS
 
 Project Phase:
 
-[ ] Initial Setup
-[ ] Database Models
-[ ] Services
-[ ] Navigation
+[x] Initial Setup
+[x] Database Models
+[x] Services
+[x] Navigation
 [ ] Dashboard
-[ ] Orders
+[x] Orders
 [ ] Order Details
 [ ] Scanner
 [ ] Map
@@ -55,11 +55,7 @@ Project Phase:
 
 Current Focus:
 
-Describe what you are actively working on.
-
-Example:
-
-"Building OrderListPage and connecting it to OrderService."
+Building the first MatrixCourier Order List screen using mock data and adapting the .NET MAUI Sample Content architecture.
 
 ====================================================
 DATABASE ALIGNMENT
@@ -113,16 +109,20 @@ PROJECT STRUCTURE
 
 Models/
 
-[ ] Order.cs
+[x] Order.cs
 [ ] OrderProduct.cs
-[ ] Product.cs
-[ ] Status.cs
+[x] Product.cs
+[x] Status.cs
 [ ] Account.cs
 [ ] Address.cs
 [ ] Category.cs
 [ ] Notification.cs
 [ ] ScanItem.cs
 [ ] ScannedPackage.cs
+
+Repositories / Data/
+
+[x] OrderRepository.cs
 
 Services/
 
@@ -132,20 +132,19 @@ Services/
 [ ] ProductService.cs
 [ ] INotificationService.cs
 
-ViewModels/
+PageModels/
 
-[ ] BaseViewModel.cs
-[ ] DashboardViewModel.cs
-[ ] OrderListViewModel.cs
-[ ] OrderDetailViewModel.cs
-[ ] MapViewModel.cs
-[ ] NotificationsViewModel.cs
-[ ] ProfileViewModel.cs
+[x] OrderListPageModel.cs
+[ ] DashboardPageModel.cs
+[ ] OrderDetailPageModel.cs
+[ ] MapPageModel.cs
+[ ] NotificationsPageModel.cs
+[ ] ProfilePageModel.cs
 
-Views/
+Pages/
 
 [ ] DashboardPage.xaml
-[ ] OrderListPage.xaml
+[x] OrderListPage.xaml
 [ ] OrderDetailPage.xaml
 [ ] MapPage.xaml
 [ ] NotificationsPage.xaml
@@ -165,43 +164,49 @@ Controls/
 SHELL ROUTES
 ============
 
-Registered Routes:
+Current Navigation:
 
-[x] dashboard
+[x] main
 [x] orders
-[x] orderDetail
-[x] map
-[x] alerts
-[x] profile
+[x] manage
 
 Notes:
 
-orderDetail receives:
+Current project is based on MAUI Sample Content Shell structure.
 
-?id={OrderId}
+Orders page currently replaces the original Projects page.
+
+Future route planned:
+
+orderDetail?id={OrderId}
 
 ====================================================
 DEPENDENCY INJECTION
 ====================
 
-Registered Services:
+Registered Repositories:
+
+[x] OrderRepository
+
+Registered PageModels:
+
+[x] OrderListPageModel
+
+Registered Pages:
+
+[x] OrderListPage
+
+Planned Registrations:
 
 [ ] IOrderService
 [ ] IProductService
 [ ] INotificationService
 
-Registered ViewModels:
-
-[ ] DashboardViewModel
-[ ] OrderListViewModel
-[ ] OrderDetailViewModel
-[ ] MapViewModel
-[ ] NotificationsViewModel
-[ ] ProfileViewModel
-
 ====================================================
 THEME
 =====
+
+Target Theme:
 
 Background:
 #000000
@@ -227,49 +232,40 @@ Warning:
 Classified:
 #FF5555
 
+Current Status:
+
+[ ] Theme conversion started
+[ ] Matrix styling applied
+[ ] Custom controls created
+
 ====================================================
 COMPLETED FEATURES
 ==================
 
-Example:
-
 2026-06-11
 
-✔ Created AppShell
-✔ Registered routes
-✔ Created BaseViewModel
-✔ Added CommunityToolkit.Mvvm
+✔ Reviewed Sample Content architecture
+✔ Confirmed PageModel pattern instead of ViewModel pattern
+✔ Created Product model
+✔ Created Status model
+✔ Created Order model
+✔ Created OrderRepository with mock data
+✔ Created OrderListPage
+✔ Created OrderListPageModel
+✔ Registered OrderRepository in Dependency Injection
+✔ Registered OrderListPageModel in Dependency Injection
+✔ Registered OrderListPage in Dependency Injection
+✔ Updated AppShell to include Orders page
+✔ Fixed InitializeComponent issue caused by page/class mismatch
+✔ Application builds successfully
 
 ---
-
-Add newest completed work at the top.
 
 ====================================================
 CURRENT BUGS
 ============
 
-Example:
-
-BUG-001
-
-Description:
-Order list not refreshing after navigation.
-
-Status:
-Open
-
-Notes:
-Possibly issue with ObservableCollection.
-
----
-
-BUG-002
-
-Description:
-Scanner overlay not closing.
-
-Status:
-Investigating
+No active bugs currently documented.
 
 ====================================================
 NEXT TASKS
@@ -277,29 +273,25 @@ NEXT TASKS
 
 Priority 1
 
-[ ]
-[ ]
-[ ]
+[x] Create Order model
+[x] Create Order repository
+[x] Create Order list page
 
 Priority 2
 
-[ ]
-[ ]
-[ ]
+[ ] Create OrderDetailPage
+[ ] Create OrderDetailPageModel
+[ ] Add Shell route for order details
 
 Priority 3
 
-[ ]
-[ ]
-[ ]
+[ ] Create Product model expansion
+[ ] Create Account model
+[ ] Create Address model
 
 ====================================================
 DECISIONS LOG
 =============
-
-Record important project decisions.
-
-Example:
 
 2026-06-11
 
@@ -311,19 +303,37 @@ Keeps models aligned with SQL schema.
 
 ---
 
-2026-06-12
+2026-06-11
 
 Decision:
-Use ZXing.Net.Maui.
+Reuse .NET MAUI Sample Content architecture.
 
 Reason:
-Native MAUI barcode scanning support.
+Provides working navigation, dependency injection, page models, and MVVM patterns.
+
+---
+
+2026-06-11
+
+Decision:
+Keep PageModels instead of renaming to ViewModels.
+
+Reason:
+Consistent with Sample Content architecture and reduces refactoring effort.
+
+---
+
+2026-06-11
+
+Decision:
+Use mock repositories before SQL integration.
+
+Reason:
+Allows learning MAUI, MVVM, Shell navigation, and data binding before introducing Dapper and SQL complexity.
 
 ====================================================
 HELP REQUEST TEMPLATE
 =====================
-
-When asking an AI for help:
 
 Current Task:
 

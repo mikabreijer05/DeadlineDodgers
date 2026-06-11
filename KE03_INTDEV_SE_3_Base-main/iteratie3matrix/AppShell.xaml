@@ -15,10 +15,10 @@
         Route="main" />
 
     <ShellContent
-        Title="Projects"
+        Title="Orders"
         Icon="{StaticResource IconProjects}"
-        ContentTemplate="{DataTemplate pages:ProjectListPage}"
-        Route="projects" />
+        ContentTemplate="{DataTemplate pages:OrderListPage}"
+        Route="orders" />
 
     <ShellContent
         Title="Manage Meta"

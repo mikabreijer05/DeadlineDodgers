@@ -1,4 +1,4 @@
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using iteratie3matrix.Data;
 using iteratie3matrix.Models;
@@ -16,6 +16,7 @@ public partial class OrderListPageModel : ObservableObject
     {
         _orderRepository = orderRepository;
 
+        // Safe immediate load
         _ = Load();
     }
 
