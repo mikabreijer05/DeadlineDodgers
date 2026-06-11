@@ -4,9 +4,18 @@ namespace iteratie3matrix.Pages;
 
 public partial class OrderListPage : ContentPage
 {
-    public OrderListPage(OrderListPageModel pageModel)
+    private readonly OrderListPageModel _vm;
+
+    public OrderListPage(OrderListPageModel vm)
     {
         InitializeComponent();
-        BindingContext = pageModel;
+        BindingContext = vm;
+        _vm = vm;
+    }
+
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await _vm.LoadAsync();
     }
 }

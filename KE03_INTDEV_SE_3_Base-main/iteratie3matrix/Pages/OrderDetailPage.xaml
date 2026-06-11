@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pageModels="clr-namespace:iteratie3matrix.PageModels"
+    x:Class="iteratie3matrix.Pages.OrderDetailPage"
+    x:DataType="pageModels:OrderDetailPageModel"
+    Title="Order Details">
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <Label Text="{Binding OrderId, StringFormat='Order #{0}'}"
+               FontSize="24" />
+
+        <Label Text="{Binding OrderDate}" />
+        <Label Text="{Binding StatusId}" />
+        <Label Text="{Binding AccountId}" />
+        <Label Text="{Binding AddressId}" />
+        <Label Text="{Binding DeliveryTogether}" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

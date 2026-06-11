@@ -2,73 +2,37 @@
 using Microsoft.Extensions.Logging;
 using Syncfusion.Maui.Toolkit.Hosting;
 
-namespace iteratie3matrix
-{
-    public static class MauiProgram
-    {
-        public static MauiApp CreateMauiApp()
-        {
-            var builder = MauiApp.CreateBuilder();
+namespace iteratie3matrix;
 
-            builder
-                .UseMauiApp<App>()
-                .UseMauiCommunityToolkit()
-                .ConfigureSyncfusionToolkit()
-                .ConfigureMauiHandlers(handlers =>
-                {
-#if IOS || MACCATALYST
-                    handlers.AddHandler<Microsoft.Maui.Controls.CollectionView,
-                        Microsoft.Maui.Controls.Handlers.Items2.CollectionViewHandler2>();
-#endif
-                })
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                    fonts.AddFont("SegoeUI-Semibold.ttf", "SegoeSemibold");
-                    fonts.AddFont("FluentSystemIcons-Regular.ttf", FluentUI.FontFamily);
-                });
+public static class MauiProgram
+{
+    public static MauiApp CreateMauiApp()
+    {
+        var builder = MauiApp.CreateBuilder();
+
+        builder
+            .UseMauiApp<App>()
+            .UseMauiCommunityToolkit()
+            .ConfigureSyncfusionToolkit();
 
 #if DEBUG
-            builder.Logging.AddDebug();
-            builder.Services.AddLogging(configure => configure.AddDebug());
+        builder.Logging.AddDebug();
 #endif
 
-            // =========================
-            // EXISTING REGISTRATIONS
-            // =========================
-            builder.Services.AddSingleton<ProjectRepository>();
-            builder.Services.AddSingleton<TaskRepository>();
-            builder.Services.AddSingleton<CategoryRepository>();
-            builder.Services.AddSingleton<TagRepository>();
-            builder.Services.AddSingleton<SeedDataService>();
-            builder.Services.AddSingleton<ModalErrorHandler>();
+        // =====================
+        // REPOSITORIES
+        // =====================
+        builder.Services.AddSingleton<OrderRepository>();
 
-            builder.Services.AddSingleton<MainPageModel>();
-            builder.Services.AddSingleton<ProjectListPageModel>();
-            builder.Services.AddSingleton<ManageMetaPageModel>();
+        // =====================
+        // PAGES + MODELS
+        // =====================
+        builder.Services.AddTransient<OrderListPageModel>();
+        builder.Services.AddTransient<OrderListPage>();
 
-            // =========================
-            // FIXED ORDER FEATURE
-            // =========================
-
-            // Repository can stay singleton (fine)
-            builder.Services.AddSingleton<OrderRepository>();
-
-            // IMPORTANT CHANGE:
-            // PageModel must NOT be singleton
-            builder.Services.AddTransient<OrderListPageModel>();
-
-            // Page must NOT be singleton
-            builder.Services.AddTransient<OrderListPage>();
-
-            // =========================
-            // ROUTES
-            // =========================
-            builder.Services.AddTransientWithShellRoute<ProjectDetailPage, ProjectDetailPageModel>("project");
-            builder.Services.AddTransientWithShellRoute<TaskDetailPage, TaskDetailPageModel>("task");
-
-            return builder.Build();
-        }
+        builder.Services.AddTransient<OrderDetailPageModel>();
+        builder.Services.AddTransient<OrderDetailPage>();
+        builder.Services.AddTransientWithShellRoute<OrderDetailPage, OrderDetailPageModel>("order");
+        return builder.Build();
     }
 }

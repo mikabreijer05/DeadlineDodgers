@@ -3,38 +3,38 @@
     x:Class="iteratie3matrix.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
     xmlns:pages="clr-namespace:iteratie3matrix.Pages"
-    Shell.FlyoutBehavior="Flyout"
+    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
     Title="iteratie3matrix">
 
-    <ShellContent
-        Title="Dashboard"
-        Icon="{StaticResource IconDashboard}"
-        ContentTemplate="{DataTemplate pages:MainPage}"
-        Route="main" />
-
+    <!-- START PAGE (Orders first) -->
     <ShellContent
         Title="Orders"
-        Icon="{StaticResource IconProjects}"
         ContentTemplate="{DataTemplate pages:OrderListPage}"
         Route="orders" />
 
     <ShellContent
+        Title="Dashboard"
+        ContentTemplate="{DataTemplate pages:MainPage}"
+        Route="main" />
+
+    <ShellContent
         Title="Manage Meta"
-        Icon="{StaticResource IconMeta}"
         ContentTemplate="{DataTemplate pages:ManageMetaPage}"
         Route="manage" />
 
+    <!-- DETAIL ROUTE (THIS WAS MISSING / WRONG BEFORE) -->
+    <ShellContent
+        Route="order"
+        ContentTemplate="{DataTemplate pages:OrderDetailPage}" />
+
     <Shell.FlyoutFooter>
         <Grid Padding="15">
-            <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 
-                VerticalOptions="Center" HorizontalOptions="Center" SelectionChanged="SfSegmentedControl_SelectionChanged"
-                SegmentWidth="40" SegmentHeight="40">
+            <sf:SfSegmentedControl x:Name="ThemeSegmentedControl">
                 <sf:SfSegmentedControl.ItemsSource>
                     <x:Array Type="{x:Type sf:SfSegmentItem}">
-                        <sf:SfSegmentItem ImageSource="{StaticResource IconLight}"/>
-                        <sf:SfSegmentItem ImageSource="{StaticResource IconDark}"/>
+                        <sf:SfSegmentItem ImageSource="{StaticResource IconLight}" />
+                        <sf:SfSegmentItem ImageSource="{StaticResource IconDark}" />
                     </x:Array>
                 </sf:SfSegmentedControl.ItemsSource>
             </sf:SfSegmentedControl>
