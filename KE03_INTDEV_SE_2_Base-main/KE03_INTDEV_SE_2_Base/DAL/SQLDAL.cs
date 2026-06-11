@@ -17,15 +17,11 @@ public class SQLDAL
     public SqlConnection CreateConnection(string userId, string password)
     {
         var connectionString =
-            $"Server={_serverAddress},1433;" +
+             $"Data Source={_serverAddress};" +
             $"Initial Catalog={_databaseName};" +
-            $"Persist Security Info=False;" +
-            $"User ID={userId};" +
-            $"Password={password};" +
-            $"MultipleActiveResultSets=False;" +
+            $"Integrated Security=True;" +
             $"Encrypt=True;" +
-            $"TrustServerCertificate=True;" +
-            $"Connection Timeout=30;";
+            $"TrustServerCertificate=True;";
 
         return new SqlConnection(connectionString);
     }
