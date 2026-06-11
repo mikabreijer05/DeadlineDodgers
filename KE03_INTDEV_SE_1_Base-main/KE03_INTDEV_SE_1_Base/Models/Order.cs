@@ -7,18 +7,40 @@ using System.Threading.Tasks;
 
 
 namespace KE03_INTDEV_SE_1_Base.Models;
+public class Order
+{
+    public int Id { get; set; }
+    public DateTime OrderDate { get; set; }
 
-    public class Order
+    [Required]
+    public int CustomerId { get; set; }
+
+    public Customer Customer { get; set; } = null!;
+
+    // Initialize collections with empty lists to allow modifications
+    public ICollection<OrderLine> OrderLines { get; private set; } = new List<OrderLine>();
+    public ICollection<Product> Products { get; private set; } = new List<Product>();
+
+    public Order()
     {
-        public int Id { get; set; }
-
-        public DateTime OrderDate { get; set; }
-
-        public int CustomerId { get; set; }
-        
-        public Customer Customer { get; set; } = null!;
-
-        public ICollection<Product> Products { get; } = new List<Product>();
-        public ICollection<OrderLine> OrderLines { get; } = new List<OrderLine>();
+        // Constructor to initialize collections
     }
 
+    // Method to add an order line
+    public void AddOrderLine(OrderLine orderLine)
+    {
+        if (!OrderLines.Contains(orderLine))
+        {
+            OrderLines.Add(orderLine);
+        }
+    }
+
+    // Method to add a product
+    public void AddProduct(Product product)
+    {
+        if (!Products.Contains(product))
+        {
+            Products.Add(product);
+        }
+    }
+}

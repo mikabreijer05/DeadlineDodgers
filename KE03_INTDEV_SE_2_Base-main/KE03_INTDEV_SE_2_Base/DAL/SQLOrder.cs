@@ -10,7 +10,7 @@ public class SQLOrder : SQLDAL
     /// </summary>
     public async Task<int> CreateOrderAsync(Order order)
     {
-        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
             await conn.OpenAsync();
 
@@ -39,7 +39,7 @@ public class SQLOrder : SQLDAL
     /// </summary>
     public async Task<Order?> GetOrderByIdAsync(int orderId)
     {
-        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
             await conn.OpenAsync();
 
@@ -89,7 +89,7 @@ public class SQLOrder : SQLDAL
     /// </summary>
     public async Task<IEnumerable<Order>> GetAllOrdersAsync()
     {
-        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
             await conn.OpenAsync();
 
@@ -139,7 +139,7 @@ public class SQLOrder : SQLDAL
     /// </summary>
     public async Task<IEnumerable<Order>> GetOrdersByCustomerIdAsync(int customerId)
     {
-        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
             await conn.OpenAsync();
 
@@ -166,7 +166,7 @@ public class SQLOrder : SQLDAL
     /// </summary>
     public async Task<bool> UpdateOrderAsync(Order order)
     {
-        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
             await conn.OpenAsync();
 
@@ -185,7 +185,7 @@ public class SQLOrder : SQLDAL
     /// </summary>
     public async Task<bool> DeleteOrderAsync(int orderId)
     {
-        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
             await conn.OpenAsync();
 
@@ -200,7 +200,7 @@ public class SQLOrder : SQLDAL
     /// </summary>
     public async Task<bool> CreateOrderLineAsync(OrderLine orderLine)
     {
-        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
             await conn.OpenAsync();
 
@@ -218,7 +218,7 @@ public class SQLOrder : SQLDAL
     /// </summary>
     public async Task<IEnumerable<OrderLine>> GetOrderLinesByOrderIdAsync(int orderId)
     {
-        using (var conn = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp"))
+        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
             await conn.OpenAsync();
 

@@ -4,7 +4,7 @@ namespace KE03_INTDEV_SE_2_Base.DAL;
 
 public class SQLDAL
 {
-    private readonly string _serverAddress = "matrixincserver.database.windows.net";
+    private readonly string _serverAddress = "localhost";
     private readonly string _databaseName = "TryoutDatabase";
 
     // Kept both constructors, but fixed assignment issue
@@ -17,14 +17,14 @@ public class SQLDAL
     public SqlConnection CreateConnection(string userId, string password)
     {
         var connectionString =
-            $"Server=tcp:{_serverAddress},1433;" +
+            $"Server={_serverAddress},1433;" +
             $"Initial Catalog={_databaseName};" +
             $"Persist Security Info=False;" +
             $"User ID={userId};" +
             $"Password={password};" +
             $"MultipleActiveResultSets=False;" +
             $"Encrypt=True;" +
-            $"TrustServerCertificate=False;" +
+            $"TrustServerCertificate=True;" +
             $"Connection Timeout=30;";
 
         return new SqlConnection(connectionString);
@@ -35,7 +35,7 @@ public class SQLDAL
     public SQLDAL()
     {
         if (connection == null)
-            connection = CreateConnection("DD-admin", "FJL7MzZPckC37uheZHp");
+            connection = CreateConnection("sa", "FJL7MzZPckC37uheZHp");
     }
 
     public void CloseConnection()
