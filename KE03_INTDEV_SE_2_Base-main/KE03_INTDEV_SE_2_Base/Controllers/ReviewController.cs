@@ -59,5 +59,6 @@ namespace KE03_INTDEV_SE_2_Base.Controllers
             // Ga terug naar de overzichtspagina
             return RedirectToAction("Index");
         }
+
     }
 }

@@ -393,3 +393,65 @@
 .animate-pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+/* Zoekbalk in filters */
+.filters-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filters-search-icon {
+    position: absolute;
+    left: 0.6rem;
+    color: rgba(0, 255, 65, 0.4);
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.filters-search input {
+    background-color: #000;
+    border: 1px solid rgba(0, 255, 65, 0.4);
+    outline: none;
+    padding: 0.35rem 2rem 0.35rem 1.75rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: hsl(var(--foreground, 0 0% 95%));
+    text-transform: uppercase;
+    transition: border-color 0.2s;
+    width: 160px;
+}
+
+    .filters-search input::placeholder {
+        color: rgba(0, 255, 65, 0.25);
+    }
+
+    .filters-search input:focus {
+        border-color: #00ff41;
+    }
+
+.filters-search-clear {
+    position: absolute;
+    right: 0.4rem;
+    background: none;
+    border: none;
+    color: rgba(0, 255, 65, 0.3);
+    font-size: 0.65rem;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+    display: none;
+}
+
+    .filters-search-clear:hover {
+        color: #00ff41;
+    }
+
+.filters-search input:not(:placeholder-shown) ~ .filters-search-clear {
+    display: block;
+}
+
+#date-filter-btn {
+    color: #00ff41;
+    min-width: 90px;
+}
