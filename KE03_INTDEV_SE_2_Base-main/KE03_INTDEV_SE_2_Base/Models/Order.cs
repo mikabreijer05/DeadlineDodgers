@@ -13,6 +13,7 @@ namespace KE03_INTDEV_SE_2_Base.Models
         public int Id { get; set; }
 
         public DateTime OrderDate { get; set; }
+        public string? Address { get; set; }
 
         public int CustomerId { get; set; }
 

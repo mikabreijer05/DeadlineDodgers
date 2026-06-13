@@ -201,6 +201,11 @@
     flex-wrap: wrap;
     padding-bottom: 15px;
 }
+.sort-toolbar {
+    border-top: 1px solid var(--matrix-primary);
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
 
 .toolbar-label {
     color: var(--matrix-primary);
@@ -258,7 +263,7 @@
 
 /* Status Buttons */
 .status-btn {
-    background-color: #184e26; 
+    background-color: #184e26;
     border: none;
     padding: 8px 16px;
     font-size: 0.9rem;
@@ -268,11 +273,47 @@
 }
 
 .status-btn:hover {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .status-btn.active {
-    background-color: #45a049; 
+    background-color: #45a049;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-btn.clicked-feedback {
+    background-color: #66bb6a;
+    box-shadow: 0 0 12px rgba(102, 187, 106, 0.8);
+}
+/* Sort Buttons */
+.sort-btn {
+    background-color: var(--matrix-input-bg);
+    border: 1px solid var(--matrix-primary);
+    color: var(--matrix-primary);
+    padding: 8px 16px;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.85rem;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+.sort-btn:hover {
+    background-color: rgba(0, 255, 65, 0.12);
+    border-color: var(--matrix-primary-2);
+    color: var(--matrix-primary-2);
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3);
+}
+
+.sort-btn.active {
+    background-color: var(--matrix-primary);
+    border-color: var(--matrix-primary-2);
+    color: var(--matrix-bg);
+    box-shadow: 0 0 14px rgba(0, 255, 65, 0.45);
+}
+
+.sort-btn.clicked-feedback {
+    transform: scale(0.96);
+    box-shadow: 0 0 18px rgba(102, 187, 106, 0.85);
 }

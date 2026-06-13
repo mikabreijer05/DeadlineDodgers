@@ -2,12 +2,37 @@
 
  @{
      ViewData["Title"] = "Orders";
- }
+     string GetPostalCode(string? address)
+     {
+         if (string.IsNullOrWhiteSpace(address))
+         {
+             return "-";
+         }
 
+         var parts = address.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+
+         if (parts.Length < 2)
+         {
+             return address;
+         }
+
+         var postalCodeAndCity = parts[1].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+         if (postalCodeAndCity.Length >= 2)
+         {
+             return $"{postalCodeAndCity[0]} {postalCodeAndCity[1]}";
+         }
+
+         return postalCodeAndCity.FirstOrDefault() ?? "-";
+     }
+ }
+ 
+ 
  <!-- Here you can find which .css and .js files get used for this page-->
  <link rel="stylesheet" href="~/css/orders.css" />
  <script src="~/js/orders.js"></script>
 
+ 
  <div class="orders-page">
      <!-- Breadcrumb -->
      <nav class="breadcrumb-nav">
@@ -118,12 +143,12 @@
              </div>
          
              <!-- Sort Options -->
-             <div class="toolbar" style="border-top: 1px solid var(--matrix-primary); padding-top: 15px; margin-bottom: 15px;">
+             <div class="toolbar sort-toolbar">
                  <span class="toolbar-label">SORTEREN:</span>
-                 <button class="sort-btn active">Datum ↓</button>
-                 <button class="sort-btn">ID ↑</button>
-                 <button class="sort-btn">Prijs ↓</button>
-                 <button class="sort-btn">Producten ↑</button>
+                 <button class="sort-btn active" data-sort="date" data-direction="desc">Datum ↓</button>
+                 <button class="sort-btn" data-sort="id" data-direction="asc">ID ↑</button>
+                 <button class="sort-btn" data-sort="total" data-direction="desc">Prijs ↓</button>
+                 <button class="sort-btn" data-sort="products" data-direction="asc">Producten ↑</button>
              </div>
          
              <!-- Orders List -->
@@ -136,6 +161,7 @@
                          <tr>
                              <th>Order ID</th>
                              <th>Customer</th>
+                             <th>Address</th>
                              <th>Date</th>
                              <th>Total</th>
                              <th>Status</th>
@@ -143,21 +169,24 @@
                          </tr>
                      </thead>
                      <tbody id="ordersTableBody">
-                         @foreach (var order in Model.OrderByDescending(o => o.OrderDate))
-                         {
-                             var orderTotal = order.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
-                             <tr class="order-row" 
-                                 data-customername="@order.CustomerName.ToLower()" 
-                                 data-orderdate="@order.OrderDate.ToString("yyyy-MM-dd")" 
-                                 data-total="@orderTotal.ToString("F2").Replace(",", ".")" 
-                                 data-minproducts="@order.OrderLines.Count().ToString()" 
-                                 data-status="@order.OrderStatus.ToLower()">
-                                 <td><span class="order-id">@order.Id.ToString("0000")</span></td>
-                                 <td>@(order.CustomerName ?? "Unknown")</td>
-                                 <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
-                                 <td><span class="order-price">€@orderTotal.ToString("F2").Replace(",", ".")</span></td>
-                                 <td>
-                                     @if (string.IsNullOrEmpty(order.OrderStatus))
+                     @foreach (var order in Model.OrderByDescending(o => o.OrderDate))
+                     {
+                         var orderTotal = order.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
+                         <tr class="order-row"
+                             data-id="@order.Id"
+                             data-customername="@((order.CustomerName ?? "").ToLower())"
+                             data-orderdate="@order.OrderDate.ToString("yyyy-MM-dd")"
+                             data-total="@orderTotal.ToString("F2").Replace(",", ".")"
+                             data-minproducts="@order.OrderLines.Count().ToString()"
+                             data-status="@((order.OrderStatus ?? "").ToLower())"
+                             data-address="@((order.Address ?? "").ToLower())">
+                             <td><span class="order-id">@order.Id.ToString("0000")</span></td>
+                             <td>@(order.CustomerName ?? "Unknown")</td>
+                             <td>@GetPostalCode(order.Address)</td>
+                             <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
+                             <td><span class="order-price">€@orderTotal.ToString("F2").Replace(",", ".")</span></td>
+                             <td>
+                                 @if (string.IsNullOrEmpty(order.OrderStatus))
                                      {
                                          <span class="order-status new">⭕ Unknown</span>
                                      }

@@ -50,10 +50,18 @@ public class SQLOrder : SQLDAL
                     o.AccountId AS CustomerId,
                     a.CustName AS CustomerName,
                     o.StatusId,
-                    s.Status AS OrderStatus
+                    s.Status AS OrderStatus,
+                    LTRIM(RTRIM(
+                        ISNULL(addr.Street, '')
+                        + ' ' + ISNULL(addr.HouseNumber, '')
+                        + ', ' + ISNULL(addr.PostalCode, '')
+                        + ' ' + ISNULL(addr.City, '')
+                        + ', ' + ISNULL(addr.Country, '')
+                    )) AS Address
                 FROM [dbo].[Order] o
                 LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
                 LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
                 WHERE o.OrderId = @OrderId";
 
             var order = await conn.QuerySingleOrDefaultAsync<Order?>(query, new { OrderId = orderId });
@@ -100,10 +108,18 @@ public class SQLOrder : SQLDAL
                     o.AccountId AS CustomerId,
                     a.CustName AS CustomerName,
                     o.StatusId,
-                    s.Status AS OrderStatus
+                    s.Status AS OrderStatus,
+                    LTRIM(RTRIM(
+                        ISNULL(addr.Street, '')
+                        + ' ' + ISNULL(addr.HouseNumber, '')
+                        + ', ' + ISNULL(addr.PostalCode, '')
+                        + ' ' + ISNULL(addr.City, '')
+                        + ', ' + ISNULL(addr.Country, '')
+                    )) AS Address
                 FROM [dbo].[Order] o
                 LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
                 LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
                 ORDER BY o.OrderDate DESC";
 
             var orders = await conn.QueryAsync<Order>(query);
@@ -150,10 +166,18 @@ public class SQLOrder : SQLDAL
                     o.AccountId AS CustomerId,
                     a.CustName AS CustomerName,
                     o.StatusId,
-                    s.Status AS OrderStatus
+                    s.Status AS OrderStatus,
+                    LTRIM(RTRIM(
+                        ISNULL(addr.Street, '')
+                        + ' ' + ISNULL(addr.HouseNumber, '')
+                        + ', ' + ISNULL(addr.PostalCode, '')
+                        + ' ' + ISNULL(addr.City, '')
+                        + ', ' + ISNULL(addr.Country, '')
+                    )) AS Address
                 FROM [dbo].[Order] o
                 LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
                 LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
                 WHERE o.AccountId = @CustomerId
                 ORDER BY o.OrderDate DESC";
 
