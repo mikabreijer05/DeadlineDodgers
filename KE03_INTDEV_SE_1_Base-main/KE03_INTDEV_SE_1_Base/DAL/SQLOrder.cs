@@ -9,18 +9,26 @@ public class SQLOrder : SQLDAL
     {
         const string sql = """
                            SELECT
-                               o.OrderId   AS Id,
+                               o.OrderId      AS Id,
                                o.OrderDate,
-                               o.AccountId AS CustomerId,
-                               op.OPId     AS Id,
+                               o.AddressId,
+                               o.AccountId    AS CustomerId,
+                               a.AddressId    AS AddressId,
+                               a.Street,
+                               a.HouseNumber,
+                               a.PostalCode,
+                               a.City,
+                               a.Country,
+                               op.OPId        AS Id,
                                op.OrderId,
                                op.ProductId,
                                op.Quantity,
-                               p.ProdPrice AS PricePerProduct,
-                               p.ProductId AS Id,
-                               p.ProdName  AS Name,
-                               p.ProdPrice AS Price
+                               p.ProdPrice    AS PricePerProduct,
+                               p.ProductId    AS Id,
+                               p.ProdName     AS Name,
+                               p.ProdPrice    AS Price
                            FROM dbo.[Order] o
+                           LEFT JOIN dbo.[Address] a ON o.AddressId = a.AddressId
                            JOIN dbo.[OrderProduct] op ON o.OrderId = op.OrderId
                            JOIN dbo.[Product] p       ON op.ProductId = p.ProductId
                            WHERE o.AccountId = @CustomerId
@@ -33,13 +41,14 @@ public class SQLOrder : SQLDAL
 
             var orderDictionary = new Dictionary<int, Order>();
 
-            connection.Query<Order, OrderLine, Product, Order>(
+            connection.Query<Order, Address, OrderLine, Product, Order>(
                 sql,
-                (order, orderLine, product) =>
+                (order, address, orderLine, product) =>
                 {
                     if (!orderDictionary.TryGetValue(order.Id, out var existingOrder))
                     {
                         existingOrder = order;
+                        existingOrder.address = address;
                         orderDictionary.Add(order.Id, existingOrder);
                     }
 
@@ -55,7 +64,7 @@ public class SQLOrder : SQLDAL
                     return existingOrder;
                 },
                 new { CustomerId = customerId },
-                splitOn: "Id,Id");
+                splitOn: "AddressId,Id,Id");
 
             return orderDictionary.Values.ToList();
         }
@@ -68,8 +77,20 @@ public class SQLOrder : SQLDAL
     public void AddOrder(Order order)
     {
         const string insertOrderSql = """
-                                      INSERT INTO dbo.[Order] (AccountId, OrderDate)
-                                      VALUES (@CustomerId, @OrderDate);
+                                      INSERT INTO dbo.[Order] (AccountId, OrderDate, AddressId, StatusId)
+                                      VALUES (
+                                          @CustomerId,
+                                          @OrderDate,
+                                          COALESCE(
+                                              @AddressId,
+                                              (
+                                                  SELECT TOP 1 aa.Address
+                                                  FROM dbo.[AccountAddress] aa
+                                                  WHERE aa.Account = @CustomerId
+                                              )
+                                          ),
+                                          1
+                                      );
 
                                       SELECT CAST(SCOPE_IDENTITY() AS int);
                                       """;
@@ -87,7 +108,7 @@ public class SQLOrder : SQLDAL
 
             order.Id = connection.QuerySingle<int>(
                 insertOrderSql,
-                new { order.CustomerId, order.OrderDate },
+                new { order.CustomerId, order.OrderDate, order.AddressId },
                 transaction);
 
             foreach (var orderLine in order.OrderLines)
