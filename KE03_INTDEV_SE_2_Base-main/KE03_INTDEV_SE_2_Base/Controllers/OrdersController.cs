@@ -1,6 +1,7 @@
 using KE03_INTDEV_SE_2_Base.DAL;
 using Microsoft.AspNetCore.Mvc;
 using KE03_INTDEV_SE_2_Base.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace KE03_INTDEV_SE_2_Base.Controllers;
 
@@ -69,6 +70,9 @@ public class OrdersController : Controller
         {
             return NotFound();
         }
+
+        await PopulateStatusOptionsAsync(order.StatusId);
+
         return View(order);
     }
 
@@ -85,9 +89,27 @@ public class OrdersController : Controller
         if (ModelState.IsValid)
         {
             await _orderDAL.UpdateOrderAsync(order);
+            TempData["OrderUpdateSuccess"] = "Order was updated successfully.";
             return RedirectToAction(nameof(Index));
         }
+
+        await PopulateStatusOptionsAsync(order.StatusId);
+
         return View(order);
+    }
+
+    private async Task PopulateStatusOptionsAsync(int? selectedStatusId = null)
+    {
+        var statuses = await _orderDAL.GetAllStatusesAsync();
+
+        ViewBag.StatusOptions = statuses
+            .Select(status => new SelectListItem
+            {
+                Value = status.StatusId.ToString(),
+                Text = status.Status,
+                Selected = selectedStatusId.HasValue && status.StatusId == selectedStatusId.Value
+            })
+            .ToList();
     }
 
     // GET: Order/Delete/5
@@ -112,6 +134,7 @@ public class OrdersController : Controller
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
         await _orderDAL.DeleteOrderAsync(id);
+        TempData["OrderDeleteSuccess"] = "Order was deleted successfully.";
         return RedirectToAction(nameof(Index));
     }
 }

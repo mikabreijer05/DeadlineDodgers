@@ -189,20 +189,107 @@ public class SQLOrder : SQLDAL
     /// Updates an existing order
     /// </summary>
     public async Task<bool> UpdateOrderAsync(Order order)
-    {
-        using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
         {
-            await conn.OpenAsync();
+            using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
+            {
+                await conn.OpenAsync();
 
-            var query = @"
-                UPDATE [dbo].[Order]
-                SET OrderDate = @OrderDate, AccountId = @CustomerId, StatusId = @StatusId
-                WHERE OrderId = @OrderId";
+                using var transaction = conn.BeginTransaction();
 
-            var rowsAffected = await conn.ExecuteAsync(query, new { order.OrderDate, order.Id, order.CustomerId, order.StatusId });
-            return rowsAffected > 0;
+                var updateOrderQuery = @"
+                    UPDATE [dbo].[Order]
+                    SET OrderDate = @OrderDate,
+                        AccountId = @CustomerId,
+                        StatusId = @StatusId
+                    WHERE OrderId = @OrderId";
+
+                var rowsAffected = await conn.ExecuteAsync(
+                    updateOrderQuery,
+                    new
+                    {
+                        order.OrderDate,
+                        OrderId = order.Id,
+                        order.CustomerId,
+                        order.StatusId
+                    },
+                    transaction);
+
+                var addressIdQuery = @"
+                    SELECT AddressId
+                    FROM [dbo].[Order]
+                    WHERE OrderId = @OrderId";
+
+                var addressId = await conn.QuerySingleOrDefaultAsync<int?>(
+                    addressIdQuery,
+                    new { OrderId = order.Id },
+                    transaction);
+
+                if (addressId.HasValue)
+                {
+                    var updateAddressQuery = @"
+                        UPDATE [dbo].[Address]
+                        SET Street = @Address
+                        WHERE AddressId = @AddressId";
+
+                    await conn.ExecuteAsync(
+                        updateAddressQuery,
+                        new
+                        {
+                            Address = order.Address,
+                            AddressId = addressId.Value
+                        },
+                        transaction);
+                }
+                else if (!string.IsNullOrWhiteSpace(order.Address))
+                {
+                    var insertAddressQuery = @"
+                        INSERT INTO [dbo].[Address] (Street)
+                        OUTPUT INSERTED.AddressId
+                        VALUES (@Address)";
+
+                    var newAddressId = await conn.QuerySingleAsync<int>(
+                        insertAddressQuery,
+                        new { Address = order.Address },
+                        transaction);
+
+                    var updateOrderAddressQuery = @"
+                        UPDATE [dbo].[Order]
+                        SET AddressId = @AddressId
+                        WHERE OrderId = @OrderId";
+
+                    await conn.ExecuteAsync(
+                        updateOrderAddressQuery,
+                        new
+                        {
+                            AddressId = newAddressId,
+                            OrderId = order.Id
+                        },
+                        transaction);
+                }
+
+                transaction.Commit();
+
+                return rowsAffected > 0;
+            }
         }
-    }
+
+        /// <summary>
+        /// Retrieves all available order statuses.
+        /// </summary>
+        public async Task<IEnumerable<(int StatusId, string Status)>> GetAllStatusesAsync()
+        {
+            using (var conn = CreateConnection("sa", "FJL7MzZPckC37uheZHp"))
+            {
+                await conn.OpenAsync();
+
+                var query = @"
+                    SELECT StatusId, Status
+                    FROM [dbo].[Status]
+                    ORDER BY StatusId";
+
+                return await conn.QueryAsync<(int StatusId, string Status)>(query);
+            }
+        }
 
     /// <summary>
     /// Deletes an order by ID
@@ -213,8 +300,28 @@ public class SQLOrder : SQLDAL
         {
             await conn.OpenAsync();
 
-            var query = "DELETE FROM [dbo].[Order] WHERE OrderId = @OrderId";
-            var rowsAffected = await conn.ExecuteAsync(query, new { OrderId = orderId });
+            using var transaction = conn.BeginTransaction();
+
+            var deleteOrderProductsQuery = @"
+                DELETE FROM [dbo].[OrderProduct]
+                WHERE OrderId = @OrderId";
+
+            await conn.ExecuteAsync(
+                deleteOrderProductsQuery,
+                new { OrderId = orderId },
+                transaction);
+
+            var deleteOrderQuery = @"
+                DELETE FROM [dbo].[Order]
+                WHERE OrderId = @OrderId";
+
+            var rowsAffected = await conn.ExecuteAsync(
+                deleteOrderQuery,
+                new { OrderId = orderId },
+                transaction);
+
+            transaction.Commit();
+
             return rowsAffected > 0;
         }
     }

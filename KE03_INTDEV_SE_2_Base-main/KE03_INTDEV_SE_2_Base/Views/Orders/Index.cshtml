@@ -34,20 +34,27 @@
 
  
  <div class="orders-page">
+     @if (TempData["OrderDeleteSuccess"] != null)
+     {
+         <div class="alert alert-success alert-dismissible fade show" role="alert">
+             @TempData["OrderDeleteSuccess"]
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+         </div>
+     }
      <!-- Breadcrumb -->
      <nav class="breadcrumb-nav">
          ➤ ORDER_MANAGEMENT
      </nav>
-     
+
      <!-- Page Title -->
      <h1 class="orders-title">ORDERS</h1>
-     
+
      <!-- Status Cards -->
      @{
          var newOrders = Model.Where(o => o.OrderStatus?.ToLower().Contains("new") == true || o.OrderStatus?.ToLower().Contains("nieuw") == true).ToList();
          var processingOrders = Model.Where(o => o.OrderStatus?.ToLower().Contains("processing") == true || o.OrderStatus?.ToLower().Contains("behandeling") == true).ToList();
      }
-     
+
      <div class="status-cards-grid">
          <div class="status-card new">
              <div class="status-card-title">
@@ -67,7 +74,7 @@
                  </div>
              }
          </div>
-     
+
          <div class="status-card processing">
              <div class="status-card-title">
                  <span>⚙️ IN BEHANDELING</span>
@@ -87,7 +94,7 @@
              }
          </div>
      </div>
-     
+
      <!-- Main Content Area -->
      <div class="orders-container">
          <!-- Filters Panel -->
@@ -95,40 +102,40 @@
              <div class="filter-section">
                  <label class="filter-label">🔍 FILTERS × wis</label>
              </div>
-         
+
              <div class="filter-section">
                  <label class="filter-label">KLANT</label>
-                 <input type="text" id="customerName" class="filter-input" placeholder="Naam zoeken..." />
+                 <input type="text" id="customerName" class="filter-input" placeholder="Naam zoeken..."/>
              </div>
-         
+
              <div class="filter-section">
                  <label class="filter-label">DATUM</label>
-                 <input type="date" id="fromDate" class="filter-input" />
+                 <input type="date" id="fromDate" class="filter-input"/>
                  <div style="text-align: center; margin: 5px 0; font-size: 0.75rem; color: var(--matrix-primary);">t/m</div>
-                 <input type="date" id="toDate" class="filter-input" />
+                 <input type="date" id="toDate" class="filter-input"/>
              </div>
-         
+
              <div class="filter-section">
                  <label class="filter-label">TOTAALPRIJS (€)</label>
-                 <input type="text" id="totalPriceFrom" class="filter-input" placeholder="Van" />
-                 <input type="text" id="totalPriceTo" class="filter-input" placeholder="Tot" />
+                 <input type="text" id="totalPriceFrom" class="filter-input" placeholder="Van"/>
+                 <input type="text" id="totalPriceTo" class="filter-input" placeholder="Tot"/>
              </div>
-         
+
              <div class="filter-section">
                  <label class="filter-label">MIN. AANTAL PRODUCTEN</label>
-                 <input type="text" id="minProducts" class="filter-input" placeholder="bv. 2" />
+                 <input type="text" id="minProducts" class="filter-input" placeholder="bv. 2"/>
              </div>
-         
+
              <div class="filter-section">
                  <label class="filter-label">ADRES</label>
-                 <input type="text" id="address" class="filter-input" placeholder="Stad, straat..." />
+                 <input type="text" id="address" class="filter-input" placeholder="Stad, straat..."/>
              </div>
-         
+
              <!-- Add Apply and Remove All Filters buttons -->
              <button class="status-btn" id="applyFiltersBtn">Apply</button>
              <button class="status-btn" id="removeAllFiltersBtn">Remove All Filters</button>
          </div>
-     
+
          <!-- Main Content -->
          <div class="main-content">
              <!-- Status Filter Buttons -->
@@ -141,7 +148,7 @@
                  <button class="status-btn" data-status="Geannuleerd">👁️ Geannuleerd</button>
                  <button class="status-btn" data-status="Retour">↩️ Retour</button>
              </div>
-         
+
              <!-- Sort Options -->
              <div class="toolbar sort-toolbar">
                  <span class="toolbar-label">SORTEREN:</span>
@@ -150,23 +157,23 @@
                  <button class="sort-btn" data-sort="total" data-direction="desc">Prijs ↓</button>
                  <button class="sort-btn" data-sort="products" data-direction="asc">Producten ↑</button>
              </div>
-         
+
              <!-- Orders List -->
              @if (Model.Any())
              {
                  <div class="result-info">▶ ORDERARCHIEF — <span id="resultCount">@Model.Count()</span> RESULTATEN</div>
-             
+
                  <table class="orders-table">
                      <thead>
-                         <tr>
-                             <th>Order ID</th>
-                             <th>Customer</th>
-                             <th>Address</th>
-                             <th>Date</th>
-                             <th>Total</th>
-                             <th>Status</th>
-                             <th>Actions</th>
-                         </tr>
+                     <tr>
+                         <th>Order ID</th>
+                         <th>Customer</th>
+                         <th>Address</th>
+                         <th>Date</th>
+                         <th>Total</th>
+                         <th>Status</th>
+                         <th>Actions</th>
+                     </tr>
                      </thead>
                      <tbody id="ordersTableBody">
                      @foreach (var order in Model.OrderByDescending(o => o.OrderDate))
@@ -187,29 +194,29 @@
                              <td><span class="order-price">€@orderTotal.ToString("F2").Replace(",", ".")</span></td>
                              <td>
                                  @if (string.IsNullOrEmpty(order.OrderStatus))
-                                     {
-                                         <span class="order-status new">⭕ Unknown</span>
-                                     }
-                                     else if (order.OrderStatus.ToLower().Contains("new") || order.OrderStatus.ToLower().Contains("nieuw"))
-                                     {
-                                         <span class="order-status new">⭕ @order.OrderStatus</span>
-                                     }
-                                     else if (order.OrderStatus.ToLower().Contains("processing") || order.OrderStatus.ToLower().Contains("behandeling"))
-                                     {
-                                         <span class="order-status processing">⚙️ @order.OrderStatus</span>
-                                     }
-                                     else
-                                     {
-                                         <span class="order-status">ℹ️ @order.OrderStatus</span>
-                                     }
-                                 </td>
-                                 <td>
-                                     <a asp-action="Details" asp-route-id="@order.Id" class="action-btn">Details</a>
-                                     <a asp-action="Edit" asp-route-id="@order.Id" class="action-btn">Edit</a>
-                                     <a asp-action="Delete" asp-route-id="@order.Id" class="action-btn delete">Delete</a>
-                                 </td>
-                             </tr>
-                         }
+                                 {
+                                     <span class="order-status new">⭕ Unknown</span>
+                                 }
+                                 else if (order.OrderStatus.ToLower().Contains("new") || order.OrderStatus.ToLower().Contains("nieuw"))
+                                 {
+                                     <span class="order-status new">⭕ @order.OrderStatus</span>
+                                 }
+                                 else if (order.OrderStatus.ToLower().Contains("processing") || order.OrderStatus.ToLower().Contains("behandeling"))
+                                 {
+                                     <span class="order-status processing">⚙️ @order.OrderStatus</span>
+                                 }
+                                 else
+                                 {
+                                     <span class="order-status">ℹ️ @order.OrderStatus</span>
+                                 }
+                             </td>
+                             <td>
+                                 <a asp-action="Details" asp-route-id="@order.Id" class="action-btn">Details</a>
+                                 <a asp-action="Edit" asp-route-id="@order.Id" class="action-btn">Edit</a>
+                                 <a asp-action="Delete" asp-route-id="@order.Id" class="action-btn delete">Delete</a>
+                             </td>
+                         </tr>
+                     }
                      </tbody>
                  </table>
              }

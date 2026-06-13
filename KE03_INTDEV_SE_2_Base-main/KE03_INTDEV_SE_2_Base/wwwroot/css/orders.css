@@ -317,3 +317,127 @@
     transform: scale(0.96);
     box-shadow: 0 0 18px rgba(102, 187, 106, 0.85);
 }
+
+/* ... existing code ... */
+
+.order-edit-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 20px;
+    align-items: start;
+}
+
+.order-edit-card,
+.order-edit-summary {
+    border: 1px solid var(--matrix-primary);
+    background-color: var(--matrix-card);
+    padding: 20px;
+    box-shadow: 0 0 18px rgba(0, 255, 65, 0.08);
+}
+
+.order-edit-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--matrix-secondary);
+    padding-bottom: 18px;
+    margin-bottom: 20px;
+}
+
+.order-edit-label {
+    display: block;
+    color: var(--matrix-primary-2);
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.order-edit-header h2 {
+    color: var(--matrix-primary);
+    margin: 0;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.order-edit-status {
+    border: 1px solid var(--matrix-primary);
+    color: var(--matrix-primary-2);
+    background-color: var(--matrix-input-bg);
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.order-edit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.order-edit-field {
+    min-width: 0;
+}
+
+.order-edit-field-wide {
+    grid-column: 1 / -1;
+}
+
+.order-address-input {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.order-edit-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid var(--matrix-secondary);
+    padding-top: 18px;
+    margin-top: 22px;
+}
+
+.order-edit-summary h3 {
+    color: var(--matrix-primary);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 0 0 18px 0;
+    text-transform: uppercase;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    border-bottom: 1px solid var(--matrix-secondary);
+    padding: 12px 0;
+    color: var(--matrix-primary);
+}
+
+.summary-row span {
+    color: var(--matrix-muted-foreground);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.summary-row strong {
+    color: var(--matrix-primary-2);
+    text-align: right;
+}
+
+@media (max-width: 900px) {
+    .order-edit-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .order-edit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-edit-header {
+        flex-direction: column;
+    }
+}
