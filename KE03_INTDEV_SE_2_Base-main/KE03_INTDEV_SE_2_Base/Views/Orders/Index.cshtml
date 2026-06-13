@@ -1,30 +1,38 @@
 @model IEnumerable<KE03_INTDEV_SE_2_Base.Models.Order>
 
- @{
+@{
+    string FormatAddress(Address? address)
+    {
+        if (address == null)
+        {
+            return "-";
+        }
+
+        return string.Join(", ", new[]
+        {
+            string.Join(" ", new[] { address.Street, address.HouseNumber }
+                .Where(value => !string.IsNullOrWhiteSpace(value))),
+            string.Join(" ", new[] { address.PostalCode, address.City }
+                .Where(value => !string.IsNullOrWhiteSpace(value))),
+            address.Country
+        }.Where(value => !string.IsNullOrWhiteSpace(value)));
+    }
      ViewData["Title"] = "Orders";
-     string GetPostalCode(string? address)
+     string GetPostalCode(Address? address)
      {
-         if (string.IsNullOrWhiteSpace(address))
+         if (address == null)
          {
              return "-";
          }
 
-         var parts = address.Split(',', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
+         var postalCodeAndCity = string.Join(" ", new[] { address.PostalCode, address.City }
+             .Where(value => !string.IsNullOrWhiteSpace(value)));
 
-         if (parts.Length < 2)
-         {
-             return address;
-         }
-
-         var postalCodeAndCity = parts[1].Split(' ', StringSplitOptions.RemoveEmptyEntries);
-
-         if (postalCodeAndCity.Length >= 2)
-         {
-             return $"{postalCodeAndCity[0]} {postalCodeAndCity[1]}";
-         }
-
-         return postalCodeAndCity.FirstOrDefault() ?? "-";
+         return string.IsNullOrWhiteSpace(postalCodeAndCity)
+             ? "-"
+             : postalCodeAndCity;
      }
+}
  }
  
  
@@ -178,6 +186,7 @@
                      <tbody id="ordersTableBody">
                      @foreach (var order in Model.OrderByDescending(o => o.OrderDate))
                      {
+                         var formattedAddress = FormatAddress(order.Address);
                          var orderTotal = order.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0));
                          <tr class="order-row"
                              data-id="@order.Id"
@@ -186,7 +195,7 @@
                              data-total="@orderTotal.ToString("F2").Replace(",", ".")"
                              data-minproducts="@order.OrderLines.Count().ToString()"
                              data-status="@((order.OrderStatus ?? "").ToLower())"
-                             data-address="@((order.Address ?? "").ToLower())">
+                             data-address="@formattedAddress.ToLower()">
                              <td><span class="order-id">@order.Id.ToString("0000")</span></td>
                              <td>@(order.CustomerName ?? "Unknown")</td>
                              <td>@GetPostalCode(order.Address)</td>

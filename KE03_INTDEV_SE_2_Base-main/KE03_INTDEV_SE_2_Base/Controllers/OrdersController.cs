@@ -71,6 +71,8 @@ public class OrdersController : Controller
             return NotFound();
         }
 
+        order.Address ??= new Address();
+
         await PopulateStatusOptionsAsync(order.StatusId);
 
         return View(order);
@@ -86,9 +88,30 @@ public class OrdersController : Controller
             return NotFound();
         }
 
+        order.Address ??= new Address();
+
+        ModelState.Remove(nameof(order.Customer));
+        ModelState.Remove(nameof(order.CustomerName));
+        ModelState.Remove(nameof(order.OrderStatus));
+        ModelState.Remove(nameof(order.Products));
+        ModelState.Remove(nameof(order.OrderLines));
+
+        if (!IsValidOrderStatus(order.StatusId))
+        {
+            ModelState.AddModelError(nameof(order.StatusId), "Please select a valid order status.");
+        }
+
         if (ModelState.IsValid)
         {
-            await _orderDAL.UpdateOrderAsync(order);
+            var updated = await _orderDAL.UpdateOrderAsync(order);
+
+            if (!updated)
+            {
+                ModelState.AddModelError(string.Empty, "Order could not be updated. Please check if the order and status still exist.");
+                await PopulateStatusOptionsAsync(order.StatusId);
+                return View(order);
+            }
+
             TempData["OrderUpdateSuccess"] = "Order was updated successfully.";
             return RedirectToAction(nameof(Index));
         }
@@ -98,18 +121,25 @@ public class OrdersController : Controller
         return View(order);
     }
 
-    private async Task PopulateStatusOptionsAsync(int? selectedStatusId = null)
+    private static bool IsValidOrderStatus(int? statusId)
     {
-        var statuses = await _orderDAL.GetAllStatusesAsync();
+        return statusId is >= 1 and <= 7;
+    }
 
-        ViewBag.StatusOptions = statuses
-            .Select(status => new SelectListItem
-            {
-                Value = status.StatusId.ToString(),
-                Text = status.Status,
-                Selected = selectedStatusId.HasValue && status.StatusId == selectedStatusId.Value
-            })
-            .ToList();
+    private Task PopulateStatusOptionsAsync(int? selectedStatusId = null)
+    {
+        ViewBag.StatusOptions = new List<SelectListItem>
+        {
+            new SelectListItem { Value = "1", Text = "Nieuw", Selected = selectedStatusId == 1 },
+            new SelectListItem { Value = "2", Text = "In behandeling", Selected = selectedStatusId == 2 },
+            new SelectListItem { Value = "3", Text = "Klaar om te verzenden", Selected = selectedStatusId == 3 },
+            new SelectListItem { Value = "4", Text = "Verzonden", Selected = selectedStatusId == 4 },
+            new SelectListItem { Value = "5", Text = "Afgeleverd", Selected = selectedStatusId == 5 },
+            new SelectListItem { Value = "6", Text = "Geannuleerd", Selected = selectedStatusId == 6 },
+            new SelectListItem { Value = "7", Text = "Retour", Selected = selectedStatusId == 7 }
+        };
+
+        return Task.CompletedTask;
     }
 
     // GET: Order/Delete/5

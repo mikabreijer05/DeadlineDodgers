@@ -12,7 +12,7 @@ public class Order
     public int Id { get; set; }
     public DateTime OrderDate { get; set; }
     public int? AddressId { get; set; }
-    public Address? address { get; set; }
+    public Address? Address { get; set; }
     
 
     [Required]

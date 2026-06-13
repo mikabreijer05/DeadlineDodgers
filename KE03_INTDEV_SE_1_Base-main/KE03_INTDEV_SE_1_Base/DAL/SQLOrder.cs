@@ -48,7 +48,7 @@ public class SQLOrder : SQLDAL
                     if (!orderDictionary.TryGetValue(order.Id, out var existingOrder))
                     {
                         existingOrder = order;
-                        existingOrder.address = address;
+                        existingOrder.Address = address;
                         orderDictionary.Add(order.Id, existingOrder);
                     }
 

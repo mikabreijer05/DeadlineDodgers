@@ -1,7 +1,9 @@
 @model KE03_INTDEV_SE_2_Base.Models.Order
+@using Microsoft.AspNetCore.Mvc.Rendering
 
 @{
     ViewData["Title"] = "Edit Order";
+    var statusOptions = ViewBag.StatusOptions as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
 }
 
 <link rel="stylesheet" href="~/css/orders.css" />
@@ -14,8 +16,11 @@
     <h1 class="orders-title">EDIT ORDER</h1>
 
     <div class="order-edit-layout">
-        <form asp-action="Edit" method="post" class="order-edit-card">
+        <form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="order-edit-card">
+            @Html.AntiForgeryToken()
+
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="AddressId" />
 
             <div class="order-edit-header">
                 <div>
@@ -38,20 +43,50 @@
                 </div>
 
                 <div class="order-edit-field">
-                    <label asp-for="CustomerId" class="filter-label">CUSTOMER ID</label>
+                    <label asp-for="CustomerId" class="filter-label">CUSTOMER / ACCOUNT ID</label>
                     <input asp-for="CustomerId" class="filter-input" type="number" />
                     <span asp-validation-for="CustomerId" class="text-danger"></span>
                 </div>
 
                 <div class="order-edit-field order-edit-field-wide">
-                    <label asp-for="Address" class="filter-label">CUSTOMER ADDRESS</label>
-                    <textarea asp-for="Address" class="filter-input order-address-input" rows="4" placeholder="Enter customer address..."></textarea>
-                    <span asp-validation-for="Address" class="text-danger"></span>
+                    <label class="filter-label">ACCOUNT ADDRESS</label>
+
+                    <div class="order-address-grid">
+                        <div class="order-edit-field">
+                            <label asp-for="Address.Street" class="filter-label">STREET</label>
+                            <input asp-for="Address.Street" class="filter-input" placeholder="Street" />
+                            <span asp-validation-for="Address.Street" class="text-danger"></span>
+                        </div>
+
+                        <div class="order-edit-field">
+                            <label asp-for="Address.HouseNumber" class="filter-label">HOUSE NUMBER</label>
+                            <input asp-for="Address.HouseNumber" class="filter-input" placeholder="House number" />
+                            <span asp-validation-for="Address.HouseNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="order-edit-field">
+                            <label asp-for="Address.PostalCode" class="filter-label">POSTAL CODE</label>
+                            <input asp-for="Address.PostalCode" class="filter-input" placeholder="Postal code" />
+                            <span asp-validation-for="Address.PostalCode" class="text-danger"></span>
+                        </div>
+
+                        <div class="order-edit-field">
+                            <label asp-for="Address.City" class="filter-label">CITY</label>
+                            <input asp-for="Address.City" class="filter-input" placeholder="City" />
+                            <span asp-validation-for="Address.City" class="text-danger"></span>
+                        </div>
+
+                        <div class="order-edit-field order-edit-field-wide">
+                            <label asp-for="Address.Country" class="filter-label">COUNTRY</label>
+                            <input asp-for="Address.Country" class="filter-input" placeholder="Country" />
+                            <span asp-validation-for="Address.Country" class="text-danger"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="order-edit-field order-edit-field-wide">
                     <label asp-for="StatusId" class="filter-label">ORDER STATUS</label>
-                    <select asp-for="StatusId" asp-items="ViewBag.StatusOptions" class="filter-input">
+                    <select asp-for="StatusId" asp-items="statusOptions" class="filter-input">
                         <option value="">Select status...</option>
                     </select>
                     <span asp-validation-for="StatusId" class="text-danger"></span>
@@ -74,8 +109,18 @@
             </div>
 
             <div class="summary-row">
+                <span>Customer ID</span>
+                <strong>@Model.CustomerId</strong>
+            </div>
+
+            <div class="summary-row">
                 <span>Current Status</span>
                 <strong>@(Model.OrderStatus ?? "Unknown")</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Current Address ID</span>
+                <strong>@Model.AddressId</strong>
             </div>
 
             <div class="summary-row">

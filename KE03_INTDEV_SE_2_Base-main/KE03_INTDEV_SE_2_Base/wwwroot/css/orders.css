@@ -428,6 +428,14 @@
     text-align: right;
 }
 
+.order-address-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+    border: 1px solid var(--matrix-secondary);
+    padding: 16px;
+    background-color: rgba(0, 255, 65, 0.03);
+}
 @media (max-width: 900px) {
     .order-edit-layout {
         grid-template-columns: 1fr;

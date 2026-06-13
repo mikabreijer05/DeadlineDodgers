@@ -5,6 +5,52 @@ namespace KE03_INTDEV_SE_2_Base.DAL;
 
 public class SQLOrder : SQLDAL
 {
+    private static string FormatAddress(Address? address)
+    {
+        if (address == null)
+        {
+            return string.Empty;
+        }
+
+        return string.Join(", ", new[]
+        {
+            string.Join(" ", new[] { address.Street, address.HouseNumber }
+                .Where(value => !string.IsNullOrWhiteSpace(value))),
+            string.Join(" ", new[] { address.PostalCode, address.City }
+                .Where(value => !string.IsNullOrWhiteSpace(value))),
+            address.Country
+        }.Where(value => !string.IsNullOrWhiteSpace(value)));
+    }
+
+    private static bool AddressChanged(Address? currentAddress, Address? newAddress)
+    {
+        if (currentAddress == null && newAddress == null)
+        {
+            return false;
+        }
+
+        if (currentAddress == null || newAddress == null)
+        {
+            return true;
+        }
+
+        return
+            !string.Equals(currentAddress.Street?.Trim(), newAddress.Street?.Trim(), StringComparison.OrdinalIgnoreCase) ||
+            !string.Equals(currentAddress.HouseNumber?.Trim(), newAddress.HouseNumber?.Trim(), StringComparison.OrdinalIgnoreCase) ||
+            !string.Equals(currentAddress.PostalCode?.Trim(), newAddress.PostalCode?.Trim(), StringComparison.OrdinalIgnoreCase) ||
+            !string.Equals(currentAddress.City?.Trim(), newAddress.City?.Trim(), StringComparison.OrdinalIgnoreCase) ||
+            !string.Equals(currentAddress.Country?.Trim(), newAddress.Country?.Trim(), StringComparison.OrdinalIgnoreCase);
+    }
+    private static bool HasAnyAddressValue(Address? address)
+    {
+        return address != null &&
+               (!string.IsNullOrWhiteSpace(address.Street) ||
+                !string.IsNullOrWhiteSpace(address.HouseNumber) ||
+                !string.IsNullOrWhiteSpace(address.PostalCode) ||
+                !string.IsNullOrWhiteSpace(address.City) ||
+                !string.IsNullOrWhiteSpace(address.Country));
+    }
+    
     /// <summary>
     /// Creates a new order in the database
     /// </summary>
@@ -15,15 +61,15 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                INSERT INTO [dbo].[Order] (OrderDate, AddressId, AccountId, StatusId, CouponId, DeliveryTogether)
-                OUTPUT INSERTED.OrderId
-                VALUES (@OrderDate, @AddressId, @AccountId, @StatusId, @CouponId, @DeliveryTogether)";
+                    INSERT INTO [dbo].[Order] (OrderDate, AddressId, AccountId, StatusId, CouponId, DeliveryTogether)
+                    OUTPUT INSERTED.OrderId
+                    VALUES (@OrderDate, @AddressId, @AccountId, @StatusId, @CouponId, @DeliveryTogether)";
 
             var parameters = new
             {
                 order.OrderDate,
-                AddressId = 1,
-                order.CustomerId,
+                order.AddressId,
+                AccountId = order.CustomerId,
                 order.StatusId,
                 CouponId = (int?)null,
                 DeliveryTogether = false
@@ -44,27 +90,36 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                SELECT 
-                    o.OrderId AS Id, 
-                    o.OrderDate, 
-                    o.AccountId AS CustomerId,
-                    a.CustName AS CustomerName,
-                    o.StatusId,
-                    s.Status AS OrderStatus,
-                    LTRIM(RTRIM(
-                        ISNULL(addr.Street, '')
-                        + ' ' + ISNULL(addr.HouseNumber, '')
-                        + ', ' + ISNULL(addr.PostalCode, '')
-                        + ' ' + ISNULL(addr.City, '')
-                        + ', ' + ISNULL(addr.Country, '')
-                    )) AS Address
-                FROM [dbo].[Order] o
-                LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
-                LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
-                LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
-                WHERE o.OrderId = @OrderId";
+                    SELECT 
+                        o.OrderId AS Id, 
+                        o.OrderDate, 
+                        o.AddressId,
+                        o.AccountId AS CustomerId,
+                        a.CustName AS CustomerName,
+                        o.StatusId,
+                        s.Status AS OrderStatus,
+                        addr.AddressId,
+                        addr.Street,
+                        addr.HouseNumber,
+                        addr.PostalCode,
+                        addr.City,
+                        addr.Country
+                    FROM [dbo].[Order] o
+                    LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
+                    LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                    LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
+                    WHERE o.OrderId = @OrderId";
 
-            var order = await conn.QuerySingleOrDefaultAsync<Order?>(query, new { OrderId = orderId });
+            var order = (await conn.QueryAsync<Order, Address, Order>(
+                query,
+                (order, address) =>
+                {
+                    order.Address = address;
+                    order.AddressId = address?.AddressId ?? order.AddressId;
+                    return order;
+                },
+                new { OrderId = orderId },
+                splitOn: "AddressId")).SingleOrDefault();
 
             if (order != null)
             {
@@ -102,27 +157,35 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                SELECT 
-                    o.OrderId AS Id, 
-                    o.OrderDate, 
-                    o.AccountId AS CustomerId,
-                    a.CustName AS CustomerName,
-                    o.StatusId,
-                    s.Status AS OrderStatus,
-                    LTRIM(RTRIM(
-                        ISNULL(addr.Street, '')
-                        + ' ' + ISNULL(addr.HouseNumber, '')
-                        + ', ' + ISNULL(addr.PostalCode, '')
-                        + ' ' + ISNULL(addr.City, '')
-                        + ', ' + ISNULL(addr.Country, '')
-                    )) AS Address
-                FROM [dbo].[Order] o
-                LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
-                LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
-                LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
-                ORDER BY o.OrderDate DESC";
+                    SELECT 
+                        o.OrderId AS Id, 
+                        o.OrderDate, 
+                        o.AddressId,
+                        o.AccountId AS CustomerId,
+                        a.CustName AS CustomerName,
+                        o.StatusId,
+                        s.Status AS OrderStatus,
+                        addr.AddressId,
+                        addr.Street,
+                        addr.HouseNumber,
+                        addr.PostalCode,
+                        addr.City,
+                        addr.Country
+                    FROM [dbo].[Order] o
+                    LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
+                    LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                    LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
+                    ORDER BY o.OrderDate DESC";
 
-            var orders = await conn.QueryAsync<Order>(query);
+            var orders = (await conn.QueryAsync<Order, Address, Order>(
+                query,
+                (order, address) =>
+                {
+                    order.Address = address;
+                    order.AddressId = address?.AddressId ?? order.AddressId;
+                    return order;
+                },
+                splitOn: "AddressId")).ToList();
 
             // Fetch order lines for each order
             foreach (var order in orders)
@@ -160,28 +223,37 @@ public class SQLOrder : SQLDAL
             await conn.OpenAsync();
 
             var query = @"
-                SELECT 
-                    o.OrderId AS Id, 
-                    o.OrderDate, 
-                    o.AccountId AS CustomerId,
-                    a.CustName AS CustomerName,
-                    o.StatusId,
-                    s.Status AS OrderStatus,
-                    LTRIM(RTRIM(
-                        ISNULL(addr.Street, '')
-                        + ' ' + ISNULL(addr.HouseNumber, '')
-                        + ', ' + ISNULL(addr.PostalCode, '')
-                        + ' ' + ISNULL(addr.City, '')
-                        + ', ' + ISNULL(addr.Country, '')
-                    )) AS Address
-                FROM [dbo].[Order] o
-                LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
-                LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
-                LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
-                WHERE o.AccountId = @CustomerId
-                ORDER BY o.OrderDate DESC";
+                    SELECT 
+                        o.OrderId AS Id, 
+                        o.OrderDate, 
+                        o.AddressId,
+                        o.AccountId AS CustomerId,
+                        a.CustName AS CustomerName,
+                        o.StatusId,
+                        s.Status AS OrderStatus,
+                        addr.AddressId,
+                        addr.Street,
+                        addr.HouseNumber,
+                        addr.PostalCode,
+                        addr.City,
+                        addr.Country
+                    FROM [dbo].[Order] o
+                    LEFT JOIN [dbo].[Account] a ON o.AccountId = a.AccId
+                    LEFT JOIN [dbo].[Status] s ON o.StatusId = s.StatusId
+                    LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
+                    WHERE o.AccountId = @CustomerId
+                    ORDER BY o.OrderDate DESC";
 
-            return await conn.QueryAsync<Order>(query, new { CustomerId = customerId });
+            return await conn.QueryAsync<Order, Address, Order>(
+                query,
+                (order, address) =>
+                {
+                    order.Address = address;
+                    order.AddressId = address?.AddressId ?? order.AddressId;
+                    return order;
+                },
+                new { CustomerId = customerId },
+                splitOn: "AddressId");
         }
     }
 
@@ -196,11 +268,79 @@ public class SQLOrder : SQLDAL
 
                 using var transaction = conn.BeginTransaction();
 
+                var statusExistsQuery = @"
+                    SELECT COUNT(1)
+                    FROM [dbo].[Status]
+                    WHERE StatusId = @StatusId";
+
+                var statusExists = await conn.QuerySingleAsync<int>(
+                    statusExistsQuery,
+                    new { order.StatusId },
+                    transaction);
+
+                if (statusExists == 0)
+                {
+                    transaction.Rollback();
+                    return false;
+                }
+
+                var currentAddressQuery = @"
+                    SELECT
+                        addr.AddressId,
+                        addr.Street,
+                        addr.HouseNumber,
+                        addr.PostalCode,
+                        addr.City,
+                        addr.Country
+                    FROM [dbo].[Order] o
+                    LEFT JOIN [dbo].[Address] addr ON o.AddressId = addr.AddressId
+                    WHERE o.OrderId = @OrderId";
+
+                var currentAddress = await conn.QuerySingleOrDefaultAsync<Address>(
+                    currentAddressQuery,
+                    new { OrderId = order.Id },
+                    transaction);
+
+                var addressId = order.AddressId;
+
+                if (HasAnyAddressValue(order.Address) && AddressChanged(currentAddress, order.Address))
+                {
+                    var insertAddressQuery = @"
+                        INSERT INTO [dbo].[Address] (
+                            Street,
+                            HouseNumber,
+                            PostalCode,
+                            City,
+                            Country
+                        )
+                        OUTPUT INSERTED.AddressId
+                        VALUES (
+                            @Street,
+                            @HouseNumber,
+                            @PostalCode,
+                            @City,
+                            @Country
+                        )";
+
+                    addressId = await conn.QuerySingleAsync<int>(
+                        insertAddressQuery,
+                        new
+                        {
+                            order.Address.Street,
+                            order.Address.HouseNumber,
+                            order.Address.PostalCode,
+                            order.Address.City,
+                            order.Address.Country
+                        },
+                        transaction);
+                }
+
                 var updateOrderQuery = @"
                     UPDATE [dbo].[Order]
                     SET OrderDate = @OrderDate,
                         AccountId = @CustomerId,
-                        StatusId = @StatusId
+                        StatusId = @StatusId,
+                        AddressId = @AddressId
                     WHERE OrderId = @OrderId";
 
                 var rowsAffected = await conn.ExecuteAsync(
@@ -208,64 +348,12 @@ public class SQLOrder : SQLDAL
                     new
                     {
                         order.OrderDate,
-                        OrderId = order.Id,
                         order.CustomerId,
-                        order.StatusId
+                        order.StatusId,
+                        AddressId = addressId,
+                        OrderId = order.Id
                     },
                     transaction);
-
-                var addressIdQuery = @"
-                    SELECT AddressId
-                    FROM [dbo].[Order]
-                    WHERE OrderId = @OrderId";
-
-                var addressId = await conn.QuerySingleOrDefaultAsync<int?>(
-                    addressIdQuery,
-                    new { OrderId = order.Id },
-                    transaction);
-
-                if (addressId.HasValue)
-                {
-                    var updateAddressQuery = @"
-                        UPDATE [dbo].[Address]
-                        SET Street = @Address
-                        WHERE AddressId = @AddressId";
-
-                    await conn.ExecuteAsync(
-                        updateAddressQuery,
-                        new
-                        {
-                            Address = order.Address,
-                            AddressId = addressId.Value
-                        },
-                        transaction);
-                }
-                else if (!string.IsNullOrWhiteSpace(order.Address))
-                {
-                    var insertAddressQuery = @"
-                        INSERT INTO [dbo].[Address] (Street)
-                        OUTPUT INSERTED.AddressId
-                        VALUES (@Address)";
-
-                    var newAddressId = await conn.QuerySingleAsync<int>(
-                        insertAddressQuery,
-                        new { Address = order.Address },
-                        transaction);
-
-                    var updateOrderAddressQuery = @"
-                        UPDATE [dbo].[Order]
-                        SET AddressId = @AddressId
-                        WHERE OrderId = @OrderId";
-
-                    await conn.ExecuteAsync(
-                        updateOrderAddressQuery,
-                        new
-                        {
-                            AddressId = newAddressId,
-                            OrderId = order.Id
-                        },
-                        transaction);
-                }
 
                 transaction.Commit();
 
