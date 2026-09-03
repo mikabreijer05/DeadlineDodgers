@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="iteratie3matrix.Pages.VehicleDamagePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Schaderapport">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+
+            <Label
+                Text="Schaderapport"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="#FF5555" />
+
+            <!-- DATE -->
+            <Entry
+                Placeholder="Datum"
+                IsReadOnly="True"
+                Text="{Binding ReportDate}" />
+
+            <!-- TIME -->
+            <Entry
+                Placeholder="Tijd"
+                IsReadOnly="True"
+                Text="{Binding ReportTime}" />
+
+            <!-- DRIVER -->
+            <Entry
+                Placeholder="Naam medewerker"
+                Text="{Binding EmployeeName}" />
+
+            <!-- VAN -->
+            <Entry
+                Placeholder="Kenteken"
+                IsReadOnly="True"
+                Text="{Binding VehicleRegistration}" />
+
+            <!-- DESCRIPTION -->
+            <Editor
+                Placeholder="Omschrijf de schade..."
+                HeightRequest="120"
+                Text="{Binding DamageDescription}" />
+
+            <!-- PHOTO -->
+            <Button
+                Text="Foto maken"
+                BackgroundColor="#FACC15"
+                TextColor="Black"
+                Command="{Binding TakePhotoCommand}" />
+
+            <Image
+                Source="{Binding PhotoPath}"
+                HeightRequest="250"
+                Aspect="AspectFit" />
+
+            <!-- BACK -->
+            <Button
+                Text="Terug"
+                BackgroundColor="#808080"
+                TextColor="White"
+                Command="{Binding GoBackCommand}" />
+
+            <!-- SAVE -->
+            <Button
+                Text="Schaderapport opslaan"
+                BackgroundColor="#FF5555"
+                TextColor="White"
+                Command="{Binding SaveReportCommand}" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

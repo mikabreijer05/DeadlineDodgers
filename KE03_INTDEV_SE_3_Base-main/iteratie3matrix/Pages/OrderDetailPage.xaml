@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="iteratie3matrix.Pages.OrderDetailPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pageModels="clr-namespace:iteratie3matrix.PageModels"
+    xmlns:models="clr-namespace:iteratie3matrix.Models"
+    x:DataType="pageModels:OrderDetailPageModel"
+    Title="Delivery Detail">
+
+    <!--
+        PURPOSE:
+        Displays a single delivery in a courier-friendly format.
+
+        DESIGN DECISION:
+        - No product details (privacy + courier relevance)
+        - Only operational information:
+          account, address, package count, status
+    -->
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="16">
+
+            <!-- ========================= -->
+            <!-- DELIVERY HEADER -->
+            <!-- ========================= -->
+
+            <Label
+                Text="{Binding OrderId, StringFormat='Delivery #{0}'}"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="#00FF41" />
+
+            <Label
+                Text="{Binding OrderDate, StringFormat='Date: {0:dd-MM-yyyy}'}"
+                Opacity="0.8" />
+
+            <!-- STATUS -->
+            <Label
+                Text="{Binding StatusText}"
+                FontAttributes="Bold"
+                FontSize="16" />
+
+            <Label
+                Text="{Binding StatusId, StringFormat='Status ID: {0}'}"
+                Opacity="0.5" />
+
+            <!-- ========================= -->
+            <!-- CUSTOMER INFO -->
+            <!-- ========================= -->
+
+            <Border
+                Stroke="#333"
+                Padding="12"
+                Background="#0F0F0F">
+
+                <VerticalStackLayout Spacing="6">
+
+                    <Label
+                        Text="Customer"
+                        FontAttributes="Bold"
+                        TextColor="#00FF41" />
+
+                    <Label
+                        Text="{Binding AccountName}"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="{Binding CustomerName}"
+                        Opacity="0.8" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- ========================= -->
+            <!-- DELIVERY ADDRESS -->
+            <!-- ========================= -->
+
+            <Border
+                Stroke="#333"
+                Padding="12"
+                Background="#0F0F0F">
+
+                <VerticalStackLayout Spacing="6">
+
+                    <Label
+                        Text="Delivery Address"
+                        FontAttributes="Bold"
+                        TextColor="#00FF41" />
+
+                    <Label
+                        Text="{Binding FullAddress}" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- ========================= -->
+            <!-- PACKAGE SUMMARY -->
+            <!-- ========================= -->
+
+            <Border
+                Stroke="#2563EB"
+                Padding="12"
+                Background="#0B1220">
+
+                <VerticalStackLayout Spacing="6">
+
+                    <Label
+                        Text="Package Summary"
+                        FontAttributes="Bold"
+                        TextColor="#60A5FA" />
+
+                    <Label
+                        Text="{Binding TotalPackages, StringFormat='Total packages: {0}'}"
+                        FontSize="16"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="Scan all packages before marking as delivered"
+                        FontSize="12"
+                        Opacity="0.6" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- ========================= -->
+            <!-- ACTIONS -->
+            <!-- ========================= -->
+
+            <Button
+                Text="Start Route"
+                BackgroundColor="#00CC33"
+                TextColor="Black"
+                Command="{Binding StartRouteCommand}" />
+
+            <Button
+                Text="Mark as Delivered"
+                BackgroundColor="#2563EB"
+                TextColor="White"
+                Command="{Binding MarkAsDeliveredCommand}" />
+
+            <!-- ========================= -->
+            <!-- PACKAGE SCANNER PLACEHOLDER -->
+            <!-- ========================= -->
+
+            <Label
+                Text="Package Scanner"
+                FontAttributes="Bold"
+                TextColor="#00FF41"
+                Margin="0,20,0,0" />
+
+            <Border
+                Stroke="#1A1A1A"
+                Background="#0F0F0F"
+                Padding="12">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label
+                        Text="Scanner not active yet"
+                        Opacity="0.6" />
+
+                    <Label
+                        Text="Planned: barcode validation per package"
+                        FontSize="12"
+                        Opacity="0.5" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

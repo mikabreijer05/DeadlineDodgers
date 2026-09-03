@@ -1,0 +1,94 @@
+/* Product search/filter form */
+.product-filter-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 16px;
+    align-items: end;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #20ff62;
+    background-color: #001a00;
+    box-shadow: 0 0 14px rgba(32, 255, 98, 0.18);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    color: #20ff62;
+    font-family: monospace;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #20ff62;
+    background-color: #000;
+    color: #20ff62;
+    font-family: monospace;
+    outline: none;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    box-shadow: 0 0 10px rgba(32, 255, 98, 0.45);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-button,
+.filter-reset-button {
+    padding: 11px 16px;
+    border: 1px solid #20ff62;
+    background-color: transparent;
+    color: #20ff62;
+    font-family: monospace;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.filter-button:hover,
+.filter-reset-button:hover {
+    background-color: #20ff62;
+    color: #000;
+}
+
+.no-products-message {
+    padding: 20px;
+    color: #20ff62;
+    font-family: monospace;
+    border: 1px solid #20ff62;
+    background-color: #001a00;
+}
+
+@media (max-width: 992px) {
+    .product-filter-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-actions {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .product-filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        grid-column: span 1;
+        flex-direction: column;
+    }
+}

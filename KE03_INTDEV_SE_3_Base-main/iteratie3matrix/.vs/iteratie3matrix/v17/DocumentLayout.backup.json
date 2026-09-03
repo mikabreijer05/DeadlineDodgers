@@ -1,0 +1,1046 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pagemodels\\loginpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pagemodels\\loginpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\services\\nfcservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:services\\nfcservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\resources\\styles\\appstyles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:resources\\styles\\appstyles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\nfcloginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\nfcloginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\nfcloginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\nfcloginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\platforms\\android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:platforms\\android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\platforms\\android\\mainapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:platforms\\android\\mainapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\vehicledamagereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\vehicledamagereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\services\\modalerrorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:services\\modalerrorhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pagemodels\\orderdetailpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pagemodels\\orderdetailpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\orderdetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\orderdetailpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\supportpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\supportpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pagemodels\\orderlistpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pagemodels\\orderlistpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\orderproductitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\orderproductitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\scannedpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\scannedpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\deliverysession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\deliverysession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\cartload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\cartload.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\iteratie3matrix.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:iteratie3matrix.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\platforms\\android\\androidmanifest.xml||{4E01A4BC-CFCF-452C-8C08-51352512D197}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:platforms\\android\\androidmanifest.xml||{4E01A4BC-CFCF-452C-8C08-51352512D197}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\cartscannerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\cartscannerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pagemodels\\vehicleinspectionpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pagemodels\\vehicleinspectionpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pagemodels\\vehicledamagepagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pagemodels\\vehicledamagepagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pagemodels\\vanselectionpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pagemodels\\vanselectionpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pagemodels\\cartscannerpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pagemodels\\cartscannerpagemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\vehicleinspectionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\vehicleinspectionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\vehicledamagepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\vehicledamagepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\vanselectionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\vanselectionpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\orderlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\orderlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\orderdetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\orderdetailpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\vehicledamagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\vehicledamagepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\van.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\van.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\adocument help\\project_state.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:adocument help\\project_state.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\dal\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:dal\\accountrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\dal\\addressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:dal\\addressrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\dal\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:dal\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\orderlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\orderlistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\dal\\sqldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:dal\\sqldal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\orderlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\orderlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\dal\\deliveryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:dal\\deliveryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\models\\orderproductdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:models\\orderproductdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\adocument help\\ai_context.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:adocument help\\ai_context.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\adocument help\\database_notes.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:adocument help\\database_notes.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\vanselectionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\vanselectionpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\data\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:data\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\pages\\cartscannerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:pages\\cartscannerpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\data\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:data\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|c:\\users\\gebruiker\\documents\\github\\deadlinedodgers\\ke03_intdev_se_3_base-main\\iteratie3matrix\\data\\statusrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABD22CAD-55FF-442B-851C-E251BDA05571}|iteratie3matrix.csproj|solutionrelative:data\\statusrepository .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Resources\\Styles\\Styles.xaml",
+              "RelativeDocumentMoniker": "Resources\\Styles\\Styles.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Resources\\Styles\\Styles.xaml",
+              "RelativeToolTip": "Resources\\Styles\\Styles.xaml",
+              "ViewState": "AgIAAOMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-03T10:22:46.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppStyles.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Resources\\Styles\\AppStyles.xaml",
+              "RelativeDocumentMoniker": "Resources\\Styles\\AppStyles.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Resources\\Styles\\AppStyles.xaml",
+              "RelativeToolTip": "Resources\\Styles\\AppStyles.xaml",
+              "ViewState": "AgIAAM8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-03T10:21:12.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Resources\\Styles\\Colors.xaml",
+              "RelativeDocumentMoniker": "Resources\\Styles\\Colors.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Resources\\Styles\\Colors.xaml",
+              "RelativeToolTip": "Resources\\Styles\\Colors.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-03T10:21:07.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiProgram.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\MauiProgram.cs",
+              "RelativeToolTip": "MauiProgram.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAowEcAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T14:44:36.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NFCLoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\NFCLoginPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\NFCLoginPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\NFCLoginPage.xaml",
+              "RelativeToolTip": "Pages\\NFCLoginPage.xaml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAGUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-01T09:35:51.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NFCLoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\NFCLoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\NFCLoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\NFCLoginPage.xaml.cs",
+              "RelativeToolTip": "Pages\\NFCLoginPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T09:42:23.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginPageModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\LoginPageModel.cs",
+              "RelativeDocumentMoniker": "PageModels\\LoginPageModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\LoginPageModel.cs",
+              "RelativeToolTip": "PageModels\\LoginPageModel.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwCYAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T08:11:07.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NfcService.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Services\\NfcService.cs",
+              "RelativeDocumentMoniker": "Services\\NfcService.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Services\\NfcService.cs",
+              "RelativeToolTip": "Services\\NfcService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T08:37:08.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Loginpage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\Loginpage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Loginpage.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\Loginpage.xaml.cs",
+              "RelativeToolTip": "Pages\\Loginpage.xaml.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwBsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T08:52:36.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-01T09:59:21.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MainApplication.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Platforms\\Android\\MainApplication.cs",
+              "RelativeDocumentMoniker": "Platforms\\Android\\MainApplication.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Platforms\\Android\\MainApplication.cs",
+              "RelativeToolTip": "Platforms\\Android\\MainApplication.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-03T09:57:42.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "VehicleDamageReport.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\VehicleDamageReport.cs",
+              "RelativeDocumentMoniker": "Models\\VehicleDamageReport.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\VehicleDamageReport.cs",
+              "RelativeToolTip": "Models\\VehicleDamageReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T14:35:17.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MainActivity.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Platforms\\Android\\MainActivity.cs",
+              "RelativeDocumentMoniker": "Platforms\\Android\\MainActivity.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Platforms\\Android\\MainActivity.cs",
+              "RelativeToolTip": "Platforms\\Android\\MainActivity.cs",
+              "ViewState": "AgIAANoAAAAAAAAAAAAIwM0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-01T08:26:59.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Loginpage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\Loginpage.xaml",
+              "RelativeDocumentMoniker": "Pages\\Loginpage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\Loginpage.xaml",
+              "RelativeToolTip": "Pages\\Loginpage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-01T07:42:29.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "OrderListPageModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\OrderListPageModel.cs",
+              "RelativeDocumentMoniker": "PageModels\\OrderListPageModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\OrderListPageModel.cs",
+              "RelativeToolTip": "PageModels\\OrderListPageModel.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAowJ4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T08:26:19.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Account.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Account.cs",
+              "RelativeDocumentMoniker": "Models\\Account.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Account.cs",
+              "RelativeToolTip": "Models\\Account.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T11:08:33.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OrderDetailPageModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\OrderDetailPageModel.cs",
+              "RelativeDocumentMoniker": "PageModels\\OrderDetailPageModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\OrderDetailPageModel.cs",
+              "RelativeToolTip": "PageModels\\OrderDetailPageModel.cs",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAowBMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T09:36:40.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SupportPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\SupportPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\SupportPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\SupportPage.xaml",
+              "RelativeToolTip": "Pages\\SupportPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-07-01T07:51:15.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CartLoad.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\CartLoad.cs",
+              "RelativeDocumentMoniker": "Models\\CartLoad.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\CartLoad.cs",
+              "RelativeToolTip": "Models\\CartLoad.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T09:11:26.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Address.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "Models\\Address.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Address.cs",
+              "RelativeToolTip": "Models\\Address.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T11:10:00.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\CartItem.cs",
+              "RelativeToolTip": "Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T09:44:32.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DeliverySession.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\DeliverySession.cs",
+              "RelativeDocumentMoniker": "Models\\DeliverySession.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\DeliverySession.cs",
+              "RelativeToolTip": "Models\\DeliverySession.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswA4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T14:44:54.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "GlobalUsings.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\GlobalUsings.cs",
+              "RelativeDocumentMoniker": "GlobalUsings.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\GlobalUsings.cs",
+              "RelativeToolTip": "GlobalUsings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T09:40:50.131Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ModalErrorHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Services\\ModalErrorHandler.cs",
+              "RelativeDocumentMoniker": "Services\\ModalErrorHandler.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Services\\ModalErrorHandler.cs",
+              "RelativeToolTip": "Services\\ModalErrorHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T10:31:00.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Package.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Package.cs",
+              "RelativeDocumentMoniker": "Models\\Package.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Package.cs",
+              "RelativeToolTip": "Models\\Package.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T09:07:41.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OrderDetailPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\OrderDetailPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\OrderDetailPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\OrderDetailPage.xaml.cs",
+              "RelativeToolTip": "Pages\\OrderDetailPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:33:20.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ScannedPackage.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\ScannedPackage.cs",
+              "RelativeDocumentMoniker": "Models\\ScannedPackage.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\ScannedPackage.cs",
+              "RelativeToolTip": "Models\\ScannedPackage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvxEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T09:36:31.174Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "OrderProductItem.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\OrderProductItem.cs",
+              "RelativeDocumentMoniker": "Models\\OrderProductItem.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\OrderProductItem.cs",
+              "RelativeToolTip": "Models\\OrderProductItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T13:02:24.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T09:42:25.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AndroidManifest.xml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeDocumentMoniker": "Platforms\\Android\\AndroidManifest.xml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Platforms\\Android\\AndroidManifest.xml",
+              "RelativeToolTip": "Platforms\\Android\\AndroidManifest.xml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2026-06-19T14:59:43.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T11:40:04.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "iteratie3matrix.csproj",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\iteratie3matrix.csproj",
+              "RelativeDocumentMoniker": "iteratie3matrix.csproj",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\iteratie3matrix.csproj",
+              "RelativeToolTip": "iteratie3matrix.csproj",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAcwHMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-18T11:20:05.646Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "VehicleInspectionPageModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\VehicleInspectionPageModel.cs",
+              "RelativeDocumentMoniker": "PageModels\\VehicleInspectionPageModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\VehicleInspectionPageModel.cs",
+              "RelativeToolTip": "PageModels\\VehicleInspectionPageModel.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAgwE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T13:54:52.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "CartScannerPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\CartScannerPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\CartScannerPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\CartScannerPage.xaml",
+              "RelativeToolTip": "Pages\\CartScannerPage.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-19T15:12:01.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "VehicleDamagePageModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\VehicleDamagePageModel.cs",
+              "RelativeDocumentMoniker": "PageModels\\VehicleDamagePageModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\VehicleDamagePageModel.cs",
+              "RelativeToolTip": "PageModels\\VehicleDamagePageModel.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAowFwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T14:38:20.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "VanSelectionPageModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\VanSelectionPageModel.cs",
+              "RelativeDocumentMoniker": "PageModels\\VanSelectionPageModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\VanSelectionPageModel.cs",
+              "RelativeToolTip": "PageModels\\VanSelectionPageModel.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T13:57:38.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "VehicleInspectionPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VehicleInspectionPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\VehicleInspectionPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VehicleInspectionPage.xaml",
+              "RelativeToolTip": "Pages\\VehicleInspectionPage.xaml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAkwEkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-19T13:46:11.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CartScannerPageModel.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\CartScannerPageModel.cs",
+              "RelativeDocumentMoniker": "PageModels\\CartScannerPageModel.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\PageModels\\CartScannerPageModel.cs",
+              "RelativeToolTip": "PageModels\\CartScannerPageModel.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAowHwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T15:13:10.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "VehicleDamagePage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VehicleDamagePage.xaml",
+              "RelativeDocumentMoniker": "Pages\\VehicleDamagePage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VehicleDamagePage.xaml",
+              "RelativeToolTip": "Pages\\VehicleDamagePage.xaml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAkwE8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-19T14:46:29.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "VanSelectionPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VanSelectionPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\VanSelectionPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VanSelectionPage.xaml",
+              "RelativeToolTip": "Pages\\VanSelectionPage.xaml",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAkwGoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-19T13:57:43.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "OrderListPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\OrderListPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\OrderListPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\OrderListPage.xaml",
+              "RelativeToolTip": "Pages\\OrderListPage.xaml",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAkwL4AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-29T08:09:06.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "OrderDetailPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\OrderDetailPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\OrderDetailPage.xaml",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\OrderDetailPage.xaml",
+              "RelativeToolTip": "Pages\\OrderDetailPage.xaml",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAkwLYAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-06-22T12:33:11.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "VehicleDamagePage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VehicleDamagePage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\VehicleDamagePage.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VehicleDamagePage.xaml.cs",
+              "RelativeToolTip": "Pages\\VehicleDamagePage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T14:46:43.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Van.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Van.cs",
+              "RelativeDocumentMoniker": "Models\\Van.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Van.cs",
+              "RelativeToolTip": "Models\\Van.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAmwD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T14:24:04.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "PROJECT_STATE.md",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\PROJECT_STATE.md",
+              "RelativeDocumentMoniker": "aDOCUMENT Help\\PROJECT_STATE.md",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\PROJECT_STATE.md",
+              "RelativeToolTip": "aDOCUMENT Help\\PROJECT_STATE.md",
+              "ViewState": "AgIAAPQBAAAAAAAAAAAAAPUBAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-06-19T14:38:46.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "AccountRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\AccountRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\AccountRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\AccountRepository.cs",
+              "RelativeToolTip": "DAL\\AccountRepository.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T11:15:59.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "AddressRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\AddressRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\AddressRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\AddressRepository.cs",
+              "RelativeToolTip": "DAL\\AddressRepository.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowDoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T11:17:05.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\OrderRepository.cs",
+              "RelativeToolTip": "DAL\\OrderRepository.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAQwMMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T11:47:00.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "OrderListItem.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\OrderListItem.cs",
+              "RelativeDocumentMoniker": "Models\\OrderListItem.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\OrderListItem.cs",
+              "RelativeToolTip": "Models\\OrderListItem.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwDAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:51:23.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\Order.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\Order.cs",
+              "RelativeToolTip": "Models\\Order.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:32:32.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "SQLDAL.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\SQLDAL.cs",
+              "RelativeDocumentMoniker": "DAL\\SQLDAL.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\SQLDAL.cs",
+              "RelativeToolTip": "DAL\\SQLDAL.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T11:26:25.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "OrderListPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\OrderListPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\OrderListPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\OrderListPage.xaml.cs",
+              "RelativeToolTip": "Pages\\OrderListPage.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAgwEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-29T09:28:08.922Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "DeliveryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\DeliveryRepository.cs",
+              "RelativeDocumentMoniker": "DAL\\DeliveryRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\DAL\\DeliveryRepository.cs",
+              "RelativeToolTip": "DAL\\DeliveryRepository.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAowFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T09:00:42.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "OrderProductDetail.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\OrderProductDetail.cs",
+              "RelativeDocumentMoniker": "Models\\OrderProductDetail.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Models\\OrderProductDetail.cs",
+              "RelativeToolTip": "Models\\OrderProductDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T12:51:41.166Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "AI_CONTEXT.md",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\AI_CONTEXT.md",
+              "RelativeDocumentMoniker": "aDOCUMENT Help\\AI_CONTEXT.md",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\AI_CONTEXT.md",
+              "RelativeToolTip": "aDOCUMENT Help\\AI_CONTEXT.md",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAuwGAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-06-18T13:01:30.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "DATABASE_NOTES.md",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\DATABASE_NOTES.md",
+              "RelativeDocumentMoniker": "aDOCUMENT Help\\DATABASE_NOTES.md",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\aDOCUMENT Help\\DATABASE_NOTES.md",
+              "RelativeToolTip": "aDOCUMENT Help\\DATABASE_NOTES.md",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAuwJoAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-06-22T11:45:28.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "VanSelectionPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VanSelectionPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\VanSelectionPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\VanSelectionPage.xaml.cs",
+              "RelativeToolTip": "Pages\\VanSelectionPage.xaml.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvyIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T09:29:53.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "VehicleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Data\\VehicleRepository.cs",
+              "RelativeDocumentMoniker": "Data\\VehicleRepository.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Data\\VehicleRepository.cs",
+              "RelativeToolTip": "Data\\VehicleRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAYwC0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T09:25:32.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "CartScannerPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\CartScannerPage.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\CartScannerPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Pages\\CartScannerPage.xaml.cs",
+              "RelativeToolTip": "Pages\\CartScannerPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T15:16:01.007Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "AppShell.xaml.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\AppShell.xaml.cs",
+              "RelativeToolTip": "AppShell.xaml.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAwFgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-19T14:44:30.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-19T15:18:46.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Data\\Constants.cs",
+              "RelativeDocumentMoniker": "Data\\Constants.cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Data\\Constants.cs",
+              "RelativeToolTip": "Data\\Constants.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T13:01:36.708Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "StatusRepository .cs",
+              "DocumentMoniker": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Data\\StatusRepository .cs",
+              "RelativeDocumentMoniker": "Data\\StatusRepository .cs",
+              "ToolTip": "C:\\Users\\Gebruiker\\Documents\\GitHub\\DeadlineDodgers\\KE03_INTDEV_SE_3_Base-main\\iteratie3matrix\\Data\\StatusRepository .cs",
+              "RelativeToolTip": "Data\\StatusRepository .cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAAFkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-18T11:54:51.726Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

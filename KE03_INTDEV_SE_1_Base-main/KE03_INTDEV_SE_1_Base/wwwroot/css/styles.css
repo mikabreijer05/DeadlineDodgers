@@ -1,0 +1,110 @@
+/* ========================================
+   Algemene instellingen & BODY
+   ======================================== */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: black;
+    color: #00ff66;
+    font-family: monospace;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .matrix-page {
+        padding: 40px 40px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .product-title {
+        font-size: 36px;
+    }
+
+    .price {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .matrix-page {
+        padding: 20px 15px;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .product-title {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 32px;
+    }
+
+    .navbar-header-content {
+        padding: 20px 15px 10px 15px !important;
+        gap: 15px;
+    }
+    
+}
+
+/* Custom matrix-style radio (rendered as square checkboxes visually) */
+input.matrix-radio {
+    /* hide native control but keep it accessible */
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+input.matrix-radio + label {
+    position: relative;
+    padding-left: 36px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 20px;
+    color: #00ff66;
+    font-family: monospace;
+}
+
+input.matrix-radio + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    border: 2px solid #00ff41;
+    background: #001a00;
+    box-shadow: 0 0 8px #00ff4170, inset 0 0 6px #002200;
+    border-radius: 4px;
+}
+
+input.matrix-radio:checked + label::before {
+    background: #00ff41;
+    box-shadow: 0 0 14px #00ff41, inset 0 0 6px #003300;
+}
+
+input.matrix-radio + label:hover::before {
+    box-shadow: 0 0 12px #00ff4177, inset 0 0 6px #003300;
+}
+
+

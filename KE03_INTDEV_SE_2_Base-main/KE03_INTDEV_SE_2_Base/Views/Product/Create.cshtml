@@ -1,0 +1,136 @@
+﻿@model KE03_INTDEV_SE_2_Base.Models.Product
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewData["Title"] = "Create Product";
+    var categoryOptions = ViewBag.CategoryOptions as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
+    var discountOptions = ViewBag.DiscountOptions as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
+    var dimensionOptions = ViewBag.DimensionOptions as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
+}
+
+<link rel="stylesheet" href="~/css/products.css" />
+
+<div class="product-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <span class="sidebar-label">Matrix</span>
+
+            <div class="sidebar-title-row">
+                <h2>Producten</h2>
+            </div>
+
+            <a href="/Products/Index" class="matrix-btn">
+                ← Overzicht
+            </a>
+        </div>
+
+    </aside>
+
+    <main class="editor-panel">
+
+        <div class="editor-header">
+
+            <div class="editor-title">
+                <small>&gt; PRODUCT_CREATE</small>
+                <h1>Nieuw Product</h1>
+            </div>
+
+        </div>
+
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" asp-for="Id" />
+
+            <div class="editor-card">
+                
+                <label for="productImage">Upload JPG Image</label>
+                <input id="productImage"
+                       name="productImage"
+                       type="file"
+                       accept=".jpg,image/jpeg" />
+
+                <div class="form-grid">
+
+                    <div>
+                        <label asp-for="Name">Name</label>
+                        <input asp-for="Name" />
+                    </div>
+
+                    <div>
+                        <label asp-for="Price">Price</label>
+                        <input asp-for="Price" />
+                    </div>
+
+                    <div>
+                        <label asp-for="Cost">Cost</label>
+                        <input asp-for="Cost" />
+                    </div>
+
+                    <div>
+                        <label asp-for="Quantity">Quantity</label>
+                        <input asp-for="Quantity" />
+                    </div>
+
+                    <div>
+                        <label asp-for="DeliveryTime">Delivery Time</label>
+                        <input asp-for="DeliveryTime" />
+                    </div>
+
+                    <div>
+                        <label asp-for="DiscountId">Discount</label>
+                        <select asp-for="DiscountId" asp-items="discountOptions">
+                            <option value="">No discount</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label asp-for="CategoryId">Category</label>
+                        <select asp-for="CategoryId" asp-items="categoryOptions" id="categoryDropdown">
+                            <option value="">Select category...</option>
+                        </select>
+
+                        <div class="add-category-row">
+                            <input id="newCategoryName"
+                                   type="text"
+                                   placeholder="Nieuwe categorie..." />
+
+                            <button type="button"
+                                    id="addCategoryButton"
+                                    class="matrix-btn">
+                                + Voeg Categorie Toe
+                            </button>
+                        </div>
+
+                        <small id="addCategoryMessage" class="add-category-message"></small>
+                    </div>
+
+                    <div>
+                        <label asp-for="DimensionId">Dimensions</label>
+                        <select asp-for="DimensionId" asp-items="dimensionOptions">
+                            <option value="">Select dimensions...</option>
+                        </select>
+                    </div>
+
+                    <div class="full-width">
+                        <label asp-for="Description">Description</label>
+                        <textarea asp-for="Description"></textarea>
+                    </div>
+
+                </div>
+
+                <button class="save-btn" type="submit">
+                    Create Product
+                </button>
+
+                <div asp-validation-summary="All"
+                     class="validation-summary-errors"></div>
+
+            </div>
+
+        </form>
+
+    </main>
+
+</div>

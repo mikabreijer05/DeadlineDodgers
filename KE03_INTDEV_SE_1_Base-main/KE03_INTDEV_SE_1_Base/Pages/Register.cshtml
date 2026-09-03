@@ -1,0 +1,68 @@
+@page
+@model KE03_INTDEV_SE_1_Base.Pages.Register
+
+@{
+    ViewData["Title"] = "Registratie";
+}
+
+<h1 class="title">@ViewData["Title"]</h1>
+
+<div class="matrix-container">
+    <div class="panel register-panel">
+        <h2>> Account Aanmaken</h2>
+
+        <div class="separator"></div>
+
+        <form method="post" class="matrix-form">
+            <div asp-validation-summary="ModelOnly" class="text-danger validation-summary"></div>
+            
+            <div class="matrix-form-group">
+                <label asp-for="Account.UserName">Gebruikersnaam:</label>
+                <span asp-validation-for="Account.UserName" class="text-danger"></span>
+                <input asp-for="Account.UserName" required />
+            </div>
+
+            <div class="matrix-form-group">
+                <label asp-for="Account.Name">Naam:</label>
+                <span asp-validation-for="Account.Name" class="text-danger"></span>
+                <input asp-for="Account.Name" required />
+            </div>
+
+            <div class="matrix-form-group">
+                <label asp-for="Account.Address.Street">Straat:</label>
+                <span asp-validation-for="Account.Address.Street" class="text-danger"></span>
+                <input asp-for="Account.Address.Street" required />
+            </div>
+
+            <div class="matrix-form-group">
+                <label asp-for="Account.Address.HouseNumber">Huisnummer:</label>
+                <span asp-validation-for="Account.Address.HouseNumber" class="text-danger"></span>
+                <input asp-for="Account.Address.HouseNumber" required />
+            </div>
+
+            <div class="matrix-form-group">
+                <label asp-for="Account.Address.PostalCode">Postcode:</label>
+                <span asp-validation-for="Account.Address.PostalCode" class="text-danger"></span>
+                <input asp-for="Account.Address.PostalCode" required />
+            </div>
+
+            <div class="matrix-form-group">
+                <label asp-for="Account.Address.City">Stad:</label>
+                <span asp-validation-for="Account.Address.City" class="text-danger"></span>
+                <input asp-for="Account.Address.City" required />
+            </div>
+
+            <div class="matrix-form-group">
+                <label asp-for="Account.Address.Country">Land:</label>
+                <span asp-validation-for="Account.Address.Country" class="text-danger"></span>
+                <select asp-for="Account.Address.Country" asp-items="Model.CountryOptions" required></select>
+            </div>
+
+            <button type="submit" class="matrix-button">Account Aanmaken</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

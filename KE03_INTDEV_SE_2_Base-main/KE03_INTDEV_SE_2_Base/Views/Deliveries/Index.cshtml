@@ -1,0 +1,204 @@
+@model IEnumerable<KE03_INTDEV_SE_2_Base.Models.Delivery>
+
+@{
+    ViewData["Title"] = "Deliveries";
+
+    string GetVehicleName(Delivery delivery)
+    {
+        if (delivery.Vehicle == null)
+        {
+            return "Onbekend voertuig";
+        }
+
+        return string.Join(" - ", new[]
+        {
+            delivery.Vehicle.VehicleType,
+            delivery.Vehicle.LicensePlate
+        }.Where(value => !string.IsNullOrWhiteSpace(value)));
+    }
+
+    int GetProductLineCount(Delivery delivery)
+    {
+        return delivery.ProductLines?.Count ?? 0;
+    }
+
+    var deliveries = Model?.ToList() ?? new List<Delivery>();
+}
+
+<link rel="stylesheet" href="~/css/deliveries.css" />
+<script src="~/js/deliveries.js"></script>
+
+<div class="deliveries-page">
+    <nav class="deliveries-breadcrumb">
+        ➤ LOGISTIEK / LEVERINGEN
+    </nav>
+
+    <div class="deliveries-header">
+        <div>
+            <h1>LEVERINGEN</h1>
+            <p><span id="deliveryResultCount">@deliveries.Count</span> levering@(deliveries.Count == 1 ? "" : "en")</p>
+        </div>
+
+        <a asp-controller="Delivery"
+           asp-action="Create"
+           class="delivery-create-button">
+            + Levering plannen
+        </a>
+    </div>
+
+    <section class="deliveries-controls">
+        <div class="deliveries-filters">
+            <div class="filter-group">
+                <label for="vehicleFilter">Voertuig</label>
+                <input id="vehicleFilter" type="text" placeholder="Zoek voertuig..." />
+            </div>
+
+            <div class="filter-group">
+                <label for="fromDateFilter">Datum vanaf</label>
+                <input id="fromDateFilter" type="date" />
+            </div>
+
+            <div class="filter-group">
+                <label for="toDateFilter">Datum t/m</label>
+                <input id="toDateFilter" type="date" />
+            </div>
+
+            <button type="button" id="clearDeliveryFilters" class="delivery-control-button">
+                Wis filters
+            </button>
+        </div>
+
+        <div class="deliveries-sort">
+            <span>Sorteren:</span>
+            <button type="button" class="delivery-sort-button active" data-sort="id" data-direction="asc">
+                ID ↑
+            </button>
+            <button type="button" class="delivery-sort-button" data-sort="vehicle" data-direction="asc">
+                Voertuig
+            </button>
+            <button type="button" class="delivery-sort-button" data-sort="date" data-direction="asc">
+                Datum
+            </button>
+        </div>
+    </section>
+
+    @if (deliveries.Any())
+    {
+        <div class="deliveries-list" id="deliveriesList">
+            @foreach (var delivery in deliveries.OrderBy(d => d.Id))
+            {
+                var vehicleName = GetVehicleName(delivery);
+                var productLineCount = GetProductLineCount(delivery);
+                var orderStatuses = (delivery.ProductLines ?? Enumerable.Empty<OrderLine>())
+                    .Where(line => line.OrderId > 0)
+                    .GroupBy(line => line.OrderId)
+                    .Select(group => new
+                    {
+                        OrderId = group.Key,
+                        Status = group
+                            .Select(line => line.OrderStatus)
+                            .FirstOrDefault(status => !string.IsNullOrWhiteSpace(status)) ?? "Onbekend"
+                    })
+                    .OrderBy(order => order.OrderId)
+                    .ToList();
+
+                <article class="delivery-card"
+                         data-id="@delivery.Id"
+                         data-vehicle="@vehicleName.ToLower()"
+                         data-date="@delivery.ToBeSentDate.ToString("yyyy-MM-dd")">
+                    <div class="delivery-card-top">
+                        <div class="delivery-identifier">
+                            <span>LEV-@delivery.Id.ToString("000000000000")</span>
+                            <strong>Gepland</strong>
+                        </div>
+
+                        <div class="delivery-actions">
+                            <button type="button"
+                                    class="delivery-action print"
+                                    data-delivery-id="@delivery.Id">
+                                Print
+                            </button>
+                            <a asp-controller="Delivery"
+                               asp-action="Edit"
+                               asp-route-id="@delivery.Id"
+                               class="delivery-action edit">
+                                Bewerken
+                            </a>
+                            <button type="button"
+                                    class="delivery-action delete"
+                                    onclick="confirmDeliveryDelete('@delivery.Id')">
+                                Verwijder
+                            </button>
+
+                            <form id="delete-delivery-form-@delivery.Id"
+                                  action="/Deliveries/Delete/@delivery.Id"
+                                  method="post"
+                                  class="delete-delivery-form">
+                                @Html.AntiForgeryToken()
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="delivery-grid">
+                        <div>
+                            <span>Voertuig</span>
+                            <strong>@vehicleName</strong>
+                        </div>
+
+                        <div>
+                            <span>Order</span>
+                            @if (orderStatuses.Any())
+                            {
+                                <div class="delivery-order-statuses">
+                                    @foreach (var order in orderStatuses)
+                                    {
+                                        <strong>
+                                            @order.OrderId.ToString("0000")
+                                            <span class="delivery-order-status">@order.Status</span>
+                                        </strong>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <strong>-</strong>
+                            }
+                        </div>
+
+                        <div>
+                            <span>Aangemaakt</span>
+                            <strong>@DateTime.Now.ToString("dd-M-yyyy")</strong>
+                        </div>
+
+                        <div>
+                            <span>Verzenddatum</span>
+                            <strong>@delivery.ToBeSentDate.ToString("dd-M-yyyy")</strong>
+                        </div>
+                    </div>
+
+                    <div class="delivery-card-bottom">
+                        <div>
+                            <span>MATEN</span>
+                            <strong>M × @Math.Max(productLineCount, 1)</strong>
+                        </div>
+
+                        <span>@productLineCount productregel@(productLineCount == 1 ? "" : "s")</span>
+                    </div>
+                </article>
+            }
+        </div>
+
+        <div id="noDeliveriesMessage" class="deliveries-empty" hidden>
+            Geen leveringen gevonden met deze filters.
+        </div>
+    }
+    else
+    {
+        <div class="deliveries-empty">
+            Geen leveringen gevonden.
+        </div>
+    }
+</div>
+@section Scripts {
+    <script src="~/js/deliveries.js" asp-append-version="true"></script>
+}

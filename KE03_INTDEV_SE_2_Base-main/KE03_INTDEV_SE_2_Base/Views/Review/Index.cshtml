@@ -1,0 +1,133 @@
+@model KE03_INTDEV_SE_2_Base.Models.ReviewsPageViewModel
+
+@{
+    ViewData["Title"] = "Reviews";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/reviews.css" asp-append-version="true" />
+}
+
+<div class="reviews-page">
+
+    <!-- HEADER -->
+    <div class="page-header">
+        <div class="breadcrumb">REVIEWS DASHBOARD</div>
+        <h1>REVIEWS</h1>
+    </div>
+
+    <!-- PENDING PANEL -->
+    <div class="pending-panel">
+
+        <div class="panel-header">
+            <div class="panel-title">&#9719; WACHTEN OP GOEDKEURING</div>
+            <div class="panel-count">@Model.PendingReviews.Count()</div>
+        </div>
+
+        <div class="panel-list">
+
+            @foreach (var r in Model.PendingReviews)
+            {
+                <div class="panel-item">
+
+                    <!-- hidden filters -->
+                    <span class="tag status" style="display:none">@r.ReviewStatus</span>
+                    <span class="tag date" style="display:none">@r.CreatedDate.ToString("yyyy-MM-dd")</span>
+
+                    <div class="item-summary">
+
+                        <div class="item-left">
+                            <div class="item-user">@r.Username</div>
+
+                            <div class="item-meta">
+                                @r.ProductName &nbsp;·&nbsp;
+                                @r.CreatedDate.ToString("yyyy-MM-dd")
+                            </div>
+                        </div>
+
+                        <div class="item-right">
+                            <div class="item-rating">@r.Rating/5</div>
+                            <div class="item-expand">▾</div>
+                        </div>
+
+                    </div>
+
+                    <div class="panel-item-details">
+                        <h4>@r.Title</h4>
+                        <p>@r.Comment</p>
+
+                        <div class="panel-item-actions">
+                            <button class="btn approve">GOEDKEUREN</button>
+                            <button class="btn reject">AFWIJZEN</button>
+                            <button class="btn delete">VERWIJDEREN</button>
+                        </div>
+                    </div>
+
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters-panel">
+
+        <div class="filters-left">
+            <button class="filter-btn active" data-status="All">ALLE OVERIGE</button>
+            <button class="filter-btn" data-status="Approved">GOEDGEKEURD</button>
+            <button class="filter-btn" data-status="Rejected">AFGEWEZEN</button>
+        </div>
+
+            <!-- ← ZOEKBALK TOEVOEGEN -->
+            <div class="filters-search">
+                <span class="filters-search-icon">⌕</span>
+                <input type="text" id="review-search" placeholder="ZOEKEN..." />
+                <button id="review-search-clear" class="filters-search-clear">✕</button>
+            </div>
+
+            <div class="filters-right">
+                <label>DATUM:</label>
+                <input type="date" id="date-from" class="date-input" />
+                <span>t/m</span>
+                <input type="date" id="date-to" class="date-input" />
+                <button id="date-filter-btn" class="filter-btn">FILTEREN</button>
+            </div>
+
+        </div>
+
+ 
+    <!-- ARCHIVE -->
+    <div class="archived-panel">
+
+        <div class="archived-header">
+            REVIEWARCHIEF – ALLE OVERIGE
+        </div>
+
+        @foreach (var r in Model.AllReviews)
+        {
+            <div class="archived-item">
+
+                <div class="archived-tags">
+                    <span class="tag status">@r.ReviewStatus</span>
+                    <span class="tag username">@r.Username</span>
+                    <span class="tag verified">VERIFIED</span>
+                    <span class="stars">★★★★★</span>
+                    <span class="tag date">@r.CreatedDate.ToString("yyyy-MM-dd")</span>
+                    <span class="tag product">@r.ProductName</span>
+                </div>
+
+                <div class="archived-body">
+                    <h4>@r.Title</h4>
+                    <p>@r.Comment</p>
+                </div>
+
+                <div class="archived-actions">
+                    <button class="btn reject">REJECT</button>
+                    <button class="btn delete">DELETE</button>
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+</div>

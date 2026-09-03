@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>53ee3fe9-13e2-4867-ab48-c2c21551b02a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+     <PackageReference Include="Dapper" Version="2.1.35" />
+  </ItemGroup>
+
+</Project>

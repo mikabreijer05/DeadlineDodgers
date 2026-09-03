@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iteratie3matrix.Pages.SupportPage"
+             Title="Klantenservice">
+    <VerticalStackLayout>
+        <Label 
+            Text="Klantenservice"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+        <Label 
+            Text="Neem contact op met de klantenservice voor hulp."
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"/>
+        <Label
+            Text="Telefoon: 1-800-123-4567"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            SemanticProperties.Hint="Support phone number"/>
+    </VerticalStackLayout>
+</ContentPage>

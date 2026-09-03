@@ -1,0 +1,457 @@
+/* ─── Reviews Page ──────────────────────────────────────────────── */
+
+.reviews-page {
+    padding: 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Header */
+.page-header .breadcrumb {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: rgba(0, 255, 65, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.25rem;
+}
+
+.page-header h1 {
+    font-family: monospace;
+    font-size: 1.5rem;
+    color: #00ff41;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+}
+
+/* ─── Pending panel ─────────────────────────────────────────────── */
+
+.pending-panel {
+    border: 2px solid rgba(248, 113, 113, 0.4);
+    background-color: rgba(248, 113, 113, 0.03);
+    margin-bottom: 1.25rem;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+.panel-title {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgb(248, 113, 113);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.panel-count {
+    font-family: monospace;
+    font-size: 1.75rem;
+    color: rgb(248, 113, 113);
+    line-height: 1;
+}
+
+.panel-list {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* Individual pending item */
+.panel-item {
+    border-top: 1px solid rgba(248, 113, 113, 0.1);
+}
+
+.item-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+    .item-summary:hover {
+        background-color: rgba(248, 113, 113, 0.06);
+    }
+
+.item-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-user {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: hsl(var(--foreground, 0 0% 95%));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-meta {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: rgba(0, 255, 65, 0.4);
+    margin-top: 0.125rem;
+}
+
+.item-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.item-rating {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: rgba(0, 255, 65, 0.7);
+}
+
+.item-expand {
+    color: rgba(0, 255, 65, 0.4);
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+/* Expanded detail block */
+.panel-item-details {
+    display: none; /* toggled with JS / small inline script */
+    padding: 1rem 1.25rem 1.25rem;
+    border-top: 1px solid rgba(248, 113, 113, 0.2);
+    background-color: rgba(248, 113, 113, 0.05);
+}
+
+    .panel-item-details.open {
+        display: block;
+    }
+
+    .panel-item-details h4 {
+        font-family: monospace;
+        font-size: 0.875rem;
+        color: #00ff41;
+        margin: 0 0 0.35rem;
+    }
+
+    .panel-item-details p {
+        font-family: monospace;
+        font-size: 0.75rem;
+        color: hsl(var(--muted-foreground, 0 0% 60%));
+        line-height: 1.65;
+        margin: 0 0 0.75rem;
+    }
+
+.panel-item-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+/* ─── Filters ───────────────────────────────────────────────────── */
+
+.filters-panel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    background-color: #000;
+    margin-bottom: 1.25rem;
+}
+
+.filters-left,
+.filters-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+    .filters-right label {
+        font-family: monospace;
+        font-size: 0.7rem;
+        color: rgba(0, 255, 65, 0.4);
+        text-transform: uppercase;
+    }
+
+/* ─── Shared button / input primitives ─────────────────────────── */
+
+.btn,
+.filter-btn {
+    border: 1px solid rgba(0, 255, 65, 0.35);
+    background: transparent;
+    padding: 0.35rem 0.75rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+}
+
+    .btn:hover,
+    .filter-btn:hover {
+        border-color: #00ff41;
+    }
+
+    .filter-btn.active {
+        border-color: #00ff41;
+        background-color: #00ff41;
+        color: #000;
+    }
+
+    .btn.approve {
+        border-color: rgba(0, 255, 65, 0.5);
+        color: #00ff41;
+    }
+
+        .btn.approve:hover {
+            background-color: rgba(0, 255, 65, 0.12);
+            border-color: #00ff41;
+        }
+
+    .btn.reject {
+        border-color: rgba(248, 113, 113, 0.35);
+        color: rgba(248, 113, 113, 0.8);
+    }
+
+        .btn.reject:hover {
+            border-color: rgb(248, 113, 113);
+            color: rgb(248, 113, 113);
+        }
+
+    .btn.delete {
+        border-color: rgba(248, 113, 113, 0.2);
+        color: rgba(248, 113, 113, 0.5);
+    }
+
+        .btn.delete:hover {
+            border-color: rgba(248, 113, 113, 0.6);
+            color: rgb(248, 113, 113);
+        }
+
+.date-input {
+    background-color: #000;
+    border: 1px solid rgba(0, 255, 65, 0.4);
+    outline: none;
+    padding: 0.35rem 0.6rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: hsl(var(--foreground, 0 0% 95%));
+    transition: border-color 0.2s;
+    color-scheme: dark;
+}
+
+    .date-input:focus {
+        border-color: #00ff41;
+    }
+
+/* ─── Archive ───────────────────────────────────────────────────── */
+
+.archived-panel {
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    background-color: #000;
+}
+
+.archived-header {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: rgba(0, 255, 65, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.15);
+}
+
+.archived-item {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+    transition: background-color 0.2s;
+}
+
+    .archived-item:last-child {
+        border-bottom: none;
+    }
+
+    .archived-item:hover {
+        background-color: rgba(0, 255, 65, 0.03);
+    }
+
+/* Tag row */
+.archived-tags {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+}
+
+.tag {
+    font-family: monospace;
+    font-size: 0.7rem;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    color: rgba(0, 255, 65, 0.55);
+}
+
+    .tag.status {
+        border-color: rgba(0, 255, 65, 0.35);
+        color: #00ff41;
+        text-transform: uppercase;
+    }
+
+        .tag.status[data-status="Rejected"],
+        .tag.status:has(+ .tag) /* fallback handled in JS if needed */ {
+            /* dynamically coloured via inline style or JS */
+        }
+
+/* Colour the status tag based on its text content */
+.archived-item:has(.tag.status) .tag.status {
+    /* override per value below */
+}
+
+.tag[data-val="Approved"],
+.tag.approved {
+    border-color: rgba(0,255,65,.3);
+    color: rgba(0,255,65,.6);
+}
+
+.tag[data-val="Rejected"],
+.tag.rejected {
+    border-color: rgba(248,113,113,.4);
+    color: rgba(248,113,113,.8);
+}
+
+.tag[data-val="Pending"],
+.tag.pending {
+    border-color: rgba(0,255,65,.6);
+    color: #00ff41;
+}
+
+.tag.verified {
+    border-color: rgba(0, 255, 65, 0.15);
+    color: rgba(0, 255, 65, 0.35);
+}
+
+.tag.username {
+    color: #00ff41;
+    border-color: rgba(0, 255, 65, 0.4);
+}
+
+.tag.product {
+    color: rgba(0, 255, 65, 0.5);
+}
+
+.stars {
+    font-size: 0.8rem;
+    color: #00ff41;
+    letter-spacing: 0.05em;
+}
+
+/* Body */
+.archived-body h4 {
+    font-family: monospace;
+    font-size: 0.875rem;
+    color: hsl(var(--foreground, 0 0% 95%));
+    margin: 0 0 0.25rem;
+}
+
+.archived-body p {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground, 0 0% 60%));
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Actions */
+.archived-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+/* ─── Animations ────────────────────────────────────────────────── */
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Zoekbalk in filters */
+.filters-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.filters-search-icon {
+    position: absolute;
+    left: 0.6rem;
+    color: rgba(0, 255, 65, 0.4);
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.filters-search input {
+    background-color: #000;
+    border: 1px solid rgba(0, 255, 65, 0.4);
+    outline: none;
+    padding: 0.35rem 2rem 0.35rem 1.75rem;
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: hsl(var(--foreground, 0 0% 95%));
+    text-transform: uppercase;
+    transition: border-color 0.2s;
+    width: 160px;
+}
+
+    .filters-search input::placeholder {
+        color: rgba(0, 255, 65, 0.25);
+    }
+
+    .filters-search input:focus {
+        border-color: #00ff41;
+    }
+
+.filters-search-clear {
+    position: absolute;
+    right: 0.4rem;
+    background: none;
+    border: none;
+    color: rgba(0, 255, 65, 0.3);
+    font-size: 0.65rem;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+    display: none;
+}
+
+    .filters-search-clear:hover {
+        color: #00ff41;
+    }
+
+.filters-search input:not(:placeholder-shown) ~ .filters-search-clear {
+    display: block;
+}
+
+#date-filter-btn {
+    color: #00ff41;
+    min-width: 90px;
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="iteratie3matrix.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:iteratie3matrix.Pages"
+    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
+    Title="iteratie3matrix">
+
+    <!-- LOGIN FLOW -->
+    <ShellContent Title="NFCLogin"
+                  ContentTemplate="{DataTemplate pages:NFCLoginPage}"
+                  Route="nfclogin" />
+
+    <ShellContent Title="Login"
+                  ContentTemplate="{DataTemplate pages:Loginpage}"
+                  Route="login" />
+
+    <ShellContent Title="Support"
+                  ContentTemplate="{DataTemplate pages:SupportPage}"
+                  Route="support" />
+
+    <!-- WORKFLOW -->
+    <ShellContent Title="Vans"
+                  ContentTemplate="{DataTemplate pages:VanSelectionPage}"
+                  Route="vans" />
+
+
+    <ShellContent Title="Orders"
+                  ContentTemplate="{DataTemplate pages:OrderListPage}"
+                  Route="orders" />
+
+    <ShellContent Title="Route"
+                  ContentTemplate="{DataTemplate pages:RoutePage}"
+                  Route="route" />
+
+    <!-- VEHICLE INSPECTION -->
+    <ShellContent Title="Vehicle Inspection"
+                  ContentTemplate="{DataTemplate pages:VehicleInspectionPage}"
+                  Route="vehicleinspection" />
+
+    <ShellContent
+    Title="Cart Scanner"
+    ContentTemplate="{DataTemplate pages:CartScannerPage}"
+    Route="cartscanner" />
+
+    <!-- VEHICLE DAMAGE REPORT -->
+    <ShellContent
+    Title="Vehicle Damage"
+    ContentTemplate="{DataTemplate pages:VehicleDamagePage}"
+    Route="vehicledamage" />
+
+</Shell>

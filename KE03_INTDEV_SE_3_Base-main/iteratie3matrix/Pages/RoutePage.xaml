@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iteratie3matrix.Pages.RoutePage"
+             Title="RoutePage">
+    <VerticalStackLayout>
+        <Label 
+            Text="Route informatie:"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Label
+            Text="Naam: Laurence Fishburne"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <Label
+            Text="Adres: Geleenstraat 25"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <Label
+            Text="Postcode: 6411 HP Heerlen"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+
+        <Button
+            Text="Route"
+            BackgroundColor="#61FF4A"
+            HorizontalOptions="Center"
+            Padding="40,10"
+            Margin="0,100,0,0"
+            TextColor="#000000"
+            FontFamily="Courier New"
+            FontSize="24"
+            HeightRequest="80"
+            Clicked="OnRouteClicked"
+            SemanticProperties.Hint="Opens the route website"/>
+    </VerticalStackLayout>
+</ContentPage>

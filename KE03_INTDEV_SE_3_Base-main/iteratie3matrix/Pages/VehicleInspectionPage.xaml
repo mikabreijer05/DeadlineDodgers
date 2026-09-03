@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="iteratie3matrix.Pages.VehicleInspectionPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pageModels="clr-namespace:iteratie3matrix.PageModels"
+    x:DataType="pageModels:VehicleInspectionPageModel"
+    Title="Voertuiginspectie">
+
+    <!--
+        WHAT:
+        Vehicle inspection screen shown after selecting an order.
+
+        HOW:
+        Bound to VehicleInspectionPageModel via MVVM.
+
+        WHY:
+        This is the first gate in the delivery workflow.
+        It determines whether the vehicle is safe to continue.
+    -->
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label
+            Text="Voertuiginspectie"
+            FontSize="22"
+            FontAttributes="Bold"
+            TextColor="#00FF41" />
+
+        <!--
+            WHAT:
+            Damage reporting action.
+
+            WHY:
+            If damage is found, workflow should NOT continue automatically.
+        -->
+        <Grid
+            ColumnDefinitions="*,*"
+            ColumnSpacing="10">
+
+            <!-- NO DAMAGE -->
+            <Button
+                Grid.Column="0"
+                Text="Geen schade"
+                BackgroundColor="#00CC33"
+                TextColor="Black"
+                Command="{Binding NoDamageCommand}" />
+
+            <!-- DAMAGE FOUND -->
+            <Button
+                Grid.Column="1"
+                Text="Schade gevonden"
+                BackgroundColor="Red"
+                TextColor="White"
+                Command="{Binding DamageFoundCommand}" />
+
+        </Grid>
+
+        <!--
+            WHAT:
+            Manual override for loading phase.
+
+            WHY:
+            Used when inspection is already completed externally.
+        -->
+        <Button
+            Text="Laden starten"
+            Command="{Binding StartLoadingCommand}"
+            TextColor="Black" />
+
+    </VerticalStackLayout>
+
+</ContentPage>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="iteratie3matrix.Pages.CartScannerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Kar Scanner">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label
+            Text="Kar Scanner"
+            FontSize="24"
+            FontAttributes="Bold" />
+
+        <Button
+            Text="Pakket Scannen"
+            TextColor="Black"
+            Command="{Binding ScanCartCommand}" />
+
+
+
+        <Frame Padding="15" BorderColor="Gray">
+
+            <VerticalStackLayout>
+
+                <Label Text="Kar" FontAttributes="Bold" />
+
+                <Label Text="{Binding AssignedCart.CartNumber}" />
+
+                <Label
+                    Text="{Binding AssignedCart.ScannedPackages,
+                           StringFormat='Gescand: {0}'}" />
+
+                <Label
+                    Text="{Binding AssignedCart.ExpectedPackages,
+                           StringFormat='Verwacht: {0}'}" />
+
+            </VerticalStackLayout>
+
+        </Frame>
+
+        <Label Text="Laatste Scan" FontAttributes="Bold" />
+
+        <Label
+            Text="{Binding LastScanResult}"
+            TextColor="Black"
+            FontAttributes="Bold" />
+
+        <!-- BUTTONS -->
+        <HorizontalStackLayout Spacing="10">
+
+            <Button
+                Text="Ga naar Bezorgingen"
+                BackgroundColor="#22C55E"
+                TextColor="Black"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                HorizontalOptions="FillAndExpand"
+                Command="{Binding ContinueToOrdersCommand}" />
+
+            <Button
+                Text="Overslaan"
+                TextColor="Gray"
+                BackgroundColor="Transparent"
+                FontSize="12"
+                Command="{Binding SkipScanningCommand}" />
+
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+
+</ContentPage>

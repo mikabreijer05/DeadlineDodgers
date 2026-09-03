@@ -1,0 +1,215 @@
+/* CSS voor accountpagina */
+
+.matrix-container {
+    width: 90%;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #00ff41;
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+}
+
+.separator {
+    border-top: 1px solid #00ff41;
+    margin: 20px 0;
+}
+
+.separator.small {
+    margin: 10px 0;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-left: 2px solid #00ff41;
+    padding-left: 15px;
+}
+
+.active-status {
+    color: #7fff7f;
+}
+
+.orders-container {
+    max-height: 550px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.order-card {
+    border: 1px solid #005f1f;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.matrix-button {
+    width: 100%;
+    background: #001a00;
+    color: #00ff41;
+    border: 1px solid #00ff41;
+    padding: 15px;
+    margin-top: 20px;
+    font-family: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.matrix-button:hover {
+    background: #003300;
+    color: #00ff41;
+    box-shadow: 0 0 10px #00ff41, inset 0 0 10px #00ff41;
+}
+
+.matrix-button-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.matrix-button-row .matrix-button {
+    margin-top: 0;
+}
+
+.matrix-button-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.matrix-button-link:hover {
+    color: #00ff41;
+    text-decoration: none;
+}
+
+.footer-status {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.panel {
+    border: 2px solid #00ff41;
+    padding: 25px;
+    min-height: 500px;
+    box-shadow: 0 0 10px #00ff41, inset 0 0 10px #00ff41;
+}
+
+.register-panel {
+    max-width: 650px;
+    min-height: auto;
+    margin: 0 auto;
+}
+
+.matrix-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.matrix-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.matrix-form-group label {
+    margin-bottom: 6px;
+    color: #00ff66;
+    text-shadow: 0 0 6px #00ff41;
+}
+
+.matrix-form-group input,
+.matrix-form-group select,
+.matrix-form-group textarea,
+.matrix-form-group .form-control,
+.matrix-form input,
+.matrix-form select,
+.matrix-form textarea {
+    background-color: #001a00 !important;
+    color: #00ff41 !important;
+    border: 1px solid #00ff41 !important;
+    padding: 12px;
+    font-family: monospace;
+    outline: none;
+    box-shadow: inset 0 0 6px #003300;
+    border-radius: 0;
+}
+
+.matrix-form-group input::placeholder,
+.matrix-form-group textarea::placeholder,
+.matrix-form input::placeholder,
+.matrix-form textarea::placeholder {
+    color: #008f39;
+}
+
+.matrix-form-group input:focus,
+.matrix-form-group select:focus,
+.matrix-form-group textarea:focus,
+.matrix-form-group .form-control:focus,
+.matrix-form input:focus,
+.matrix-form select:focus,
+.matrix-form textarea:focus {
+    background-color: #001a00 !important;
+    color: #00ff41 !important;
+    border-color: #7fff7f !important;
+    box-shadow: 0 0 10px #00ff41, inset 0 0 8px #003300 !important;
+}
+
+.matrix-form-group select,
+.matrix-form select {
+    cursor: pointer;
+}
+
+.matrix-form-group select option,
+.matrix-form select option {
+    background-color: #001a00;
+    color: #00ff41;
+}
+
+.matrix-form-group input:-webkit-autofill,
+.matrix-form input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #001a00 inset !important;
+    -webkit-text-fill-color: #00ff41 !important;
+    caret-color: #00ff41;
+}
+
+.validation-summary {
+    margin-bottom: 10px;
+}
+
+.field-validation-error {
+    display: block;
+    margin-bottom: 6px;
+    color: #ff4d4d;
+    text-shadow: 0 0 6px #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .matrix-button-row {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}

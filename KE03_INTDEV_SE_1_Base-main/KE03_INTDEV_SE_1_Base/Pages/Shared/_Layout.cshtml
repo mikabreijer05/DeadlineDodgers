@@ -1,0 +1,168 @@
+﻿@inherits Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
+@inject KE03_INTDEV_SE_1_Base.DAL.SQLProducts ProductService
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Inheritance toegevoegd om-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KE03_INTDEV_SE_1_Base</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/account.css" />
+    <link rel="stylesheet" href="~/css/cart.css" />
+    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="~/css/product.css" />
+    <link rel="stylesheet" href="~/css/review.css" />
+    <link rel="stylesheet" href="~/css/searchBar.css" />
+    <link rel="stylesheet" href="~/css/searchPage.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link rel="stylesheet" href="~/KE03_INTDEV_SE_1_Base.styles.css" />
+    <script src="~/js/site.js" defer></script>
+    <script src="~/js/search.js" defer></script>
+    <script src="~/js/review.js" defer></script>
+    <script src="~/js/cart.js" defer></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header>
+        <!-- Header top row: logo, search and icons -->
+        <div class="navbar-header-content">
+            <a class="navbar-brand" asp-area="" asp-page="/Index">
+                Matrix Market
+            </a>
+            <div class="search-container">
+                <input id="siteSearchInput" type="text" placeholder="Zoeken..." autocomplete="off" />
+                <div id="siteSearchResults" class="search-results-dropdown"></div>
+            </div>
+        @* If we're on a product page, show the product's average rating in the header similar to product page *@
+        @{
+            try
+            {
+                var currentPage = ViewContext.RouteData.Values["page"] as string ?? string.Empty;
+                if (string.Equals(currentPage, "/ProductPagina", StringComparison.OrdinalIgnoreCase))
+                {
+                    var idObj = ViewContext.RouteData.Values["id"];
+                    if (idObj != null && int.TryParse(idObj.ToString(), out var prodId))
+                    {
+                        var prod = ProductService.GetProductById(prodId);
+                        if (prod != null)
+                        {
+                            <div class="layout-product-rating" style="margin-top:8px; margin-left:16px;">
+                                @await Html.PartialAsync("_Rating", prod.AverageRating)
+                            </div>
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                // ignore errors in layout
+            }
+        }
+            <div class="nav-icons">
+                @{ 
+                    var loggedName = Context.Request.Cookies["LoggedInCustomerName"];
+                    var loggedId = Context.Request.Cookies["LoggedInCustomerId"];
+                }
+
+                @if (!string.IsNullOrEmpty(loggedName))
+                {
+                    <a class="nav-link" asp-page="/Account" asp-route-id="@(loggedId ?? String.Empty)" title="Mijn account">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="logged-name" style="margin-left:8px;">@loggedName</span>
+                    </a>
+                }
+                else
+                {
+                    <a class="nav-link" asp-page="/Login" title="Inloggen">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                }
+
+                <a class="nav-link" href="/Cart" title="Winkelmandje" style="position:relative;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cartCount" class="cart-badge"></span>
+                </a>
+            </div>
+        </div>
+        <!-- Category navigation bar, horizontal, below nav row -->
+        <div class="category-bar">
+            <a asp-page="/Index">HOME</a>
+            <a asp-page="/Producten">Producten</a>
+            
+            @{
+                try
+                {
+                    var categories = ProductService.GetAllCategories() ?? Enumerable.Empty<string>();
+                    foreach (var cat in categories.Where(c => !string.IsNullOrWhiteSpace(c)))
+                    {
+                        <a asp-page="/Producten" asp-route-Type="@cat">@cat</a>
+                    }
+                }
+                catch
+                {
+                    // fail silently if categories cannot be loaded (layout should not break)
+                }
+            }
+        </div>
+        <!-- Green separator line below header -->
+        <hr class="header-separator" />
+    </header>
+
+    <!-- Main content area -->
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Toast for Add to Cart notifications Noaw -->
+    <div id="toast" style="
+        display:none;
+        position:fixed;
+        bottom:40px;
+        left:50%;
+        transform:translateX(-50%);
+        background:#20ff62;
+        color:black;
+        font-family:monospace;
+        font-weight:bold;
+        font-size:1.1rem;
+        padding:14px 40px;
+        border-radius:18px;
+        z-index: 9999;
+        box-shadow: 0 0 24px #20ff6299;
+        transition: opacity 0.3s;">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-muted">
+        <div class="container">
+            <p>© 2025 - KE03_INTDEV_SE_1_Base</p>
+            <div class="footer-buttons">
+                <a asp-page="/OverOns" class="btn btn-outline-light">
+                    Over Ons
+                </a>
+
+                <a asp-page="/Privacy" class="btn btn-outline-light">
+                    Privacy
+                </a>
+
+                <a asp-page="/Klantenservice" class="btn btn-outline-light">
+                    Klantenservice
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

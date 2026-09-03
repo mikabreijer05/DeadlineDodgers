@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KE03_INTDEV_SE_2_Base</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/orders.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/products.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/reviews.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/deliveries.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/create-delivery.css" asp-append-version="true" />
+    
+</head>
+<body class="matrix-body">
+<header class="matrix-header">
+    <nav class="matrix-nav">
+        <a class="matrix-nav-card" href="/">
+            <span class="matrix-nav-icon">🏠</span>
+            <span class="matrix-nav-title">HOME</span>
+        </a>
+        <a class="matrix-nav-card" href="/Orders">
+            <span class="matrix-nav-icon">📝</span>
+            <span class="matrix-nav-title">ORDERS</span>
+        </a>
+        <a class="matrix-nav-card" href="/Review">
+            <span class="matrix-nav-icon">⭐</span>
+            <span class="matrix-nav-title">REVIEWS</span>
+        </a>
+        <a class="matrix-nav-card" href="/Support">
+            <span class="matrix-nav-icon">🎧</span>
+            <span class="matrix-nav-title">SUPPORT</span>
+        </a>
+        <a class="matrix-nav-card" href="/Product">
+            <span class="matrix-nav-icon">📦</span>
+            <span class="matrix-nav-title">PRODUCTEN</span>
+        </a>
+        <a class="matrix-nav-card" href="/Customers">
+            <span class="matrix-nav-icon">👥</span>
+            <span class="matrix-nav-title">GEBRUIKERS</span>
+        </a>
+        <a class="matrix-nav-card" href="/Deliveries">
+            <span class="matrix-nav-icon">📈</span>
+            <span class="matrix-nav-title">LEVERINGEN</span>
+        </a>
+        <a class="matrix-nav-card" href="/Home/Privacy">
+            <span class="matrix-nav-icon">🔒</span>
+            <span class="matrix-nav-title">PRIVACY</span>
+        </a>
+    </nav>
+</header>
+
+<main class="matrix-main">
+    @RenderBody()
+</main>
+
+    <footer class="matrix-footer">
+        <div>&copy; 2025 - KE03_INTDEV_SE_2_Base</div>
+        <a class="matrix-nav-link" href="/Home/Privacy">Privacy</a>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/js/orders.js"></script>
+    <script src="~/js/products.js"></script>
+</body>
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+@await RenderSectionAsync("Styles", required: false)   
+</html>

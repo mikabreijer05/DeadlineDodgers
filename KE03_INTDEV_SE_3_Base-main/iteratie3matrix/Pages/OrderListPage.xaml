@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    x:Class="iteratie3matrix.Pages.OrderListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pageModels="clr-namespace:iteratie3matrix.PageModels"
+    xmlns:models="clr-namespace:iteratie3matrix.Models"
+    x:DataType="pageModels:OrderListPageModel"
+    Title="Bezorgingen"
+    BackgroundColor="{StaticResource DarkBackground}">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="20">
+
+            <!-- ========================= -->
+            <!-- ACTIVE DELIVERIES -->
+            <!-- ========================= -->
+
+            <!--
+                WHAT:
+                Deliveries currently on route.
+
+                WHY:
+                Allows drivers to continue deliveries.
+            -->
+
+            <VerticalStackLayout
+                Spacing="10"
+                IsVisible="{Binding HasActiveDeliveries}">
+
+                <Label
+                    Text="ACTIEVE BEZORGINGEN"
+                    FontSize="22"
+                    FontAttributes="Bold"
+                    TextColor="#2563EB" />
+
+                <CollectionView
+                    ItemsSource="{Binding ActiveDeliveries}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+
+                    <CollectionView.ItemTemplate>
+
+                        <DataTemplate x:DataType="models:OrderListItem">
+
+                            <Border
+                                Padding="15"
+                                Margin="0,0,0,10"
+                                Stroke="#2563EB"
+                                Background="{StaticResource BlackBrush}">
+
+                                <VerticalStackLayout Spacing="6">
+
+                                    <!-- DELIVERY NUMBER -->
+                                    <Label
+                                        Text="{Binding DeliveryLabel}"
+                                        FontSize="20"
+                                        FontAttributes="Bold"
+                                        TextColor="#60A5FA" />
+
+                                    <!-- DELIVERY DATE -->
+                                    <Label
+                                        Text="{Binding DeliveryDate}"
+                                        TextColor="White" />
+
+                                    <!-- STATUS -->
+                                    <Border
+                                        Background="#2563EB"
+                                        Padding="6"
+                                        HorizontalOptions="Start">
+
+                                        <Label
+                                            Text="ONDERWEG"
+                                            FontAttributes="Bold"
+                                            TextColor="White" />
+
+                                    </Border>
+
+                                    <Label
+                                        Text="Tik om de bezorging voort te zetten"
+                                        FontSize="12"
+                                        Opacity="0.6" />
+
+                                </VerticalStackLayout>
+
+                            </Border>
+
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+            </VerticalStackLayout>
+
+            <!-- ========================= -->
+            <!-- AVAILABLE DELIVERIES -->
+            <!-- ========================= -->
+
+            <Label
+                Text="BESCHIKBARE BEZORGINGEN"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="{StaticResource Primary}" />
+
+            <CollectionView
+                ItemsSource="{Binding Deliveries}"
+                SelectionMode="Single"
+                SelectionChanged="CollectionView_SelectionChanged">
+
+                <CollectionView.EmptyView>
+
+                    <VerticalStackLayout
+                        Spacing="10"
+                        HorizontalOptions="Center">
+
+                        <Label
+                            Text="Geen bezorgingen beschikbaar"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource Primary}" />
+
+                        <Label
+                            Text="Er zijn geen bezorgingen gereed."
+                            Opacity="0.7" />
+
+                    </VerticalStackLayout>
+
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+
+                    <DataTemplate x:DataType="models:OrderListItem">
+
+                        <Border
+                            Padding="15"
+                            Margin="0,0,0,10"
+                            Stroke="{StaticResource Primary}"
+                            Background="{StaticResource BlackBrush}">
+
+                            <VerticalStackLayout Spacing="6">
+
+                                <!-- DELIVERY NUMBER -->
+                                <Label
+                                    Text="{Binding DeliveryLabel}"
+                                    FontSize="20"
+                                    FontAttributes="Bold"
+                                    TextColor="{StaticResource Primary}" />
+
+                                <!-- DELIVERY DATE -->
+                                <Label
+                                    Text="{Binding DeliveryDate}"
+                                    TextColor="White" />
+
+                                <!-- STATUS -->
+                                <Border
+                                    Background="#16A34A"
+                                    Padding="6"
+                                    HorizontalOptions="Start">
+
+                                    <Label
+                                        Text="GEREED VOOR BEZORGING"
+                                        FontAttributes="Bold"
+                                        TextColor="White" />
+
+                                </Border>
+
+                                <Label
+                                    Text="Tik om de route te starten"
+                                    FontSize="12"
+                                    Opacity="0.6" />
+
+                            </VerticalStackLayout>
+
+                        </Border>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>

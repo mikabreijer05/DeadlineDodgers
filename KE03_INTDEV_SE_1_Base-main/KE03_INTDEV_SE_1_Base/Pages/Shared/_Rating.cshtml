@@ -1,0 +1,25 @@
+@model double
+@{
+    var rating = Math.Round(Model, 1);
+    var fullStars = (int)Math.Floor(rating);
+    var remainder = rating - fullStars;
+    var hasHalf = remainder >= 0.5 && fullStars < 5;
+    var emptyStars = 5 - fullStars - (hasHalf ? 1 : 0);
+}
+<div class="rating" role="img" aria-label="Rating: @rating out of 5">
+    <span class="rating-number">@rating</span>
+    <span class="rating-stars">
+        @for (int i = 0; i < fullStars; i++)
+        {
+            <i class="fa-solid fa-star star filled" aria-hidden="true"></i>
+        }
+        @if (hasHalf)
+        {
+            <i class="fa-solid fa-star-half-stroke star half" aria-hidden="true"></i>
+        }
+        @for (int i = 0; i < emptyStars; i++)
+        {
+            <i class="fa-regular fa-star star empty" aria-hidden="true"></i>
+        }
+    </span>
+</div>

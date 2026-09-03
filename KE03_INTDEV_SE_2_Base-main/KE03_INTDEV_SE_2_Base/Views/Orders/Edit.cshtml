@@ -1,0 +1,145 @@
+@model KE03_INTDEV_SE_2_Base.Models.Order
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewData["Title"] = "Edit Order";
+    var statusOptions = ViewBag.StatusOptions as IEnumerable<SelectListItem> ?? Enumerable.Empty<SelectListItem>();
+}
+
+<link rel="stylesheet" href="~/css/orders.css" />
+
+<div class="orders-page">
+    <nav class="breadcrumb-nav">
+        ➤ <a asp-action="Index">ORDER_MANAGEMENT</a> / EDIT_ORDER_@Model.Id.ToString("0000")
+    </nav>
+
+    <h1 class="orders-title">EDIT ORDER</h1>
+
+    <div class="order-edit-layout">
+        <form asp-action="Edit" asp-route-id="@Model.Id" method="post" class="order-edit-card">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="AddressId" />
+
+            <div class="order-edit-header">
+                <div>
+                    <span class="order-edit-label">ORDER ID</span>
+                    <h2>#@Model.Id.ToString("0000")</h2>
+                </div>
+
+                <div class="order-edit-status">
+                    @(Model.OrderStatus ?? "Unknown")
+                </div>
+            </div>
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="order-edit-grid">
+                <div class="order-edit-field">
+                    <label asp-for="OrderDate" class="filter-label">ORDER DATE</label>
+                    <input asp-for="OrderDate" class="filter-input" type="datetime-local" />
+                    <span asp-validation-for="OrderDate" class="text-danger"></span>
+                </div>
+
+                <div class="order-edit-field">
+                    <label asp-for="CustomerId" class="filter-label">CUSTOMER / ACCOUNT ID</label>
+                    <input asp-for="CustomerId" class="filter-input" type="number" />
+                    <span asp-validation-for="CustomerId" class="text-danger"></span>
+                </div>
+
+                <div class="order-edit-field order-edit-field-wide">
+                    <label class="filter-label">ACCOUNT ADDRESS</label>
+
+                    <div class="order-address-grid">
+                        <div class="order-edit-field">
+                            <label asp-for="Address.Street" class="filter-label">STREET</label>
+                            <input asp-for="Address.Street" class="filter-input" placeholder="Street" />
+                            <span asp-validation-for="Address.Street" class="text-danger"></span>
+                        </div>
+
+                        <div class="order-edit-field">
+                            <label asp-for="Address.HouseNumber" class="filter-label">HOUSE NUMBER</label>
+                            <input asp-for="Address.HouseNumber" class="filter-input" placeholder="House number" />
+                            <span asp-validation-for="Address.HouseNumber" class="text-danger"></span>
+                        </div>
+
+                        <div class="order-edit-field">
+                            <label asp-for="Address.PostalCode" class="filter-label">POSTAL CODE</label>
+                            <input asp-for="Address.PostalCode" class="filter-input" placeholder="Postal code" />
+                            <span asp-validation-for="Address.PostalCode" class="text-danger"></span>
+                        </div>
+
+                        <div class="order-edit-field">
+                            <label asp-for="Address.City" class="filter-label">CITY</label>
+                            <input asp-for="Address.City" class="filter-input" placeholder="City" />
+                            <span asp-validation-for="Address.City" class="text-danger"></span>
+                        </div>
+
+                        <div class="order-edit-field order-edit-field-wide">
+                            <label asp-for="Address.Country" class="filter-label">COUNTRY</label>
+                            <input asp-for="Address.Country" class="filter-input" placeholder="Country" />
+                            <span asp-validation-for="Address.Country" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-edit-field order-edit-field-wide">
+                    <label asp-for="StatusId" class="filter-label">ORDER STATUS</label>
+                    <select asp-for="StatusId" asp-items="statusOptions" class="filter-input">
+                        <option value="">Select status...</option>
+                    </select>
+                    <span asp-validation-for="StatusId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="order-edit-actions">
+                <button type="submit" class="status-btn">Save Changes</button>
+                <a asp-action="Details" asp-route-id="@Model.Id" class="sort-btn">Details</a>
+                <a asp-action="Index" class="sort-btn">Cancel</a>
+            </div>
+        </form>
+
+        <aside class="order-edit-summary">
+            <h3>ORDER SUMMARY</h3>
+
+            <div class="summary-row">
+                <span>Customer</span>
+                <strong>@(Model.CustomerName ?? "Unknown")</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Customer ID</span>
+                <strong>@Model.CustomerId</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Current Status</span>
+                <strong>@(Model.OrderStatus ?? "Unknown")</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Current Address ID</span>
+                <strong>@Model.AddressId</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Products</span>
+                <strong>@Model.OrderLines.Count</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Total</span>
+                <strong>
+                    €@Model.OrderLines.Sum(ol => ol.Quantity * (ol.ProdPrice ?? 0)).ToString("F2")
+                </strong>
+            </div>
+        </aside>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iteratie3matrix.Pages.NFCLoginPage"
+             Title="NFC Inloggen">
+
+    <!--
+        WHAT: NFC login screen for delivery employees.
+        HOW: Uses MVVM command bindings to start the native Android NFC ReaderMode.
+        WHY: Demonstrates mobile-specific NFC authentication within the application.
+    -->
+
+    <Grid>
+
+        <!-- Allows the page to remain usable on smaller screens. -->
+        <ScrollView>
+
+            <VerticalStackLayout
+                WidthRequest="350"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Spacing="20"
+                Padding="20">
+
+                <!-- Company branding -->
+                <Frame
+                    BorderColor="#61FF4A"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    CornerRadius="40"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center">
+
+                    <Image
+                        Source="matrixbg.png"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+
+                </Frame>
+
+                <Label
+                    Text="MATRIX INC."
+                    TextColor="#61FF4A"
+                    HorizontalOptions="Center"
+                    FontFamily="Courier New"/>
+
+                <Label
+                    Text="LEVERANCIER PORTAAL"
+                    FontSize="34"
+                    FontAttributes="Bold"
+                    TextColor="#61FF4A"
+                    HorizontalOptions="Center"
+                    FontFamily="Courier New"/>
+
+                <!-- Login instructions -->
+                <Label
+                    Text="Scan je medewerkerspas om in te loggen."
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#61FF4A"
+                    FontFamily="Courier New"
+                    FontSize="18"/>
+
+                <!-- Starts the native Android NFC ReaderMode -->
+                <Button
+                    Text="START SCAN"
+                    Command="{Binding ScanNfcCommand}"
+                    BackgroundColor="#61FF4A"
+                    TextColor="#000000"
+                    FontFamily="Courier New"
+                    FontSize="24"
+                    HeightRequest="80"/>
+
+                <!-- Fallback login -->
+                <Button
+                    Text="MANUEEL INLOGGEN"
+                    BackgroundColor="#61FF4A"
+                    TextColor="#000000"
+                    FontFamily="Courier New"
+                    FontSize="24"
+                    HeightRequest="80"
+                    Command="{Binding ManualLoginCommand}"
+                    SemanticProperties.Hint="Opens the manual login page"/>
+
+                <!-- Support page -->
+                <Button
+                    Text="KAN JE NIET INLOGGEN?"
+                    HorizontalOptions="Center"
+                    TextColor="#000000"
+                    FontSize="10"
+                    Command="{Binding CantLoginCommand}"
+                    SemanticProperties.Hint="Opens the support page"/>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

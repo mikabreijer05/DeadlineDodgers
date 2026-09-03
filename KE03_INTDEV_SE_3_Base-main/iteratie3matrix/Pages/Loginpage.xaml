@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="iteratie3matrix.Pages.Loginpage"
+             Title="Inloggen">
+
+    <Grid>
+
+        <ScrollView>
+
+            <VerticalStackLayout
+                WidthRequest="350"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Spacing="20"
+                Padding="20">
+
+                <!-- Logo -->
+                <Frame
+                    BorderColor="#61FF4A"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    CornerRadius="40"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center">
+
+                    <Image
+                        Source="matrixbg.png"
+                        WidthRequest="40"
+                        HeightRequest="40"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center" />
+
+                </Frame>
+
+                <Label
+                    Text="MATRIX INC."
+                    TextColor="#61FF4A"
+                    HorizontalOptions="Center"
+                    FontFamily="Courier New"/>
+
+                <Label
+                    Text="BEZORGERSPORTAAL"
+                    FontSize="34"
+                    FontAttributes="Bold"
+                    TextColor="#61FF4A"
+                    HorizontalOptions="Center"
+                    FontFamily="Courier New"/>
+
+                <!-- Agent -->
+                <Label
+                    Text="MEDEWERKER"
+                    TextColor="#61FF4A"
+                    FontFamily="Courier New"/>
+
+                <Border Stroke="#61FF4A" StrokeThickness="2">
+                    <Entry
+                        x:Name="UsernameEntry"
+                        Placeholder="GEBRUIKERSNAAM"
+                        BackgroundColor="Transparent"
+                        TextColor="#61FF4A"
+                        FontSize="24"
+                        FontFamily="Courier New"/>
+                </Border>
+
+                <!-- Password -->
+                <Label
+                    Text="TOEGANGSCODE"
+                    TextColor="#61FF4A"
+                    FontFamily="Courier New"/>
+
+                <Border Stroke="#61FF4A" StrokeThickness="2">
+                    <Entry
+                        x:Name="PasswordEntry"
+                        IsPassword="True"
+                        Placeholder="TOEGANGSCODE"
+                        BackgroundColor="Transparent"
+                        TextColor="#61FF4A"
+                        FontSize="24"
+                        FontFamily="Courier New"/>
+                </Border>
+
+                <!-- LOGIN BUTTON -->
+                <Button
+                    Text="INLOGGEN"
+                    BackgroundColor="#61FF4A"
+                    TextColor="#000000"
+                    FontFamily="Courier New"
+                    FontSize="24"
+                    HeightRequest="80"
+                    Clicked="OnLoginClicked"
+                    SemanticProperties.Hint="Opens the Order List page"/>
+
+                <!-- Support -->
+                <Button
+                    Text="KAN JE NIET INLOGGEN?"
+                    HorizontalOptions="Center"
+                    TextColor="#000000"
+                    FontSize="10"
+                    Clicked="OnCantLoginClicked"
+                    SemanticProperties.Hint="Opens the support page"/>
+
+                <Label
+                    Text="ONBEVOEGDE TOEGANG WORDT GELOGD"
+                    HorizontalOptions="Center"
+                    TextColor="#2CFF2C"
+                    FontSize="10"
+                    FontFamily="Courier New"/>
+
+            </VerticalStackLayout>
+
+        </ScrollView>
+
+    </Grid>
+</ContentPage>

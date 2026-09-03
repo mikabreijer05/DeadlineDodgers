@@ -1,0 +1,236 @@
+@model KE03_INTDEV_SE_2_Base.Models.ViewModels.CreateDeliveryViewModel
+
+@{
+    ViewData["Title"] = "Levering bewerken";
+
+    var modelProductLines = Model.ProductLines ?? new List<KE03_INTDEV_SE_2_Base.Models.ViewModels.CreateDeliveryProductLineViewModel>();
+
+    var allProductLines = Model.NewOrders
+        .SelectMany(order => order.OrderLines.Select(line =>
+        {
+            var selectedLine = modelProductLines.FirstOrDefault(productLine =>
+                productLine.OrderId == order.Id &&
+                productLine.ProductId == line.ProductId);
+
+            return new
+            {
+                OrderId = order.Id,
+                CustomerName = order.CustomerName,
+                ProductId = line.ProductId,
+                ProductName = line.ProdName ?? selectedLine?.ProductName ?? $"Product {line.ProductId}",
+                PackageDimension = line.PackageDimension ?? selectedLine?.PackageDimension ?? "Onbekend",
+                OrderedQuantity = line.Quantity,
+                AvailableQuantity = Math.Max(line.RemainingQuantity ?? 0, selectedLine?.AvailableQuantity ?? 0),
+                SelectedQuantity = selectedLine?.SelectedQuantity ?? 0,
+                ProductQuantity = line.Product?.Quantity ?? 0
+            };
+        }))
+        .ToList();
+
+    var packageDimensions = new[] { "XS", "S", "M", "L", "XL" };
+}
+
+<link rel="stylesheet" href="~/css/create-delivery.css" />
+<script src="~/js/create-delivery.js"></script>
+
+<form asp-controller="Delivery"
+      asp-action="Edit"
+      asp-route-id="@Model.DeliveryId"
+      method="post"
+      class="create-delivery-page">
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" asp-for="DeliveryId" />
+    <input type="hidden" asp-for="IsEditMode" />
+
+    <header class="create-delivery-header">
+        <div>
+            <h1>LEVERING BEWERKEN</h1>
+            <p>Selecteer orders → bekijk producten → kies voertuig → bevestig</p>
+        </div>
+
+        <div class="delivery-date-box">
+            <label asp-for="ToBeSentDate">Verzenddatum</label>
+            <input asp-for="ToBeSentDate" type="date" />
+        </div>
+    </header>
+
+    <div asp-validation-summary="ModelOnly" class="delivery-validation"></div>
+
+    <main class="packing-layout">
+        <section class="packing-panel orders-panel">
+            <div class="panel-title">
+                <h2>ORDERS</h2>
+                <span><strong id="selectedOrderCount">0</strong> geselecteerd</span>
+            </div>
+
+            <input type="text" id="orderSearch" class="terminal-input" placeholder="Zoek order..." />
+
+            <div class="order-selection-list">
+                @foreach (var order in Model.NewOrders)
+                {
+                    var isSelected = Model.SelectedOrderIds.Contains(order.Id);
+
+                    <label class="order-select-card"
+                           data-order-id="@order.Id"
+                           data-search="@($"{order.Id} {order.CustomerName}".ToLower())">
+                        <input type="checkbox"
+                               name="SelectedOrderIds"
+                               value="@order.Id"
+                               class="order-checkbox"
+                               checked="@isSelected" />
+
+                        <span class="fake-checkbox"></span>
+
+                        <span class="order-card-content">
+                            <span class="order-number">@order.Id.ToString("0000")</span>
+                            <strong>@(order.CustomerName ?? "Onbekende klant")</strong>
+                            <em>Levering</em>
+                            <small>@order.OrderLines.Count product@(order.OrderLines.Count == 1 ? "" : "en")</small>
+                        </span>
+                    </label>
+                }
+            </div>
+        </section>
+
+        <section class="packing-panel products-panel">
+            <div class="panel-title">
+                <h2>PRODUCTEN</h2>
+            </div>
+
+            <div class="dimension-summary">
+                @foreach (var dimension in packageDimensions)
+                {
+                    <div>
+                        <span>@dimension</span>
+                        <strong id="dimensionCount-@dimension">0</strong>
+                    </div>
+                }
+            </div>
+
+            <div id="emptyProductsState" class="empty-products-state">
+                <span>▣</span>
+                <p>Selecteer een order om producten te zien</p>
+            </div>
+
+            <div class="product-selection-list" id="productSelectionList">
+                @for (var index = 0; index < allProductLines.Count; index++)
+                {
+                    var line = allProductLines[index];
+
+                    <article class="product-select-row"
+                             data-order-id="@line.OrderId"
+                             data-dimension="@line.PackageDimension.ToUpper()"
+                             hidden>
+                        <input type="hidden"
+                               name="ProductLines[@index].OrderId"
+                               value="@line.OrderId" />
+
+                        <input type="hidden"
+                               name="ProductLines[@index].ProductId"
+                               value="@line.ProductId" />
+
+                        <input type="hidden"
+                               name="ProductLines[@index].ProductName"
+                               value="@line.ProductName" />
+
+                        <input type="hidden"
+                               name="ProductLines[@index].PackageDimension"
+                               value="@line.PackageDimension" />
+
+                        <input type="hidden"
+                               name="ProductLines[@index].AvailableQuantity"
+                               value="@line.AvailableQuantity" />
+
+                        <div>
+                            <span class="product-order">Order @line.OrderId.ToString("0000")</span>
+                            <strong>@line.ProductName</strong>
+                            <small>@line.PackageDimension pakket</small>
+                            <small>@line.ProductQuantity beschikbaar in voorraad</small>
+                        </div>
+
+                        <div class="quantity-picker">
+                            <button type="button" class="quantity-button quantity-minus">−</button>
+
+                            <input type="number"
+                                   name="ProductLines[@index].SelectedQuantity"
+                                   value="@line.SelectedQuantity"
+                                   min="0"
+                                   max="@line.AvailableQuantity"
+                                   class="product-quantity-input" />
+
+                            <button type="button" class="quantity-button quantity-plus">+</button>
+
+                            <span>/ @line.AvailableQuantity beschikbaar</span>
+                        </div>
+                    </article>
+                }
+            </div>
+        </section>
+
+        <section class="packing-panel vehicles-panel">
+            <div class="panel-title">
+                <h2>VOERTUIGEN</h2>
+            </div>
+
+            <input type="text" id="vehicleSearch" class="terminal-input" placeholder="Zoek voertuig..." />
+
+            <div class="vehicle-selection-list">
+                @foreach (var vehicle in Model.Vehicles)
+                {
+                    var vehicleName = $"{vehicle.VehicleType} {vehicle.LicensePlate}".Trim();
+                    var isSelected = Model.SelectedVehicleId == vehicle.Id;
+
+                    <label class="vehicle-select-card"
+                           data-search="@vehicleName.ToLower()">
+                        <input type="radio"
+                               name="SelectedVehicleId"
+                               value="@vehicle.Id"
+                               class="vehicle-radio"
+                               checked="@isSelected" />
+
+                        <span class="fake-radio"></span>
+
+                        <span class="vehicle-card-content">
+                            <strong>@vehicle.VehicleType</strong>
+                            <small>@vehicle.LicensePlate</small>
+
+                            <span class="vehicle-capacity-grid">
+                                <span>
+                                    XS
+                                    <strong>@vehicle.MaxXsPackages</strong>
+                                </span>
+                                <span>
+                                    S
+                                    <strong>@vehicle.MaxSPackages</strong>
+                                </span>
+                                <span>
+                                    M
+                                    <strong>@vehicle.MaxMPackages</strong>
+                                </span>
+                                <span>
+                                    L
+                                    <strong>@vehicle.MaxLPackages</strong>
+                                </span>
+                                <span>
+                                    XL
+                                    <strong>@vehicle.MaxXlPackages</strong>
+                                </span>
+                            </span>
+                        </span>
+                    </label>
+                }
+            </div>
+        </section>
+    </main>
+
+    <footer class="create-delivery-footer">
+        <a asp-controller="Delivery" asp-action="Index" class="secondary-delivery-button">
+            Annuleren
+        </a>
+
+        <button type="submit" class="save-delivery-button">
+            Sla Wijzigingen Op
+        </button>
+    </footer>
+</form>
